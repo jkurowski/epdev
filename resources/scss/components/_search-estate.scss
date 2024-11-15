@@ -1,0 +1,92 @@
+.search-estate {
+
+  .form-box {
+    background: $white;
+    border: 1px solid #D4D4D4;
+    padding: 1.6875rem;
+  }
+
+  #ap-range {
+    min-width: 200px;
+    margin-bottom: 0px;
+
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+      margin-block: 24px;
+      min-width: auto;
+    }
+  }
+
+  .title {
+    @include font-size(35px);
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .subtitle {
+    @include font-size(15px);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  label.apartments-city {
+    display: inline-block;
+  }
+
+  .apartments-floor {
+    font-size: 13px;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: none;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: #000;
+    padding-left: 0;
+    padding-bottom: 0px;
+    text-transform: uppercase;
+    box-shadow: none;
+
+    &:focus,
+    &:focus-visible,
+    &:active,
+    &:hover {
+      border-color: $primary;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+
+  .rooms-box {
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+
+    & input {
+      visibility: hidden;
+      display: none;
+    }
+
+    .room-label {
+      width: 57px;
+      height: 57px;
+      border: 1px solid #D4D4D4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        border-color: $primary;
+        color: $primary;
+      }
+    }
+
+    .room-input:checked+.room-label {
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+
+}

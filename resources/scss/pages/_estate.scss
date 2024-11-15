@@ -1,0 +1,25 @@
+.img-contact {
+  max-height: 572px;
+  width: calc(calc(940 / 1920 * 100vw) + calc(var(--bs-gutter-x)* 0.5));
+  height: auto;
+  min-height: 572px;
+  object-fit: cover;
+
+
+  @include media-breakpoint-down(xl) {
+    width: 100%;
+    min-height: auto;
+  }
+}
+
+.img-contact-left {
+  @include media-breakpoint-up(xl) {
+    transform: translateX(calc(var(--bs-gutter-x)* 0.5));
+  }
+}
+
+.img-contact-right {
+  @include media-breakpoint-up(xl) {
+    transform: translateX(calc(calc(var(--bs-gutter-x)* 0.5) * -1));
+  }
+}

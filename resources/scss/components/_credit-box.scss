@@ -1,0 +1,44 @@
+.credit-box {
+  margin-top: .5rem;
+
+  .name {
+    @include font-size(16px);
+    font-weight: 700;
+    padding-bottom: .5rem;
+
+  }
+
+  .subtitle {
+    @include font-size(16px);
+    font-weight: 300;
+
+    padding-bottom: 1rem;
+  }
+
+  .contact-box,
+  .contact-box.phone {
+    a {
+      color: $black;
+      font-weight: 400;
+      @include font-size(1rem);
+
+      display: flex;
+      gap: 0.8125rem;
+
+      &:hover {
+        color: $primary;
+
+        svg {
+          circle {
+            fill: $white;
+          }
+
+          path {
+            fill: $primary;
+          }
+        }
+      }
+    }
+  }
+
+}

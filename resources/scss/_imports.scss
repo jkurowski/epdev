@@ -1,0 +1,14 @@
+@import "../../node_modules/slick-carousel/slick/slick";
+@import "../../node_modules/nouislider/dist/nouislider.min.css";
+
+// // 2. Include any default variable overrides here
+@import "./base/variables.scss";
+
+// 3.
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// 4.
+@import "./base/utils";
+@import "./pages/home.scss";
+@import "./pages/estate.scss";
+@import "./components/index.scss";

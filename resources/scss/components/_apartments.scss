@@ -1,0 +1,244 @@
+.apartment-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: min(25px, calc(25 / 1920 * 100vw));
+  width: 100%;
+  height: 100%;
+  background: $white;
+  padding: 1rem;
+
+  a {
+    margin-top: 1rem;
+  }
+
+  .glightbox {
+    z-index: 2;
+  }
+}
+
+.stretched-link:empty {
+  display: contents;
+}
+
+.apartment-title {
+  @include rfs($font-size-lg);
+  font-weight: 900;
+}
+
+
+.apartment-img {
+  max-width: 245px;
+  max-height: 175px;
+  width: 100%;
+  height: 100%;
+}
+
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-wrap: nowrap;
+
+  @include media-breakpoint-down(xl) {
+    width: fit-content;
+    gap: 1.25rem;
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: auto;
+
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  svg {
+    margin: 2px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+  }
+}
+
+.info-first {
+  align-self: flex-start;
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+.info-last {
+  align-self: flex-end;
+  justify-content: flex-end;
+  padding-right: 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  text-wrap: nowrap;
+
+  @include media-breakpoint-down(xl) {
+    width: fit-content;
+    gap: 1.25rem;
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: auto;
+
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    justify-content: flex-start;
+  }
+
+  svg {
+    margin: 2px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+  }
+}
+
+.pdf {
+  align-self: flex-start;
+  width: fit-content;
+  z-index: 2;
+
+  .btn-underline {
+    display: flex;
+    gap: 1rem;
+    font-weight: 400;
+    @include rfs($font-size-10px);
+  }
+}
+
+.apartment-type {
+  @include rfs($font-size-13px);
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  padding: 0.625rem 1.375rem;
+  color: $white;
+  height: fit-content;
+  width: fit-content;
+
+  align-self: flex-start;
+
+  position: absolute;
+  top: -20px;
+}
+
+.apartment-hero-type {
+  position: static;
+  top: 0;
+}
+
+
+.site-record-book-slider {
+
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    height: inherit !important;
+    min-height: 300px;
+  }
+}
+
+.site-record-book-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+
+  position: relative;
+
+  .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: start;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $black;
+    width: 80px;
+    height: 80px;
+    background: $gray-200;
+    border-radius: 50%;
+  }
+
+  .date-box {
+    min-height: 92px;
+    text-align: center;
+    margin-top: 1rem;
+
+    span {
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .date {
+      color: $primary;
+    }
+  }
+
+  .title {
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 150px;
+    text-align: center;
+  }
+
+  .dot::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: $primary;
+    border-radius: 50%;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .dot::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: rgba($primary, .2);
+    border-radius: 50%;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .lane::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: rgba($primary, .2);
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+}

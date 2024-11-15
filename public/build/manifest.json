@@ -1,0 +1,32 @@
+{
+  "public/fonts/lato-v24-latin_latin-ext-300.woff2": {
+    "file": "assets/lato-v24-latin_latin-ext-300-BBFm41PR.woff2",
+    "src": "public/fonts/lato-v24-latin_latin-ext-300.woff2"
+  },
+  "public/fonts/lato-v24-latin_latin-ext-700.woff2": {
+    "file": "assets/lato-v24-latin_latin-ext-700-lLjpCx2w.woff2",
+    "src": "public/fonts/lato-v24-latin_latin-ext-700.woff2"
+  },
+  "public/fonts/lato-v24-latin_latin-ext-900.woff2": {
+    "file": "assets/lato-v24-latin_latin-ext-900-BGfhh3kH.woff2",
+    "src": "public/fonts/lato-v24-latin_latin-ext-900.woff2"
+  },
+  "public/fonts/lato-v24-latin_latin-ext-regular.woff2": {
+    "file": "assets/lato-v24-latin_latin-ext-regular-D_lz-w8E.woff2",
+    "src": "public/fonts/lato-v24-latin_latin-ext-regular.woff2"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-G_C09QZv.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-Banrqkr2.css"
+    ]
+  },
+  "resources/scss/app.scss": {
+    "file": "assets/app-BXvRnk-1.css",
+    "src": "resources/scss/app.scss",
+    "isEntry": true
+  }
+}

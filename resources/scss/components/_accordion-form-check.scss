@@ -1,0 +1,78 @@
+.accordion-form-check {
+
+  padding-inline: 2.3rem;
+
+  &.accordion {
+    padding: 0;
+  }
+
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding-inline: 0.8rem;
+
+    .form-check-input {
+      width: 16px;
+      height: 16px;
+
+      margin-top: 0 !important;
+      margin-left: 0 !important;
+    }
+  }
+
+  .form-check-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    padding-right: 1rem;
+  }
+
+  .form-check-label,
+  .accordion-body {
+    @include font-size(12px);
+  }
+
+  .accordion-item {
+    border-radius: 0;
+    background: transparent;
+    border: none;
+
+
+    .accordion-button {
+      padding-inline: 0;
+      padding-block: .5rem;
+      background: transparent;
+      width: 93.4%;
+
+
+
+      &:focus,
+      &:hover {
+        outline: none !important;
+      }
+    }
+  }
+}
+
+.accordion-form-check .accordion-item .accordion-button:focus,
+.accordion-form-check .accordion-item .accordion-button:hover {
+  box-shadow: none;
+}
+
+#termsAccordion {
+
+  .accordion-button::after {
+    content: "więcej";
+    font-size: 10px;
+    font-weight: 700;
+    background: none;
+    color: $primary;
+    width: fit-content;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    transform: none;
+  }
+}

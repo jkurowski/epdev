@@ -1,0 +1,59 @@
+.slick-slider-single-btns {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+
+    @include media-breakpoint-down(lg) {
+        bottom: 0;
+    }
+
+    .slick-arrow {
+        padding: 0;
+        border: 1px solid $quaternary;
+        border-radius: 50%;
+        background: transparent;
+        width: 50px;
+        height: 50px;
+        color: $quaternary;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 100ms ease-in-out;
+
+        &:hover,
+        &:active,
+        &:focus-visible {
+            border-color: $primary;
+            color: $primary;
+        }
+
+        img {
+            svg {
+                width: 15px;
+                height: 15px;
+                fill: $primary;
+            }
+        }
+
+        &.slick-disabled {}
+    }
+
+    .slick-prev {
+        svg {
+            position: relative;
+            left: 2px;
+        }
+    }
+
+    .slick-next {
+        svg {
+            position: relative;
+            left: -1px;
+        }
+    }
+}

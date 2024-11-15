@@ -1,0 +1,55 @@
+// About form
+
+// Utils
+.form-control {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.form-control-min {
+  min-height: 125px !important;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-floating>* {
+  padding: 0;
+  letter-spacing: 2px;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid $black;
+
+  &:focus {
+    background: transparent;
+  }
+}
+
+.form-floating>label {
+  @include font-size(1.125rem);
+  font-weight: 500;
+  padding-inline: 0;
+}
+
+.form-floating>*::placeholder {
+  padding: 0;
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-control-plaintext~label,
+.form-floating>.form-select~label {
+  color: $black;
+  font-family: "Jost", sans-serif;
+  background: transparent;
+  font-size: 0.75rem;
+}
+
+.form-floating>.form-control:focus~label::after,
+.form-floating>.form-control:not(:placeholder-shown)~label::after,
+.form-floating>.form-control-plaintext~label::after,
+.form-floating>.form-select~label::after {
+  background-color: transparent;
+}

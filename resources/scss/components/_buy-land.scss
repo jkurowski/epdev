@@ -1,0 +1,70 @@
+.buy-land {
+  margin-top: .5rem;
+
+  .contacts {
+    @include media-breakpoint-down(md) {
+      flex-direction: row;
+    }
+  }
+
+  .date {
+    @include font-size(22px);
+    font-weight: 500;
+    margin-left: 2.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .name {
+    @include font-size(16px);
+    font-weight: 700;
+    padding-bottom: .5rem;
+
+  }
+
+  .subtitle {
+    @include font-size(16px);
+    font-weight: 300;
+
+    padding-bottom: 1rem;
+  }
+
+  .contact-box {
+    a {
+      color: $black;
+      font-weight: 400;
+      @include font-size(1rem);
+
+      display: flex;
+      gap: 0.8125rem;
+      word-break: break-all;
+
+      @include media-breakpoint-down(md) {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      &:hover {
+        color: $primary;
+
+        svg {
+          circle {
+            fill: $white;
+          }
+
+          path {
+            fill: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-box.phone {
+    padding-bottom: 0 !important;
+
+    a {
+      align-items: flex-start;
+    }
+  }
+
+}

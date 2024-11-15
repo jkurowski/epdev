@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Http\Controllers\Front\Static;
+
+use App\Http\Controllers\Controller;
+use App\Models\Investment;
+use App\Repositories\Client\ClientRepository;
+use Illuminate\Http\Request;
+
+class IndexController extends Controller
+{
+    private $clientRepository;
+
+    public function __construct(ClientRepository $clientRepository)
+    {
+        $this->clientRepository = $clientRepository;
+    }
+    public function testPage()
+    {
+        $investment = Investment::find(1);
+        return view('test-page', compact('investment'));
+    }
+
+    public function store(Request $request)
+    {
+        try {
+            $validated = $request->validate([
+                'investment_id' => 'nullable|exists:investments,id',
+                'name' => 'required|string|max:255',
+                'surname' => 'required|string|max:255',
+                'phone' => 'required|string|max:255',
+                'email' => 'required|email|max:255',
+                'message' => 'nullable|string',
+            ]);
+
+            $investmentName = Investment::find($request->investment_id)->name;
+
+            $client = $this->clientRepository->createClient(
+                [
+                    'name' => $request->name,
+                    'lastname' => $request->surname,
+                    'phone' => $request->phone,
+                    'email' => $request->email,
+                    'message' => $request->message,
+                    'ip' => $request->ip(),
+                    'investment_id' => $request->investment_id,
+                    'investment_name' => $investmentName,
+                ],null, 1, 'iframe'
+            );
+        } catch (\Throwable $exception) {
+        }
+        return redirect()->back()->with('success', 'Wiadomość została wysłana. Dziękujemy za kontakt!');
+    }
+}

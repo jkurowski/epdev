@@ -1,0 +1,137 @@
+.main-search-box {
+    width: 405px;
+    background: $white;
+    padding: 1.875rem;
+
+    @media screen and (max-width: 1800px) {
+        transform: translateX(-40%);
+    }
+
+    @include media-breakpoint-down(xxl) {
+        transform: translateX(-10%);
+    }
+
+    @include media-breakpoint-down(xl) {
+        transform: translateX(-25%);
+    }
+
+    @include media-breakpoint-down(lg) {
+        transform: translateX(0%);
+        width: 100%;
+    }
+
+    .title {
+        @include font-size(35px);
+        text-align: center;
+        font-weight: 900;
+    }
+
+    .subtitle {
+        @include font-size(15px);
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    label.apartments-city {
+        display: inline-block;
+    }
+
+    .apartments-city {
+        font-size: 13px;
+        border: none;
+        background-color: transparent;
+        border-radius: 0;
+        border-bottom: 1px solid #000;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        color: #000;
+        padding-left: 0;
+        padding-bottom: 6px;
+        text-transform: uppercase;
+        box-shadow: none;
+
+        &:focus,
+        &:focus-visible,
+        &:active,
+        &:hover {
+            border-color: $primary;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    .levels-box {
+        display: flex;
+        gap: 0.9rem;
+
+        flex-wrap: wrap;
+
+        & input {
+            visibility: hidden;
+            display: none;
+        }
+
+        .level-label {
+            width: 57px;
+            height: 57px;
+            border: 1px solid #D4D4D4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                border-color: $primary;
+                color: $primary;
+            }
+        }
+
+        .level-input:checked+.level-label {
+            color: $primary;
+            border-color: $primary;
+        }
+    }
+}
+
+#ap-range,
+#ap-range-contact {
+    height: 1px;
+    margin-bottom: 52px;
+
+    .noUi-base {
+        height: 1px;
+    }
+
+    .noUi-connects {
+        background: $black;
+    }
+
+    .noUi-connect {
+        background: $primary;
+        height: 1px;
+    }
+
+    .noUi-handle {
+        height: 18px;
+        width: 18px;
+        top: -8px;
+        right: -9px;
+        border-radius: 9px;
+        border-color: $black;
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .noUi-tooltip {
+        border: none;
+        bottom: -200%;
+        background: transparent;
+        font-size: 13px;
+    }
+}

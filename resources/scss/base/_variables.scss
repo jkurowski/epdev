@@ -1,0 +1,187 @@
+/* lato-300 - latin_latin-ext */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 300;
+    src: url("/public/fonts/lato-v24-latin_latin-ext-300.woff2") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lato-regular - latin_latin-ext */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/public/fonts/lato-v24-latin_latin-ext-regular.woff2") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lato-700 - latin_latin-ext */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/public/fonts/lato-v24-latin_latin-ext-700.woff2") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lato-900 - latin_latin-ext */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 900;
+    src: url("/public/fonts/lato-v24-latin_latin-ext-900.woff2") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+$primary: #d7007a;
+$secondary: #f9f9f9;
+$tertiary: #3d2489;
+$quaternary: #a8a8a8;
+$success: #1ebf00;
+$danger: #e60000;
+$warning: #df8600;
+$checkbox-bg: #D7007A4F;
+
+//
+$footer-bg: #272727;
+
+//  White => Black
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+// scss-docs-start color-variables
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+
+//
+// Fonts
+//
+
+// || TYPO
+$font-size-base: 1rem;
+$font-size-9px: $font-size-base * 0.5625; // 9px
+$font-size-10px: $font-size-base * 0.625; // 10px
+$font-size-12px: $font-size-base * 0.75; // 12px
+$font-size-13px: $font-size-base * 0.8125; // 13px
+$font-size-14px: $font-size-base * 0.875; // 14px
+$font-size-sm: $font-size-base * 0.9375; // 15px
+$font-size-17px: $font-size-base * 1.0625; // 17px
+$font-size-lg: $font-size-base * 1.25; // 20px
+$font-size-22px: $font-size-base * 1.375; // 22px
+$font-size-xl: $font-size-base * 1.5; // 24px
+$font-size-25px: $font-size-base * 1.5625; // 25px
+$font-size-26px: $font-size-base * 1.625; // 26px
+$font-size-xxl: $font-size-base * 1.75; // 28px
+$font-size-30px: $font-size-base * 1.875; // 30px
+$font-size-2x: $font-size-base * 2; // 32px
+$font-size-39px: $font-size-base * 2.4375; // 39px
+$font-size-25x: $font-size-base * 2.5; // 40px
+$font-size-41px: $font-size-base * 2.5625; // 41px
+$font-size-3x: $font-size-base * 3; //  48px
+$font-size-50px: 3.33rem; //  50px
+$font-size-55px: 3.67rem; //  55px
+$font-size-35x: $font-size-base * 3.5;
+$font-weight-base: 400;
+$line-height-base: 1.6 !default;
+$font-family-base: "Lato";
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$ls-sm: 0.1rem;
+$ls-md: 0.2rem;
+$ls-lg: 0.3rem;
+$ls-xl: 0.4rem;
+$ls-xxl: 0.5rem;
+
+//
+//  Paddings
+//
+$p-main-vw: 14vw;
+$p-main-vh: 14vh;
+
+$p-half-vh: 7vh;
+$p-half-vw: 7vw;
+
+// Select
+$form-select-indicator-color: $black;
+$form-select-focus-box-shadow: transparent;
+$form-select-color: $black;
+$form-select-bg-position: right 0em top 50%;
+
+//Grid
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    2xl: 1600px,
+);
+
+//Gutter
+$grid-gutter-width: 1.5rem;
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    4r: $spacer * 4,
+    6: $spacer * 5,
+    7: $spacer * 6,
+    30px: $spacer * 1.875,
+    40px: $spacer * 2.5,
+    100px: $spacer * 6.25,
+);
+$gutters: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 7.5,
+);
+
+//
+//
+//
+// Breadcrumb
+//
+
+$breadcrumb-item-padding-x: 0.3rem;

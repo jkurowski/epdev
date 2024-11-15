@@ -1,0 +1,187 @@
+  .footer-bg {
+    background: $footer-bg ;
+  }
+
+  .footer-logo-title {
+    color: $primary;
+    @include font-size(3.9375rem);
+    line-height: min(79px, calc(1.61875rem + 4.425vw)); // 79px
+
+  }
+
+  .list-title {
+    color: $white;
+    @include font-size(1.25rem);
+    font-weight: 900;
+
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+
+  .contacts {
+    @include media-breakpoint-down(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    a {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      @include font-size(12px);
+
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $white;
+
+      @include media-breakpoint-down(md) {
+        @include font-size(15px);
+
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        letter-spacing: $ls-sm;
+        gap: 1rem;
+      }
+
+      &:hover {
+        // border-bottom: 1px solid $black;
+        text-shadow: $box-shadow-lg;
+        color: $primary;
+      }
+    }
+  }
+
+  .contact-box {
+    display: flex;
+    gap: 1rem;
+    color: $white;
+
+    a:hover {
+      color: $primary;
+    }
+
+    a:hover svg {
+      circle {
+        fill: $black;
+      }
+    }
+
+    svg {
+      min-width: 32px;
+      min-height: 32px;
+      width: 32px;
+      height: 32px;
+    }
+
+    &.email {
+      a {
+        font-weight: 500;
+        @include rfs($font-size-base);
+        text-transform: lowercase;
+      }
+    }
+
+    &.location {
+      font-weight: 500;
+      @include rfs($font-size-base);
+      text-transform: lowercase;
+
+      display: flex;
+      align-items: center;
+
+      @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+
+    &.phone {
+      a {
+        font-weight: 500;
+        letter-spacing: 1px;
+        @include rfs($font-size-22px);
+      }
+    }
+  }
+
+  .features {
+    .feature-box {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      .icon {
+        img {
+          min-width: 87px;
+          min-height: 87px;
+        }
+      }
+
+      .title {
+        @include rfs($font-size-13px);
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .second-footer {
+    display: flex;
+    align-items: center;
+    padding-block: 2rem;
+  }
+
+  .footer-divider {
+    background: #464444;
+    height: 1px;
+    opacity: 1;
+    width: 100%;
+  }
+
+  .second-footer-link {
+    @include font-size(1.6875rem);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .footer-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    @include media-breakpoint-down(md) {
+      justify-content: center;
+    }
+
+    a svg {
+      max-width: 30px;
+      max-height: 30px;
+      width: 30px;
+      height: 30px;
+
+      cursor: pointer;
+    }
+
+    a:is(:not(.fb)):hover svg {
+      path {
+        stroke: $white;
+      }
+    }
+
+    a.fb:hover svg {
+      path {
+        fill: $white;
+      }
+    }
+  }

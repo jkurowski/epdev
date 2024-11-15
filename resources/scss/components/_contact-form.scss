@@ -1,0 +1,63 @@
+#contact-form {
+  & .hide-empty:empty {
+    display: none;
+  }
+
+  .form-check-input[type="checkbox"] {
+    background-color: $white;
+    border-radius: 0;
+    border: 1px solid $black;
+  }
+
+  .form-check-input:focus {
+    box-shadow: none;
+  }
+
+  .form-check-input:checked {
+    background-color: $white;
+    border-radius: 0;
+    border: 1px solid $black;
+  }
+
+  & .hide-empty:empty {
+    display: none;
+  }
+
+  .form-subtitle {
+    @include font-size(18px);
+    font-weight: 500;
+  }
+
+  .form-check-input {
+    margin-top: 0.4em;
+  }
+
+  .form-check-input[type=radio] {
+    border-radius: 0;
+  }
+
+  .form-check-input[type="checkbox"] {
+    background-color: $white;
+    border-radius: 0;
+    border: 1px solid $black;
+  }
+
+  .form-check-input:focus {
+    box-shadow: none;
+  }
+
+  .form-check-input:checked {
+    background-color: $white;
+    border-radius: 0;
+    border: 1px solid $black;
+  }
+
+  .form-check-input:checked {
+    --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='black' class='bi bi-check' viewBox='0 0 16 16'%3e%3cpath d='M13.354 4.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L6 10.793l6.646-6.647a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+  }
+
+  #ap-range-contact {
+    margin-top: 2rem;
+    width: 95%;
+  }
+}

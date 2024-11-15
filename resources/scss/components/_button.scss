@@ -1,0 +1,319 @@
+.btn {
+    --bs-btn-padding-x: 1.8125em;
+    --bs-btn-padding-y: 0.8125em;
+    --bs-btn-font-size: 10px;
+    --bs-btn-font-weight: 400;
+    --bs-btn-line-height: 1.6;
+    --bs-btn-color: var(--bs-primary);
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-border-radius: 0;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-disabled-opacity: 0.65;
+    --bs-btn-focus-box-shadow: none;
+    width: fit-content;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    --bs-btn-color: var(--bs-primary);
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-border-radius: 0px;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-active-color: var(--bs-white);
+    --bs-btn-active-bg: var(--bs-secondary);
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-active-shadow: transparent;
+    --bs-btn-disabled-color: var(--bs-white);
+    --bs-btn-disabled-bg: rgba(var(--bs-primary-rgb), 0.5);
+    --bs-btn-disabled-border-color: transparent;
+    background-image: transparent;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus-visible {
+        background-image: linear-gradient(to right,
+                var(--bs-primary) 0%,
+                $tertiary 100%);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:disabled {
+        border: 1px solid var(--bs-black);
+        color: var(--bs-black);
+        background: transparent;
+    }
+
+    svg {
+        width: 8px;
+        height: 8px;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover svg {
+        transform: translateX(5px);
+    }
+}
+
+.btn-primary-big {
+    font-size: 16px;
+}
+
+.btn-simple-big {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: 1px solid $primary;
+    min-width: 150px;
+
+    @include media-breakpoint-up(lg) {
+        min-width: 200px;
+    }
+
+    &.active {
+        background: $primary;
+        color: $white;
+
+    }
+
+    &:hover {
+        background: $primary;
+        color: $white;
+        // border-color: transparent;
+    }
+}
+
+.btn-footer {
+    --bs-btn-padding-x: 1.8125em;
+    --bs-btn-padding-y: 0.8125em;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-color: var(--bs-white);
+    --bs-btn-border-radius: 0px;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-hover-color: var(--bs-primary);
+    --bs-btn-hover-border-color: var(--bs-primary);
+    --bs-btn-active-color: var(--bs-primary);
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: var(--bs-primary);
+    --bs-btn-active-shadow: transparent;
+    --bs-btn-disabled-color: var(--bs-white);
+    --bs-btn-disabled-bg: rgba(var(--bs-primary-rgb), 0.5);
+    --bs-btn-disabled-border-color: var(--bs-white);
+    background-image: transparent;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    font-size: 18px;
+
+    text-transform: uppercase;
+}
+
+.btn.btn-primary.btn-phone {
+    --bs-btn-padding-x: 1.25em;
+    --bs-btn-padding-y: 0.125em;
+    letter-spacing: 0px;
+    color: var(--bs-primary);
+    font-size: 24px;
+    font-weight: 700;
+    text-wrap: nowrap;
+
+    &:hover {
+        color: $white;
+    }
+}
+
+.btn-phone-big {
+    font-size: 16px;
+    color: $black;
+
+
+}
+
+.btn-underline {
+    --bs-btn-padding-x: 2.8125em;
+    --bs-btn-padding-y: 0;
+    --bs-btn-font-size: 20px;
+    --bs-btn-font-weight: 900;
+    --bs-btn-line-height: 1.6;
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 5px;
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-color: transparent;
+    --bs-btn-border-radius: 0px;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-active-color: var(--bs-black);
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-active-shadow: transparent;
+    --bs-btn-disabled-color: var(--bs-black);
+    --bs-btn-disabled-bg: rgba(var(--bs-primary-rgb), 0.5);
+    --bs-btn-disabled-border-color: transparent;
+    background-image: transparent;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus-visible {
+        color: $primary;
+        border-bottom: 1px solid $primary;
+    }
+
+    &.active {
+        color: $primary;
+        border-bottom: 1px solid $primary;
+    }
+
+    &:disabled {
+        color: var(--bs-black);
+        background: transparent;
+    }
+}
+
+.btn-underline-white {
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 2px;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-color: transparent;
+    --bs-btn-border-radius: 0px;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-active-color: var(--bs-black);
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-active-shadow: transparent;
+    --bs-btn-disabled-color: var(--bs-black);
+    --bs-btn-disabled-bg: rgba(var(--bs-primary-rgb), 0.5);
+    --bs-btn-disabled-border-color: transparent;
+    background-image: transparent;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus-visible {
+        color: $black;
+        border-bottom: 1px solid $black;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:disabled {
+        color: var(--bs-black);
+        background: transparent;
+    }
+
+    svg {
+        width: 8px;
+        height: 8px;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover svg {
+        transform: translateX(5px);
+    }
+}
+
+.btn-underline-sm {
+    --bs-btn-padding-x: 2.8125em;
+    --bs-btn-padding-y: 0;
+    --bs-btn-font-size: 10px;
+    --bs-btn-font-weight: 400;
+    --bs-btn-line-height: 1.6;
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 2px;
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-color: transparent;
+    --bs-btn-border-radius: 0px;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-active-color: var(--bs-black);
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-active-shadow: transparent;
+    --bs-btn-disabled-color: var(--bs-black);
+    --bs-btn-disabled-bg: rgba(var(--bs-primary-rgb), 0.5);
+    --bs-btn-disabled-border-color: transparent;
+    background-image: transparent;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus-visible {
+        color: $primary;
+        border-bottom: 1px solid $primary;
+    }
+
+    &.active {
+        color: $primary;
+        border-bottom: 1px solid $primary;
+    }
+
+    &:disabled {
+        color: var(--bs-black);
+        background: transparent;
+    }
+
+    svg {
+        width: 8px;
+        height: 8px;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover svg {
+        transform: translateX(5px);
+    }
+}
+
+.rotate-180 {
+    svg {
+        rotate: 180deg;
+    }
+}
+
+.btn-complaint {
+    margin-top: .5rem;
+    width: 100%;
+    font-size: 22px;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $black;
+        border-color: $black;
+    }
+}

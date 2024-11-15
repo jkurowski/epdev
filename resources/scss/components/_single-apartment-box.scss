@@ -1,0 +1,12 @@
+.single-apartment-box {
+
+  background: $white;
+  padding: 1rem;
+
+  .single-apartment-box--img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 680px;
+  }
+}

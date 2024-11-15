@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "prettier-plugin-blade"
+  ],
+  "tabWidth": 4,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "bladeBracketSpacing": true,
+  "bladeWrapAttributes": "auto",
+  "bladePrintWidth": 80
+}

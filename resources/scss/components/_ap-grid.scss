@@ -1,0 +1,298 @@
+.apartments {
+  position: relative;
+
+  .form-select {
+    background-position: right 0em top 50%;
+  }
+
+  &-form {
+    background-color: $white;
+    padding: 2rem 2rem;
+
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &-select {
+      border: none;
+      background-color: transparent;
+      border-radius: 0;
+      border-bottom: 1px solid $black;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      color: $black;
+      padding-left: 0;
+
+      svg {}
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+    }
+
+    & select>option {
+      color: $black;
+    }
+  }
+}
+
+.grid-btn {
+  border: none;
+  background: transparent;
+  opacity: 0.3;
+
+  &.active {
+    opacity: 1;
+
+    svg {
+      g {
+        stroke: $black;
+      }
+    }
+  }
+}
+
+.main-row-titles {
+  padding: 1rem 2.25rem;
+  gap: 2rem;
+
+  @include media-breakpoint-down(xxl) {
+    gap: 1rem;
+  }
+
+  .ap-apartment {
+    left: 108px;
+
+    @include media-breakpoint-down(xxl) {
+      left: 44px;
+    }
+  }
+
+  .ap-squares,
+  .ap-balcoon,
+  .ap-level,
+  .ap-rooms {
+    left: 130px;
+
+    @include media-breakpoint-down(xxl) {
+      left: 80px;
+    }
+  }
+
+  .ap-rzut {
+    left: 124px;
+
+    @include media-breakpoint-down(xxl) {
+      left: 77px;
+    }
+  }
+}
+
+.inner-row-titles {
+  gap: 2rem;
+
+  @include media-breakpoint-down(xxl) {
+    gap: 1rem;
+  }
+
+  .ap-column-title {
+    min-width: 130px;
+  }
+}
+
+.ap-column-box {
+  padding: 1.875rem 2.25rem;
+  background: $white;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include media-breakpoint-down(xxl) {
+    gap: 1rem;
+    padding: 0.875rem 0.25rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 2rem;
+  }
+
+  .apartment-info-box {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+
+    .info-row {
+      min-width: 130px
+    }
+
+    @include media-breakpoint-down(xxl) {
+      gap: 1rem;
+    }
+
+    @include media-breakpoint-down(lg) {
+      .info-row {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .ap-pdf-box {
+    gap: 2rem;
+
+    @include media-breakpoint-down(xxl) {
+      gap: 1rem;
+    }
+  }
+
+
+
+  .btn-ap-check {
+    border-radius: 25px;
+  }
+
+  .apartment-title {
+    @include media-breakpoint-up(lg) {
+      max-width: 110px;
+    }
+  }
+
+  .apartment-type {
+    width: 120px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+
+  .ap-column--img {
+    display: none;
+  }
+
+  &>div {
+    flex-shrink: 1;
+  }
+}
+
+.ap-column-title {
+  @include rfs($font-size-13px);
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  position: relative;
+
+}
+
+.ap-column-box.ap-column-switch {
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  gap: 1rem;
+
+  .apartment-type {
+    position: absolute;
+    transform: translateY(-50%);
+  }
+
+  .apartment-info-box {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    div {
+      width: 47%;
+    }
+
+  }
+
+  .ap-pdf-box {
+    display: inline-block;
+
+  }
+
+  .ap-column--img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    max-height: 235px;
+
+    @include media-breakpoint-down(xl) {
+      max-height: 100%;
+    }
+  }
+
+  .btn-ap-check {
+    display: none;
+  }
+}
+
+
+
+.apartment-box-container.switch {
+  .col-12 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+
+    @include media-breakpoint-down(xl) {
+      width: 50%;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+
+  }
+
+  &.gy-3 {
+    --bs-gutter-y: 3rem !important;
+  }
+
+}
+
+//
+//
+// Link 
+//
+//
+
+.ap-column-box--a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 2;
+}
+
+.ap-column-box {
+  z-index: 1;
+}
+
+.ap-column--img,
+.ap-column-glightbox {
+  position: relative;
+  z-index: 3;
+}
+
+.ap-pdf-box {
+
+  .pdf,
+  .btn-ap-check {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+
+.apartments-titles-hide {
+  display: none !important;
+}
