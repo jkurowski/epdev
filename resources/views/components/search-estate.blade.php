@@ -15,6 +15,7 @@
                 </select>
             </div>
 
+            <div class="form-vh"></div>
             {{-- Checkbox for selecting room numbers --}}
             <div class="d-flex gap-3 justify-content-lg-center align-items-center">
                 <div class="subtitle ">LICZBA POKOI:</div>

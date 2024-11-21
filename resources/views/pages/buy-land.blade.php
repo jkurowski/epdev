@@ -10,7 +10,7 @@
     <section class="margin-below-breadcrumb">
         <div class="container">
             <div class="row align-items-center gy-5 gy-lg-0">
-                <div class="col-12 col-lg-5 col-xxl-4">
+                <div class="col-12 col-lg-5">
                     <div class="buy-land">
                         <h1 class="section-title fw-bold mb-4 text-uppercase">KUPIMY GRuNTY</h1>
                         <p class="paragraph mb-4">Posiadasz na sprzedaż atrakcyjną nieruchomość w Warszawie i okolicach?</p>
@@ -23,7 +23,7 @@
                             zapraszamy do kontaktu</p>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 offset-lg-1 offset-xxl-2">
+                <div class="col-12 col-lg-6 offset-lg-1">
                     <div class="" data-aos="fade" data-aos-delay="200">
 
                         <x-picture webpSmall="images/reusable/land.webp" webpLarge="images/reusable/land@2x.webp"

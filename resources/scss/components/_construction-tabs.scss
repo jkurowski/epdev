@@ -98,7 +98,8 @@
 
     .construction-title {
       @include font-size(1rem);
-      font-weight: 900;
+      font-weight: 700;
+      letter-spacing: 0.8px;
     }
 
     .construction-subtitle {
@@ -110,6 +111,11 @@
       border: 1px solid #707070;
       width: 98%;
       margin-left: 1%;
+    }
+
+    img {
+      max-height: 382px;
+      object-fit: cover;
     }
 
     .construction-btn {

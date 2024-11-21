@@ -1,3 +1,13 @@
+.form-check.accordion-form-check {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  .form-check-label {
+    transform: translate(0, 3px);
+  }
+}
+
 .accordion-form-check {
 
   padding-inline: 2.3rem;

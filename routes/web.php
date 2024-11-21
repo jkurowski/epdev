@@ -136,8 +136,8 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
         Route::get('/i/{slug}/pietro/{floor}', 'InvestmentFloorController@index')->name('floor');
         Route::get('/i/{slug}/pietro/{floor}/m/{property}', 'InvestmentPropertyController@index')->name('property');
 
-        Route::get('/{slug}/aktualnosci', 'Article\IndexController@index')->name('investment.news');
-        Route::get('/{slug}/aktualnosci/{article}', 'Article\IndexController@show')->name('investment.news.show');
+        // Route::get('/{slug}/aktualnosci', 'Article\IndexController@index')->name('investment.news');
+        // Route::get('/{slug}/aktualnosci/{article}', 'Article\IndexController@show')->name('investment.news.show');
 
         // Inwestycja domkowa
         Route::get('/{slug}/d/{property}', 'InvestmentHouseController@index')->name('house');
@@ -145,6 +145,10 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
         //Pages
         Route::get('/{slug}/{page}', 'Page\IndexController@index')->name('page');
     });
+
+    //dziennik budowy
+    Route::get('/dziennik-budowy', 'App\Http\Controllers\Front\Developro\Article\IndexController@index')->name('investment.news');
+    Route::get('/dziennik-budowy/{article}', 'App\Http\Controllers\Front\Developro\Article\IndexController@show')->name('investment.news.show');
 
     // Inline
     Route::group(['prefix' => '/inline', 'as' => 'front.inline.'], function () {
@@ -169,7 +173,7 @@ Route::group(['as' => 'pages.'], function () {
     //
     // Apartments
     //
-    Route::get('/mieszkania', [PropertiesController::class, 'index'])->name('properties');
+    // Route::get('/mieszkania', [PropertiesController::class, 'index'])->name('properties');
 
     Route::get('/mieszkania/warszawa/apartamenty-talarowa-3', function () {
         return view('pages.estate');
@@ -203,11 +207,11 @@ Route::group(['as' => 'pages.'], function () {
     // Construction diary
     //
 
-    Route::get('/dziennik-budowy', function () {
+    Route::get('/dziennik-budowy-old', function () {
         return view('pages.construction-diary');
     })->name('construction-diary');
 
-    Route::get('/dziennik-budowy/osiedle-pogodne', function () {
+    Route::get('/dziennik-budowy-old/osiedle-pogodne', function () {
         return view('pages.construction-diary-single');
     })->name('construction-diary-single');
 

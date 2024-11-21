@@ -62,8 +62,11 @@ Route::group([
         'article' => 'Article\IndexController',
         'contract' => 'Contract\IndexController',
         'ux' => 'UX\IndexController',
-        'box' => 'Box\IndexController'
+        'box' => 'Box\IndexController',
+        'city'=> 'City\IndexController'
     ]);
+
+    Route::post('city/set', 'City\IndexController@sort')->name('city.sort');
 
     // Settings
     Route::group(['prefix' => '/settings', 'as' => 'settings.'], function () {

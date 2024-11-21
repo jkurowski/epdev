@@ -30,6 +30,8 @@ class InvestArticlesFormRequest extends FormRequest
             'content_entry' => 'required|string|min:5',
             'content' => 'required|string|min:5',
             'date' => 'required',
+            'gallery_id' => 'nullable|integer',
+            'subtitle' => 'nullable|string',
             'meta_title' => '',
             'meta_description' => '',
             'meta_robots' => ''

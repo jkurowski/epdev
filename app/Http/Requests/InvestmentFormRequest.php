@@ -46,7 +46,8 @@ class InvestmentFormRequest extends FormRequest
             'users' => '',
             'supervisors' => '',
             'template_id' => 'integer',
-            'investmentTemplates' => 'array'
+            'investmentTemplates' => 'array',
+            'gallery_id' => 'integer|nullable'
         ];
     }
 

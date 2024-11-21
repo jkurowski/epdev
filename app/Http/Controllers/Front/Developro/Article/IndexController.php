@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Front\Developro\Article;
 
 use App\Http\Controllers\Controller;
+use App\Models\InvestmentArticles;
 use App\Models\Page;
 use App\Repositories\InvestmentArticleRepository;
 use App\Repositories\InvestmentRepository;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 
 class IndexController extends Controller
 {
@@ -20,34 +23,89 @@ class IndexController extends Controller
         $this->pageId = 11;
     }
 
-    public function index($language, $slug)
+    public function index()
     {
-        $investment = $this->repository->findBySlug($slug);
-        $investmentPage = $investment->investmentPage()->where('slug', $slug)->first();
-        $investmentArticles = $this->articleRepository->allSortByWhere('investment_id', $investment->id, 'date', 'ASC');
+        $investmentArticles = InvestmentArticles::all();
         $menu_page = Page::where('id', $this->pageId)->first();
+        $tabs = $this->prepareTabs($investmentArticles);
 
         return view('front.developro.investment.news', [
-            'investment' => $investment,
             'page' => $menu_page,
-            'investment_page' => $investmentPage,
-            'investment_news' => $investmentArticles
+            'investment_news' => $investmentArticles,
+            'tabs' => $tabs
         ]);
     }
 
-    public function show($language, $slug, $article)
+    private function prepareTabs(Collection $investmentArticles): array
+    {
+        $articles = $investmentArticles;
+        $investments = $articles->pluck('investment')->unique('id');
+        $cities = $investments->pluck('city')->unique('id');
+        $locations = $cities->pluck('name','slug');
+
+        // Initialize tabs with "All" tab
+        $tabs = [[
+            'id' => 'all',
+            'label' => 'Wszystkie',
+            'streets' => []
+        ]];
+
+        // Create location-specific tabs
+        foreach ($locations as $id => $label) {
+            $filteredArticles = $investmentArticles->filter(
+                function ($article) use ($id) {
+                    $investment = $article->investment()->first();
+                    $city = $investment->city()->first();
+                    return $city->slug === $id;
+                }
+            );
+
+            if ($filteredArticles->isNotEmpty()) {
+                $tabs[] = [
+                    'id' => $id,
+                    'label' => $label,
+                    'streets' => $this->prepareStreetData($filteredArticles)
+                ];
+            }
+            
+        }
+
+        return $tabs;
+    }
+
+    private function prepareStreetData(Collection $articles): array
+    {
+        return $articles->map(function ($article) {
+            $investment = $article->investment()->first();
+            $city = $investment->city()->first();
+            
+            return [
+                'name' => $article->title,
+                'boxId' => 'box-' . $article->id,
+                'location' => $city->name,
+                'data_location' => $city->slug,
+                'date' => Carbon::parse($article->created_at)->format('d.m.Y'),
+                'subtitle' => $article->subtitle,
+                'href' => route('front.investment.news.show', ['article' => $article->slug]),
+                'webpSmall' => '$article->getWebpSmallPath()',
+                'webpLarge' => '$article->getWebpLargePath()',
+                'pngSmall' => '$article->getPngSmallPath()',
+                'pngLarge' => '$article->getPngLargePath()',
+                'defaultSrc' => $article->file,
+                'alt' => 'Dziennik budowy - zdjęcie budowy'
+            ];
+        })->toArray();
+    }
+
+    public function show ($article)
     {
 
-        $investment = $this->repository->findBySlug($slug);
-        $investmentPage = $investment->investmentPage()->where('slug', $slug)->first();
         $investmentArticle = $this->articleRepository->findBySlug($article);
         $menu_page = Page::where('id', $this->pageId)->first();
 
         return view('front.developro.investment.news-show', [
-            'investment' => $investment,
             'page' => $menu_page,
-            'investment_page' => $investmentPage,
-            'investment_news' => $investmentArticle
+            'article' => $investmentArticle
         ]);
     }
 }

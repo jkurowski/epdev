@@ -5,13 +5,16 @@ namespace App\Http\Controllers\Admin\Developro\Investment;
 use App\Helpers\TemplateTypes;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\InvestmentFormRequest;
+use App\Models\City;
 use App\Models\EmailTemplate;
+use App\Models\Gallery;
 use App\Models\Investment;
 use App\Models\InvestmentTemplates;
 use App\Models\User;
 use App\Notifications\SupervisorNotification;
 use App\Repositories\InvestmentRepository;
 use App\Services\InvestmentService;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
@@ -72,6 +75,7 @@ class IndexController extends Controller
 
         $templatesForOffer = $this->getEmailTemplates(TemplateTypes::OFFER);
         $templatesForEmail = $this->getEmailTemplates(TemplateTypes::EMAIL);
+        $cities = $this->prepareCitiesForSelect(City::all());
 
 
         return view('admin.developro.investment.form', [
@@ -83,8 +87,14 @@ class IndexController extends Controller
             'investmentTemplates' => $investmentTemplates,
             'offerTemplates' => ['' => 'Brak'] + $templatesForOffer,
             'emailTemplates' => ['' => 'Brak'] + $templatesForEmail,
-
+            'cities' => $cities,
+            'galleries' => $this->getGalleryList()
         ])->with('entry', $emptyInvestment);
+    }
+    private function getGalleryList()
+    {
+        $galleries = Gallery::all();
+        return $galleries->pluck('name', 'id')->prepend('Wybierz galerię', '');
     }
 
     public function store(InvestmentFormRequest $request)
@@ -122,6 +132,7 @@ class IndexController extends Controller
         $templatesForOffer = $this->getEmailTemplates(TemplateTypes::OFFER);
         $templatesForEmail = $this->getEmailTemplates(TemplateTypes::EMAIL);
         $offer = $this->repository->find($id);
+        $cities = $this->prepareCitiesForSelect(City::all());
 
         return view('admin.developro.investment.form', [
             'entry' => $offer,
@@ -132,8 +143,20 @@ class IndexController extends Controller
             'offerTemplates' => ['' => 'Brak'] + $templatesForOffer,
             'emailTemplates' => ['' => 'Brak'] + $templatesForEmail,
             'investmentTemplates' => $offer->investmentTemplates()->first(),
-            'selectedOfferTemplate' => $offer->template_id
+            'selectedOfferTemplate' => $offer->template_id,
+            'cities' => $cities,
+            'galleries' => $this->getGalleryList()
         ]);
+    }
+
+    private function prepareCitiesForSelect(Collection $cities){
+        $citiesArray = [
+            '' => 'Brak'
+        ];
+        foreach($cities as $city){
+            $citiesArray[$city->id] = $city->name;
+        }
+        return $citiesArray;
     }
 
     public function templates(int $id)

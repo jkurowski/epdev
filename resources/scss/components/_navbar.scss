@@ -85,7 +85,7 @@
 
         a:not(.btn-phone) {
             font-size: clamp(1rem, 0.063rem + 1.25vw, 1.563rem);
-            font-weight: $font-weight-normal;
+            font-weight: 600;
             color: $primary;
             text-decoration: none;
 

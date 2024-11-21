@@ -86,8 +86,8 @@
                     {{-- Dziennik Budowy --}}
                     {{--  --}}
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('pages.construction-diary') ? 'active' : '' }}"
-                            href="{{ route('pages.construction-diary') }}">
+                        <a class="nav-link {{ request()->routeIs('front.investment.news') ? 'active' : '' }}"
+                            href="{{ route('front.investment.news') }}">
                             Dziennik Budowy
                         </a>
                     </li>

@@ -13,6 +13,8 @@ class InvestmentArticles extends Model
     protected $fillable = [
         'investment_id',
         'title',
+        'gallery_id',
+        'subtitle',
         'date',
         'content',
         'content_entry',
@@ -23,4 +25,14 @@ class InvestmentArticles extends Model
         'file',
         'file_webp'
     ];
+
+    public function investment()
+    {
+        return $this->belongsTo(Investment::class);
+    }
+
+    public function gallery()
+    {
+        return $this->hasOne(Gallery::class, 'id', 'gallery_id');
+    }
 }

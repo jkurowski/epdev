@@ -181,6 +181,7 @@
                 </div>
                 <div class="col-md-6 col-xl-4">
                     <div class="bg-white p-3 h-100">
+                        <h1 class="header-1 px-lg-3 m-0">Zapytaj <br /> o mieszkanie</h1>
                         <x-contact-form-simple :terms="[
                             [
                                 'id' => 'terms-1',

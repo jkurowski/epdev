@@ -1,6 +1,7 @@
 @extends('admin.layout')
 
 @section('content')
+
     @if (Route::is('admin.developro.investment.edit'))
         <form method="POST" action="{{ route('admin.developro.investment.update', $entry->id) }}"
             enctype="multipart/form-data">
@@ -83,10 +84,12 @@
                         ])
                     </div>
                     <div class="col-6">
-                        @include('form-elements.html-input-text', [
+                     
+                        @include('form-elements.html-select', [
                             'label' => 'Miasto inwestycji',
-                            'name' => 'city',
-                            'value' => $entry->city,
+                            'name' => 'city_id',
+                            'selected' => $entry->city_id,
+                            'select' => $cities,
                         ])
                     </div>
                 </div>
@@ -236,6 +239,14 @@
                         'name' => 'file',
                         'file' => $entry->file_thumb,
                         'file_preview' => config('images.investment.preview_file_path'),
+                    ])
+                </div>
+                <div class="row w-100 form-group">
+                    @include('form-elements.html-select', [
+                        'label' => 'Galeria',
+                        'name' => 'gallery_id',
+                        'selected' => $entry->gallery_id,
+                        'select' => $galleries,
                     ])
                 </div>
 

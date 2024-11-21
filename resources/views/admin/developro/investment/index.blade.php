@@ -46,6 +46,11 @@
                                             data-bs-title="Edytuj">
                                             <i class="fe-edit" aria-hidden="true"></i>
                                         </a>
+                                        <a href="{{ route('admin.developro.investment.article.index', $p) }}"
+                                            class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
+                                            data-bs-title="Dzienniki inwestycji">
+                                            <i class="fe-file" aria-hidden="true"></i>
+                                        </a>
                                         <form class="d-none" method="POST"
                                             action="{{ route('admin.developro.investment.destroy', $p) }}">
                                             {{ csrf_field() }}

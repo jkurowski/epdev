@@ -25,7 +25,7 @@
 
 
             <div class="subtitle mt-40px mb-3">LICZBA POKOI</div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex">
                 {{-- Checkboxes for apartment levels --}}
                 <div class="levels-box">
                     @for ($i = 1; $i <= $levels; $i++)

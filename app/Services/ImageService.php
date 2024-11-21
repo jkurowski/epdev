@@ -9,58 +9,91 @@ use Intervention\Image\ImageManagerStatic as ImageManager;
 
 class ImageService
 {
-    public function upload(UploadedFile $file, object $model, bool $delete = false)
+    private const BASE_PATH = 'uploads/gallery/images';
+    
+    private function ensureDirectoriesExist(): void
     {
+        $paths = [
+            self::BASE_PATH,
+            self::BASE_PATH . '/webp',
+            self::BASE_PATH . '/thumbs',
+            self::BASE_PATH . '/thumbs/webp'
+        ];
 
-        if ($delete) {
-            if (File::isFile(public_path('uploads/gallery/images/' . $model->file))) {
-                File::delete(public_path('uploads/gallery/images/' . $model->file));
-            }
-            if (File::isFile(public_path('uploads/gallery/images/webp/' . $model->file_webp))) {
-                File::delete(public_path('uploads/gallery/images/webp/' . $model->file_webp));
-            }
-
-            if (File::isFile(public_path('uploads/gallery/images/thumbs/' . $model->file))) {
-                File::delete(public_path('uploads/gallery/images/thumbs/' . $model->file));
-            }
-            if (File::isFile(public_path('uploads/gallery/images/thumbs/webp/' . $model->file_webp))) {
-                File::delete(public_path('uploads/gallery/images/thumbs/webp/' . $model->file_webp));
+        foreach ($paths as $path) {
+            $fullPath = public_path($path);
+            if (!File::isDirectory($fullPath)) {
+                File::makeDirectory($fullPath, 0755, true);
             }
         }
-        $name_file = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+    }
 
-        $name = date('His') . '_' . Str::slug($name_file) . '.' . $file->getClientOriginalExtension();
-        $name_webp = date('His') . '_' . Str::slug($name_file) . '.webp';
+    public function upload(UploadedFile $file, object $model, bool $delete = false): void
+    {
+        try {
+            // Ensure directories exist before processing
+            $this->ensureDirectoriesExist();
+            
+            // Delete old files if requested
+            if ($delete) {
+                $this->deleteExistingFiles($model);
+            }
 
-        $file->storeAs('gallery/images/', $name, 'public_uploads');
+            $name_file = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
 
-        $filepath = public_path('uploads/gallery/images/' . $name);
-        $filepath_webp = public_path('uploads/gallery/images/webp/' . $name_webp);
+            $name = date('His') . '_' . Str::slug($name_file) . '.' . $file->getClientOriginalExtension();
+            $name_webp = date('His') . '_' . Str::slug($name_file) . '.webp';
 
-        $thumb_filepath = public_path('uploads/gallery/images/thumbs/' . $name);
-        $thumb_filepath_webp = public_path('uploads/gallery/images/thumbs/webp/' . $name_webp);
+            $file->storeAs('gallery/images/', $name, 'public_uploads');
 
-        ImageManager::make($filepath)
-            ->resize(
-                config('images.gallery.big_width'),
-                config('images.gallery.big_height'),
-                function ($constraint) {
-                    $constraint->aspectRatio();
-                }
-            )->save($filepath);
-        ImageManager::make($filepath)->encode('webp', 90)->save($filepath_webp);
+            $filepath = public_path('uploads/gallery/images/' . $name);
+            $filepath_webp = public_path('uploads/gallery/images/webp/' . $name_webp);
 
-        ImageManager::make($filepath)
-            ->fit(
-                config('images.gallery.thumb_width'),
-                config('images.gallery.thumb_height')
-            )->save($thumb_filepath);
-        ImageManager::make($thumb_filepath)->encode('webp', 90)->save($thumb_filepath_webp);
+            $thumb_filepath = public_path('uploads/gallery/images/thumbs/' . $name);
+            $thumb_filepath_webp = public_path('uploads/gallery/images/thumbs/webp/' . $name_webp);
 
-        $model->update([
-            'file' => $name,
-            'file_webp' => $name_webp,
-            'name' => $file->getClientOriginalName()
-        ]);
+            ImageManager::make($filepath)
+                ->resize(
+                    config('images.gallery.big_width'),
+                    config('images.gallery.big_height'),
+                    function ($constraint) {
+                        $constraint->aspectRatio();
+                    }
+                )->save($filepath);
+            ImageManager::make($filepath)->encode('webp', 90)->save($filepath_webp);
+
+            ImageManager::make($filepath)
+                ->fit(
+                    config('images.gallery.thumb_width'),
+                    config('images.gallery.thumb_height')
+                )->save($thumb_filepath);
+            ImageManager::make($thumb_filepath)->encode('webp', 90)->save($thumb_filepath_webp);
+
+            $model->update([
+                'file' => $name,
+                'file_webp' => $name_webp,
+                'name' => $file->getClientOriginalName()
+            ]);
+        } catch (\Exception $e) {
+            \Log::error('Image upload failed: ' . $e->getMessage());
+            throw new \RuntimeException('Failed to process image: ' . $e->getMessage());
+        }
+    }
+
+    private function deleteExistingFiles(object $model): void
+    {
+        $paths = [
+            self::BASE_PATH . '/' . $model->file,
+            self::BASE_PATH . '/webp/' . $model->file_webp,
+            self::BASE_PATH . '/thumbs/' . $model->file,
+            self::BASE_PATH . '/thumbs/webp/' . $model->file_webp
+        ];
+
+        foreach ($paths as $path) {
+            $fullPath = public_path($path);
+            if (File::isFile($fullPath)) {
+                File::delete($fullPath);
+            }
+        }
     }
 }

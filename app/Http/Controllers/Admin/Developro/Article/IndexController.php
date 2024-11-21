@@ -8,7 +8,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Investment;
 use App\Repositories\InvestmentArticleRepository as Repository;
 use App\Http\Requests\InvestArticlesFormRequest as FormRequest;
+use App\Models\Gallery;
 use App\Models\InvestmentArticles as Model;
+use App\Models\InvestmentArticles;
 use App\Services\InvestmentArticleService;
 
 class IndexController extends Controller
@@ -24,7 +26,8 @@ class IndexController extends Controller
 
     public function index(Investment $investment)
     {
-        return view('admin.developro.investment_article.index', ['list' => $this->repository->allSortBy('date', 'ASC'), 'investment' => $investment]);
+        $list = InvestmentArticles::where('investment_id', $investment->id)->get();
+        return view('admin.developro.investment_article.index', ['list' => $list, 'investment' => $investment]);
     }
 
     public function create(Investment $investment)
@@ -32,7 +35,8 @@ class IndexController extends Controller
         return view('admin.developro.investment_article.form', [
             'cardTitle' => 'Dodaj wpis',
             'investment' => $investment,
-            'backButton' => route('admin.developro.investment.article.index', $investment)
+            'backButton' => route('admin.developro.investment.article.index', $investment),
+            'galleries' => $this->getGalleryList()
         ])->with('entry', Model::make());
     }
 
@@ -53,8 +57,14 @@ class IndexController extends Controller
             'entry' => $article,
             'investment' => $investment,
             'cardTitle' => 'Edytuj wpis',
-            'backButton' => route('admin.developro.investment.article.index', $investment)
+            'backButton' => route('admin.developro.investment.article.index', $investment),
+            'galleries' => $this->getGalleryList()
         ]);
+    }
+    private function getGalleryList()
+    {
+        $galleries = Gallery::all();
+        return $galleries->pluck('name', 'id')->prepend('Wybierz galerię', '');
     }
 
     public function update(FormRequest $request, Investment $investment, Model $article)

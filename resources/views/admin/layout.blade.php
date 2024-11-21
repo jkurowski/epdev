@@ -38,80 +38,80 @@
                             <span> DeveloCMS </span>
                             <i class='fe-settings ms-auto with-hover'></i>
                         </a>
-                        
+
                         <ul class="sub-menu">
-                                @if(in_array('page', $modules))
-                            <li {{ Request::routeIs('admin.page.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.page.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Strony</a>
-                            </li>
-                               @endif
-                                @if(in_array('article', $modules))
-                            <li {{ Request::routeIs('admin.article.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.article.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Aktualności</a>
-                            </li>
-                               @endif
-                                @if(in_array('slider', $modules))
-                            <li {{ Request::routeIs('admin.slider.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.slider.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Slider</a>
-                            </li>
-                               @endif
-                                @if(in_array('map', $modules))
-                            <li {{ Request::routeIs('admin.map.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.map.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Mapa</a>
-                            </li>
-                                @endif
-                                @if(in_array('gallery', $modules))
-                            <li {{ Request::routeIs('admin.gallery.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.gallery.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Galeria</a>
-                            </li>
-                                @endif
-                                @if(in_array('user', $modules))
-                            <li {{ Request::routeIs('admin.user.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.user.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Użytkownicy</a>
-                            </li>
-                                @endif
-                                @if(in_array('greylist', $modules))
-                            <li {{ Request::routeIs('admin.greylist.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.greylist.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Blokada dostępu</a>
-                            </li>
-                                @endif
-                                @if(in_array('settings', $modules))
-                            <li {{ Request::routeIs('admin.settings.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.settings.seo.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Ustawienia</a>
-                            </li>
-                                @endif
-                                @if(in_array('boxes', $modules))
-                            <li class="d-none">
-                                <a href="">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Boksy</a>
-                            </li>
-                                @endif
+                            @if (in_array('page', $modules))
+                                <li {{ Request::routeIs('admin.page.*') ? 'class=active' : '' }}>
+                                    <a href="{{ route('admin.page.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span> Strony</a>
+                                </li>
+                            @endif
+                            @if (in_array('article', $modules))
+                                <li {{ Request::routeIs('admin.article.*') ? 'class=active' : '' }}>
+                                    <a href="{{ route('admin.article.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span> Aktualności</a>
+                                </li>
+                            @endif
+                            @if (in_array('slider', $modules))
+                                <li {{ Request::routeIs('admin.slider.*') ? 'class=active' : '' }}>
+                                    <a href="{{ route('admin.slider.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span> Slider</a>
+                                </li>
+                            @endif
+                            @if (in_array('map', $modules))
+                                <li {{ Request::routeIs('admin.map.*') ? 'class=active' : '' }}>
+                                    <a href="{{ route('admin.map.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span> Mapa</a>
+                                </li>
+                            @endif
+                            @if (in_array('gallery', $modules))
+                                <li {{ Request::routeIs('admin.gallery.*') ? 'class=active' : '' }}>
+                                    <a href="{{ route('admin.gallery.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span> Galeria</a>
+                                </li>
+                            @endif
+                            @if (in_array('user', $modules))
+                                <li {{ Request::routeIs('admin.user.*') ? 'class=active' : '' }}>
+                                    <a href="{{ route('admin.user.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span> Użytkownicy</a>
+                                </li>
+                            @endif
+                            @if (in_array('greylist', $modules))
+                                <li {{ Request::routeIs('admin.greylist.*') ? 'class=active' : '' }}>
+                                    <a href="{{ route('admin.greylist.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span> Blokada dostępu</a>
+                                </li>
+                            @endif
+                            @if (in_array('settings', $modules))
+                                <li {{ Request::routeIs('admin.settings.*') ? 'class=active' : '' }}>
+                                    <a href="{{ route('admin.settings.seo.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span> Ustawienia</a>
+                                </li>
+                            @endif
+                            @if (in_array('boxes', $modules))
+                                <li class="d-none">
+                                    <a href="">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span> Boksy</a>
+                                </li>
+                            @endif
                         </ul>
                     </li>
                     <li class="active">
@@ -120,6 +120,13 @@
                             <span> DeveloCRM </span>
                         </a>
                         <ul class="sub-menu">
+                            <li class="{{ Request::routeIs('admin.city.*') ? 'active' : '' }}">
+                                <a href="{{ route('admin.city.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span> Miasta
+                                </a>
+                            </li>
                             <li {{ Request::routeIs('admin.crm.clients.*') ? 'class=active' : '' }}>
                                 <a href="{{ route('admin.crm.clients.index') }}">
                                     <span class="menu-bullet">

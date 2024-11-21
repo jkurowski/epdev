@@ -17,6 +17,7 @@ class Image extends Model
         'name',
         'file',
         'file_webp',
+        'gallery_item_hover_date',
         'file_alt'
     ];
 }

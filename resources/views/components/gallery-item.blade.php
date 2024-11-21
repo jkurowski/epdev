@@ -1,10 +1,6 @@
 {{-- resources/views/components/gallery-item.blade.php --}}
 
 @props([
-    'webpSmall',
-    'webpLarge',
-    'pngSmall',
-    'pngLarge',
     'defaultSrc',
     'index',
     'alt' => 'EP Development Blok mieszkalny',
@@ -16,7 +12,7 @@
         {{-- Picture component --}}
         <a href="{{ asset($defaultSrc) }}" data-gallery="gallery-gallery" class="glightbox ">
 
-            <x-picture :webpSmall="$webpSmall" :webpLarge="$webpLarge" :pngSmall="$pngSmall" :pngLarge="$pngLarge" :defaultSrc="$defaultSrc"
+            <x-picture :defaultSrc="$defaultSrc"
                 :alt="$alt" class="img-fluid gallery-ap--img" />
 
             {{-- Date overlay --}}

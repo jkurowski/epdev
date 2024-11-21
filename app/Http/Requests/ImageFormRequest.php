@@ -25,7 +25,8 @@ class ImageFormRequest extends FormRequest
     {
         return [
             'file' => 'image',
-            'file_alt' => 'max:255|nullable'
+            'file_alt' => 'max:255|nullable',
+            'gallery_item_hover_date' => 'date|nullable'
         ];
     }
 }

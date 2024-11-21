@@ -27,7 +27,7 @@
             <div class="checkbox-list">
                 @foreach ($tabs as $tab)
                     @foreach ($tab['streets'] as $street)
-                        <div class="form-check" data-location="{{ $street['location'] }}">
+                        <div class="form-check" data-location="{{ $street['data_location'] }}">
                             <input type="checkbox" class="form-check-input street-checkbox"
                                 id="{{ Str::slug($street['boxId']) }}" data-target="{{ $street['boxId'] }}"
                                 name="streets[]" checked>
@@ -66,15 +66,14 @@
     <div class="row g-4">
         @foreach ($tabs as $index => $tab)
             @foreach ($tab['streets'] as $street)
-                <div class="col-12 col-lg-6 col-xl-4" data-location="{{ $street['location'] }}"
+                <div class="col-12 col-lg-6 col-xl-4" data-location="{{ $street['data_location'] }}"
                     data-target-box="{{ $street['boxId'] }}">
                     <div class="construction-box" data-aos="fade-right" data-aos-delay="{{ $index * 50 }}">
-                        <x-picture :webpSmall="$street['webpSmall']" :webpLarge="$street['webpLarge']" :pngSmall="$street['pngSmall']" :pngLarge="$street['pngLarge']"
-                            :defaultSrc="$street['defaultSrc']" :alt="$street['alt']" class="img-fluid" />
+                        <x-picture :defaultSrc="asset('investment/articles/thumbs/' . $street['defaultSrc'])" :alt="$street['alt']" class="img-fluid" />
                         <div class="construction-inner">
 
                             <div class="construction-date">{{ $street['date'] }}</div>
-                            <div class="construction-title">Postęp prac {{ $street['name'] }}</div>
+                            <div class="construction-title">{{ $street['name'] }}</div>
                             <p class="construction-subtitle">{{ $street['subtitle'] }}</p>
                             <hr class="construction-hr" />
                             <a href="{{ $street['href'] }}" class="construction-btn">

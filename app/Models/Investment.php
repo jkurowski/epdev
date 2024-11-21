@@ -51,7 +51,8 @@ class Investment extends Model
         'supervisors',
         'template_id',
         'iframe_css',
-        'vox_url'
+        'vox_url',
+        'gallery_id'
     ];
 
     /**
@@ -240,8 +241,18 @@ class Investment extends Model
         return $this->hasOne(InvestmentTemplates::class);
     }
 
+    public function investmentPage():HasOne
+    {
+        return $this->hasOne(InvestmentPage::class);
+    }
+
     public function iframeSettings()
     {
         return $this->hasOne(IframeSetting::class);
+    }
+
+    public function gallery()
+    {
+        return $this->hasOne(Gallery::class);
     }
 }

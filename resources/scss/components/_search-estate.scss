@@ -1,5 +1,42 @@
 .search-estate {
 
+  form {
+    button {
+      margin: 0 auto;
+    }
+  }
+
+  .form-vh {
+    width: 1px;
+    background: #E3E3E3;
+    position: relative;
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      background: #E3E3E3;
+    }
+
+    &::before {
+      top: -1.6875rem;
+      height: 1.6875rem;
+      left: 0;
+    }
+
+    &::after {
+      bottom: -1.6875rem;
+      height: 1.6875rem;
+      left: 0;
+    }
+  }
+
+
   .form-box {
     background: $white;
     border: 1px solid #D4D4D4;
