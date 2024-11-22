@@ -66,7 +66,7 @@
 
 
 
-<section class = "" id="roomsList">
+<section class = "" id="mieszkania">
     <div class="container">
         <!-- BUTTONS -->
         <div class="row">
