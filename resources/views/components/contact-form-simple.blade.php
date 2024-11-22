@@ -3,9 +3,26 @@
     'termsAccordionId' => 'termsAccordion',
     'selectAllId' => 'select-all',
     'terms' => [],
+    'textareaProperty' => '',
+    'textareaInvestment' => ''
 ])
-
-<form id="{{ $id }}" autocomplete="off" class="p-0 p-lg-3">
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+{{-- All errors --}}
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<form id="{{ $id }}" autocomplete="off" action='{{ route('contact-form.store') }}' method="POST" class="p-0 p-lg-3">
+    @csrf
     <div class="row">
         <div class="col-12">
             <div id="form-errors" class="alert-danger alert hide-empty"></div>
@@ -16,7 +33,7 @@
         <div class="col-12">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="user-name" placeholder="Imię i nazwisko"
-                    name="username" />
+                    name="name" />
                 <label for="user-name">Imię i nazwisko*</label>
             </div>
         </div>
@@ -31,7 +48,7 @@
         </div>
         <div class="col-12 ">
             <div class="form-floating mb-3">
-                <input type="tel" class="form-control" id="user-tel" placeholder="Telefon" name="tel" />
+                <input type="tel" class="form-control" id="user-tel" placeholder="Telefon" name="phone" />
                 <label for="user-tel">Telefon*</label>
             </div>
         </div>
@@ -40,17 +57,19 @@
         <div class="col-12">
             <div class="form-floating">
                 <textarea class="form-control form-control-min" placeholder="Wiadomość" id="user-message" style="height: 100px"
-                    name="message">Dzień dobry, interesuje mnie mieszkanie Mieszkanie nr A.01.02 w inwestycji Apartamenty Talarowa. Proszę o kontakt.</textarea>
+                    name="message">Dzień dobry, interesuje mnie mieszkanie {{$textareaProperty}} w inwestycji {{$textareaInvestment}}. Proszę o kontakt.</textarea>
                 <label for="user-message">Wiadomość</label>
             </div>
         </div>
 
+
         {{-- Terms and Conditions Accordion --}}
-        <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" />
+        <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" :textareaProperty="$textareaProperty" :textareaInvestment="$textareaInvestment" />
+        
 
         {{-- Submit Button --}}
         <div class="col-12 d-flex justify-content-start">
-            <button data-btn-submit type="submit" class="btn btn-primary mt-2 btn-submit" disabled>
+            <button data-btn-submit type="submit" class="btn btn-primary mt-2 btn-submit" >
                 WYŚLIJ
                 <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293">
                     <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"

@@ -32,7 +32,7 @@
 @endsection --}}
 
 @extends('layouts.page')
-@section('title', 'Aktualnie w sprzedaży')
+@section('meta_title', $page->meta_title . ' - ' . $city->name)
 
 @section('content')
     <section class="search-hero">
@@ -66,9 +66,10 @@
 
     <div class="container margin-below-breadcrumb">
         <div class="text-lg-center">
-            <div class="header-section" data-aos="fade">Inwestycje</div>
+            <div class="header-section" data-aos="fade">Inwestycje - {{ $city->name }}</div>
         </div>
     </div>
+  
 
     <section class="mt-5">
         <div class="container">

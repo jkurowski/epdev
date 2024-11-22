@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front\Developro;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\Investment;
 use App\Models\Page;
 use Illuminate\Http\Request;
@@ -21,14 +22,17 @@ class IndexController extends Controller
         $this->investmentRepository = $investmentRepository;
     }
 
-    public function index(Request $request)
+    public function index(Request $request, string $citySlug)
     {
+        $city = City::where('slug', $citySlug)->first();
+
         $page = Page::find($this->pageId);
-        $investments = $this->investmentRepository->search($request->all());
+        $investments = Investment::where('city_id', $city->id)->where('status', '1')->get();
 
         return view('front.developro.investment.index', [
             'list' => $investments,
-            'page' => $page
+            'page' => $page,
+            'city' => $city
         ]);
     }
 

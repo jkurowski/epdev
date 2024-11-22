@@ -5,7 +5,7 @@
         dla siebie
     </div>
     <div>
-        <form action="{{ route('front.developro.index') }}" method="GET">
+        <form action="{{route('front.developro.properties')}}" method="GET">
           
             {{-- Dropdown for city selection --}}
             <div class="d-flex flex-column">
@@ -29,8 +29,8 @@
                 {{-- Checkboxes for apartment levels --}}
                 <div class="levels-box">
                     @for ($i = 1; $i <= $levels; $i++)
-                        <input type="checkbox" id="level{{ $i }}" class="level-input" name="rooms[]" 
-                            value="{{ $i }}" {{ in_array($i, (array)request('rooms', [])) ? 'checked' : '' }} />
+                        <input type="radio" id="level{{ $i }}" class="level-input" name="rooms" 
+                            value="{{ $i }}" {{ request('rooms') == $i ? 'checked' : '' }} />
                         <label for="level{{ $i }}" class="level-label">
                             <span class="level-name">{{ $i }}</span>
                         </label>
@@ -40,9 +40,9 @@
 
             {{-- Dual handle range slider --}}
             <div class="subtitle mt-40px mb-3">METRAŻ</div>
-            <div id="ap-range" data-range-min="{{ $rangeMin }}" data-range-max="{{ $rangeMax }}"></div>
-            <input type="hidden" name="area-min" id="ap-range-min" value="{{ request('area-min') }}">
-            <input type="hidden" name="area-max" id="ap-range-max" value="{{ request('area-max') }}">
+            <div id="ap-range" data-range-min="{{ $minRoomArea }}" data-range-max="{{ $maxRoomArea }}"></div>
+            <input type="hidden" name="area-min" id="ap-range-min" value="{{ request('area-min') ?? $minRoomArea }}">
+            <input type="hidden" name="area-max" id="ap-range-max" value="{{ request('area-max') ?? $maxRoomArea }}">
 
             {{-- Search button --}}
             <button class="mt-3 btn btn-primary" type="submit">

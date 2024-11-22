@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front\Developro;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\Investment;
 use Illuminate\Http\Request;
 
@@ -21,9 +22,10 @@ class InvestmentController extends Controller
         $this->pageId = 4;
     }
 
-    public function show($slug)
+    public function show(string $citySlug, string $slug)
     {
-        $investment = Investment::findBySlug($slug);
+        $city = City::where('slug', $citySlug)->first();
+        $investment = Investment::where('city_id', $city->id)->where('slug', $slug)->with(['properties', 'properties.floor'])->first();
         $page = Page::find($this->pageId);
 
         return view('front.developro.investment.show', [

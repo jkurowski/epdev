@@ -1,56 +1,89 @@
 @props(['property'])
 <div class="col-12">
 
-    <?php
-    $propertyLink = '';
-    
-    switch ($investment->type) {
-        case $investment->type == 2:
-            $propertyLink = route('front.developro.property', ['slug' => $investment->slug, 'floor' => $property->floor_id, 'property' => $property->id]);
-            break;
-        case $investment->type == 3:
-            $propertyLink = route('front.developro.house', ['slug' => $investment->slug, 'property' => $property->id]);
-            break;
-        default:
-            $propertLink = '#';
-    }
-    ?>
+    @php
+        $propertyLink = '';
+        $DEV_FLOOR_ID = 1;
+// @TODO: Zmienic floor_id
+        switch ($investment->type) {
+            case $investment->type == 1:
+                $propertyLink = route('front.developro.property', [
+                    'citySlug' => $investment->city->slug,
+                    'slug' => $investment->slug,
+                    'floor' => $property->floor ?? $DEV_FLOOR_ID,
+                    'property' => $property->id,
+                ]);
+                break;
+            case $investment->type == 2:
+                $propertyLink = route('front.developro.property', [
+                    'citySlug' => $investment->city->slug,
+                    'slug' => $investment->slug,
+                    'floor' => $property->floor ?? $DEV_FLOOR_ID,
+                    'property' => $property->id,
+                ]);
+                break;
+            case $investment->type == 3:
+                $propertyLink = route('front.developro.house', [
+                    'citySlug' => $investment->city->slug,
+                    'slug' => $investment->slug,
+                    'property' => $property->id,
+                ]);
+                break;
+            default:
+                $propertLink = '#';
+        }
+    @endphp
 
 
     <div class="ap-column-box ap-column-switch" data-aos="fade-right" data-aos-delay="100">
-        @if (isset($statusClass) && isset($statusText))
-            <!-- TAG -->
-            <div>
-                <div class="apartment-type apartment-hero-type {{ $statusClass }}">
-                    {{ $statusText }}
-                </div>
-                <span class="badge room-list-status-{{ $property->status }}">{{ roomStatus($property->status) }}</span>
+        @php
+            switch ($property->status) {
+                case 1:
+                    $statusClass = ['class' => 'bg-success'];
+                    break;
+                case 2:
+                    $statusClass = ['class' => 'bg-warning'];
+                    break;
+                case 3:
+                    $statusClass = ['class' => 'bg-danger'];
+                    break;
+                default:
+                    $statusClass = ['class' => 'bg-info'];
+            }
+        @endphp
+        <!-- TAG -->
+        <div>
+            <div class="apartment-type apartment-hero-type {{ $statusClass['class'] }}">
+                {{ roomStatus($property->status) }}
             </div>
-        @endif
+
+        </div>
+
 
         @if ($property->file)
             <!-- PICTURE -->
+            @php
+                $image_url = '/investment/property/list/' . $property->file;
+                if ($property->vox_id) {
+                    $image_url = $property->file . '.jpg';
+                }
+            @endphp
+
             <div>
-                {{-- <a href="{{ $lightboxSrc }}" data-gallery="apartment-gallery" class="glightbox ap-column-glightbox">
-                    <x-picture :webpSmall="$webpSmall" :webpLarge="$webpLarge" :pngSmall="$pngSmall" :pngLarge="$pngLarge" :defaultSrc="$defaultSrc"
-                        :alt="$alt" class="ap-column--img" />
-                        
-                </a> --}}
-                <picture>
-                    <source type="image/webp" srcset="/investment/property/list/webp/{{$property->file_webp}}">
-                    <source type="image/jpeg" srcset="/investment/property/list/{{$property->file}}">
-                    <img class="ap-column--img" src="/investment/property/list/{{$property->file}}" alt="{{$property->name}}">
-                </picture>
+
+                <a href="{{ $image_url }}" data-gallery="apartment-gallery" class="glightbox ap-column-glightbox">
+                    <x-picture :defaultSrc="$image_url" class="ap-column--img" />
+                </a>
             </div>
         @endif
 
 
-        @if (isset($title))
-            <!-- TITLE -->
-            <div>
-                <div class="apartment-title">{!! $title !!}</div>
-            </div>
-        @endif
+
+        <!-- TITLE -->
+        <div>
+            <div class="apartment-title">{{ $property->name }}</div>
+        </div>
+
 
         <div class="apartment-info-box">
             <!-- METERAGE -->
@@ -69,7 +102,7 @@
             @endif
 
             <!-- TYPE -->
-            @if ($property->garden_area)
+            
                 <div>
                     <div class="info-row">
                         <svg xmlns="http://www.w3.org/2000/svg" width="21.457" height="21.458"
@@ -78,14 +111,15 @@
                                 d="M8.437,23.458a1.079,1.079,0,0,1-1-.7L6.621,20.6H5.247l-.812,2.165a1.073,1.073,0,0,1-2.01-.753l.963-2.567-1.007-4.7a1.073,1.073,0,0,1,2.1-.449l.891,4.159H7.365a1.079,1.079,0,0,1,1,.7l1.073,2.861a1.074,1.074,0,0,1-1,1.45ZM5,19.881h1.87a.358.358,0,0,1,.335.232l.9,2.4a.364.364,0,0,0,.46.209.358.358,0,0,0,.21-.46L7.7,19.4a.359.359,0,0,0-.335-.232H5.082a.357.357,0,0,1-.35-.283l-.952-4.441a.358.358,0,0,0-.7.15l1.029,4.8a.357.357,0,0,1-.015.2l-1,2.665a.358.358,0,0,0,.209.46.358.358,0,0,0,.461-.209l.9-2.4A.358.358,0,0,1,5,19.881ZM17.02,23.458a1.073,1.073,0,0,1-1-1.45l1.073-2.861a1.079,1.079,0,0,1,1-.7h1.993l.891-4.159a1.073,1.073,0,0,1,2.1.449l-1.007,4.7.963,2.567a1.073,1.073,0,0,1-2.01.753L20.211,20.6H18.837l-.812,2.165a1.078,1.078,0,0,1-1,.7Zm-.335-1.2a.358.358,0,0,0,.209.46.363.363,0,0,0,.461-.209l.9-2.4a.358.358,0,0,1,.335-.232h1.87a.358.358,0,0,1,.335.232l.9,2.4a.359.359,0,0,0,.461.209.358.358,0,0,0,.209-.46l-1-2.665a.357.357,0,0,1-.015-.2l1.029-4.8a.358.358,0,0,0-.275-.425.359.359,0,0,0-.425.275l-.952,4.441a.357.357,0,0,1-.35.283H18.093a.359.359,0,0,0-.335.232l-1.073,2.861ZM23.2,8.81l-5.926-1.8h2.6a.358.358,0,0,0,.13-.691L13.8,3.9V3.073a1.073,1.073,0,1,0-2.146,0V3.9L5.447,6.316a.358.358,0,0,0,.13.691h2.6L2.254,8.81a.358.358,0,0,0,.024.691l4.649,1.073a.366.366,0,0,0,.08.009h4.649V15.59h-2.5a1.073,1.073,0,1,0,0,2.146h2.5v3.576H11.3a1.073,1.073,0,1,0,0,2.146h2.861a1.073,1.073,0,1,0,0-2.146H13.8V17.735h2.5a1.073,1.073,0,1,0,0-2.146H13.8V10.583h4.649a.365.365,0,0,0,.08-.009L23.18,9.5A.358.358,0,0,0,23.2,8.81ZM12.371,3.073a.358.358,0,1,1,.715,0v.715h-.715ZM7.483,6.291l4.6-1.788h1.3l4.6,1.788ZM6.894,9.832,3.742,9.1l5.577-1.7L6.894,9.832Zm.976.035,2.861-2.861h1.64V9.868Zm5.216.715V15.59h-.715V10.583Zm1.073,11.444a.358.358,0,0,1,0,.715H11.3a.358.358,0,0,1,0-.715Zm-1.073-.715h-.715V17.735h.715ZM16.305,16.3a.358.358,0,1,1,0,.715H9.153a.358.358,0,0,1,0-.715ZM13.086,9.868V7.007h1.64l2.861,2.861Zm5.477-.035L16.139,7.408l5.577,1.7-3.152.727Z"
                                 transform="translate(-2 -2)" />
                         </svg>
-                        <span>Ogród</span>
+                        <span>{{ $property->garden_area ? $property->garden_area . ' m<sup>2</sup>' : 'Nie' }}</span>
                     </div>
                 </div>
-            @endif
+           
 
-       
+
             <!-- LEVEL -->
-            @if (!empty($floor))
+
+           
                 <div>
                     <div class="info-row">
                         <svg id="layers" xmlns="http://www.w3.org/2000/svg" width="18.51" height="17.798"
@@ -106,10 +140,10 @@
                                     transform="translate(-7 -905.278)" />
                             </g>
                         </svg>
-                        <span>{{ $floor->number }}</span>
+                        <span>{{ $property->floor->number  ?? '-'}}</span>
                     </div>
                 </div>
-            @endif
+           
 
 
             {{-- ROOMS --}}
@@ -146,9 +180,14 @@
         <!-- PDF and Details Button -->
         <div class="d-flex ap-pdf-box">
             @if ($property->file_pdf)
+                @php
+                    $pdf_url = asset('/investment/property/pdf/' . $property->file_pdf);
+                    if ($property->vox_id) {
+                        $pdf_url = $property->file_pdf;
+                    }
+                @endphp
                 <div class="pdf">
-                    <a href="{{ asset('/investment/property/pdf/' . $property->file_pdf) }}" target="_blank"
-                        class="btn btn-underline">
+                    <a href="{{ $pdf_url }}" target="_blank" class="btn btn-underline">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11.936" height="15.914"
                             viewBox="0 0 11.936 15.914">
                             <path id="Icon_awesome-file-pdf" data-name="Icon awesome-file-pdf"
@@ -159,23 +198,23 @@
                     </a>
                 </div>
             @endif
-            @if ($propertyLink)
-                <div>
-                    <a href="{{ $propertyLink }}" class="btn btn-primary btn-ap-check">
-                        Sprawdź
-                        <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293"
-                            viewBox="0 0 4.553 8.293">
-                            <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
-                                d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z"
-                                transform="translate(4.553 8.293) rotate(180)" fill="currentColor" />
-                        </svg>
-                    </a>
-                </div>
-            @endif
+
+
+            <div>
+                <a href="{{ $propertyLink }}" class="btn btn-primary btn-ap-check">
+                    Sprawdź
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293">
+                        <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
+                            d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z"
+                            transform="translate(4.553 8.293) rotate(180)" fill="currentColor" />
+                    </svg>
+                </a>
+            </div>
+
         </div>
 
-        @if ($propertyLink)
-            <a class="ap-column-box--a" href="{{ $propertyLink }}"></a>
-        @endif
+
+        <a class="ap-column-box--a" href="{{ $propertyLink }}"></a>
+
     </div>
 </div>

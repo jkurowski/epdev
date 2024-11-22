@@ -167,15 +167,18 @@ class AppServiceProvider extends ServiceProvider
 
         View::share('current_locale', app()->getLocale());
         View::share('rules', RodoRules::orderBy('sort')->whereActive(1)->get());
+        View::share('minRoomArea', intval(Property::min('area')));
+        View::share('maxRoomArea', intval(Property::max('area')));
+
+        
 
         view()->composer(['admin.crm.offer.form', 'admin.crm.inbox.index'], function ($view) {
             $view->with('investments', Investment::all()->pluck('name', 'id'));
         });
 
     
-        View::share('current_investment', Investment::where('status', 1)->with('city')->get([
-            'slug', 'name', 'file_thumb', 'date_end', 'city_id', 'entry_content'
-        ]));
+        View::share('active_cities', City::whereActive(1)->orderBy('name')->get());
+
 
         Image::observe(ImageObserver::class);
         Gallery::observe(GalleryObserver::class);

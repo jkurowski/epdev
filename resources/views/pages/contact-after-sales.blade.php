@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'Obsługa posprzedażowa')
+@section('meta_title', 'Obsługa posprzedażowa')
 
 @section('content')
     @include('components.breadcrumbs', [

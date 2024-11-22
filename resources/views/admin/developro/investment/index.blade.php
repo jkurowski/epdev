@@ -41,6 +41,48 @@
                                 <td>{{ $p->updated_at }}</td>
                                 <td class="option-120">
                                     <div class="btn-group">
+                                        {{-- <a href="{{ route('admin.email.generator.index') }}" class="btn action-button me-1"
+                                            data-bs-toggle="tooltip" data-placement="top" data-bs-title="Szablony email">
+                                            <i class="fe-mail"></i>
+                                        </a>
+                                        <a href="{{ route('admin.developro.investment.templates', $p) }}"
+                                            class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
+                                            data-bs-title="Ustaw szablony email">
+                                            <i class="fe-mail"></i>
+                                        </a> --}}
+                                        <a href="{{ route('admin.developro.investment.log', $p) }}"
+                                            class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
+                                            data-bs-title="Pokaż aktywność"><i class="fe-activity"></i></a>
+{{-- 
+                                        <a href="" class="btn action-button me-1" data-bs-toggle="tooltip"
+                                            data-placement="top" data-bs-title="Harmonogram"><i class="fe-book"></i></a> --}}
+
+                                        <a href="{{ route('admin.developro.investment.plan.index', $p) }}"
+                                            class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
+                                            data-bs-title="Plan inwestycji">
+                                            <i class="fe-image" aria-hidden="true"></i>
+                                        </a>
+                                        @if ($p->type == 1)
+                                            <a href="{{ route('admin.developro.investment.buildings.index', $p) }}"
+                                                class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
+                                                data-bs-title="Lista budynków">
+                                                <i class="fe-grid" aria-hidden="true"></i>
+                                            </a>
+                                        @endif
+                                        @if ($p->type == 2)
+                                            <a href="{{ route('admin.developro.investment.floors.index', $p) }}"
+                                                class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
+                                                data-bs-title="Lista kondygnacji">
+                                                <i class="fe-layers" aria-hidden="true"></i>
+                                            </a>
+                                        @endif
+                                        @if ($p->type == 3)
+                                            <a href="{{ route('admin.developro.investment.houses.index', $p) }}"
+                                                class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
+                                                data-bs-title="Lista domów">
+                                                <i class="fe-archive" aria-hidden="true"></i>
+                                            </a>
+                                        @endif
                                         <a href="{{ route('admin.developro.investment.edit', $p) }}"
                                             class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
                                             data-bs-title="Edytuj">

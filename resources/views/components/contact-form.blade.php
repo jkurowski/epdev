@@ -5,7 +5,24 @@
     'terms' => [],
 ])
 
-<form id="{{ $id }}" autocomplete="off" class="p-0 p-lg-3" action='/testform' method="POST">
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+{{-- All errors --}}
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<form id="{{ $id }}" autocomplete="on" class="p-0 p-lg-3" action='{{ route('contact-form.store') }}' method="POST">
     @csrf
     <div class="row">
         <div class="col-12">
@@ -17,7 +34,7 @@
         <div class="col-12">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="user-name" placeholder="Imię i nazwisko"
-                    name="username" />
+                    name="name" />
                 <label for="user-name">Imię i nazwisko*</label>
             </div>
         </div>
@@ -32,7 +49,7 @@
         </div>
         <div class="col-12 col-sm-6 col-md-12 col-lg-6">
             <div class="form-floating mb-3">
-                <input type="tel" class="form-control" id="user-tel" placeholder="Telefon" name="tel" />
+                <input type="tel" class="form-control" id="user-tel" placeholder="Telefon" name="phone" />
                 <label for="user-tel">Telefon*</label>
             </div>
         </div>
@@ -44,9 +61,9 @@
         <div class="col-12">
             <div class="form-subtitle mt-3">Powierzchnia</div>
             <div class="d-flex gap-4 align-items-center justify-content-center">
-                <div id="ap-range-contact" data-range-min="35" data-range-max="95"></div>
-                <input type="hidden" name="area-min" id="ap-range-contact-min">
-                <input type="hidden" name="area-max" id="ap-range-contact-max">
+                <div id="ap-range-contact" data-range-min="{{ $minRoomArea }}" data-range-max="{{ $maxRoomArea }}"></div>
+                <input type="hidden" name="area-min" id="ap-range-contact-min" value="{{ $minRoomArea }}">
+                <input type="hidden" name="area-max" id="ap-range-contact-max" value="{{ $maxRoomArea }}">
             </div>
         </div>
 
@@ -64,7 +81,7 @@
 
         {{-- Submit Button --}}
         <div class="col-12 d-flex justify-content-end">
-            <button data-btn-submit type="submit" class="btn btn-primary mt-5 btn-submit" disabled>
+            <button data-btn-submit type="submit" class="btn btn-primary mt-5 btn-submit" >
                 WYŚLIJ WIADOMOŚĆ
                 <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293">
                     <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"

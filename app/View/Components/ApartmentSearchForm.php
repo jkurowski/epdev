@@ -40,13 +40,13 @@ class ApartmentSearchForm extends Component
     }
     private function getCities(): array
     {
-        $cities = City::select('name')->distinct()->get()->pluck('name', 'name');
+        $cities = City::where('active', 1)->select('name')->distinct()->get()->pluck('name', 'name');
         return $cities->toArray();
     }
 
     private function getRoomsCount(): int
     {
-        $roomsCount = Property::max('rooms') ?? 5;
+        $roomsCount = 5;
         return $roomsCount;
     }
     private function getRanges(): array

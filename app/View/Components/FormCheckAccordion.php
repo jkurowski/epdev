@@ -10,13 +10,17 @@ class FormCheckAccordion extends Component
     public $id;
     public $selectAllId;
     public $required_rodo_rules;
+    public $textareaProperty;
+    public $textareaInvestment;
 
 
-    public function __construct($id = 'accordionExample', $selectAllId = 'select-all')
+    public function __construct($id = 'accordionExample', $selectAllId = 'select-all', $textareaProperty = '', $textareaInvestment = '')
     {
         $this->id = $id;
         $this->selectAllId = $selectAllId;
         $this->required_rodo_rules = RodoRules::whereIn('id', [1, 2, 3])->get();
+        $this->textareaProperty = $textareaProperty;
+        $this->textareaInvestment = $textareaInvestment;
     }
 
     /**

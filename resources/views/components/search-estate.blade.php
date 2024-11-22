@@ -1,5 +1,5 @@
 <div class="search-estate">
-    <form action="{{ route('pages.properties') }}" method="GET">
+    <form action="{{route('front.developro.properties')}}" method="GET">
         <div class="form-box d-flex flex-column flex-lg-row justify-content-between gap-5 gap-lg-3">
             {{-- Dropdown for floor selection --}}
             <div class="d-flex gap-2 align-items-center">
@@ -7,8 +7,9 @@
                     PIĘTRO:
                 </label>
                 <select id="apartments-floor" class="apartments-floor" name="apartments-floor">
+                    <option value="null" {{ request('apartments-floor') == null ? 'selected' : '' }}>Piętro</option>
                     @foreach ($floors as $floorValue => $floorName)
-                        <option value="{{ $floorValue }}">
+                        <option value="{{ $floorValue }}" {{ request('apartments-floor') == $floorValue ? 'selected' : '' }}>
                             {{ $floorName }}
                         </option>
                     @endforeach
@@ -21,8 +22,8 @@
                 <div class="subtitle ">LICZBA POKOI:</div>
                 <div class="rooms-box">
                     @for ($i = 1; $i <= $rooms; $i++)
-                        <input type="checkbox" id="room{{ $i }}" class="room-input" name="rooms[]"
-                            value="{{ $i }}" {{ in_array($i, (array) request('rooms', [])) ? 'checked' : '' }} />
+                        <input type="radio" id="room{{ $i }}" class="room-input" name="rooms"
+                            value="{{ $i }}" {{ request('rooms') == $i ? 'checked' : '' }} />
                         <label for="room{{ $i }}" class="room-label">
                             <span class="room-name">{{ $i }}</span>
                         </label>
@@ -33,9 +34,9 @@
             {{-- Dual handle range slider --}}
             <div class="d-flex gap-4 align-items-center">
                 <div class="subtitle ">METRAŻ:</div>
-                <div id="ap-range" data-range-min="{{ $rangeMin }}" data-range-max="{{ $rangeMax }}">
-                    <input type="hidden" name="area-min" id="ap-range-min" value="{{ request('area-min') }}">
-                    <input type="hidden" name="area-max" id="ap-range-max" value="{{ request('area-max') }}">
+                <div id="ap-range" data-range-min="{{ $minRoomArea }}" data-range-max="{{ $maxRoomArea }}">
+                    <input type="hidden" name="area-min" id="ap-range-min" value="{{ request('area-min') ?? $minRoomArea }}">
+                    <input type="hidden" name="area-max" id="ap-range-max" value="{{ request('area-max') ?? $maxRoomArea }}">
                 </div>
             </div>
         </div>

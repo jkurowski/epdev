@@ -169,7 +169,8 @@
         <div class="row gy-3 apartment-box-container switch">
             @if ($investment->properties->count() > 0)
                 @foreach ($investment->properties as $room)
-                    @include('components.apartment-box', ['property' => $room])
+                @include('components.apartment-box', ['property' => $room])
+            
                 @endforeach
             @else
                 <div class="row">

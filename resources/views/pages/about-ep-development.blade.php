@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'o EP Development')
+@section('meta_title', 'o EP Development')
 
 @php
     $galleryItems = [
@@ -126,7 +126,7 @@
 
     {{-- Gallery --}}
     <section class="margin-below-breadcrumb">
-        <x-gallery :items="$galleryItems" />
+        <x-gallery-static :items="$galleryItems" />
     </section>
 
     {{--  --}}

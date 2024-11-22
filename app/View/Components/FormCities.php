@@ -28,7 +28,7 @@ class FormCities extends Component
 
     private function getCities(): array
     {
-        $cities = City::select('name')->distinct()->get()->pluck('name', 'name');
+        $cities = City::where('active', 1)->select('name')->distinct()->get()->pluck('name', 'name');
         return $cities->toArray();
     }
 }

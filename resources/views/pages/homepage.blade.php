@@ -1,4 +1,5 @@
 @extends('layouts.page')
+@section('meta_title', 'Strona główna')
 
 @section('content')
     {{-- HERO SECTION --}}

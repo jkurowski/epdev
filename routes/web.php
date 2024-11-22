@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\Front\ContactFormsController;
 use App\Http\Controllers\Front\EmailTemplatePreviewController;
 use App\Http\Controllers\Front\IframePageController;
 use App\Http\Controllers\Front\PropertiesController;
 use App\Http\Controllers\SMSController;
 use App\Http\Middleware\IframeContactMiddleware;
 use App\Http\Middleware\VerifyCsrfToken;
+use App\Models\Building;
+use App\Models\Investment;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -125,22 +128,20 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     });
 
     // DeveloPro
-    Route::group(['namespace' => 'Developro', 'prefix' => '/inwestycje', 'as' => 'developro.'], function () {
+    Route::get('/mieszkania', 'Developro\InvestmentPropertyController@properties')->name('developro.properties');
+    Route::group(['namespace' => 'Developro', 'prefix' => '/miasto', 'as' => 'developro.'], function () {
 
-        Route::post('{property}/notifications', 'Property\NotificationController@store')->name('properties.notifications.store');
-        Route::get('/unsubscribe/{hash}', 'Property\NotificationController@unsubscribe')->name('properties.notifications.unsubscribe');
-
-        Route::get('/', 'IndexController@index')->name('index');
-        Route::get('/i/{slug}', 'InvestmentController@show')->name('show');
-        Route::get('/i/{slug}/plan', 'InvestmentPlanController@index')->name('plan');
-        Route::get('/i/{slug}/pietro/{floor}', 'InvestmentFloorController@index')->name('floor');
-        Route::get('/i/{slug}/pietro/{floor}/m/{property}', 'InvestmentPropertyController@index')->name('property');
+        Route::get('/{citySlug}', 'IndexController@index')->name('index');
+        Route::get('/{citySlug}/i/{slug}', 'InvestmentController@show')->name('show');
+        Route::get('/{citySlug}/i/{slug}/plan', 'InvestmentPlanController@index')->name('plan');
+        Route::get('/{citySlug}/i/{slug}/pietro/{floor}', 'InvestmentFloorController@index')->name('floor');
+        Route::get('/{citySlug}/i/{slug}/pietro/{floor}/m/{property}', 'InvestmentPropertyController@index')->name('property');
 
         // Route::get('/{slug}/aktualnosci', 'Article\IndexController@index')->name('investment.news');
         // Route::get('/{slug}/aktualnosci/{article}', 'Article\IndexController@show')->name('investment.news.show');
 
         // Inwestycja domkowa
-        Route::get('/{slug}/d/{property}', 'InvestmentHouseController@index')->name('house');
+        Route::get('/{citySlug}/{slug}/d/{property}', 'InvestmentHouseController@index')->name('house');
 
         //Pages
         Route::get('/{slug}/{page}', 'Page\IndexController@index')->name('page');
@@ -260,6 +261,6 @@ Route::group(['as' => 'pages.'], function () {
 });
 
 
-Route::post('/testform', function (Request $request) {
-    dd($request->all());
-});
+
+
+Route::post('/contact-form', [ContactFormsController::class, 'store'])->name('contact-form.store');

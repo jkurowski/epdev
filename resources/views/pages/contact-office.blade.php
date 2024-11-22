@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'Kontakt')
+@section('meta_title', 'Kontakt')
 
 @section('content')
     <x-breadcrumbs :items="[
