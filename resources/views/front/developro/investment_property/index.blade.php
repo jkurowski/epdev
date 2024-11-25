@@ -380,7 +380,7 @@
                 <div class="col-md-6 col-xl-4">
                     <div class="bg-white p-3 h-100">
 
-                        <x-contact-form-simple :textareaProperty="$property->name" :textareaInvestment="$property->investment->name" />
+                        <x-contact-form-simple :textareaProperty="$property->name" :textareaInvestment="$property->investment->name" :investment="$property->investment" />
                     </div>
 
                 </div>

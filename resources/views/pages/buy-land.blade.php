@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'Kupimy grunty')
+@section('meta_title', 'Kupimy grunty')
 
 @section('content')
     @include('components.breadcrumbs', [

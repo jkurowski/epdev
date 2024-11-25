@@ -4,7 +4,8 @@
     'selectAllId' => 'select-all',
     'terms' => [],
     'textareaProperty' => '',
-    'textareaInvestment' => ''
+    'textareaInvestment' => '',
+    'investment' => null,
 ])
 @if (session('success'))
     <div class="alert alert-success">
@@ -23,6 +24,10 @@
 @endif
 <form id="{{ $id }}" autocomplete="off" action='{{ route('contact-form.store') }}' method="POST" class="p-0 p-lg-3">
     @csrf
+    @if($investment)
+        <input type="hidden" name="investment_id" value="{{ $investment->id }}">
+        <input type="hidden" name="investment_name" value="{{ $investment->name }}">
+    @endif
     <div class="row">
         <div class="col-12">
             <div id="form-errors" class="alert-danger alert hide-empty"></div>

@@ -18,7 +18,7 @@ class FormCheckAccordion extends Component
     {
         $this->id = $id;
         $this->selectAllId = $selectAllId;
-        $this->required_rodo_rules = RodoRules::whereIn('id', [1, 2, 3])->get();
+        $this->required_rodo_rules = RodoRules::where('active', 1)->get();
         $this->textareaProperty = $textareaProperty;
         $this->textareaInvestment = $textareaInvestment;
     }

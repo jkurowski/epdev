@@ -122,7 +122,7 @@
                     {{-- MAIL ICON - TO CHANGE --}}
                     {{--  --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('pages.contact-office') }}">
+                        <a  class="nav-link" href="mailto:lead@epdevelopment.com.pl">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                                 <g id="Group_939" data-name="Group 939" transform="translate(-1209 -6117)">
                                     <g id="Group_181" data-name="Group 181" transform="translate(117 435)">

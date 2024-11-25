@@ -1,1 +1,21 @@
 @import "./imports";
+
+
+.apartment-type {
+    /* font-size: 0.8125rem; */
+    font-size: 0.7125rem;
+    /* height: fit-content; */
+    /* height: fit-content; */
+}
+  .ap-column-box .apartment-type {
+    /* width: 120px; */
+    /* height: 36px; */
+    width: 180px;
+    min-height: 36px;
+    text-align: center;
+  }
+
+  .apartment-box-container:not(.apartment-box-container.switch) .apartment-type {
+    font-size: 0.5125rem;
+    width: 120px;
+}

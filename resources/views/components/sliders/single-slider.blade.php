@@ -2,9 +2,8 @@
 
 <div class="single-slider">
     @foreach ($images as $image)
-        <div class="slide">
-            <x-picture :webpSmall="$image['webpSmall']" :webpLarge="$image['webpLarge']" :pngSmall="$image['pngSmall']" :pngLarge="$image['pngLarge']" :defaultSrc="$image['defaultSrc']"
-                :alt="$image['alt']" class="img-fluid" />
+        <div class="slide text-center">
+            <x-picture :defaultSrc="$image['defaultSrc']" :alt="$image['alt']" class="img-fluid mx-auto" />
         </div>
     @endforeach
 </div>

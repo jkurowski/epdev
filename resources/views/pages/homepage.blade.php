@@ -7,35 +7,19 @@
     @php
         $sliderImages = [
             [
-                'webpSmall' => 'images/apartments/ap-1.webp',
-                'webpLarge' => 'images/apartments/ap-1@2x.webp',
-                'pngSmall' => 'images/apartments/ap-1.png',
-                'pngLarge' => 'images/apartments/ap-1@2x.png',
-                'defaultSrc' => 'images/apartments/ap-1@2x.png',
+                'defaultSrc' => 'images/investments/apartamenty-talarowa-3/WARSZAWA, TALAROWA 3, NR.1 (1).jpg',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'webpSmall' => 'images/apartments/ap-2.webp',
-                'webpLarge' => 'images/apartments/ap-2@2x.webp',
-                'pngSmall' => 'images/apartments/ap-2.png',
-                'pngLarge' => 'images/apartments/ap-2@2x.png',
-                'defaultSrc' => 'images/apartments/ap-2@2x.png',
+                'defaultSrc' => 'images/investments/apartamenty-talarowa-3/WARSZAWA, TALAROWA 3, NR.2 (1).jpg',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'webpSmall' => 'images/apartments/ap-1.webp',
-                'webpLarge' => 'images/apartments/ap-1@2x.webp',
-                'pngSmall' => 'images/apartments/ap-1.png',
-                'pngLarge' => 'images/apartments/ap-1@2x.png',
-                'defaultSrc' => 'images/apartments/ap-1@2x.png',
+                'defaultSrc' => 'images/investments/apartamenty-talarowa-3/TALAROWA 3, BUDOWA 6.jpg',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'webpSmall' => 'images/apartments/ap-2.webp',
-                'webpLarge' => 'images/apartments/ap-2@2x.webp',
-                'pngSmall' => 'images/apartments/ap-2.png',
-                'pngLarge' => 'images/apartments/ap-2@2x.png',
-                'defaultSrc' => 'images/apartments/ap-2@2x.png',
+                'defaultSrc' => 'images/investments/apartamenty-talarowa-3/TALAROWA 3, BUDOWA 5.jpg',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
         ];
@@ -99,6 +83,26 @@
         </div>
     </section>
 
+    @php
+        $sliderImages = [
+            [
+                'defaultSrc' => 'images/investments/jarzębinowa-ii/1.jpeg',
+                'alt' => 'EP Development Blok mieszkalny',
+            ],
+            [
+                'defaultSrc' => 'images/investments/jarzębinowa-ii/2.jpeg',
+                'alt' => 'EP Development Blok mieszkalny',
+            ],
+            [
+                'defaultSrc' => 'images/investments/jarzębinowa-ii/3.jpeg',
+                'alt' => 'EP Development Blok mieszkalny',
+            ],
+            [
+                'defaultSrc' => 'images/investments/jarzębinowa-ii/budowa-1.jpg',
+                'alt' => 'EP Development Blok mieszkalny',
+            ],
+        ];
+    @endphp
 
     {{-- SLIDER-RIGHT --}}
     <section class="margin-below-breadcrumb section-clip">
@@ -122,6 +126,66 @@
                     {{-- SLIDER --}}
                     <div class="col-12 col-xl-5 offset-xl-1 slider-container">
                         <x-sliders.slick-slider :images="$sliderImages" position="right" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- SLIDER-LEFT --}}
+    @php
+        $sliderImages = [
+            [
+                'defaultSrc' => 'images/investments/osiedle-pogodne/1.jpg',
+                'alt' => 'EP Development Blok mieszkalny',
+            ],
+            [
+                'defaultSrc' => 'images/investments/osiedle-pogodne/2.jpg',
+                'alt' => 'EP Development Blok mieszkalny',
+            ],
+            [
+                'defaultSrc' => 'images/investments/osiedle-pogodne/4.jpg',
+                'alt' => 'EP Development Blok mieszkalny',
+            ],
+            [
+                'defaultSrc' => 'images/investments/osiedle-pogodne/5.jpg',
+                'alt' => 'EP Development Blok mieszkalny',
+            ],
+        ];
+    @endphp
+    <section class="margin-below-breadcrumb section-clip">
+        <div class="container">
+            <div class="slider-left">
+                <div class="row gx-5 align-items-center">
+                    <div class="order-1 col-12 col-xl-5">
+                        <x-sliders.slick-slider :images="$sliderImages" position="left" />
+                    </div>
+                    <!-- TEXT -->
+                    <div class="order-0 order-xl-2 col-12 col-xl-5 offset-xl-1">
+                        <x-text-container titleTag="Nowy Dwór Mazowiecki" title="Osiedle Pogodne" :paragraphs="[
+                            '<strong>Z radością przedstawiamy naszą nową inwestycję - Osiedle Pogodne. Jego pierwszy etap składać się
+                                                    będzie łącznie z 10 budynków. To wyjątkowe miejsce, gdzie nowoczesność spotyka się z naturą, tworząc
+                                                    idealne warunki do życia dla całej rodziny.</strong>',
+                            'Osiedle Pogodne znajduje się w spokojnej i zielonej części Nowego Dworu Mazowieckiego. Dzięki
+                                                    dogodnemu położeniu, mieszkańcy osiedla będą mogli cieszyć się bliskością natury, a jednocześnie
+                                                    łatwym dostępem do miejskich udogodnień. W pobliżu znajdują się sklepy, szkoły, przedszkola oraz
+                                                    przystanki komunikacji miejskiej, co sprawia, że codzienne obowiązki stają się prostsze i
+                                                    przyjemniejsze.',
+                            'Oferujemy szeroki wybór mieszkań, które zostały zaprojektowane z myślą o komforcie i funkcjonalności.
+                                                    Nowoczesna architektura, przestronne wnętrza oraz duże balkony lub tarasy to tylko niektóre z atutów,
+                                                    które wyróżniają naszą inwestycję. Każde mieszkanie zostało starannie zaprojektowane.',
+                            'Stawiamy na jakość – zarówno w doborze materiałów, jak i realizacji każdego etapu budowy. Mieszkania
+                                                    charakteryzują się nowoczesnym wykończeniem, które zapewnia komfort i bezpieczne użytkowanie
+                                                    przez długie lata.',
+                            'Osiedle Pogodne zostało zaprojektowane z myślą o komforcie i bezpieczeństwie mieszkańców. Na
+                                                    terenie znajdują się liczne miejsca parkingowe w garażu podziemnym, a całość będzie monitorowana.
+                                                    Dodatkowo przewidziano przestrzenie wspólne, takie jak plac zabaw dla dzieci oraz tereny zielone,
+                                                    które będą sprzyjać relaksowi na świeżym powietrzu.',
+                            'Bliskość terenów zielonych sprawia, że Osiedle Pogodne jest idealnym miejscem dla osób ceniących
+                                                    kontakt z naturą. Liczne ścieżki spacerowe i rowerowe zachęcają do aktywnego spędzenia czasu na
+                                                    świeżym powietrzu, a spokojna okolica sprzyja wypoczynkowi po intensywnym dniu.',
+                        ]"
+                            link="/miasto/nowy-dwor-mazowiecki/i/pogodne" buttonText="DOSTĘPNE MIESZKANIE" />
                     </div>
                 </div>
             </div>

@@ -167,7 +167,7 @@ $(document).ready(function () {
 
         $(slider).slick({
             dots: false,
-            infinite: false,
+            infinite: true,
             speed: 250,
             rtl: true,
             slidesToShow: 1,
@@ -204,7 +204,7 @@ $(document).ready(function () {
 
         $(slider).slick({
             dots: false,
-            infinite: false,
+            infinite: true,
             speed: 250,
             slidesToShow: 1,
             slidesToScroll: 1,

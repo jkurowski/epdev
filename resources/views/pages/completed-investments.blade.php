@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'Inwestycje zrealizowane')
+@section('meta_title', 'Inwestycje zrealizowane')
 
 @section('content')
     <section class="bg-white">

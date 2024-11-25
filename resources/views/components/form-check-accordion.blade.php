@@ -20,15 +20,7 @@
                     data-bs-target="#collapse_rule_{{ $rule->id }}" aria-expanded="false"
                     aria-controls="collapse_rule_{{ $rule->id }}">
                     <label for="rule_{{ $rule->id }}" class="form-check-label rules-text ms-2">
-                        @if ($rule->id === 1)
-                            Wyrażam zgodę na otrzymywanie informacji marketingowych drogą elektroniczną.
-                        @endif
-                        @if ($rule->id === 2)
-                            Wyrażam zgodę na marketing telefoniczny.
-                        @endif
-                        @if ($rule->id === 3)
-                            Wyrażam zgodę na personalizację treści.
-                        @endif
+                        {{ $rule->title }}
                     </label>
                 </button>
             </h2>

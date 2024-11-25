@@ -3,6 +3,7 @@
     'termsAccordionId' => 'termsAccordion',
     'selectAllId' => 'select-all',
     'terms' => [],
+    'investment' => null,
 ])
 
 @if (session('success'))
@@ -23,6 +24,10 @@
 @endif
 
 <form id="{{ $id }}" autocomplete="on" class="p-0 p-lg-3" action='{{ route('contact-form.store') }}' method="POST">
+    @if($investment)
+        <input type="hidden" name="investment_id" value="{{ $investment->id }}">
+        <input type="hidden" name="investment_name" value="{{ $investment->name }}">
+    @endif
     @csrf
     <div class="row">
         <div class="col-12">

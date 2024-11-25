@@ -114,10 +114,6 @@
                         <h2 class="header-1 px-0" data-aos="fade-up">
                             100% oddanych mieszkań w terminie
                         </h2>
-                        <p class="paragraph" data-aos="fade-up">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                            ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                        </p>
                     </div>
                 </div>
             </div>
