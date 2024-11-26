@@ -76,7 +76,7 @@
                             'Obiekt zaprojektowano z ogromną troską o detale, komfort mieszkańców oraz w oparciu o wysokiej klasy materiały wykończeniowe. Wszystkie kondygnacje są dostępne bezpośrednio z poziomu parkingu podziemnego.',
                             'Zaplanowano tu 52 mieszkania o metrażach od 38 m2 do 63 m2, w rozkładach od 1 do 4 pokojowych.',
                         ]"
-                            link="/miasto/warszawa/i/apartamenty-talarowa-3" buttonText="DOSTĘPNE MIESZKANIE" />
+                            link="/miasto/warszawa/i/apartamenty-talarowa-3#mieszkania" buttonText="DOSTĘPNE MIESZKANIE" />
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                             'W inwestycji kładziemy nacisk na najwyższą jakość materiałów oraz precyzję wykonania. Mieszkania są wyposażone w nowoczesne rozwiązania techniczne, a duże okna zapewniają doskonałe doświetlenie wnętrz. Przemyślane rozkłady pomieszczeń gwarantują maksymalny komfort użytkowania.',
                             'Jarzębinowa II to Twoje nowe miejsce na mapie Nowego Dworu Mazowieckiego.',
                         ]"
-                            link="/miasto/nowy-dwor-mazowiecki/i/jarzebinowa-ii" buttonText="DOSTĘPNE MIESZKANIE" />
+                            link="/miasto/nowy-dwor-mazowiecki/i/jarzebinowa-ii#mieszkania" buttonText="DOSTĘPNE MIESZKANIE" />
 
                     </div>
                     {{-- SLIDER --}}
@@ -185,7 +185,7 @@
                                                     kontakt z naturą. Liczne ścieżki spacerowe i rowerowe zachęcają do aktywnego spędzenia czasu na
                                                     świeżym powietrzu, a spokojna okolica sprzyja wypoczynkowi po intensywnym dniu.',
                         ]"
-                            link="/miasto/nowy-dwor-mazowiecki/i/pogodne" buttonText="DOSTĘPNE MIESZKANIE" />
+                            link="/miasto/nowy-dwor-mazowiecki/i/osiedle-pogodne#mieszkania" buttonText="DOSTĘPNE MIESZKANIE" />
                     </div>
                 </div>
             </div>
