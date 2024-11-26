@@ -18,7 +18,7 @@
 
             <div class="form-vh"></div>
             {{-- Checkbox for selecting room numbers --}}
-            <div class="d-flex gap-3 justify-content-lg-center align-items-center">
+            <div class="d-flex gap-3 justify-content-lg-center align-items-md-center flex-column flex-md-row">
                 <div class="subtitle ">LICZBA POKOI:</div>
                 <div class="rooms-box">
                     @for ($i = 1; $i <= $rooms; $i++)

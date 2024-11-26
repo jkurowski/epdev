@@ -19,3 +19,18 @@
     font-size: 0.5125rem;
     width: 120px;
 }
+
+.main-search-box .levels-box {
+  /* flex-wrap: wrap */
+  flex-wrap: wrap;
+  width: 100%;
+}
+.main-search-box .levels-box .level-label {
+  /* width: 57px; */
+  /* height: 57px; */
+  min-height: 57px;
+  width: auto;
+  /* cursor: pointer */
+  cursor: pointer;
+  flex: 1 1 auto;
+}

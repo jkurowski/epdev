@@ -16,7 +16,7 @@
     "src": "public/fonts/lato-v24-latin_latin-ext-regular.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BvnyNF5N.js",
+    "file": "assets/app-B1nDv7Uo.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -25,7 +25,7 @@
     ]
   },
   "resources/scss/app.scss": {
-    "file": "assets/app-CycPAhkM.css",
+    "file": "assets/app-CYvzWLSu.css",
     "src": "resources/scss/app.scss",
     "isEntry": true
   }
