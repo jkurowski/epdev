@@ -8,7 +8,7 @@
     @endforeach
 </div>
 
-<div class="slick-slider-single-btns">
+<div class="slick-slider-single-btns" style="transform: rotate(180deg)" >
     <button type="button" class="slick-slider-single-prev slick-prev" aria-label="Poprzedni slajd">
         <svg xmlns="http://www.w3.org/2000/svg" width="7.675" height="13.979" viewBox="0 0 7.675 13.979">
             <path d="M1.371,6.99l6.3-6.3L6.99,0,0,6.99l6.99,6.99.685-.685Z"
