@@ -11,7 +11,7 @@
                         pngSmall="images/reusable/logo.png" pngLarge="images/reusable/logo@2x.png"
                         defaultSrc="images/reusable/logo@2x.png" alt="Logo EP Development" class="nav-logo img-fluid" />
                 </a>
-                <div class="nav-text">
+                <div class="nav-text flex-grow-1 text-center">
                     Witamy
                     <br />
                     w okolicy.
