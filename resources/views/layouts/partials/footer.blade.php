@@ -30,11 +30,11 @@
             <div class="col-lg-5 offset-lg-1">
                 {{--  --}}
                 <x-contact-list listTitle="Biuro Sprzedaży Warszawa"
-                    location="ul. Modlińska 201 lok. <br /> 32 03-122 Warszawa" phoneNumber="+48 531 329 392"
+                    location="ul. Modlińska 201 lok. 32<br />03-122 Warszawa" phoneNumber="+48 531 329 392"
                     email="lead@epdevelopment.com.pl" />
                 {{--  --}}
                 <x-contact-list listTitle="Biuro Sprzedaży Nowy Dwór Mazowiecki"
-                    location="ul. Jasna <br/> 15 05-101 Nowy Dwór Mazowiecki" phoneNumber="+48 793 501 501"
+                    location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki" phoneNumber="+48 793 501 501"
                     phoneNumberSecond="+48 513 231 231" email="lead@epdevelopment.com.pl" />
                 {{-- TIME --}}
                 <ul class="list-unstyled contacts mt-4">

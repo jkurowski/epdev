@@ -12,7 +12,7 @@
                     <div class="position-relative">
                         <x-apartment-search-form />
                         <div class="hero-phone-icon">
-                            <a href="tel:+48 531 329 392">
+                            <a href="{{ route('pages.contact-office') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
                                     <g id="Group_937" data-name="Group 937" transform="translate(-1813 -872)">
                                         <circle id="Ellipse_22" data-name="Ellipse 22" cx="30" cy="30" r="30"

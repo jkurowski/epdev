@@ -439,7 +439,7 @@
     </section>
 
     {{--  --}}
-    <section class="margin-xs ">
+    <section class="margin-xs bg-custom-gray">
         <div class="container">
             <div class="row align-items-center gy-3 gy-xl-0">
                 <div class="order-2 order-xl-0  col-12 col-xl-6">
@@ -450,7 +450,7 @@
                             alt="EP Development wnętrze " class="img-contact img-contact-left" />
                     </div>
                 </div>
-                <div class="order-1 col-12 col-xl-6">
+                <div class="order-1 col-12 col-xl-6 ps-xl-4">
                     <x-text-container :paragraphs="[
                         '<strong>Pragnąc zapewnić Państwu kompleksową obsługę, nawiązaliśmy współpracę z Pracownią Architektury Wnętrz INTERIOR DESIGN STUDIO</strong>',
                         'INTERIOR DESIGN STUDIO łączy pasję do projektowania z wieloletnim doświadczeniem w zakresie usług wykończeniowych.',

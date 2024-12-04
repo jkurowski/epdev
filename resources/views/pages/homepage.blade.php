@@ -14,14 +14,14 @@
                 'defaultSrc' => 'images/investments/apartamenty-talarowa-3/WARSZAWA, TALAROWA 3, NR.2 (1).jpg',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
-            [
-                'defaultSrc' => 'images/investments/apartamenty-talarowa-3/TALAROWA 3, BUDOWA 6.jpg',
-                'alt' => 'EP Development Blok mieszkalny',
-            ],
-            [
-                'defaultSrc' => 'images/investments/apartamenty-talarowa-3/TALAROWA 3, BUDOWA 5.jpg',
-                'alt' => 'EP Development Blok mieszkalny',
-            ],
+            // [
+            //     'defaultSrc' => 'images/investments/apartamenty-talarowa-3/TALAROWA 3, BUDOWA 6.jpg',
+            //     'alt' => 'EP Development Blok mieszkalny',
+            // ],
+            // [
+            //     'defaultSrc' => 'images/investments/apartamenty-talarowa-3/TALAROWA 3, BUDOWA 5.jpg',
+            //     'alt' => 'EP Development Blok mieszkalny',
+            // ],
         ];
     @endphp
 
@@ -35,7 +35,7 @@
                     <div class="position-relative">
                         <x-apartment-search-form :cities="['warszawa' => 'warszawa', 'nowy-dwor' => 'Nowy Dwór']" :range-min="35" :range-max="95" :levels="5" />
                         <div class="hero-phone-icon">
-                            <a href="tel:+48 531 329 392">
+                            <a href="{{ route('pages.contact-office') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
                                     <g id="Group_937" data-name="Group 937" transform="translate(-1813 -872)">
                                         <circle id="Ellipse_22" data-name="Ellipse 22" cx="30" cy="30" r="30"
@@ -71,12 +71,12 @@
                     <!-- TEXT -->
                     <div class="order-0 order-xl-2 col-12 col-xl-5 offset-xl-1">
                         <x-text-container titleTag="WARSZAWA" title="Apartamenty Talarowa 3" :paragraphs="[
-                            '<strong>To projekt o ciekawej minimalistycznej architekturze, zlokalizowany na warszawskim Tarchominie.</strong>',
+                            'To projekt o ciekawej minimalistycznej architekturze, zlokalizowany na warszawskim Tarchominie.',
                             'Miejsce pełne wygód ze znakomitą komunikacją. Bogata infrastruktura miejska w okolicy oraz łatwy i szybki dostęp do centrum sprawiają, że Apartamenty Talarowa to znakomita propozycja dla ceniących komfort codziennego życia.',
                             'Obiekt zaprojektowano z ogromną troską o detale, komfort mieszkańców oraz w oparciu o wysokiej klasy materiały wykończeniowe. Wszystkie kondygnacje są dostępne bezpośrednio z poziomu parkingu podziemnego.',
                             'Zaplanowano tu 52 mieszkania o metrażach od 38 m2 do 63 m2, w rozkładach od 1 do 4 pokojowych.',
                         ]"
-                            link="/miasto/warszawa/i/apartamenty-talarowa-3#mieszkania" buttonText="DOSTĘPNE MIESZKANIE" />
+                            link="/miasto/warszawa/i/apartamenty-talarowa-3" buttonText="Dowiedz się więcej" />
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                     <!-- TEXT -->
                     <div class="col-12 col-xl-5 offset-2xl-1">
                         <x-text-container titleTag="NOWY DWÓR MAZOWIECKI" title="Osiedle Jarzębinowa II" :paragraphs="[
-                            '<strong>Nowoczesne osiedle mieszkaniowe, które łączy komfort życia w spokojnej zielonej okolicy z doskonałym dostępem do miejskiej infrastruktury.</strong>',
+                            'Nowoczesne osiedle mieszkaniowe, które łączy komfort życia w spokojnej zielonej okolicy z doskonałym dostępem do miejskiej infrastruktury.',
                             'Zaplanowano 141 mieszkań o metrażach od 37 m2 do 65 m2.',
                             'Inwestycja znajduje się w strategicznej części Nowego Dworu Mazowieckiego, co zapewnia wygodny dostęp do szkół, przedszkoli oraz obiektów sportowych. Bliskość komunikacji miejskiej oraz głównych dróg sprawia, że dojazd do centrum Warszawy jest szybki i komfortowy.',
                             'Nasze osiedle zostało zaprojektowane z myślą o wygodzie i estetyce.',
@@ -120,7 +120,7 @@
                             'W inwestycji kładziemy nacisk na najwyższą jakość materiałów oraz precyzję wykonania. Mieszkania są wyposażone w nowoczesne rozwiązania techniczne, a duże okna zapewniają doskonałe doświetlenie wnętrz. Przemyślane rozkłady pomieszczeń gwarantują maksymalny komfort użytkowania.',
                             'Jarzębinowa II to Twoje nowe miejsce na mapie Nowego Dworu Mazowieckiego.',
                         ]"
-                            link="/miasto/nowy-dwor-mazowiecki/i/jarzebinowa-ii#mieszkania" buttonText="DOSTĘPNE MIESZKANIE" />
+                            link="/miasto/nowy-dwor-mazowiecki/i/jarzebinowa-ii" buttonText="Dowiedz się więcej" />
 
                     </div>
                     {{-- SLIDER --}}
@@ -163,9 +163,9 @@
                     <!-- TEXT -->
                     <div class="order-0 order-xl-2 col-12 col-xl-5 offset-xl-1">
                         <x-text-container titleTag="Nowy Dwór Mazowiecki" title="Osiedle Pogodne" :paragraphs="[
-                            '<strong>Z radością przedstawiamy naszą nową inwestycję - Osiedle Pogodne. Jego pierwszy etap składać się
+                            'Z radością przedstawiamy naszą nową inwestycję - Osiedle Pogodne. Jego pierwszy etap składać się
                                                     będzie łącznie z 10 budynków. To wyjątkowe miejsce, gdzie nowoczesność spotyka się z naturą, tworząc
-                                                    idealne warunki do życia dla całej rodziny.</strong>',
+                                                    idealne warunki do życia dla całej rodziny.',
                             'Osiedle Pogodne znajduje się w spokojnej i zielonej części Nowego Dworu Mazowieckiego. Dzięki
                                                     dogodnemu położeniu, mieszkańcy osiedla będą mogli cieszyć się bliskością natury, a jednocześnie
                                                     łatwym dostępem do miejskich udogodnień. W pobliżu znajdują się sklepy, szkoły, przedszkola oraz
@@ -185,7 +185,7 @@
                                                     kontakt z naturą. Liczne ścieżki spacerowe i rowerowe zachęcają do aktywnego spędzenia czasu na
                                                     świeżym powietrzu, a spokojna okolica sprzyja wypoczynkowi po intensywnym dniu.',
                         ]"
-                            link="/miasto/nowy-dwor-mazowiecki/i/osiedle-pogodne#mieszkania" buttonText="DOSTĘPNE MIESZKANIE" />
+                            link="/miasto/nowy-dwor-mazowiecki/i/osiedle-pogodne" buttonText="Dowiedz się więcej" />
                     </div>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                 </div>
                 <div class="order-1 col-12 col-lg-5 offset-lg-1">
                     <x-text-container title="o EP DEVELOPMENT" :paragraphs="[
-                        '<strong>Jesteśmy dynamicznie rozwijającą się firmą developerską. Od 12 lat z powodzeniem realizujemy projekty mieszkaniowe na terenie Warszawy i okolic.</strong>',
+                        'Jesteśmy dynamicznie rozwijającą się firmą developerską. Od 12 lat z powodzeniem realizujemy projekty mieszkaniowe na terenie Warszawy i okolic.',
                         'Stawiamy na innowacyjne rozwiązania architektoniczne, najwyższą jakość wykonania oraz zrównoważony rozwój, dbając o to, aby każda harmonijnie wpisywała się w otoczenie i spełniała oczekiwania naszych Klientów.',
                         'Dzięki wieloletniemu doświadczeniu oraz szerokiej wiedzy na temat rynku nieruchomości, zyskaliśmy zaufanie wielu zadowolonych Klientów, dla których stworzyliśmy przestrzenie, w których codzienność nabiera nowego wymiaru.',
                     ]" />
@@ -451,7 +451,7 @@
             <div class="row gy-5 gy-lg-0 align-items-center">
                 <div class=" col-12 col-lg-5 ">
                     <x-text-container :paragraphs="[
-                        '<strong>Dzięki wieloletniemu doświadczeniu oraz szerokiej wiedzy na temat rynku nieruchomości, zyskaliśmy zaufanie wielu zadowolonych Klientów, dla których stworzyliśmy przestrzenie, w których codzienność nabiera nowego wymiaru.</strong>',
+                        'Dzięki wieloletniemu doświadczeniu oraz szerokiej wiedzy na temat rynku nieruchomości, zyskaliśmy zaufanie wielu zadowolonych Klientów, dla których stworzyliśmy przestrzenie, w których codzienność nabiera nowego wymiaru.',
                     ]" />
                 </div>
                 <div class="col-12 col-lg-6 offset-lg-1 d-flex">
