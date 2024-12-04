@@ -1,5 +1,5 @@
 <header class="sticky-top bg-black d-flex">
-    <nav class="navbar navbar-expand-xl py-0  bg-black">
+    <nav class="navbar navbar-expand-xl py-0  bg-black w-100">
         <div class="d-flex justify-content-between position-relative w-100 h-100">
             {{--  --}}
             {{-- LOGO --}}
@@ -37,7 +37,7 @@
             {{-- NAVIGATION --}}
             {{--  --}}
 
-            <div class="collapse navbar-collapse justify-content-end bg-black position-relative" id="navbarNav">
+            <div class="collapse navbar-collapse justify-content-center bg-black position-relative" id="navbarNav">
                 <ul class="navbar-nav fw-light py-4 py-xl-0 align-items-xl-center">
                     {{--  --}}
                     {{-- Mieszkania --}}
