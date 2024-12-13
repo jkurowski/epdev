@@ -20,8 +20,7 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="d-flex align-items-center justify-content-center mt-5">
-                                <a href="{{ route('pages.contact-office') . '#kontakt' }}" class="btn btn-footer">napisz
-                                    do nas</a>
+                                <a href="{{ route('pages.contact-office') . '#kontakt' }}" class="btn btn-footer">napisz do nas</a>
                             </div>
                         </div>
                     </div>
@@ -55,6 +54,10 @@
                         </span>
                     </li>
                 </ul>
+                @php
+                    $footer_text = settings()->get("page_footer_text");
+                @endphp
+                @if($footer_text)
                 {{--  --}}
                 <hr class="footer-divider" />
                 {{--  --}}
@@ -67,17 +70,16 @@
                                 d="M18,.563A17.438,17.438,0,1,0,35.438,18,17.44,17.44,0,0,0,18,.563ZM18,8.3a2.953,2.953,0,1,1-2.953,2.953A2.953,2.953,0,0,1,18,8.3Zm3.938,17.859a.844.844,0,0,1-.844.844H14.906a.844.844,0,0,1-.844-.844V24.469a.844.844,0,0,1,.844-.844h.844v-4.5h-.844a.844.844,0,0,1-.844-.844V16.594a.844.844,0,0,1,.844-.844h4.5a.844.844,0,0,1,.844.844v7.031h.844a.844.844,0,0,1,.844.844Z"
                                 transform="translate(-0.563 -0.563)" fill="#d7007a" />
                         </svg>
-
                         <span class="location-info ">
                             <div class=" text-uppercase pb-2">
                                 <strong>komunikat</strong>
                             </div>
-                            <p class="paragraph text-white">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
+                            <p class="paragraph text-white first-upper">{{ $footer_text }}</p>
+                            <style>.first-upper::first-letter {text-transform: uppercase;}</style>
                         </span>
                     </li>
                 </ul>
+                @endif
             </div>
         </div>
     </div>
@@ -124,5 +126,4 @@
 
         </div>
     </div>
-
 </footer>

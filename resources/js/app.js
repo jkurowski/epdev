@@ -138,6 +138,114 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 });
+
+const modal = document.getElementById('modalContact');
+
+modal.addEventListener('show.bs.modal', function () {
+    const form = document.getElementById('fastForm');
+    const errorsDiv = document.getElementById("form-errors");
+    const successDiv = document.getElementById("form-success");
+    errorsDiv.classList.add("hide-empty");
+    errorsDiv.innerHTML = "";
+    successDiv.classList.add("hide-empty");
+    successDiv.innerHTML = "";
+    form.reset();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the form
+    const form = document.getElementById("fastForm");
+
+    // Attach a submit event listener
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        // Clear previous messages
+        const errorsDiv = document.getElementById("form-errors");
+        const successDiv = document.getElementById("form-success");
+        errorsDiv.classList.add("hide-empty");
+        errorsDiv.innerHTML = "";
+        successDiv.classList.add("hide-empty");
+        successDiv.innerHTML = "";
+
+        // Get the form data
+        const formData = new FormData(form);
+
+        // Make the AJAX request
+        fetch(form.action, {
+            method: form.method || "POST",
+            headers: {
+                "Accept": "application/json",
+            },
+            body: formData, // FormData object automatically sets headers
+        })
+            .then(async (response) => {
+                if (response.ok) {
+                    const data = await response.json();
+                    // Display success message
+                    successDiv.classList.remove("hide-empty");
+                    successDiv.innerText = data.message || "Form submitted successfully!";
+                    // Optional: Reset the form
+                    form.reset();
+                } else {
+                    const errorData = await response.json();
+                    throw errorData.errors || "An unknown error occurred.";
+                }
+            })
+            .catch((errors) => {
+                // Display error messages
+                errorsDiv.classList.remove("hide-empty");
+
+                if (typeof errors === "object") {
+                    let errorList = "";
+                    for (let field in errors) {
+                        if (errors.hasOwnProperty(field)) {
+                            errorList += `<p>${errors[field].join(", ")}</p>`;
+                        }
+                    }
+                    errorsDiv.innerHTML = errorList;
+                } else {
+                    errorsDiv.innerText = errors; // Fallback for unknown errors
+                }
+            });
+    });
+
+    const rangeSlider2 = document.getElementById('ap-range-contact2');
+
+    if (rangeSlider2) {
+        const rangeMin = parseInt(rangeSlider2.getAttribute('data-range-min2'));
+        const rangeMax = parseInt(rangeSlider2.getAttribute('data-range-max2'));
+        const rangeMinInput = document.getElementById('ap-range-contact-min2');
+        const rangeMaxInput = document.getElementById('ap-range-contact-max2');
+
+        noUiSlider.create(rangeSlider2, {
+            start: [rangeMinInput.value, rangeMaxInput.value],
+            connect: true,
+            range: {
+                min: rangeMin,
+                max: rangeMax,
+            },
+            step: 1,
+            tooltips: [true, true],
+            format: {
+                to: function (value) {
+                    return Math.round(value) + ' m²';
+                },
+                from: function (value) {
+                    return Number(value.replace(' m²', ''));
+                },
+            },
+        });
+
+        rangeSlider2.noUiSlider.on('update', (values) => {
+            const inputMin = document.getElementById('ap-range-contact-min2');
+            const inputMax = document.getElementById('ap-range-contact-max2');
+            updateRangeValues(inputMin, inputMax, values);
+        });
+
+    }
+});
+
 function updateRangeValues(inputMin, inputMax, values) {
     const minValue = values[0];
     const maxValue = values[1];

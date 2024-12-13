@@ -21,5 +21,10 @@ return [
                 'verify' => false
             ],
         ],
+
+        'log' => [
+            'driver' => 'log',
+        ],
+
     ],
 ];

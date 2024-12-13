@@ -1,5 +1,23 @@
 @import "./imports";
 
+.page-item.active span {
+  background: #d7007a;
+  color: white;
+  font-weight: 600;
+}
+.page-item.disabled {
+  display: none;
+}
+#pagination {
+  border: 1px solid #e1e1e1;
+  padding: 5px 15px;
+}
+.pagination {
+  .page-link {
+    width: 34px;
+    height: 34px
+  }
+}
 
 .apartment-type {
     /* font-size: 0.8125rem; */

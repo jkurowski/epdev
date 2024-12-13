@@ -63,9 +63,6 @@
     </div>
 </div>  --}}
 
-
-
-
 <section class = "" id="mieszkania">
     <div class="container">
         <!-- BUTTONS -->
@@ -167,11 +164,14 @@
             </div>
         </div>
         <div class="row gy-3 apartment-box-container switch">
-            @if ($investment->properties->count() > 0)
-                @foreach ($investment->properties as $room)
-                @include('components.apartment-box', ['property' => $room])
-            
+            @if ($properties->count() > 0)
+                @foreach ($properties as $room)
+                    @php
+                        $investment = $room->investment;
+                    @endphp
+                    @include('components.apartment-box', ['property' => $room])
                 @endforeach
+                {{ $properties->links() }}
             @else
                 <div class="row">
                     <div class="col-12 text-center">

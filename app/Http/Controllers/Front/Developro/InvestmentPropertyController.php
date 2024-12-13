@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front\Developro;
 
 use App\Http\Controllers\Controller;
 use App\Models\Floor;
+use App\Models\Investment;
 use App\Models\Page;
 use App\Models\Property;
 use Illuminate\Http\Request;
@@ -37,13 +38,41 @@ class InvestmentPropertyController extends Controller
 
     public function properties(Request $request)
     {
+        $citySlug = $request->input('apartments-city');
+        $investmentSlug = $request->input('apartments-invest');
 
+        if ($citySlug && $investmentSlug) {
+            // Prepare the query parameters to include all except 'apartments-city' and 'apartments-invest'
+            $queryParams = $request->except(['apartments-city', 'apartments-invest']);
 
+            // Build the query string
+            $queryString = http_build_query($queryParams);
+
+            // Construct the redirect URL with query parameters
+            $redirectUrl = route('front.developro.show', ['citySlug' => $citySlug, 'slug' => $investmentSlug]);
+
+            // Append the query string to the URL
+            if (!empty($queryString)) {
+                $redirectUrl .= '?' . $queryString;
+            }
+
+            // Redirect to the investment show page with the additional query parameters
+            return redirect()->to($redirectUrl.'#mieszkania');
+        }
 
         $page = Page::where('id', $this->pageId)->first();
-
-     
         $query = Property::query();
+
+        // Filter properties where the associated investment status is 1
+        $query->whereHas('investment', function ($query) {
+            $query->where('status', 1);
+        });
+
+        if ($citySlug) {
+            $query->whereHas('investment.city', function ($query) use ($citySlug) {
+                $query->where('slug', $citySlug); // City slug matches the selected city
+            });
+        }
 
         if ($request->has('apartments-city') && $request->input('apartments-city') !== 'null') {
             $query->whereHas('investment.city', function (\Illuminate\Database\Eloquent\Builder $query) use ($request) {
@@ -68,7 +97,11 @@ class InvestmentPropertyController extends Controller
             $query->whereBetween('area', [$request->input('area-min'), $request->input('area-max')]);
         }
 
-        $allProperties = $query->get();
+        $query->whereIn('status', [1, 2]);
+
+        // Paginate the results
+        $perPage = 9; // Number of items per page
+        $allProperties = $query->paginate($perPage)->appends($request->query());
 
         return view('front.developro.investment_property.properties', [
             'page' => $page,

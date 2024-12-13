@@ -20,21 +20,26 @@
     <meta name="robots" content="@yield('seo_robots', settings()->get('page_robots'))">
     <meta name="author" content="{{ settings()->get('page_author') }}">
 
-    @yield('opengraph')
-    @yield('schema')
-
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     {{-- <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
     {{-- <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet"> --}}
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+
+    <!-- Manually include the CSS files -->
+    <link href="{{ asset('build/assets/app-Banrqkr2.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/assets/app-LzLsZAzD.css') }}" rel="stylesheet">
+
+    <!-- Manually include the JS file -->
+    <script src="{{ asset('build/assets/app-McqmVNVb.js') }}" defer></script>
+
     @stack('styles')
+
 </head>
 
 <body class="bg-custom-full overflow-x-hidden">
-    {!! settings()->get('scripts_afterbody') !!}
+{!! settings()->get('scripts_afterbody') !!}
 
-    @include('layouts.partials.header')
-    @yield('pageheader')
+@include('layouts.partials.header')
+@yield('pageheader')
 
     <main>
         @yield('content')

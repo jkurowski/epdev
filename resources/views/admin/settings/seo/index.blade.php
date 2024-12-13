@@ -134,6 +134,15 @@
                     </div>
 
                     <div class="row w-100 form-group">
+                        @include('form-elements.input-text', [
+                            'label' => 'Komunikat',
+                            'sublabel' => 'Treść komunikatu w stopce',
+                            'name' => 'page_footer_text',
+                            'value' => settings()->get('page_footer_text'),
+                        ])
+                    </div>
+
+                    <div class="row w-100 form-group">
                         @include('form-elements.html-input-file', [
                             'label' => 'Logo',
                             'sublabel' => '(wymiary: 40 px / 200 px)',
@@ -221,110 +230,6 @@
                             'value' => settings()->get('recaptcha_secret_key'),
                         ])
                     </div>
-
-                    <div class="row w-100">
-                        <div class="col-12">
-                            <div class="section">SMS Api</div>
-                        </div>
-                    </div>
-                    <div class="row w-100 form-group">
-                        @include('form-elements.input-text', [
-                            'label' => 'Token',
-                            'name' => 'sms_api_token',
-                            'value' => settings()->get('sms_api_token'),
-                        ])
-                    </div>
-                    <div class="row w-100 form-group">
-                        @include('form-elements.input-text', [
-                            'label' => 'Sender',
-                            'name' => 'sms_api_sender',
-                            'value' => settings()->get('sms_api_sender'),
-                        ])
-                    </div>
-
-                    <div class="row w-100">
-                        <div class="col-12">
-                            <div class="section">SMTP Mailing</div>
-                        </div>
-                    </div>
-                    <div class="row w-100 form-group">
-                        @include('form-elements.input-text', [
-                            'label' => 'Host',
-                            'name' => 'mailing_host',
-                            'value' => settings()->get('mailing_host'),
-                        ])
-                    </div>
-                    <div class="row w-100 form-group">
-                        @include('form-elements.input-text', [
-                            'label' => 'Port',
-                            'name' => 'mailing_port',
-                            'value' => settings()->get('mailing_port'),
-                        ])
-                    </div>
-                    <div class="row w-100 form-group">
-                        @include('form-elements.input-text', [
-                            'label' => 'Username',
-                            'name' => 'mailing_username',
-                            'value' => settings()->get('mailing_username'),
-                        ])
-                    </div>
-                    <div class="row w-100 form-group">
-                        @include('form-elements.input-text', [
-                            'label' => 'Password',
-                            'name' => 'mailing_password',
-                            'type' => 'password',
-                            'value' => settings()->get('mailing_password'),
-                        ])
-                    </div>
-                    <div class="row w-100 form-group">
-                        <label for="mailing_encryption" class="col-12 col-form-label control-label">
-                            <div class="text-start w-100">
-                                Encryption
-                            </div>
-                        </label>
-                        <div class="col-12 control-input d-flex align-items-center">
-                            <select class="form-select" name="mailing_encryption" id="form_mailing_encryption">
-                                <option value=""<?php if(settings()->get("mailing_encryption") == ''){?> selected<?php } ?>>Brak</option>
-                                <option value="ssl"<?php if(settings()->get("mailing_encryption") == 'ssl'){?> selected<?php } ?>>SSL</option>
-                                <option value="tls"<?php if(settings()->get("mailing_encryption") == 'tls'){?> selected<?php } ?>>TLS</option>
-                                <option value="starttls"<?php if(settings()->get("mailing_encryption") == 'starttls'){?> selected<?php } ?>>STARTTLS</option>
-                            </select>
-                        </div>
-
-                    </div>
-                    <div class="row w-100 form-group">
-                        @include('form-elements.input-text', [
-                            'label' => 'From Address',
-                            'name' => 'mailing_from_address',
-                            'value' => settings()->get('mailing_from_address'),
-                        ])
-                    </div>
-                    <div class="row w-100 form-group">
-                        @include('form-elements.input-text', [
-                            'label' => 'From Name',
-                            'name' => 'mailing_from_name',
-                            'value' => settings()->get('mailing_from_name'),
-                        ])
-                    </div>
-                    <div class="row w-100 form-group mt-5">
-
-                        @include('form-elements.input-text', [
-                            'label' => 'Testowy email',
-                            'name' => 'test_email',
-                            'sublabel' => 'Wpisz email na który chcesz wysłać testowy email',
-                            'value' => settings()->get('test_email'),
-                        ])
-                        <div class="col-12 mt-4 text-center">
-                            <button type="button" class="btn btn-primary" id="send_test_email">Sprawdź połączenie
-                                SMTP</button>
-                        </div>
-                        <div class="col-12 mt-3">
-                            <div id="test_email_result"></div>
-                        </div>
-
-
-                    </div>
-
                 </div>
             </div>
             <div class="form-group form-group-submit">
@@ -372,80 +277,5 @@
 
 
         });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('send_test_email').addEventListener('click', async function() {
-                const url = '{{ route('admin.smtp-test.checkSMTP') }}';
-                const button = this;
-                button.classList.add('loading');
-                const body = {
-                    host: document.getElementById('form_mailing_host').value,
-                    port: document.getElementById('form_mailing_port').value,
-                    username: document.getElementById('form_mailing_username').value,
-                    password: document.getElementById('form_mailing_password').value,
-                    encryption: document.getElementById('form_mailing_encryption').value,
-                    from_address: document.getElementById('form_mailing_from_address').value,
-                    from_name: document.getElementById('form_mailing_from_name').value,
-                    to_address: document.getElementById('form_test_email').value,
-                }
-                const response = await sendTestEmail(url, body);
-                button.classList.remove('loading');
-                console.log(response);
-
-
-            });
-
-            async function sendTestEmail(url, body) {
-                try {
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                        },
-                        body: JSON.stringify(body)
-                    });
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        toastr.success(data.message);
-                        return data;
-                    } else {
-                        const data = await response.json();
-                        console.error(data);
-                        toastr.error('Wystąpił błąd podczas wysyłania emaila. Sprawdź poprawność danych SMTP');
-                    }
-
-                } catch (error) {
-                    console.error(error);
-                    toastr.error('Wystąpił błąd podczas wysyłania emaila. Sprawdź poprawność danych SMTP');
-                }
-            }
-        });
     </script>
 @endpush
-<style>
-    .btn.loading {
-        pointer-events: none;
-        opacity: 0.5;
-    }
-
-    .btn.loading:after {
-        content: "";
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        border: 0.15em solid currentColor;
-        border-right-color: transparent;
-        border-radius: 50%;
-        animation: loading-spinner 0.75s linear infinite;
-        vertical-align: middle;
-        margin-left: 0.5em;
-    }
-
-    @keyframes loading-spinner {
-        to {
-            transform: rotate(360deg);
-        }
-    }
-</style>

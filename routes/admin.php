@@ -47,6 +47,10 @@ Route::group([
     Route::get('user/datatable', 'User\IndexController@datatable')->name('user.datatable');
     Route::get('user/send-notification', 'User\IndexController@sendNotification')->name('user.sendNotification');
 
+    Route::resource('contract', 'Contract\IndexController')->except([
+        'show'
+    ]);
+
     Route::resources([
         'page' => 'Page\IndexController',
         'url' => 'Url\IndexController',
@@ -60,7 +64,6 @@ Route::group([
         'role' => 'Role\IndexController',
         'greylist' => 'Greylist\IndexController',
         'article' => 'Article\IndexController',
-        'contract' => 'Contract\IndexController',
         'ux' => 'UX\IndexController',
         'box' => 'Box\IndexController',
         'city'=> 'City\IndexController'

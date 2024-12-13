@@ -61,7 +61,6 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
 
     Route::get('/kontakt', 'ContactController@index')->name('contact');
     Route::post('/kontakt', 'ContactController@send')->name('contact.send');
-
     Route::post('/kontakt/{property}', 'ContactController@property')->name('contact.property');
 
 
@@ -260,7 +259,5 @@ Route::group(['as' => 'pages.'], function () {
     })->name('contact-after-sales');
 });
 
-
-
-
 Route::post('/contact-form', [ContactFormsController::class, 'store'])->name('contact-form.store');
+Route::post('/submit-form', [ContactFormsController::class, 'modal'])->name('contact-form.modal');

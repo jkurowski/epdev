@@ -140,6 +140,7 @@
                         @endphp
                         @include('components.apartment-box', ['property' => $room])
                     @endforeach
+                    {{ $allProperties->links() }}
                 @else
                     <div class="row">
                         <div class="col-12 text-center">
@@ -150,5 +151,4 @@
             </div>
         </div>
     </section>
-
 @endsection

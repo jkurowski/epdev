@@ -45,10 +45,7 @@
                 </div>
             </div>
         </div>
-        @include('front.developro.investment_shared.list', ['investment' => $investment])
-
-
-
+        @include('front.developro.investment_shared.list', ['investment' => $investment, 'properties' => $properties])
 
         <section class="margin-xs contact-section">
             <div class="container">

@@ -15,9 +15,9 @@ if (! function_exists('roomStatus')) {
             case RoomStatusMaper::RENTED:
                 return 'Wynajęte';
             case RoomStatusMaper::DEVELOPERS_AGREEMENT:
-                return 'Umowa deweloperska';
+                return 'Sprzedane';
             case RoomStatusMaper::PRE_SALE_AGREEMENT:
-                return 'Umowa przedsprzedażowa';
+                return 'Sprzedane';
         }
     }
 }

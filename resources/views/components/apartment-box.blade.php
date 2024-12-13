@@ -45,6 +45,8 @@
                     $statusClass = ['class' => 'bg-warning'];
                     break;
                 case 3:
+                case 5:
+                case 6:
                     $statusClass = ['class' => 'bg-danger'];
                     break;
                 default:

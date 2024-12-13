@@ -52,8 +52,7 @@
                         <ul class="dropdown-menu">
                             @foreach ($active_cities as $city)
                                 <li>
-                                    <a class="dropdown-item"
-                                        href="{{ route('front.developro.index', $city->slug) }}">
+                                    <a class="dropdown-item" href="{{ route('front.developro.index', $city->slug) }}">
                                         {{ $city->name }}
                                     </a>
                                 </li>
@@ -122,7 +121,7 @@
                     {{-- MAIL ICON - TO CHANGE --}}
                     {{--  --}}
                     <li class="nav-item">
-                        <a  class="nav-link" href="mailto:lead@epdevelopment.com.pl">
+                        <a class="nav-link" href="#modalContact" data-bs-toggle="modal" data-bs-target="#modalContact">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                                 <g id="Group_939" data-name="Group 939" transform="translate(-1209 -6117)">
                                     <g id="Group_181" data-name="Group 181" transform="translate(117 435)">
@@ -151,3 +150,42 @@
         </div>
     </nav>
 </header>
+
+<!-- Modal -->
+<div class="modal fade" id="modalContact" tabindex="-1" aria-labelledby="modalContactLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalContactLabel">Skontaktuj się z nami</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="ZAMKNIJ"></button>
+            </div>
+                <x-contact-modal-form :terms="[
+                        [
+                            'id' => 'terms-1',
+                            'label' =>
+                                'Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zapytania.',
+                            'description' => 'Treść zgody na przetwarzanie danych osobowych.',
+                        ],
+                        [
+                            'id' => 'terms-2',
+                            'label' =>
+                                'Wyrażam zgodę na wykorzystywanie przez EP Development Sp. z o.o. telekomunikacyjnych urządzeń',
+                            'description' => 'Treść akceptacji regulaminu.',
+                        ],
+                        [
+                            'id' => 'terms-3',
+                            'label' =>
+                                'Wyrażam zgodę na przetwarzanie moich danych osobowych przez EP Development Sp. z o.o. w celach',
+                            'description' => 'Treść zgody na newsletter.',
+                        ],
+                        [
+                            'id' => 'terms-4',
+                            'label' =>
+                                'Wyrażam zgodę na otrzymywanie drogą elektroniczną informacji handlowych od EP Development Sp.',
+                            'description' => 'Treść zgody na newsletter.',
+                        ],
+                    ]" />
+        </div>
+    </div>
+</div>
+

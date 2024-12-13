@@ -59,6 +59,7 @@ use Carbon\Carbon;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Mail\Markdown;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\HtmlString;
 use Request;
@@ -105,6 +106,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        Paginator::useBootstrapFive();
 
         Activity::saving(function (Activity $activity) {
 
@@ -170,15 +173,21 @@ class AppServiceProvider extends ServiceProvider
         View::share('minRoomArea', intval(Property::min('area')));
         View::share('maxRoomArea', intval(Property::max('area')));
 
-        
-
         view()->composer(['admin.crm.offer.form', 'admin.crm.inbox.index'], function ($view) {
             $view->with('investments', Investment::all()->pluck('name', 'id'));
         });
 
-    
-        View::share('active_cities', City::whereActive(1)->orderBy('name')->get());
 
+        View::share('active_cities', City::whereActive(1)
+            ->orderBy('name')
+            ->get(['id', 'name', 'slug'])
+        );
+
+        View::share('active_investments', Investment::whereStatus(1)
+            ->orderBy('name')
+            ->with('city')
+            ->get(['id', 'name', 'slug', 'city_id'])
+        );
 
         Image::observe(ImageObserver::class);
         Gallery::observe(GalleryObserver::class);

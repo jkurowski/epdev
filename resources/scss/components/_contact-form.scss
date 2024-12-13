@@ -61,3 +61,33 @@
     width: 95%;
   }
 }
+#ap-range-contact2
+{
+  margin-top: 2rem;
+  width: 95%;
+}
+#fastForm {
+  border-radius: 0;
+  .hide-empty {display: none}
+  #form-errors {
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+#modalContact {
+  .modal-content {
+    border-radius: 0
+  }
+  .modal-header {
+    background: #000000;
+    border-radius: 0;
+    h5 {
+      font-weight: 600;
+      color: #d7007a;
+    }
+  }
+}
+.modal-backdrop {
+  opacity: 0.9 !important;
+}

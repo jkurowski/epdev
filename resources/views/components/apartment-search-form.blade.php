@@ -14,15 +14,27 @@
                 </label>
                 <select id="apartments-city" class="apartments-city" name="apartments-city">
                     <option value="">WYBIERZ Z LISTY</option>
-                    @foreach ($cities as $cityValue => $cityName)
-                        <option value="{{ $cityValue }}" {{ request('apartments-city') == $cityValue ? 'selected' : '' }}>
-                            {{ $cityName }}
+                    @foreach ($active_cities as $city)
+                        <option value="{{ $city->slug }}" {{ request('apartments-city') == $city->slug ? 'selected' : '' }}>
+                            {{ $city->name }}
                         </option>
                     @endforeach
                 </select>
-
             </div>
 
+            <div class="d-flex flex-column">
+                <label for="apartments-city" class="subtitle mt-4 mb-3">
+                    INWESTYCJA
+                </label>
+                <select id="apartments-invest" class="apartments-city" name="apartments-invest">
+                    <option value="">WYBIERZ Z LISTY</option>
+                    @foreach ($active_investments as $i)
+                        <option value="{{ $i->slug }}" {{ request('apartments-invest') == $i->slug ? 'selected' : '' }} data-city="{{ $i->city ? $i->city->slug : '' }}">
+                            {{ $i->name }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
 
             <div class="subtitle mt-40px mb-3">LICZBA POKOI</div>
             <div class="d-flex">
@@ -56,3 +68,31 @@
         </form>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const citySelect = document.getElementById('apartments-city');
+        const investSelect = document.getElementById('apartments-invest');
+
+        citySelect.value = "";
+        investSelect.value = "";
+
+        // Function to filter investments based on the selected city
+        citySelect.addEventListener('change', function() {
+            const selectedCity = citySelect.value;
+
+            // Show or hide investment options based on the selected city
+            Array.from(investSelect.options).forEach(option => {
+                if (selectedCity === '' || option.getAttribute('data-city') === selectedCity) {
+                    option.style.display = 'block'; // Show matching city options
+                } else {
+                    option.style.display = 'none'; // Hide non-matching city options
+                }
+            });
+
+            // Optionally, reset the investments select to show the placeholder when no city is selected
+            if (selectedCity === '') {
+                investSelect.value = ''; // Reset the value of apartments-invest dropdown
+            }
+        });
+    });
+</script>
