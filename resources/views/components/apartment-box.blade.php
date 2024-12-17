@@ -142,7 +142,7 @@
                                     transform="translate(-7 -905.278)" />
                             </g>
                         </svg>
-                        <span>{{ $property->floor->number  ?? '-'}}</span>
+                        <span>{{ $property->floor_id  ?? '-'}}</span>
                     </div>
                 </div>
            

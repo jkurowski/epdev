@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front\Static;
 
 use App\Http\Controllers\Controller;
 use App\Models\Investment;
+use App\Models\Page;
 use App\Repositories\Client\ClientRepository;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,12 @@ class IndexController extends Controller
     {
         $this->clientRepository = $clientRepository;
     }
+    public function privacypolicy()
+    {
+        $page = Page::find(5);
+        return view('pages.privacy-policy', compact('page'));
+    }
+
     public function testPage()
     {
         $investment = Investment::find(1);

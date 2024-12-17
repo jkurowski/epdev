@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function () {
     siteRecordBookSliders.forEach((slider, index) => {
         $(slider).slick({
             dots: false,
-            infinite: false,
+            infinite: true,
             arrows: false,
             speed: 250,
             slidesToShow: 6,
@@ -359,6 +359,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         slidesToShow: 4,
                         infinite: true,
                         slidesToScroll: 1,
+                        arrows: true,
                     },
                 },
                 {
@@ -367,6 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         slidesToShow: 2,
                         infinite: true,
                         slidesToScroll: 1,
+                        arrows: true,
                     },
                 },
             ],

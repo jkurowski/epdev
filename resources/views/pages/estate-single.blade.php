@@ -223,7 +223,7 @@
                 <div class="col-12 text-lg-center">
                     <div class="title-container mb-4">
                         <div class="title-tag-sm mb-2" data-aos="fade" data-aos-delay="150">
-                            APARTAMENTY TALAROWA
+                            APARTAMENTY TALAROWA 3
                         </div>
                         <h2 class="header-1" data-aos="fade-up">
                             Wybierz spośród </br> podobnych mieszkań

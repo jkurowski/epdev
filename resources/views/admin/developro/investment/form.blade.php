@@ -129,6 +129,17 @@
                         ])
                     </div>
                     <div class="col-4">
+                        @include('form-elements.input-text', [
+                            'label' => 'Zakres pięter w wyszukiwarce',
+                            'sublabel' => '(liczby oddzielone przecinkiem)',
+                            'name' => 'floor_range',
+                            'value' => $entry->floor_range,
+                        ])
+                    </div>
+                </div>
+
+                <div class="row w-100 mb-4">
+                    <div class="col-4">
                         @include('form-elements.html-select', [
                             'label' => 'Pokaż ceny',
                             'sublabel' => '(ceny wszystkich powierzchni)',
@@ -140,9 +151,6 @@
                             ],
                         ])
                     </div>
-                </div>
-
-                <div class="row w-100 mb-4">
                     <div class="col-4">
                         @include('form-elements.html-select', [
                             'label' => 'Pokaż mieszkania jako',
@@ -389,7 +397,17 @@
 
                 <div class="row w-100 mb-4">
                     @include('form-elements.textarea-fullwidth', [
-                        'label' => 'Email - Opis inwestycji',
+                        'label' => 'Postęp prac',
+                        'name' => 'progress',
+                        'value' => $entry->progress,
+                        'rows' => 11,
+                        'required' => 1,
+                    ])
+                </div>
+
+                <div class="row w-100 mb-4">
+                    @include('form-elements.textarea-fullwidth', [
+                        'label' => 'Opis inwestycji',
                         'name' => 'content',
                         'value' => $entry->content,
                         'rows' => 11,
@@ -400,7 +418,7 @@
 
                 <div class="row w-100 mb-4">
                     @include('form-elements.textarea-fullwidth', [
-                        'label' => 'Email - Opis inwestycji po zakończeniu',
+                        'label' => 'Opis inwestycji po zakończeniu',
                         'name' => 'end_content',
                         'value' => $entry->end_content,
                         'rows' => 11,

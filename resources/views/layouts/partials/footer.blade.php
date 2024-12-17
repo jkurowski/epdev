@@ -87,40 +87,15 @@
     <div class="w-100 footer-bg second-footer ">
         <div class="container">
             <div class="d-flex gap-3 gap-md-0 flex-column flex-md-row justify-content-between align-items-center">
-                <a href="{{ route('pages.completed-investments') }}" class="second-footer-link">Inwestycje
-                    zrealizowane</a>
+                <a href="{{ route('pages.completed-investments') }}" class="second-footer-link">Inwestycje zrealizowane</a>
                 <a href="{{ route('pages.planned-investments') }}" class="second-footer-link">Inwestycje planowane</a>
                 <a href="{{ route('pages.buy-land') }}" class="second-footer-link">Kupimy grunty</a>
                 <div class="footer-socials">
                     <!-- Facebook -->
-                    <a href="http://facebook.pl/" class="fb" aria-label="link do Facebook EP Development">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.839" height="23.972"
-                            viewBox="0 0 12.839 23.972">
-                            <path id="Icon_awesome-facebook-f" data-name="Icon awesome-facebook-f"
-                                d="M13.607,13.484l.666-4.338H10.11V6.331a2.169,2.169,0,0,1,2.446-2.344h1.892V.293A23.079,23.079,0,0,0,11.089,0C7.661,0,5.42,2.078,5.42,5.839V9.146H1.609v4.338H5.42V23.972h4.69V13.484Z"
-                                transform="translate(-1.609)" fill="currentColor" />
-                        </svg>
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100083628571206" class="fb" aria-label="link do Facebook EP Development" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.839" height="23.972" viewBox="0 0 12.839 23.972"><path id="Icon_awesome-facebook-f" data-name="Icon awesome-facebook-f" d="M13.607,13.484l.666-4.338H10.11V6.331a2.169,2.169,0,0,1,2.446-2.344h1.892V.293A23.079,23.079,0,0,0,11.089,0C7.661,0,5.42,2.078,5.42,5.839V9.146H1.609v4.338H5.42V23.972h4.69V13.484Z" transform="translate(-1.609)" fill="currentColor" /></svg></a>
                     <!-- Instagram -->
-                    <a href="http://instagram.pl/" aria-label="link do Instagram EP Development">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="21.093" height="21.093"
-                            viewBox="0 0 21.093 21.093">
-                            <g id="Icon_feather-instagram" data-name="Icon feather-instagram"
-                                transform="translate(-2 -2)">
-                                <path id="Path_11" data-name="Path 11"
-                                    d="M7.773,3h9.546a4.773,4.773,0,0,1,4.773,4.773v9.546a4.773,4.773,0,0,1-4.773,4.773H7.773A4.773,4.773,0,0,1,3,17.319V7.773A4.773,4.773,0,0,1,7.773,3Z"
-                                    transform="translate(0 0)" fill="none" stroke="#d7007a" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" />
-                                <path id="Path_12" data-name="Path 12"
-                                    d="M19.661,15.193a3.819,3.819,0,1,1-3.217-3.217,3.818,3.818,0,0,1,3.217,3.217Z"
-                                    transform="translate(-3.296 -3.249)" fill="none" stroke="#d7007a"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                                <path id="Path_13" data-name="Path 13" d="M26.25,9.75h0"
-                                    transform="translate(-8.453 -2.454)" fill="none" stroke="#d7007a"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                            </g>
-                        </svg>
-                    </a>
+                    <a href="https://www.instagram.com/ep_development" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="21.093" height="21.093" viewBox="0 0 21.093 21.093"><g id="Icon_feather-instagram" data-name="Icon feather-instagram" transform="translate(-2 -2)"><path id="Path_11" data-name="Path 11" d="M7.773,3h9.546a4.773,4.773,0,0,1,4.773,4.773v9.546a4.773,4.773,0,0,1-4.773,4.773H7.773A4.773,4.773,0,0,1,3,17.319V7.773A4.773,4.773,0,0,1,7.773,3Z" transform="translate(0 0)" fill="none" stroke="#d7007a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><path id="Path_12" data-name="Path 12" d="M19.661,15.193a3.819,3.819,0,1,1-3.217-3.217,3.818,3.818,0,0,1,3.217,3.217Z" transform="translate(-3.296 -3.249)" fill="none" stroke="#d7007a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><path id="Path_13" data-name="Path 13" d="M26.25,9.75h0" transform="translate(-8.453 -2.454)" fill="none" stroke="#d7007a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg></a>
                 </div>
             </div>
 

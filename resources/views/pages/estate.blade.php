@@ -82,7 +82,7 @@
         <div class="container">
             <div class="row gy-5 gy-lg-0 align-items-center" data-aos="fade" data-aos-delay="200">
                 <div class=" col-12 col-lg-5 ">
-                    <x-text-container titleTag="WARSZAWA, BIAŁOŁĘKA" title="Apartamenty <br/> Talarowa" :paragraphs="[
+                    <x-text-container titleTag="WARSZAWA, BIAŁOŁĘKA" title="Apartamenty <br/> Talarowa 3" :paragraphs="[
                         '<strong>Apartamenty Talarowa to projekt o ciekawej minimalistycznej architekturze, zlokalizowany na warszawskim Tarchominie. Miejsce pełne wygód ze znakomitą komunikacją. Bogata infrastruktura miejska w okolicy oraz łatwy i szybki dostęp do centrum sprawiają, że Apartamenty Talarowa to znakomita propozycja dla ceniących komfort codziennego życia. </strong>',
                         'Obiekt zaprojektowano z ogromną troską o detale, komfort mieszkańców oraz w oparciu o wysokiej klasy materiały wykończeniowe. Wszystkie kondygnacje są dostępne bezpośrednio z poziomu parkingu podziemnego. Zaplanowano tu 52 mieszkania o metrażach od 38 m2 do 63 m2, w rozkładach od 1 do 4 pokojowych',
                     ]"
@@ -162,8 +162,8 @@
     {{-- 5 - SEARCH --}}
     <div class="container margin-xs" id="znajdz-swoje-mieszkanie">
         <div class="text-center">
-            <div class="title-tag-sm" data-aos="fade">APARTAMENTY TALAROWA</div>
-            <div class="header-1" data-aos="fade-up" data-aos-delay="200"r>Znajdź swoje mieszkanie</div>
+            <div class="title-tag-sm" data-aos="fade">APARTAMENTY TALAROWA 3</div>
+            <div class="header-1" data-aos="fade-up" data-aos-delay="200">Znajdź swoje mieszkanie</div>
         </div>
     </div>
     <div class="container mt-3 mt-lg-5 mb-5 mb-xl-3">

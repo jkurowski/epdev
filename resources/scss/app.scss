@@ -5,7 +5,8 @@
   color: white;
   font-weight: 600;
 }
-.page-item.disabled {
+.page-item:first-child,
+.page-item:last-child {
   display: none;
 }
 #pagination {
@@ -16,6 +17,15 @@
   .page-link {
     width: 34px;
     height: 34px
+  }
+}
+
+.investment-news {
+  h2 {
+    font-size: 35px;
+    color: #000;
+    font-weight: 900;
+    letter-spacing: 2px;
   }
 }
 

@@ -125,7 +125,7 @@
         <x-gallery-static :items="$galleryItems" />
     </section>
 
-    {{--  --}}
+    @if (0 == 1)
     <x-recommendation-section buttonLink="{{ route('pages.about-ep-development') }}" buttonText="ZOBACZ WIĘCEJ ">
         <x-recommendation-slider-item name="Weronika S." avatarSrc="images/reusable/avatar.png" :reviewTexts="[
             '<strong>Lorem ipsum dolor sit amet,</strong> consetetur sadipscing elitr.',
@@ -139,5 +139,5 @@
             buttonText="OPINIE GOOGLE" />
 
     </x-recommendation-section>
-
+    @endif
 @endsection

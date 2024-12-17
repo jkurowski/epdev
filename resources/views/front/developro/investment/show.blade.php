@@ -34,14 +34,13 @@
         <div class="container mt-3 mt-lg-5 mb-5 mb-xl-3">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
-
-                    <x-search-estate :floors="[
-                        0 => 'Parter',
-                        1 => '1',
-                        2 => '2',
-                        3 => '3',
-                        4 => '4',
-                    ]" :rooms="5" :rangeMin="$minRoomArea" :rangeMax="$maxRoomArea" />
+                    <x-search-estate
+                            :floors="$floors"
+                            :rooms="5"
+                            :rangeMin="$minRoomArea"
+                            :rangeMax="$maxRoomArea"
+                            :route="url('#mieszkania')"
+                    />
                 </div>
             </div>
         </div>
@@ -67,10 +66,34 @@
             </div>
         </section>
 
+        @if($progressData->count() > 0)
+        <section class="margin-xs overflow-x-hidden">
+            <div class="container">
+                <div class="header-1 mb-5" data-aos="fade">Postęp prac</div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="site-record-book-slider mt-3">
+                        @foreach ($progressData as $progress)
+                            <div>
+                                <div class="site-record-book-box {{ $progress['highlight'] ? 'highlight' : '' }}">
+                                    <div class="number">{{ $progress['number'] }}</div>
+                                    <div class="date-box">
+                                        <div class="date">{{ $progress['date'] ?? '&nbsp;' }}</div>
+                                    </div>
+                                    <div class="dot">&nbsp;</div>
+                                    <div class="lane">&nbsp;</div>
+                                    <div class="title">{{ $progress['title'] }}</div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+        @endif
 
         {!! $investment->end_content !!}
-
-
 
         @if ($investment->gallery && $investment->gallery->photos->count() > 0)
             {{-- Gallery --}}
@@ -92,30 +115,18 @@
                     <div class="order-1 col-12 col-xl-6 ps-xl-4">
                         <div class="d-flex flex-column gap-4">
                             <div class="title-container">
-                                <div class="header-1 aos-init aos-animate" data-aos="fade-up">Interesuje Cię
-                                    <br>wykończenie
-                                    pod
-                                    klucz?
-                                </div>
+                                <div class="header-1 aos-init aos-animate" data-aos="fade-up">Interesuje Cię<br>wykończenie pod klucz?</div>
                             </div>
                             <div class="text-container d-flex flex-column gap-3">
                                 <p class="text-pretty paragraph aos-init aos-animate" data-aos="fade-up"
                                     data-aos-delay="100">
-                                    <strong>Pragnąc zapewnić Państwu kompleksową obsługę, nawiązaliśmy współpracę
-                                        z&nbsp;Pracownią Architektury Wnętrz INTERIOR DESIGN STUDIO</strong>
+                                    <strong>Pragnąc zapewnić Państwu kompleksową obsługę, nawiązaliśmy współpracę z&nbsp;Pracownią Architektury Wnętrz INTERIOR DESIGN STUDIO</strong>
                                 </p>
-                                <p class="text-pretty paragraph aos-init aos-animate" data-aos="fade-up"
-                                    data-aos-delay="100">
-                                    INTERIOR DESIGN STUDIO łączy pasję do projektowania z&nbsp;wieloletnim
-                                    doświadczeniem
-                                    w&nbsp;zakresie usług wykończeniowych.</p>
-                                <p class="text-pretty paragraph aos-init aos-animate" data-aos="fade-up"
-                                    data-aos-delay="100">
-                                    Skontaktuj się z&nbsp;Ekspertem wnętrz!</p>
+                                <p class="text-pretty paragraph aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">INTERIOR DESIGN STUDIO łączy pasję do projektowania z&nbsp;wieloletnim doświadczeniem w&nbsp;zakresie usług wykończeniowych.</p>
+                                <p class="text-pretty paragraph aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">Skontaktuj się z&nbsp;Ekspertem wnętrz!</p>
                             </div>
                         </div>
-                        <a class="btn btn-primary btn-phone-big aos-init aos-animate" href="tel:+48 698 719 562"
-                            data-aos="fade-up" data-aos-delay="200"> ZADZWOŃ +48 698 719 562 </a>
+                        <a class="btn btn-primary btn-phone-big aos-init aos-animate" href="tel:+48 698 719 562" data-aos="fade-up" data-aos-delay="200"> ZADZWOŃ +48 698 719 562 </a>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,8 @@
         "vite:build": "vite build",
         "vite:dev": "vite",
         "dev": "npm run vite:dev",
-        "build": "npm run vite:build"
+        "build": "npm run vite:build",
+        "watch": "vite build --watch"
     },
     "devDependencies": {
         "axios": "^1.7.4",

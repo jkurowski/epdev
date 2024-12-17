@@ -151,6 +151,9 @@
 
                         $(".btn-addevent").click((d) => {
                             d.preventDefault();
+
+                            console.log("btn-addevent");
+
                             jQuery.ajax({
                                 type: 'POST',
                                 data: {
@@ -166,6 +169,8 @@
                                     } else {
                                         alert('Error');
                                     }
+
+                                    button.css('pointer-events', 'auto');
                                 }
                             });
                         });

@@ -24,12 +24,7 @@
     {{-- <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
     {{-- <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet"> --}}
 
-    <!-- Manually include the CSS files -->
-    <link href="{{ asset('build/assets/app-Banrqkr2.css') }}" rel="stylesheet">
-    <link href="{{ asset('build/assets/app-LzLsZAzD.css') }}" rel="stylesheet">
-
-    <!-- Manually include the JS file -->
-    <script src="{{ asset('build/assets/app-McqmVNVb.js') }}" defer></script>
+    @vite()
 
     @stack('styles')
 

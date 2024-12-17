@@ -1,5 +1,9 @@
 <div class="search-estate">
+    @isset($route)
+    <form action="{{ $route }}" method="GET">
+    @else
     <form action="{{route('front.developro.properties')}}" method="GET">
+    @endif
         <div class="form-box d-flex flex-column flex-lg-row justify-content-between gap-5 gap-lg-3">
             {{-- Dropdown for floor selection --}}
             <div class="d-flex gap-2 align-items-center">
@@ -7,9 +11,9 @@
                     PIĘTRO:
                 </label>
                 <select id="apartments-floor" class="apartments-floor" name="apartments-floor">
-                    <option value="null" {{ request('apartments-floor') == null ? 'selected' : '' }}>Piętro</option>
+                    <option value="" {{ request('apartments-floor') == '' ? 'selected' : '' }}>Piętro</option>
                     @foreach ($floors as $floorValue => $floorName)
-                        <option value="{{ $floorValue }}" {{ request('apartments-floor') == $floorValue ? 'selected' : '' }}>
+                        <option value="{{ $floorValue }}" {{ request('apartments-floor') == (string) $floorValue ? 'selected' : '' }}>
                             {{ $floorName }}
                         </option>
                     @endforeach

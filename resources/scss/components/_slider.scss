@@ -1,3 +1,62 @@
+.site-record-book-slider {
+    .slick-arrow {
+        padding: 0;
+        border: 1px solid $quaternary;
+        border-radius: 50%;
+        background: transparent;
+        width: 50px;
+        height: 50px;
+        color: $quaternary;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 100ms ease-in-out;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+
+        z-index: 99;
+
+        &:hover,
+        &:active,
+        &:focus-visible {
+            border-color: $primary;
+            color: $primary;
+        }
+
+        img {
+            svg {
+                width: 15px;
+                height: 15px;
+                fill: $primary;
+            }
+        }
+
+        &.slick-disabled {}
+    }
+
+    .slick-prev {
+        left: 15px;
+        svg {
+            position: relative;
+            left: 0;
+        }
+    }
+
+    .slick-next {
+        right: 15px;
+        left: auto;
+        svg {
+            position: relative;
+            left: 0;
+        }
+    }
+}
+
 .slick-slider-single-btns {
     position: relative;
     display: flex;

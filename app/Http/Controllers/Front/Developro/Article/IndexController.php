@@ -103,9 +103,28 @@ class IndexController extends Controller
         $investmentArticle = $this->articleRepository->findBySlug($article);
         $menu_page = Page::where('id', $this->pageId)->first();
 
+        $progressData = collect([]);
+        $investment = $investmentArticle->investment;
+
+
+        if (!is_null($investment->progress)) {
+            $lines = explode("\n", $investment->progress);
+
+            $progressData = collect($lines)->map(function ($line) {
+                $parts = explode(';', $line);
+                return [
+                    'number' => $parts[0],
+                    'date' => $parts[1] ?: '',
+                    'title' => $parts[2],
+                    'highlight' => isset($parts[3]) && $parts[3] == '1',
+                ];
+            });
+        }
+
         return view('front.developro.investment.news-show', [
             'page' => $menu_page,
-            'article' => $investmentArticle
+            'article' => $investmentArticle,
+            'progressData' => $progressData
         ]);
     }
 }

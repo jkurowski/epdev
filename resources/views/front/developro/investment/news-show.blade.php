@@ -86,16 +86,40 @@
             'backLink' => true,
         ])
     </section>
-      {!! $article->content !!}
 
-
-
-@if ($article->gallery && $article->gallery->photos->count() > 0)
-    {{-- Gallery --}}
-    <section class="margin-xs">
-        <x-gallery :items="$article->gallery->photos" />
+    @if($progressData->count() > 0)
+    <section class="margin-xs overflow-x-hidden mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="site-record-book-slider mt-3">
+                    @foreach ($progressData as $progress)
+                        <div>
+                            <div class="site-record-book-box {{ $progress['highlight'] ? 'highlight' : '' }}">
+                                <div class="number">{{ $progress['number'] }}</div>
+                                <div class="date-box">
+                                    <div class="date">{{ $progress['date'] ?? '&nbsp;' }}</div>
+                                </div>
+                                <div class="dot">&nbsp;</div>
+                                <div class="lane">&nbsp;</div>
+                                <div class="title">{{ $progress['title'] }}</div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
     </section>
-@endif
+    @endif
+
+    <section class="margin-xs overflow-x-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 investment-news">
+                    {!! parse_text($article->content) !!}
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 3. CONTACT FORM -->
     <section class="margin-xs contact-section">
@@ -103,12 +127,8 @@
             <div class="row">
                 <div class="col-12 text-lg-center">
                     <div class="title-container mb-4">
-                        <div class="title-tag-sm mb-2" data-aos="fade" data-aos-delay="150">
-                            EP DEVELOPMENT
-                        </div>
-                        <h2 class="header-1" data-aos="fade-up">
-                            Skontaktuj się z nami
-                        </h2>
+                        <div class="title-tag-sm mb-2" data-aos="fade" data-aos-delay="150">EP DEVELOPMENT</div>
+                        <h2 class="header-1" data-aos="fade-up">Skontaktuj się z nami</h2>
                     </div>
                 </div>
                 <div class="col col-lg-8 offset-lg-2 col-xxl-6 offset-xxl-3">

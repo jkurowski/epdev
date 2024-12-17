@@ -241,6 +241,11 @@ Route::group(['as' => 'pages.'], function () {
         return view('pages.buy-land');
     })->name('buy-land');
 
+    //
+    // Privacy policy
+    //
+
+    Route::get('/polityka-prywatnosci', 'Front\Static\IndexController@privacypolicy')->name('privacy-policy');
 
     // 
     // Contact
