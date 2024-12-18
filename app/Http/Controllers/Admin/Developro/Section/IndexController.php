@@ -80,7 +80,7 @@ class IndexController extends Controller
         return redirect(route('admin.developro.investment.section.index', $investment))->with('success', 'Wpis zaktualizowany');
     }
 
-    public function destroy($id)
+    public function destroy(Investment $investment, $id)
     {
         $this->repository->delete($id);
         return response()->json('Deleted');
