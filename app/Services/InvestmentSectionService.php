@@ -22,8 +22,17 @@ class InvestmentSectionService
             }
         }
 
-        $name = date('His').'_'.Str::slug($title).'.' . $file->getClientOriginalExtension();
-        $name_webp = date('His').'_'.Str::slug($title).'.webp';
+        if($title) {
+            $name = date('His').'_'.Str::slug($title).'.' . $file->getClientOriginalExtension();
+            $name_webp = date('His').'_'.Str::slug($title).'.webp';
+        } else {
+
+            $investment = $model->investment->slug;
+
+            $name = date('His').'_'.$investment.'.' . $file->getClientOriginalExtension();
+            $name_webp = date('His').'_'.$investment.'.webp';
+        }
+
 
         $file->storeAs('sections', $name, 'investment_uploads');
 

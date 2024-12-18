@@ -24,6 +24,11 @@ class InvestmentSections extends Model
         'active',
         'position'
     ];
+
+    public function investment()
+    {
+        return $this->belongsTo(Investment::class);
+    }
 }
 
 
