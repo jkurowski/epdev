@@ -163,7 +163,7 @@
         <div id="modalNewUser"></div>
         <div id="content">
             <header id="header-navbar">
-                <h1><a href="" class="logo"><span>kCMS v4.2</span></a></h1>
+                <h1><a href="" class="logo"><span>DeveloPRO</span></a></h1>
 
                 <a href="#" id="togglemenu"><span class="fe-menu"></span></a>
                 <div class="user">

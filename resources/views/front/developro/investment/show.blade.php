@@ -22,8 +22,40 @@
             ],
         ]" />
 
-        {!! $investment->content !!}
+        @foreach($investment->sections as $section)
+        <section class="margin-below-breadcrumb">
+            <div class="container">
+                <div class="row gy-5 gy-lg-0 align-items-center">
+                    <div class="col-12 col-lg-5">
+                        <div class="d-flex flex-column gap-4">
+                            @if($section->title)
+                            <div class="title-container">
+                                @if($section->subtitle)
+                                <div class="title-tag mb-2">{{ $section->subtitle }}</div>
+                                @endif
+                                <div class="header-1">{{ $section->title }}</div>
+                            </div>
+                            @endif
+                            <div class="text-container d-flex flex-column gap-3">
+                                {!! $section->text !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 offset-lg-1 d-flex">
+                        @if($section->file)
+                        <picture>
+                            <source type="image/webp" srcset="{{asset('investment/sections/webp/'.$section->file_webp) }}">
+                            <source type="image/jpeg" srcset="{{asset('investment/sections/'.$section->file) }}">
+                            <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$article->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
+                        </picture>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </section>
+        @endforeach
 
+        {!! $investment->content !!}
 
         <div class="container margin-xs" id="znajdz-swoje-mieszkanie">
             <div class="text-center">

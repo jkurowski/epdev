@@ -336,6 +336,7 @@ Route::group([
         Route::group(['middleware' => 'check.investment.permission', 'prefix' => '/investment', 'as' => 'investment.'], function () {
             Route::resources([
                 //'{investment}/import' => 'Import\IndexController',
+                '{investment}/section' => 'Section\IndexController',
                 '{investment}/page' => 'Page\IndexController',
                 '{investment}/article' => 'Article\IndexController',
                 '{investment}/plan' => 'Plan\IndexController',

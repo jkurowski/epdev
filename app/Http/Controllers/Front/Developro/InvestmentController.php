@@ -26,7 +26,7 @@ class InvestmentController extends Controller
     public function show(Request $request, string $citySlug, string $slug)
     {
         $city = City::where('slug', $citySlug)->first();
-        $investment = Investment::where('city_id', $city->id)->where('slug', $slug)->first();
+        $investment = Investment::where('city_id', $city->id)->where('slug', $slug)->with('sections')->first();
         $page = Page::find($this->pageId);
 
         $query = Property::query();

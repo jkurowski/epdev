@@ -201,6 +201,15 @@ class Investment extends Model
      * Get payments for investment
      * @return HasMany
      */
+    public function sections(): HasMany
+    {
+        return $this->hasMany('App\Models\InvestmentSections');
+    }
+
+    /**
+     * Get payments for investment
+     * @return HasMany
+     */
     public function payments(): HasMany
     {
         return $this->hasMany('App\Models\InvestmentPayment');

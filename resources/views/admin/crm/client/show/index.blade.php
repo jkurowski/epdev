@@ -32,16 +32,6 @@
                                     'value' => $client->nip ?? '',
                                     'required' => false,
                                 ])
-                                @if (true)
-                                    <button type="button" id="get_data_from_gus" class="btn link-secondary p-0"
-                                        style="--bs-btn-font-size: 0.8rem;">
-                                        <i class="fe-download"></i>
-                                        <span>
-                                            Pobierz dane z GUS
-                                        </span>
-                                    </button>
-                                @endif
-
                             </div>
                         </div>
                         <div class="row w-100 mb-4">
@@ -303,42 +293,6 @@
                                         'name' => 'source_additional',
                                         'value' => $client->source_additional,
                                     ])
-                                </div>
-                            </div>
-                            <button type="button" class="btn action-button position-relative" data-bs-toggle="modal"
-                                data-bs-target="#additionalFields">
-                                <i class="fe-edit"></i>
-                                <span>Transakcje i statusy</span>
-                            </button>
-                            <div>
-                                <!-- Modal -->
-                                <div class="modal modal-xl fade" id="additionalFields" tabindex="-1"
-                                    aria-labelledby="additionalFieldsLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5 text-white" id="additionalFieldsLabel">Edytuj
-                                                </h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"><i class='fe-x'></i></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div data-fields-groups="">
-                                                </div>
-                                                <div class='text-center'>
-                                                    <button data-new-fields-group type="button" class="btn btn-primary">
-                                                        <i class="fe-plus"></i>
-                                                        <span>Dodaj nową grupę</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-
-                                                <button type="button" class="btn btn-primary"
-                                                    data-bs-dismiss="modal">Zamknij</button>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
