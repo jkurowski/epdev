@@ -24,7 +24,9 @@
     {{-- <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
     {{-- <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet"> --}}
 
-    @vite()
+    <script type="module" src="{{ asset('build/assets/app-BaChqbro.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('build/assets/app-Banrqkr2.css') }}" />
+    <link rel="stylesheet" href="{{ asset('build/assets/app-OfCiKS4-.css') }}" />
 
     @stack('styles')
 
