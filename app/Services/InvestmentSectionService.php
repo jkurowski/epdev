@@ -9,7 +9,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class InvestmentSectionService
 {
-    public function upload(string $title, UploadedFile $file, object $model, bool $delete = false)
+    public function upload($title, UploadedFile $file, object $model, bool $delete = false)
     {
 
         if ($delete) {
