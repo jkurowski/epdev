@@ -36,7 +36,7 @@
                                 <div class="header-1">{{ $section->title }}</div>
                             </div>
                             @endif
-                            <div class="text-container d-flex flex-column gap-3">
+                            <div class="text-container d-flex flex-column gap-3 text-pretty paragraph">
                                 {!! $section->text !!}
                             </div>
                         </div>
