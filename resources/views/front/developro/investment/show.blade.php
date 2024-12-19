@@ -100,7 +100,7 @@
                     <section>
                         <div class="container">
                             <div class="row gy-5 gy-lg-0 align-items-center flex-row-reverse">
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-5 offset-lg-1">
                                     <div class="d-flex flex-column gap-4">
                                         @if($section->title)
                                             <div class="title-container">
