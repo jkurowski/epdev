@@ -51,6 +51,9 @@ Route::group([
         'show'
     ]);
 
+    // Gallery
+    Route::get('ajaxGetGalleries', 'Gallery\IndexController@ajaxGetGalleries')->name('ajaxGetGalleries');
+
     Route::resources([
         'page' => 'Page\IndexController',
         'url' => 'Url\IndexController',

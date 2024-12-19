@@ -22,38 +22,115 @@
             ],
         ]" />
 
+        @if($investment->sections->count() <= 3)
+        <div class="investment-carousel margin-below-breadcrumb">
         @foreach($investment->sections as $section)
-        <section class="margin-below-breadcrumb">
-            <div class="container">
-                <div class="row gy-5 gy-lg-0 align-items-center">
-                    <div class="col-12 col-lg-5">
-                        <div class="d-flex flex-column gap-4">
-                            @if($section->title)
-                            <div class="title-container">
-                                @if($section->subtitle)
-                                <div class="title-tag mb-2">{{ $section->subtitle }}</div>
+            <section>
+                <div class="container">
+                    <div class="row gy-5 gy-lg-0 align-items-center">
+                        <div class="col-12 col-lg-5">
+                            <div class="d-flex flex-column gap-4">
+                                @if($section->title)
+                                <div class="title-container">
+                                    @if($section->subtitle)
+                                    <div class="title-tag mb-2">{{ $section->subtitle }}</div>
+                                    @endif
+                                    <div class="header-1">{{ $section->title }}</div>
+                                </div>
                                 @endif
-                                <div class="header-1">{{ $section->title }}</div>
-                            </div>
-                            @endif
-                            <div class="text-container d-flex flex-column gap-3 text-pretty paragraph">
-                                {!! $section->text !!}
+                                <div class="text-container d-flex flex-column gap-3 text-pretty paragraph">
+                                    {!! $section->text !!}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-6 offset-lg-1 d-flex">
-                        @if($section->file)
-                        <picture>
-                            <source type="image/webp" srcset="{{asset('investment/sections/webp/'.$section->file_webp) }}">
-                            <source type="image/jpeg" srcset="{{asset('investment/sections/'.$section->file) }}">
-                            <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$article->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
-                        </picture>
-                        @endif
+                        <div class="col-12 col-lg-6 offset-lg-1 d-flex">
+                            @if($section->file)
+                            <picture>
+                                <source type="image/webp" srcset="{{asset('investment/sections/webp/'.$section->file_webp) }}">
+                                <source type="image/jpeg" srcset="{{asset('investment/sections/'.$section->file) }}">
+                                <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$article->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
+                            </picture>
+                            @endif
+                        </div>
                     </div>
                 </div>
+            </section>
+            @endforeach
             </div>
-        </section>
-        @endforeach
+            <div id="invest-arrows"></div>
+        @else
+            <div class="investment-carousel-1 margin-below-breadcrumb">
+                @foreach($investment->sections->take(2) as $section)
+                    <section>
+                        <div class="container">
+                            <div class="row gy-5 gy-lg-0 align-items-center">
+                                <div class="col-12 col-lg-5">
+                                    <div class="d-flex flex-column gap-4">
+                                        @if($section->title)
+                                            <div class="title-container">
+                                                @if($section->subtitle)
+                                                    <div class="title-tag mb-2">{{ $section->subtitle }}</div>
+                                                @endif
+                                                <div class="header-1">{{ $section->title }}</div>
+                                            </div>
+                                        @endif
+                                        <div class="text-container d-flex flex-column gap-3 text-pretty paragraph">
+                                            {!! $section->text !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 offset-lg-1 d-flex">
+                                    @if($section->file)
+                                        <picture>
+                                            <source type="image/webp" srcset="{{asset('investment/sections/webp/'.$section->file_webp) }}">
+                                            <source type="image/jpeg" srcset="{{asset('investment/sections/'.$section->file) }}">
+                                            <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$article->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
+                                        </picture>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                @endforeach
+            </div>
+            <div id="invest-arrows-1"></div>
+
+            <div class="investment-carousel-2 margin-below-breadcrumb">
+                @foreach($investment->sections->skip(2)->take(2) as $section)
+                    <section>
+                        <div class="container">
+                            <div class="row gy-5 gy-lg-0 align-items-center flex-row-reverse">
+                                <div class="col-12 col-lg-5">
+                                    <div class="d-flex flex-column gap-4">
+                                        @if($section->title)
+                                            <div class="title-container">
+                                                @if($section->subtitle)
+                                                    <div class="title-tag mb-2">{{ $section->subtitle }}</div>
+                                                @endif
+                                                <div class="header-1">{{ $section->title }}</div>
+                                            </div>
+                                        @endif
+                                        <div class="text-container d-flex flex-column gap-3 text-pretty paragraph">
+                                            {!! $section->text !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 offset-lg-1 d-flex">
+                                    @if($section->file)
+                                        <picture>
+                                            <source type="image/webp" srcset="{{asset('investment/sections/webp/'.$section->file_webp) }}">
+                                            <source type="image/jpeg" srcset="{{asset('investment/sections/'.$section->file) }}">
+                                            <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$article->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
+                                        </picture>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                @endforeach
+            </div>
+            <div id="invest-arrows-2"></div>
+        @endif
 
         {!! $investment->content !!}
 
@@ -134,108 +211,89 @@
             </section>
         @endif
 
-        <section class="margin-xs bg-custom-gray">
-            <div class="container">
-                <div class="row align-items-center gy-3 gy-xl-0">
-                    <div class="order-2 order-xl-0  col-12 col-xl-6">
-                        <div class="" dir="rtl"> <img class="img-contact img-contact-left"
-                                src="/images/apartments/ap-finish@2x.png" alt="EP Development wnętrze " width="1920"
-                                height="1144" loading="lazy">
-
+        <section class="margin-xs bg-custom-gray halfs">
+            <div class="half-section half-image">
+                <div class="half-image-cover">
+                    <img src="{{ asset('images/half-left.jpg') }}"
+                         alt="EP Development wnętrze"
+                         width="1000"
+                         height="750"
+                         loading="lazy">
+                </div>
+            </div>
+            <div class="half-section half-text">
+                <div class="half-text-cover">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="title-container">
+                            <div class="header-1">Interesuje Cię<br>wykończenie pod klucz?</div>
+                        </div>
+                        <div class="text-container d-flex flex-column gap-3">
+                            <p class="text-pretty paragraph">
+                                <strong>Pragnąc zapewnić Państwu kompleksową obsługę, nawiązaliśmy współpracę z&nbsp;Pracownią Architektury Wnętrz INTERIOR DESIGN STUDIO</strong>
+                            </p>
+                            <p class="text-pretty paragraph">INTERIOR DESIGN STUDIO łączy pasję do projektowania z&nbsp;wieloletnim doświadczeniem w zakresie usług wykończeniowych.</p>
+                            <p class="text-pretty paragraph">Skontaktuj się z&nbsp;Ekspertem wnętrz!</p>
                         </div>
                     </div>
-                    <div class="order-1 col-12 col-xl-6 ps-xl-4">
-                        <div class="d-flex flex-column gap-4">
-                            <div class="title-container">
-                                <div class="header-1 aos-init aos-animate" data-aos="fade-up">Interesuje Cię<br>wykończenie pod klucz?</div>
-                            </div>
-                            <div class="text-container d-flex flex-column gap-3">
-                                <p class="text-pretty paragraph aos-init aos-animate" data-aos="fade-up"
-                                    data-aos-delay="100">
-                                    <strong>Pragnąc zapewnić Państwu kompleksową obsługę, nawiązaliśmy współpracę z&nbsp;Pracownią Architektury Wnętrz INTERIOR DESIGN STUDIO</strong>
-                                </p>
-                                <p class="text-pretty paragraph aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">INTERIOR DESIGN STUDIO łączy pasję do projektowania z&nbsp;wieloletnim doświadczeniem w&nbsp;zakresie usług wykończeniowych.</p>
-                                <p class="text-pretty paragraph aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">Skontaktuj się z&nbsp;Ekspertem wnętrz!</p>
-                            </div>
-                        </div>
-                        <a class="btn btn-primary btn-phone-big aos-init aos-animate" href="tel:+48 698 719 562" data-aos="fade-up" data-aos-delay="200"> ZADZWOŃ +48 698 719 562 </a>
-                    </div>
+                    <a class="btn btn-primary btn-phone-big" href="tel:+48 698 719 562"> ZADZWOŃ +48 698 719 562 </a>
                 </div>
             </div>
         </section>
 
-
-
-        <section class="mt-5 mt-xl-0 overflow-x-hidden">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-xl-6">
-                        <div class="d-flex flex-column gap-4">
-                            <div class="title-container">
-                                <div class="header-1 aos-init aos-animate" data-aos="fade-up">Kredyty hipoteczne</div>
-                            </div>
-                            <div class="text-container d-flex flex-column gap-3">
-                                <p class="text-pretty paragraph aos-init aos-animate" data-aos="fade-up"
-                                    data-aos-delay="100">
-                                    <strong>Dla naszych Klientów ubiegających się o&nbsp;kredyt hipoteczny oferujemy
-                                        bezpłatne
-                                        wsparcie ekspertów finansowych.</strong>
-                                </p>
-                                <p class="text-pretty paragraph aos-init" data-aos="fade-up" data-aos-delay="100">
-                                    Doradcy
-                                    pomogą
-                                    w&nbsp;wyborze najlepszego i&nbsp;najbardziej dopasowanego do możliwości finansowych
-                                    kredytu, przygotują niezbędne dokumenty i&nbsp;złożą wnioski.</p>
-                                <p class="text-pretty paragraph aos-init" data-aos="fade-up" data-aos-delay="100">
-                                    Zapraszamy
-                                    do
-                                    kontaktu</p>
-                            </div>
+        <section class="halfs flex-row-reverse">
+            <div class="half-section half-image">
+                <div class="half-image-cover">
+                    <img src="{{ asset('images/half-right.jpg') }}"
+                         alt="Ludzie w biurze"
+                         width="1000"
+                         height="750"
+                         loading="lazy">
+                </div>
+            </div>
+            <div class="half-section half-text">
+                <div class="half-text-cover">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="title-container">
+                            <div class="header-1">Kredyty hipoteczne</div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-12 col-xl-6">
-                                <div class="credit-box">
-                                    <div class="name">Aneta Jasińska - Gorzelak</div>
-                                    <div class="subtitle">Ekspert finansowy ds. kredytów hipotecznych</div>
-                                    <div class="pb-3 contact-box email"><a class="nav-link"
-                                            href="mailto:aneta.jasinska@grupaang.pl" aria-label="Contact us">
-                                            aneta.jasinska@grupaang.pl </a></div>
-                                    <div class="pb-3 contact-box phone"><a class="nav-link" href="tel:+48 790 023 189"
-                                            aria-label="Call us"> +48 790 023 189 </a></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-12 col-xl-6">
-                                <div class="credit-box">
-                                    <div class="name">Hubert Burkowski</div>
-                                    <div class="subtitle">Ekspert finansowy ds. kredytów hipotecznych</div>
-                                    <div class="pb-3 contact-box email"><a class="nav-link"
-                                            href="mailto:hubert.burkowski@hbfinanse.pl" aria-label="Contact us">
-                                            hubert.burkowski@hbfinanse.pl </a></div>
-                                    <div class="pb-3 contact-box phone"><a class="nav-link" href="tel:+48 793 353 021"
-                                            aria-label="Call us"> +48 793 353 021 </a></div>
-                                </div>
-                            </div>
+                        <div class="text-container d-flex flex-column gap-3">
+                            <p class="text-pretty paragraph">
+                                <strong>Dla naszych Klientów ubiegających się o&nbsp;kredyt hipoteczny oferujemy bezpłatne wsparcie ekspertów finansowych.</strong>
+                            </p>
+                            <p class="text-pretty paragraph">
+                                Doradcy pomogą w&nbsp;wyborze najlepszego i&nbsp;najbardziej dopasowanego do możliwości finansowych kredytu, przygotują niezbędne dokumenty i&nbsp;złożą wnioski.</p>
+                            <p class="text-pretty paragraph">Zapraszamy do kontaktu</p>
                         </div>
                     </div>
-                    <div class="col-12 col-xl-6">
-                        <div class="">
-                            <picture>
-                                <source srcset="/images/apartments/credit.webp" type="image/webp"
-                                    media="(max-width: 992px)">
-                                <source srcset="/images/apartments/credit@2x.webp" type="image/webp"
-                                    media="(min-width: 992px)">
-                                <source srcset="/images/apartments/credit.png" type="image/png"
-                                    media="(max-width: 992px)">
-                                <source srcset="/images/apartments/credit@2x.png" type="image/png"
-                                    media="(min-width: 992px)">
-                                <img class="img-contact img-contact-right" src="/images/apartments/credit@2x.png"
-                                    alt="Ludzie w biurze" width="1922" height="1144" loading="lazy">
-                            </picture>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-12 col-xl-6">
+                            <div class="credit-box">
+                                <div class="name">Aneta Jasińska - Gorzelak</div>
+                                <div class="subtitle">Ekspert finansowy ds. kredytów hipotecznych</div>
+                                <div class="pb-3 contact-box email">
+                                    <a class="nav-link" href="mailto:aneta.jasinska@grupaang.pl" aria-label="Contact us">aneta.jasinska@grupaang.pl </a>
+                                </div>
+                                <div class="pb-3 contact-box phone">
+                                    <a class="nav-link" href="tel:+48 790 023 189" aria-label="Call us"> +48 790 023 189 </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xl-6">
+                            <div class="credit-box">
+                                <div class="name">Hubert Burkowski</div>
+                                <div class="subtitle">Ekspert finansowy ds. kredytów hipotecznych</div>
+                                <div class="pb-3 contact-box email">
+                                    <a class="nav-link" href="mailto:hubert.burkowski@hbfinanse.pl" aria-label="Contact us">hubert.burkowski@hbfinanse.pl </a>
+                                </div>
+                                <div class="pb-3 contact-box phone">
+                                    <a class="nav-link" href="tel:+48 793 353 021" aria-label="Call us"> +48 793 353 021 </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        </div>
+        <style>#footer{margin-top:0 !important;}@media (max-width: 991.98px) {#footer{margin-top: max(65px,7.8125vw) !important;}}</style>
     @endsection
 @endif

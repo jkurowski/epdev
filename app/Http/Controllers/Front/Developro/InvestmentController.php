@@ -48,7 +48,6 @@ class InvestmentController extends Controller
 
         // Filter by floor if provided
         if ($request->has('apartments-floor') && (string) $request->input('apartments-floor') !== '') {
-
             $query->where('floor_id', $request->input('apartments-floor'));
         }
 

@@ -60,6 +60,56 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    let slickSettings = {
+        dots: false,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ],
+        appendArrows: '#invest-arrows'
+    };
+    $('.investment-carousel').slick(slickSettings);
+
+    let slickSettings1 = {
+        dots: false,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ],
+        appendArrows: '#invest-arrows-1'
+    };
+    $('.investment-carousel-1').slick(slickSettings1);
+
+    let slickSettings2 = {
+        dots: false,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ],
+        appendArrows: '#invest-arrows-2'
+    };
+    $('.investment-carousel-2').slick(slickSettings2);
+});
+
 //
 //
 //

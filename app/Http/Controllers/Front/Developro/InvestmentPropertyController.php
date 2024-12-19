@@ -81,10 +81,8 @@ class InvestmentPropertyController extends Controller
         }
 
         // Filter by floor if provided
-        if ($request->has('apartments-floor') && $request->input('apartments-floor') !== 'null') {
-            $query->whereHas('floor', function ($query) use ($request) {
-                $query->where('number', $request->input('apartments-floor'));
-            });
+        if ($request->has('apartments-floor') && (string) $request->input('apartments-floor') !== '') {
+            $query->where('floor_id', $request->input('apartments-floor'));
         }
 
         // Filter by rooms if provided

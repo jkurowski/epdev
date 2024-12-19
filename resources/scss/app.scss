@@ -70,3 +70,135 @@
   background-color: var(--bs-primary);
   color: var(--bs-white)
 }
+
+.halfs {
+  display: flex;
+  height: 800px;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  flex-direction: row;
+  .half-section {
+    width: 50%;
+    height: 100%;
+  }
+  .half-image-cover {
+    display: block;
+    min-height: initial;
+    min-width: initial;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+      transition-delay: 500ms
+    }
+  }
+  .half-text {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    &-cover {
+      display: flex;
+      flex-direction: column;
+      max-width: 620px;
+      margin-left: 100px;
+      padding-right: 20px;
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .half-text-cover {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .halfs {
+    display: block;
+    height: auto;
+    .half-section {
+      width: 100%;
+    }
+    .half-image-cover {
+      height: 320px;
+      img {
+        object-position: top;
+      }
+    }
+    .half-text {
+      padding: 30px;
+      &-cover {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        margin-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+#invest-arrows, #invest-arrows-1, #invest-arrows-2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  .slick-arrow {
+    padding: 0;
+    border: 1px solid $quaternary;
+    border-radius: 50%;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    color: $quaternary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 100ms ease-in-out;
+    z-index: 99;
+    margin:0 15px;
+    &:hover,
+    &:active,
+    &:focus-visible {
+      border-color: $primary;
+      color: $primary;
+    }
+
+    img {
+      svg {
+        width: 15px;
+        height: 15px;
+        fill: $primary;
+      }
+    }
+
+    &.slick-disabled {}
+  }
+
+  .slick-prev {
+    left: 15px;
+    svg {
+      position: relative;
+      left: 0;
+    }
+  }
+
+  .slick-next {
+    right: 15px;
+    left: auto;
+    svg {
+      position: relative;
+      left: 0;
+    }
+  }
+}

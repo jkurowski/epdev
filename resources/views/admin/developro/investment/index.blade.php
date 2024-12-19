@@ -39,28 +39,45 @@
                                 <td>{{ investmentType($p->type) }}</td>
                                 <td class="text-center">{{ $p->vox_url ? 'Tak' : '-' }}</td>
                                 <td>{{ $p->updated_at }}</td>
-                                <td class="option-120">
+                                <td class="option-120 text-end">
                                     <div class="btn-group">
+                                        @if($p->vox_url)
+                                        <a href="{{route('admin.developro.investment.vox.index', $p)}}?type=import"
+                                           class="btn action-button me-1"
+                                           data-bs-toggle="tooltip"
+                                           data-placement="top"
+                                           data-bs-title="Aktualizacja VOX">
+                                            <i class="fe-download-cloud" aria-hidden="true"></i>
+                                        </a>
+                                        @endif
                                         <a href="{{route('admin.developro.investment.search.index', $p)}}"
-                                            class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
-                                            data-bs-title="Wyszukiwarka">
+                                           class="btn action-button me-1"
+                                           data-bs-toggle="tooltip"
+                                           data-placement="top"
+                                           data-bs-title="Wyszukiwarka">
                                             <i class="fe-search" aria-hidden="true"></i>
                                         </a>
                                         <a href="{{ route('admin.developro.investment.edit', $p) }}"
-                                            class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
-                                            data-bs-title="Edytuj">
+                                           class="btn action-button me-1"
+                                           data-bs-toggle="tooltip"
+                                           data-placement="top"
+                                           data-bs-title="Edytuj">
                                             <i class="fe-edit" aria-hidden="true"></i>
                                         </a>
 
                                         <a href="{{ route('admin.developro.investment.section.index', $p) }}"
-                                           class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
+                                           class="btn action-button me-1"
+                                           data-bs-toggle="tooltip"
+                                           data-placement="top"
                                            data-bs-title="Sekcje tekstowe">
                                             <i class="fe-file-text" aria-hidden="true"></i>
                                         </a>
 
                                         <a href="{{ route('admin.developro.investment.article.index', $p) }}"
-                                            class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
-                                            data-bs-title="Dzienniki inwestycji">
+                                           class="btn action-button me-1"
+                                           data-bs-toggle="tooltip"
+                                           data-placement="top"
+                                           data-bs-title="Dzienniki inwestycji">
                                             <i class="fe-file" aria-hidden="true"></i>
                                         </a>
                                         <form class="d-none" method="POST"
@@ -100,7 +117,7 @@
                 toastr.options = {
                     closeButton: !0,
                     progressBar: !0,
-                    positionClass: "toast-bottom-right",
+                    positionClass: "toast-top-right",
                     timeOut: "3000"
                 };
                 toastr.success("{{ session('success') }}");

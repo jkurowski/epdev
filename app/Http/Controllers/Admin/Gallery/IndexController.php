@@ -95,4 +95,9 @@ class IndexController extends Controller
         }
     }
 
+    public function ajaxGetGalleries()
+    {
+        $galleries = Gallery::all('id', 'name');
+        return response()->json($galleries);
+    }
 }

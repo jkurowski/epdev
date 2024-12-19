@@ -1,9 +1,5 @@
 <div class="main-search-box">
-    <div class="title">
-        Znajdź mieszkanie
-        <br />
-        dla siebie
-    </div>
+    <div class="title">Znajdź mieszkanie<br />dla siebie</div>
     <div>
         <form action="{{route('front.developro.properties')}}" method="GET">
           
@@ -41,8 +37,12 @@
                 {{-- Checkboxes for apartment levels --}}
                 <div class="levels-box">
                     @for ($i = 1; $i <= $levels; $i++)
-                        <input type="radio" id="level{{ $i }}" class="level-input" name="rooms" 
-                            value="{{ $i }}" {{ request('rooms') == $i ? 'checked' : '' }} />
+                        <input type="radio"
+                               id="level{{ $i }}"
+                               class="level-input"
+                               name="rooms"
+                               value="{{ $i }}" {{ request('rooms') == $i ? 'checked' : '' }}
+                        />
                         <label for="level{{ $i }}" class="level-label">
                             <span class="level-name">{{ $i }}</span>
                         </label>
@@ -59,11 +59,7 @@
             {{-- Search button --}}
             <button class="mt-3 btn btn-primary" type="submit">
                 ZNAJDŹ MIESZKANIE
-                <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293">
-                    <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
-                        d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z"
-                        transform="translate(4.553 8.293) rotate(180)" fill="currentColor"></path>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293"><path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24" d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z" transform="translate(4.553 8.293) rotate(180)" fill="currentColor"></path></svg>
             </button>
         </form>
     </div>
@@ -76,23 +72,32 @@
         citySelect.value = "";
         investSelect.value = "";
 
-        // Function to filter investments based on the selected city
         citySelect.addEventListener('change', function() {
             const selectedCity = citySelect.value;
-
-            // Show or hide investment options based on the selected city
             Array.from(investSelect.options).forEach(option => {
                 if (selectedCity === '' || option.getAttribute('data-city') === selectedCity) {
-                    option.style.display = 'block'; // Show matching city options
+                    option.style.display = 'block';
                 } else {
-                    option.style.display = 'none'; // Hide non-matching city options
+                    option.style.display = 'none';
                 }
             });
-
-            // Optionally, reset the investments select to show the placeholder when no city is selected
             if (selectedCity === '') {
-                investSelect.value = ''; // Reset the value of apartments-invest dropdown
+                investSelect.value = '';
             }
+        });
+
+        const levelRadios = document.querySelectorAll('.levels-box .level-input');
+        let lastCheckedRadio = null;
+
+        levelRadios.forEach(radio => {
+            radio.addEventListener('click', function (event) {
+                if (lastCheckedRadio === this) {
+                    this.checked = false;
+                    lastCheckedRadio = null;
+                } else {
+                    lastCheckedRadio = this;
+                }
+            });
         });
     });
 </script>

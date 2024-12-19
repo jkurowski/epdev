@@ -51,3 +51,19 @@
         </button>
     </form>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const levelRadios = document.querySelectorAll('.rooms-box .room-input');
+        let lastCheckedRadio = null;
+        levelRadios.forEach(radio => {
+            radio.addEventListener('click', function (event) {
+                if (lastCheckedRadio === this) {
+                    this.checked = false;
+                    lastCheckedRadio = null;
+                } else {
+                    lastCheckedRadio = this;
+                }
+            });
+        });
+    });
+</script>
