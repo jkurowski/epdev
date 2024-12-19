@@ -7,9 +7,20 @@
         'backLink' => false,
     ])
 
-    <section class="margin-below-breadcrumb">
+    <section class="margin-below-breadcrumb mt-4">
         <div class="container">
-            <div class="row align-items-center gy-5 gy-lg-0">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="section-title fw-bold mb-4">Zgłoszenia serwisowe, reklamcje</h1>
+                    <p class="paragraph mb-4">W celu złożenia reklamacji prosimy wypełnić formularz.</p>
+                </div>
+                <div class="col-12 mt-5">
+                    <iframe src="https://epdevelopment.voxdeveloper.com/webservice/faultnoticeform/api_key/e493bcb15b45cdf33368db18440023f4d806a6b3" frameborder="0" class="w-100" style="height: 1730px"></iframe>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center gy-5 gy-lg-0 d-none">
                 <div class="col-12 col-lg-5 col-xxl-4">
                     <div class="complaint-box">
                         <h1 class="section-title fw-bold mb-4">Zgłoszenia serwisowe, <br /> reklamcje</h1>
@@ -19,6 +30,7 @@
                             zgłoś reklamację
                         </a>
                     </div>
+
                 </div>
                 <div class="col-12 col-lg-6 offset-lg-1 offset-xxl-2">
                     <div class="" data-aos="fade" data-aos-delay="200">
@@ -31,4 +43,5 @@
             </div>
         </div>
     </section>
+    <style>#footer{margin-top:60px !important;}</style>
 @endsection
