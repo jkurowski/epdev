@@ -95,7 +95,7 @@
             </div>
             <div id="invest-arrows-1"></div>
 
-            <div class="investment-carousel-2 margin-below-breadcrumb">
+            <div class="investment-carousel-2 margin-below-breadcrumb mt-5">
                 @foreach($investment->sections->skip(2)->take(2) as $section)
                     <section>
                         <div class="container">
