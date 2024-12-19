@@ -100,7 +100,7 @@
                     <section>
                         <div class="container">
                             <div class="row gy-5 gy-lg-0 align-items-center flex-row-reverse">
-                                <div class="col-12 col-lg-5">
+                                <div class="col-12 col-lg-6">
                                     <div class="d-flex flex-column gap-4">
                                         @if($section->title)
                                             <div class="title-container">
@@ -115,7 +115,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-6 offset-lg-1 d-flex">
+                                <div class="col-12 col-lg-6 d-flex">
                                     @if($section->file)
                                         <picture>
                                             <source type="image/webp" srcset="{{asset('investment/sections/webp/'.$section->file_webp) }}">
