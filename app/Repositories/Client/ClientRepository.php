@@ -116,7 +116,14 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
         Log::info('Request: ' . $attributes['email']);
         Log::info('Request: ' . $attributes['phone']);
         Log::info('Request: ' . $attributes['name']);
-        Log::info('Request: ' . $status);
+
+        if (!empty($attributes['lastname'])) {
+            Log::info('Request: ' . $attributes['lastname']);
+        } else {
+            Log::info('Request: lastname not provided');
+        }
+
+        Log::info('Request status: ' . $status);
 
         try {
             // Additional logging before updateOrCreate
@@ -140,20 +147,32 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
                 // Client exists, update attributes
                 $client->phone = $attributes['phone'] ?? null;
                 $client->name = $attributes['name'];
+                $client->lastname = $attributes['lastname'] ?? null;
                 $client->status = $status;
                 $client->updated_at = now();
 
                 // Save and trigger the 'updated' event
+                if ($this->isCompany($attributes)) {
+                    $this->storeCompanyFields($attributes, $client);
+                }
+
                 $client->save();
             } else {
                 // Client does not exist, set attributes
                 $client->phone = $attributes['phone'] ?? null;
                 $client->name = $attributes['name'];
+                $client->lastname = $attributes['lastname'] ?? null;
                 $client->status = $status;
-                $client->created_at = now(); // Optional: set created_at manually if needed
+                $client->created_at = now();
                 $client->updated_at = now();
+                $client->email_tracking_id = Str::uuid()->toString();
+
 
                 // Save and trigger the 'created' event
+                if ($this->isCompany($attributes)) {
+                    $this->storeCompanyFields($attributes, $client);
+                }
+
                 $client->save();
             }
 
@@ -197,12 +216,13 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
                 $arguments['is_external'] = $attributes['is_external_source'];
             }
 
-            $arguments = array_merge(
-                $arguments,
-                ['investment_id' => $attributes['investment_id']],
-                ['investment_name' => $attributes['investment_name']]
-            );
-
+            if (isset($attributes['investment_id']) && isset($attributes['investment_name'])) {
+                $arguments = array_merge(
+                    $arguments,
+                    ['investment_id' => $attributes['investment_id']],
+                    ['investment_name' => $attributes['investment_name']]
+                );
+            }
             if (isset($attributes['property_name'])) {
                 $arguments = array_merge($arguments, ['property_name' => $attributes['property_name']]);
             }
@@ -212,10 +232,16 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
             }
 
             $msg->save();
-        }
+        } else {
+            $msg = ClientMessage::create([
+                'client_id' => $client->id,
+                'message' => 'Klient dodany w systemie',
+                'ip' => '127.0.0.1',
+                'source' => 'Formularz w systemie',
+            ]);
 
-        $client->email_tracking_id = Str::uuid()->toString();
-        $client->save();
+            $msg->save();
+        }
 
         return $client;
     }
