@@ -44,8 +44,10 @@ class ContactFormsController extends Controller
         $validated['property_name'] = $request->input('property_name');
         $validated['page'] = url()->current();
 
-        $this->clientRepository->createClient($validated);
+        $client = $this->clientRepository->createClient($validated);
         $this->sendToVox($validated);
+
+        Mail::to(settings()->get("page_email"))->send(new ChatSend($request, $client));
 
         return redirect()->back()->with('success', 'Formularz został wysłany pomyślnie.');
     }
