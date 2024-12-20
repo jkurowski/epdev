@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ChatSend;
 use App\Mail\VoxContactMail;
 use App\Models\RodoRules;
 use App\Repositories\Client\ClientRepository;
@@ -90,8 +91,10 @@ class ContactFormsController extends Controller
         $validated['property_name'] = $request->input('property_name');
         $validated['page'] = url()->current();
 
-        $this->clientRepository->createClient($validated);
+        $client = $this->clientRepository->createClient($validated);
         $this->sendToVox($validated);
+
+        Mail::to(settings()->get("page_email"))->send(new ChatSend($request, $client));
 
         return response()->json([
             'success' => true,
