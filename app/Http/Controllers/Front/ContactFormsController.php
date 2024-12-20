@@ -141,37 +141,36 @@ class ContactFormsController extends Controller
 
         // Check if rule_1 exists in the validated array
         if (isset($validated['rule_1']) && $validated['rule_1']) {
-            $rule = RodoRules::find($validated['rule_1']);
+            $rule = RodoRules::find(1);
             if ($rule) {
                 $rules[] = [
                     'title' => $rule->title,
-                    'description' => $rule->text,
+                    'description' => strip_tags($rule->text),
                 ];
             }
         }
 
         // Check if rule_2 exists in the validated array
         if (isset($validated['rule_2']) && $validated['rule_2']) {
-            $rule = RodoRules::find($validated['rule_2']);
+            $rule = RodoRules::find(2);
             if ($rule) {
                 $rules[] = [
                     'title' => $rule->title,
-                    'description' => $rule->text,
+                    'description' => strip_tags($rule->text),
                 ];
             }
         }
 
         // Check if rule_3 exists in the validated array
         if (isset($validated['rule_3']) && $validated['rule_3']) {
-            $rule = RodoRules::find($validated['rule_3']);
+            $rule = RodoRules::find(3);
             if ($rule) {
                 $rules[] = [
                     'title' => $rule->title,
-                    'description' => $rule->text,
+                    'description' => strip_tags($rule->text),
                 ];
             }
         }
-
         return $rules;
     }
 }
