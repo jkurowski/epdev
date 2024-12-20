@@ -151,11 +151,6 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
                 $client->status = $status;
                 $client->updated_at = now();
 
-                // Save and trigger the 'updated' event
-                if ($this->isCompany($attributes)) {
-                    $this->storeCompanyFields($attributes, $client);
-                }
-
                 $client->save();
             } else {
                 // Client does not exist, set attributes
