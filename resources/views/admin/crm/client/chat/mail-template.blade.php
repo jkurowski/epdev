@@ -28,19 +28,6 @@
             </table>
         </td>
     </tr>
-    @if($signature)
-    <tr>
-        <td style="padding:0 30px">
-            <table align="center" cellpadding="0" cellspacing="0" border="0" width="660" style="margin:0 auto;width:660px;padding:0;border-collapse:collapse;background:white">
-                <tr>
-                    <td style="padding:0 30px 25px">
-                        {!! nl2br($signature) !!}
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    @endif
     <tr>
         <td style="height: 100px" height="100">&nbsp;</td>
     </tr>
