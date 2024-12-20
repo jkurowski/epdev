@@ -167,12 +167,6 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
                 $client->updated_at = now();
                 $client->email_tracking_id = Str::uuid()->toString();
 
-
-                // Save and trigger the 'created' event
-                if ($this->isCompany($attributes)) {
-                    $this->storeCompanyFields($attributes, $client);
-                }
-
                 $client->save();
             }
 
