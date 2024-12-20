@@ -48,11 +48,18 @@ class ContactFormsController extends Controller
         $this->sendToVox($validated);
 
         $email = settings()->get("page_email");
-        $emailArray = json_decode($email, true);
 
-        if (is_array($emailArray) && isset($emailArray[0]['value'])) {
-            $emailAddress = $emailArray[0]['value'];
-            Mail::to($emailAddress)->send(new ChatSend($request, $client));
+        if (!is_array($email)) {
+            $email = json_decode($email, true); // Decode JSON string if not already an array
+        }
+
+        if (is_array($email)) {
+            foreach ($email as $entry) {
+                if (isset($entry['value'])) {
+                    $emailAddresses[] = $entry['value'];
+                }
+            }
+            Mail::to($emailAddresses)->send(new ChatSend($request, $client));
         }
 
         return redirect()->back()->with('success', 'Formularz został wysłany pomyślnie.');
@@ -103,11 +110,18 @@ class ContactFormsController extends Controller
         $this->sendToVox($validated);
 
         $email = settings()->get("page_email");
-        $emailArray = json_decode($email, true);
 
-        if (is_array($emailArray) && isset($emailArray[0]['value'])) {
-            $emailAddress = $emailArray[0]['value'];
-            Mail::to($emailAddress)->send(new ChatSend($request, $client));
+        if (!is_array($email)) {
+            $email = json_decode($email, true); // Decode JSON string if not already an array
+        }
+
+        if (is_array($email)) {
+            foreach ($email as $entry) {
+                if (isset($entry['value'])) {
+                    $emailAddresses[] = $entry['value'];
+                }
+            }
+            Mail::to($emailAddresses)->send(new ChatSend($request, $client));
         }
 
         return response()->json([
