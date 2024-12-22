@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
             duration: 1000,
             // once: true,
         });
-
+    innerWidth<1199.98
     window.matchMedia('(max-width: 1399px)').matches &&
         AOS.init({
             offset: 120,
@@ -619,6 +619,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function updateViewBasedOnScreenSize() {
+            if (!pillsTab) return; // Exit the function if pillsTab does not exist
+
             if (window.innerWidth < 1199.98) {
                 setColumnView();
                 pillsTab.style.display = 'none';

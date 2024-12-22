@@ -36,6 +36,7 @@ class ContactFormsController extends Controller
             'rule_2' => 'integer',
             'rule_3' => 'integer',
             'rule_5' => 'integer',
+            'g-recaptcha-response' => ['required', new ReCaptchaV3()]
         ]);
 
         $validated['is_external'] = false;
