@@ -21,8 +21,18 @@
             <table align="center" cellpadding="0" cellspacing="0" border="0" width="660" style="margin:0 auto;width:660px;padding:0;border-collapse:collapse;background:white">
                 <tr>
                     <td style="font-family:Arial;font-size:14px;padding:25px 30px;line-height:24px">
-                        <p>Witaj <b>{{ $client->name }}</b>,</p>
-                        <p>{!! $request->message !!}</p>
+                        <p style="text-align:center">{{ config('app.name') }}</p>
+                        <p><b>Wiadomość wysłana: <?= date("d.m.Y - H:i:s"); ?> ze strony: {{ $request->form_page }}</b></p>
+                        <hr style="border:0;border-bottom:1px solid #ececec" />
+                        <p><b>Imię:</b> {{ $request->name }}</p>
+                        <p><b>E-mail:</b> {{ $request->email }}</p>
+                        @isset($request->phone)<p style="margin:0"><b>Telefon:</b> {{ $request->phone }}</p>@endisset
+                        @isset($request->investment_name)<p style="margin:0"><b>Inwestycja:</b> {{ $request->investment_name }}</p>@endisset
+                        @isset($request->property_name)<p style="margin:0"><b>Lokal:</b> {{ $request->property_name }}</p>@endisset
+                        @isset($request->city)<p style="margin:0"><b>Miasto:</b> {{ $request->city }}</p>@endisset
+                        @isset($request['area-min'])<p style="margin:0"><b>Zakres pow.:</b> {{ $request['area-min'] }} - {{ $request['area-max'] }}</p>@endisset
+                        <hr style="border:0;border-bottom:1px solid #ececec" />
+                        <p>{{ $request->message }}</p>
                     </td>
                 </tr>
             </table>

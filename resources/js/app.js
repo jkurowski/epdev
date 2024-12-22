@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
+// Easing
+jQuery.easing.jswing=jQuery.easing.swing,jQuery.extend(jQuery.easing,{def:"easeInOutExpo",swing:function(e,n,u,i,r){return jQuery.easing[jQuery.easing.def](e,n,u,i,r)},easeInOutExpo:function(e,n,u,i,r){return 0===n?u:n===r?u+i:(n/=r/2)<1?i/2*Math.pow(2,10*(n-1))+u:i/2*(2-Math.pow(2,-10*--n))+u}});
+
 document.addEventListener('DOMContentLoaded', function () {
     let slickSettings = {
         dots: false,

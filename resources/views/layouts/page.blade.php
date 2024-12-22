@@ -24,11 +24,11 @@
     {{-- <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
     {{-- <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet"> --}}
 
-    <script type="module" src="{{ asset('build/assets/app-B39JUJd6.js') }}"></script>
+    <script type="module" src="{{ asset('build/assets/app-J2vkHPev.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('build/assets/app-Banrqkr2.css') }}" />
-    <link rel="stylesheet" href="{{ asset('build/assets/app-PRIwpe7b.css') }}" />
+    <link rel="stylesheet" href="{{ asset('build/assets/app-Cqpn3nfT.css') }}" />
 
-    {{--    @vite()--}}
+{{--    @vite()--}}
 
     @stack('styles')
 

@@ -12,21 +12,27 @@
     @foreach ($required_rodo_rules as $rule)
         <div class="accordion-item">
             <h2 class="accordion-header" id="heading_rule_{{ $rule->id }}">
-                <input type="checkbox" id="rule_{{ $rule->id }}" name="rule_{{ $rule->id }}" value="1"
-                    class="form-check-input term-checkbox"
-                    @if ($rule->required === 1) class="validate[required]" @endif data-prompt-position="topLeft:0"
-                    onclick="event.stopPropagation();">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse_rule_{{ $rule->id }}" aria-expanded="false"
-                    aria-controls="collapse_rule_{{ $rule->id }}">
+                <input type="checkbox" id="rule_{{ $rule->id }}"
+                       name="rule_{{ $rule->id }}"
+                       value="1"
+                       class="form-check-input term-checkbox @if ($rule->required === 1) validate[required] @endif"
+                       data-prompt-position="topLeft:0"
+                       onclick="event.stopPropagation();">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse_rule_{{ $rule->id }}"
+                        aria-expanded="false"
+                        aria-controls="collapse_rule_{{ $rule->id }}">
                     <label for="rule_{{ $rule->id }}" class="form-check-label rules-text ms-2">
                         {{ $rule->title }}
                     </label>
                 </button>
             </h2>
             <div id="collapse_rule_{{ $rule->id }}"
-                class="accordion-collapse collapse @error('rule_' . $rule->id) is-invalid @enderror"
-                aria-labelledby="heading_rule_{{ $rule->id }}" data-bs-parent="#{{ $id }}">
+                 class="accordion-collapse collapse @error('rule_' . $rule->id) is-invalid @enderror"
+                 aria-labelledby="heading_rule_{{ $rule->id }}"
+                 data-bs-parent="#{{ $id }}">
                 <div class="accordion-body">
                     {!! $rule->text !!}
                     @error('rule_' . $rule->id)

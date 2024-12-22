@@ -7,6 +7,7 @@ use App\Mail\ChatSend;
 use App\Mail\VoxContactMail;
 use App\Models\RodoRules;
 use App\Repositories\Client\ClientRepository;
+use App\Rules\ReCaptchaV3;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -97,6 +98,7 @@ class ContactFormsController extends Controller
             'rule_2' => 'integer',
             'rule_3' => 'integer',
             'rule_5' => 'integer',
+            'g-recaptcha-response' => ['required', new ReCaptchaV3()]
         ], $messages);
 
         $validated['is_external'] = false;
