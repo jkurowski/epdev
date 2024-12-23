@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front\Developro;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\Floor;
 use App\Models\Investment;
 use App\Models\Page;
@@ -50,6 +51,27 @@ class InvestmentPropertyController extends Controller
 
             // Construct the redirect URL with query parameters
             $redirectUrl = route('front.developro.show', ['citySlug' => $citySlug, 'slug' => $investmentSlug]);
+
+            // Append the query string to the URL
+            if (!empty($queryString)) {
+                $redirectUrl .= '?' . $queryString;
+            }
+
+            // Redirect to the investment show page with the additional query parameters
+            return redirect()->to($redirectUrl.'#mieszkania');
+        }
+
+        if (!$citySlug && $investmentSlug) {
+            // Prepare the query parameters to include all except 'apartments-city' and 'apartments-invest'
+            $queryParams = $request->except(['apartments-city', 'apartments-invest']);
+
+            // Build the query string
+            $queryString = http_build_query($queryParams);
+            $investment = Investment::where('slug', '=', $investmentSlug)->first();
+            $city = City::find($investment->city_id);
+
+            // Construct the redirect URL with query parameters
+            $redirectUrl = route('front.developro.show', ['citySlug' => $city->slug, 'slug' => $investmentSlug]);
 
             // Append the query string to the URL
             if (!empty($queryString)) {
