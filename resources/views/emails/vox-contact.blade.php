@@ -46,3 +46,15 @@
         {{ strtoupper(isset($item['title_vox']) ? $item['title_vox'] : 'Brak tytułu') }} &nbsp; ({{ isset($item['description']) ? $item['description'] : 'Brak opisu' }}) <br>
     @endforeach
 @endif
+@if ($data['area_from'])
+    <br><br>
+    POWIERZCHNIA_OD:<br>
+    {{ $data['area_from'] }}
+@endif
+<br><br>
+@if ($data['area_to'])
+    <br><br>
+    POWIERZCHNIA_DO:<br>
+    {{ $data['area_to'] }}
+@endif
+
