@@ -160,6 +160,7 @@ class ContactFormsController extends Controller
             "name" => $validated['name'] ?? null,
             "email" => $validated['email'] ?? null,
             "phone" => $validated['phone'] ?? null,
+            "city" => $validated['city'] ?? null,
             "message" => $validated['message'] ?? null,
             "agreements" => []
         ];

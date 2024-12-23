@@ -15,6 +15,7 @@ class RodoRules extends Model
 
     protected $fillable = [
         'title',
+        'title_vox',
         'text',
         'required',
         'time',

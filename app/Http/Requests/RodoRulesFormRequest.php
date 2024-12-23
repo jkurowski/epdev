@@ -25,6 +25,7 @@ class RodoRulesFormRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
+            'title_vox' => 'nullable|string|max:255',
             'time' => 'numeric',
             'text' => 'required',
             'required' => 'boolean',

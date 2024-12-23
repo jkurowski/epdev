@@ -14,6 +14,11 @@
     {{ $data['investment_name'] }}
 @endif
 <br><br>
+@if ($data['city'])
+    MIASTO:<br>
+    {{ $data['city'] }}
+@endif
+<br><br>
 @if ($data['name'])
     IMIE:<br>
     {{ $data['name'] }}
@@ -38,6 +43,6 @@
     ZGODY:
     <br>
     @foreach ($data['agreements'] as $item)
-        {{ strtoupper(isset($item['title']) ? $item['title'] : 'Brak tytułu') }} &nbsp; ({{ isset($item['description']) ? $item['description'] : 'Brak opisu' }}) <br>
+        {{ strtoupper(isset($item['title_vox']) ? $item['title_vox'] : 'Brak tytułu') }} &nbsp; ({{ isset($item['description']) ? $item['description'] : 'Brak opisu' }}) <br>
     @endforeach
 @endif

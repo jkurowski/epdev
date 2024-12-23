@@ -32,12 +32,18 @@
                                     <div class="row w-100 form-group">
                                         @include('form-elements.html-input-text', ['label' => 'Nazwa regułki', 'name' => 'title', 'value' => $entry->title, 'required' => 1, 'readonly' => 'readonly'])
                                     </div>
+                                    <div class="row w-100 form-group">
+                                        @include('form-elements.html-input-text', ['label' => 'Nazwa regułki VOX', 'name' => 'title_vox', 'value' => $entry->title_vox, 'required' => 1, 'readonly' => 'readonly'])
+                                    </div>
                                 @else
                                     <div class="row w-100 form-group">
                                         @include('form-elements.html-select', ['label' => 'Wymagane', 'name' => 'required', 'selected' => $entry->required, 'select' => ['1' => 'Tak', '0' => 'Nie']])
                                     </div>
                                     <div class="row w-100 form-group">
                                         @include('form-elements.html-input-text', ['label' => 'Nazwa regułki', 'name' => 'title', 'value' => $entry->title, 'required' => 1])
+                                    </div>
+                                    <div class="row w-100 form-group">
+                                        @include('form-elements.html-input-text', ['label' => 'Nazwa regułki VOX', 'name' => 'title_vox', 'value' => $entry->title_vox, 'required' => 1, 'readonly' => 'readonly'])
                                     </div>
                                 @endif
                                 <div class="row w-100 form-group">
