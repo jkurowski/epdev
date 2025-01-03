@@ -43,7 +43,7 @@
     ZGODY:
     <br>
     @foreach ($data['agreements'] as $item)
-        {{ strtoupper(isset($item['title_vox']) ? $item['title_vox'] : 'Brak tytułu') }} &nbsp; ({{ isset($item['description']) ? $item['description'] : 'Brak opisu' }}) <br>
+        {{ strtoupper(isset($item['title']) ? $item['title'] : 'Brak tytułu') }} &nbsp; ({{ isset($item['description']) ? $item['description'] : 'Brak opisu' }}) <br>
     @endforeach
 @endif
 @if ($data['area_from'])

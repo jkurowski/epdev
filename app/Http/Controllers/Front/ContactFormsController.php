@@ -36,7 +36,7 @@ class ContactFormsController extends Controller
             'rule_2' => 'integer',
             'rule_3' => 'integer',
             'rule_5' => 'integer',
-            'g-recaptcha-response' => ['required', new ReCaptchaV3()]
+            //'g-recaptcha-response' => ['required', new ReCaptchaV3()]
         ]);
 
         $validated['is_external'] = false;
@@ -160,8 +160,8 @@ class ContactFormsController extends Controller
             "name" => $validated['name'] ?? null,
             "email" => $validated['email'] ?? null,
             "phone" => $validated['phone'] ?? null,
-            "area_from" => $validated['area-max'] ?? null,
-            "area_to" => $validated['area-min'] ?? null,
+            "area_from" => $validated['area-min'] ?? null,
+            "area_to" => $validated['area-max'] ?? null,
             "city" => $validated['city'] ?? null,
             "message" => $validated['message'] ?? null,
             "agreements" => []
@@ -181,7 +181,7 @@ class ContactFormsController extends Controller
             $rule = RodoRules::find(1);
             if ($rule) {
                 $rules[] = [
-                    'title' => $rule->title,
+                    'title' => $rule->title_vox,
                     'description' => strip_tags($rule->text),
                 ];
             }
@@ -192,7 +192,7 @@ class ContactFormsController extends Controller
             $rule = RodoRules::find(2);
             if ($rule) {
                 $rules[] = [
-                    'title' => $rule->title,
+                    'title' => $rule->title_vox,
                     'description' => strip_tags($rule->text),
                 ];
             }
@@ -203,7 +203,7 @@ class ContactFormsController extends Controller
             $rule = RodoRules::find(3);
             if ($rule) {
                 $rules[] = [
-                    'title' => $rule->title,
+                    'title' => $rule->title_vox,
                     'description' => strip_tags($rule->text),
                 ];
             }
