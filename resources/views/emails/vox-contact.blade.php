@@ -11,9 +11,16 @@
 
 @if ($data['investment_name'])
     INWESTYCJA:<br>
-    {{ $data['investment_name'] }}
+    {{ $data['investment_name'] }} @if ($data['city']) {{ $data['city'] }} @endif
+    <br><br>
+@else
+    @if ($data['city'])
+    INWESTYCJA:<br>
+    {{ $data['city'] }}
+    <br><br>
+    @endif
 @endif
-<br><br>
+
 @if ($data['name'])
     IMIE:<br>
     {{ $data['name'] }}
@@ -32,11 +39,6 @@
 @if ($data['message'])
     OPIS:<br>
     {{ $data['message'] }}
-@endif
-<br><br>
-@if ($data['city'])
-    MIASTO:<br>
-    {{ $data['city'] }}
 @endif
 <br><br>
 @if (!empty($data['agreements']))
