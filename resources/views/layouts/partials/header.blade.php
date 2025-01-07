@@ -43,7 +43,7 @@
                     {{-- Mieszkania --}}
                     {{--  --}}
                     <li class="nav-item dropdown">
-                        <a href="{{route('front.developro.properties')}}">Mieszkania</a>
+                        <a href="#">Mieszkania</a>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"

@@ -211,7 +211,7 @@
             </section>
         @endif
 
-        <section class="margin-xs bg-custom-gray halfs">
+        <section class="margin-xs bg-custom-gray halfs d-none">
             <div class="half-section half-image">
                 <div class="half-image-cover">
                     <img src="{{ asset('images/half-left.jpg') }}"
@@ -240,7 +240,7 @@
             </div>
         </section>
 
-        <section class="halfs flex-row-reverse">
+        <section class="margin-xs halfs flex-row-reverse">
             <div class="half-section half-image">
                 <div class="half-image-cover">
                     <img src="{{ asset('images/half-right.jpg') }}"
