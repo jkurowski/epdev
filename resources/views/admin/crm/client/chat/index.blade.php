@@ -28,9 +28,9 @@
                                 </div>
                                 <div class="chat-text d-flex flex-wrap">
                                     <div class="chat-text-content w-100">
-                                        {{ $msg->message }}
-                                        <div class="chat-text-desc">Nazwa inwestycji <span class="separator">·</span> Mieszkanie nr. 1 / Pokoje: 4 / 40 m<sup>2</sup></div>
-                                    </div>
+                                        {{ $msg->message }}Nazwa inwestycji <span class="separator">·</span> Mieszkanie nr. 1 / Pokoje: 4 / 40 m<sup>2</sup></div>
+                                </div>
+                                        <div class="chat-text-desc">
                                     <div class="chat-text-date w-50 pt-1 ps-2" title="{{ $msg->created_at }}">{{$msg->created_at->diffForHumans()}}</div>
                                     <div class="chat-text-action w-50 pt-1 pe-2">
                                     </div>
