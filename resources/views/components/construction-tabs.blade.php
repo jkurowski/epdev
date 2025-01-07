@@ -68,7 +68,7 @@
             @foreach ($tab['streets'] as $street)
                 <div class="col-12 col-lg-6 col-xl-4" data-location="{{ $street['data_location'] }}"
                     data-target-box="{{ $street['boxId'] }}">
-                    <div class="construction-box" data-aos="fade-right" data-aos-delay="{{ $index * 50 }}">
+                    <div class="construction-box">
                         <x-picture :defaultSrc="asset('investment/articles/thumbs/' . $street['defaultSrc'])" :alt="$street['alt']" class="img-fluid" />
                         <div class="construction-inner">
 
