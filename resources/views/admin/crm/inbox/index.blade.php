@@ -12,18 +12,6 @@
             </div>
         </div>
 
-        <div class="card-header border-bottom card-nav">
-            <nav class="nav">
-                <a class="nav-link {{ Request::routeIs('admin.crm.inbox.*') ? ' active' : '' }}"
-                    href="{{ route('admin.crm.inbox.index') }}"><span class="fe-check-square"></span>Wszystkie</a>
-                <a class="nav-link {{ Request::routeIs('admin.externalLeads*') ? ' active' : '' }}"
-                    href="{{ route('admin.externalLeads.index') }}"><span class="fe-external-link"></span>Zewnętrzne</a>
-                <a class="nav-link {{ Request::routeIs('admin.crm.assign-leads.*') ? ' active' : '' }}"
-                    href="{{ route('admin.crm.assign-leads.index') }}"><span class="fe-save"></span>Przypisywanie
-                    automatyczne</a>
-            </nav>
-        </div>
-
         <div class="card-header card-nav">
             <nav class="nav">
                 <div class="container-fluid">

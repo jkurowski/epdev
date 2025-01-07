@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="row w-100 mb-4">
-                    <div class="col-6">
+                    <div class="col-4">
                         @include('form-elements.html-select', [
                             'label' => 'Typ inwestycji',
                             'name' => 'type',
@@ -60,7 +60,7 @@
                             ],
                         ])
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         @include('form-elements.html-select', [
                             'label' => 'Status inwestycji',
                             'name' => 'status',
@@ -73,18 +73,7 @@
                             ],
                         ])
                     </div>
-                </div>
-
-                <div class="row w-100 mb-4">
-                    <div class="col-6">
-                        @include('form-elements.html-input-text', [
-                            'label' => 'Adres inwestycji',
-                            'name' => 'address',
-                            'value' => $entry->address,
-                        ])
-                    </div>
-                    <div class="col-6">
-                     
+                    <div class="col-4">
                         @include('form-elements.html-select', [
                             'label' => 'Miasto inwestycji',
                             'name' => 'city_id',
@@ -95,14 +84,24 @@
                 </div>
 
                 <div class="row w-100 mb-4">
-                    <div class="col-6">
+                    <div class="col-6 d-none">
+                        @include('form-elements.html-input-text', [
+                            'label' => 'Adres inwestycji',
+                            'name' => 'address',
+                            'value' => $entry->address,
+                        ])
+                    </div>
+                </div>
+
+                <div class="row w-100 mb-4">
+                    <div class="col-4">
                         @include('form-elements.html-input-text', [
                             'label' => 'Termin rozpoczęcia inwestycji',
                             'name' => 'date_start',
                             'value' => $entry->date_start,
                         ])
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         @include('form-elements.html-input-text', [
                             'label' => 'Termin zakończenia inwestycji',
                             'name' => 'date_end',
@@ -111,7 +110,7 @@
                     </div>
                 </div>
 
-                <div class="row w-100 mb-4">
+                <div class="row w-100 mb-4 d-none">
                     <div class="col-4">
                         @include('form-elements.html-input-text', [
                             'label' => 'Ilość lokali',
@@ -128,14 +127,7 @@
                             'value' => $entry->area_range,
                         ])
                     </div>
-                    <div class="col-4">
-                        @include('form-elements.input-text', [
-                            'label' => 'Zakres pięter w wyszukiwarce',
-                            'sublabel' => '(liczby oddzielone przecinkiem)',
-                            'name' => 'floor_range',
-                            'value' => $entry->floor_range,
-                        ])
-                    </div>
+
                 </div>
 
                 <div class="row w-100 mb-4">
@@ -152,6 +144,14 @@
                         ])
                     </div>
                     <div class="col-4">
+                        @include('form-elements.input-text', [
+                            'label' => 'Zakres pięter w wyszukiwarce',
+                            'sublabel' => '(liczby oddzielone przecinkiem)',
+                            'name' => 'floor_range',
+                            'value' => $entry->floor_range,
+                        ])
+                    </div>
+                    <div class="col-4 d-none">
                         @include('form-elements.html-select', [
                             'label' => 'Pokaż mieszkania jako',
                             'sublabel' => '()',
@@ -164,7 +164,7 @@
                             ],
                         ])
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-none">
                         @include('form-elements.html-select-multiple', [
                             'label' => 'Opiekun inwestycji',
                             'sublabel' => '()',
@@ -176,7 +176,7 @@
                     </div>
                 </div>
 
-                <div class="row w-100 mb-4">
+                <div class="row w-100 mb-4 d-none">
                     <div class="col-12">
                         @include('form-elements.html-input-text', [
                             'label' => 'Opiekunowie inwestycji z portali nieruchomości',
@@ -188,7 +188,7 @@
                     </div>
                 </div>
 
-                <div class="row w-100 mb-4">
+                <div class="row w-100 mb-4 d-none">
                     <div class="col-12">
                         @include('form-elements.html-input-text', [
                             'label' => 'Adres biura sprzedaży',
@@ -227,7 +227,7 @@
                     </div>
                 </div>
 
-                <div class="row w-100 mb-4">
+                <div class="row w-100 mb-4 d-none">
                     @include('form-elements.html-input-text', [
                         'label' => 'Krótki opis na liście',
                         'name' => 'entry_content',

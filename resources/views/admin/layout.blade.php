@@ -127,18 +127,6 @@
                                     </span> Miasta
                                 </a>
                             </li>
-                            <li {{ Request::routeIs('admin.crm.clients.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.crm.clients.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Klienci</a>
-                            </li>
-                            <li {{ Request::routeIs('admin.crm.statistics.*') ? 'class=active' : '' }}>
-                                <a href="{{ route('admin.crm.statistics.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span> Raporty</a>
-                            </li>
                             <li {{ Request::routeIs('admin.crm.inbox.*') ? 'class=active' : '' }}>
                                 <a href="{{ route('admin.crm.inbox.index') }}">
                                     <span class="menu-bullet">
