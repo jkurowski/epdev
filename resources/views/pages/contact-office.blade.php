@@ -37,7 +37,7 @@
     {{--  --}}
     {{-- OFFICES --}}
     {{--  --}}
-    <section class="margin-xs" id="biura">
+    <section class="margin-xs d-none" id="biura">
         <div class="container">
             <x-contact.contact-office-boxes title="Warszawa" :offices="[
                 [
@@ -73,7 +73,7 @@
 
         </div>
     </section>
-    <section class="margin-below-breadcrumb">
+    <section class="margin-below-breadcrumb d-none">
         <div class="container">
             <x-contact.contact-office-boxes title="Nowy Dwór Mazowiecki" :offices="[
 
@@ -114,7 +114,7 @@
     {{--  --}}
     {{-- CONTACT --}}
     {{--  --}}
-    <section class="margin-xs contact-section" id="kontakt">
+    <section class="margin-xs contact-section d-none" id="kontakt">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-lg-center">

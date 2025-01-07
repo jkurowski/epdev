@@ -106,11 +106,6 @@
                         </svg>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="{{ route('pages.contact-office') . '#biura' }}">
-                                    Biura
-                                </a>
-                            </li>
-                            <li>
                                 <a class="dropdown-item" href="{{ route('pages.contact-after-sales') }}">
                                     Obsługa posprzedażowa
                                 </a>
