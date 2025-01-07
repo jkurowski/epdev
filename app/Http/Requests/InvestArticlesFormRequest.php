@@ -27,7 +27,7 @@ class InvestArticlesFormRequest extends FormRequest
             'investment_id' => 'integer',
             'active' => 'boolean',
             'title' => 'required|string|min:2|max:190',
-            'content_entry' => 'required|string|min:5',
+            'content_entry' => 'nullable|string|min:5',
             'content' => 'required|string|min:5',
             'date' => 'required',
             'gallery_id' => 'nullable|integer',

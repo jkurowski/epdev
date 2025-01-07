@@ -110,23 +110,6 @@
                     </div>
                 @endif
                 <div class="row w-100 form-group">
-                    @include('form-elements.html-select', [
-                        'label' => 'Galeria',
-                        'name' => 'gallery_id',
-                        'selected' => $entry->gallery_id,
-                        'select' => $galleries,
-                    ])
-                </div>
-
-                <div class="row w-100 form-group">
-                    @include('form-elements.html-input-text', [
-                        'label' => 'Wprowadzenie',
-                        'name' => 'content_entry',
-                        'value' => $entry->content_entry,
-                        'required' => 1,
-                    ])
-                </div>
-                <div class="row w-100 form-group">
                     @include('form-elements.textarea-fullwidth', [
                         'label' => 'Wprowadź tekst',
                         'name' => 'content',
