@@ -19,6 +19,8 @@
                 <div class="card mt-3">
                     <div class="card-body card-body-rem">
                         <div id="chat">
+                            <div id="messages"></div>
+
                             @foreach($chat as $msg)
                             <div class="chat-box d-flex align-items-end float-end mb-4 flex-row-reverse d-none @if($msg->mark_at) chat-mark @endif" data-msg-id="{{$msg->id}}">
                                 <div class="chat-avatar">
@@ -28,11 +30,16 @@
                                 </div>
                                 <div class="chat-text d-flex flex-wrap">
                                     <div class="chat-text-content w-100">
-                                        {{ $msg->message }}Nazwa inwestycji <span class="separator">·</span> Mieszkanie nr. 1 / Pokoje: 4 / 40 m<sup>2</sup></div>
-                                </div>
-                                        <div class="chat-text-desc">
+                                        {{ $msg->message }}
+                                        <div class="chat-text-desc">Nazwa inwestycji <span class="separator">·</span> Mieszkanie nr. 1 / Pokoje: 4 / 40 m<sup>2</sup></div>
+                                    </div>
                                     <div class="chat-text-date w-50 pt-1 ps-2" title="{{ $msg->created_at }}">{{$msg->created_at->diffForHumans()}}</div>
                                     <div class="chat-text-action w-50 pt-1 pe-2">
+                                        <a role="button" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-menu-dots"><i class="fe-more-horizontal-"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item dropdown-item-replay" href="#">Odpowiedz</a></li>
+                                            <li><a class="dropdown-item dropdown-item-mark" href="#">Oznacz jako ważna</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
