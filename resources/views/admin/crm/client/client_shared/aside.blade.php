@@ -11,9 +11,6 @@
             <li class="list-group-item">Data rejestracji: <b class="float-end">{{$client->created_at}}</b></li>
             @if($client->updated_at)<li class="list-group-item">Ostatnia aktualizacja: <b class="float-end">{{$client->updated_at}}</b></li>@endif
             <li class="list-group-item">&nbsp;</li>
-            <li class="list-group-item">Status sprzedaży: <b class="float-end">🚧</b></li>
-            <li class="list-group-item">Inwestycja: <b class="float-end">🚧</b></li>
-
             <li class="list-group-item">RODO - Zgoda na telefon: {!! clientRule(1, $client->id) !!}</li>
             <li class="list-group-item">RODO - Zgoda na e-mail: {!! clientRule(2, $client->id) !!}</li>
             <li class="list-group-item">RODO - Zgoda na profilowanie: {!! clientRule(3, $client->id) !!}</li>

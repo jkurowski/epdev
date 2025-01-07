@@ -1,11 +1,6 @@
 <div class="card-header card-nav">
     <nav class="nav">
         <a
-            class="nav-link {{ Request::routeIs('admin.crm.clients.show') ? ' active' : '' }}"
-            href="{{ route('admin.crm.clients.show', $client->id) }}">
-            <span class="fe-user"></span> Profil
-        </a>
-        <a
             class="nav-link {{ Request::routeIs('admin.crm.clients.rodo') ? ' active' : '' }}"
             href="{{ route('admin.crm.clients.rodo', $client->id) }}">
             <span class="fe-check-circle"></span> Zgody
