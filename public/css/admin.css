@@ -3337,7 +3337,8 @@ span.actionBtn {
 .badge.room-list-status-2 {
   background: var(--color-reservation);
 }
-.badge.room-list-status-3 {
+.badge.room-list-status-3,
+.badge.room-list-status-5 {
   background: var(--color-sold);
 }
 .badge.room-list-status-4 {
