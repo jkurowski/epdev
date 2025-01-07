@@ -24,11 +24,12 @@
                 </div>
                 <div class="col-lg-8 col-xl-9 offset-lg-1">
                     <div class="" data-aos="fade" data-aos-delay="200">
-
-                        <x-picture webpSmall="images/apartments/ap-7.webp" webpLarge="images/apartments/ap-7@2x.webp"
-                            pngSmall="images/apartments/ap-7.png" pngLarge="images/apartments/ap-7@2x.png"
-                            defaultSrc="images/apartments/ap-7@2x.png" alt="EP Development Blok mieszkalny"
-                            class="img-fluid" />
+                        <img src="{{ asset('images/kontakt.jpg') }}"
+                             width="970"
+                             height="640"
+                             alt="EP Development Blok mieszkalny"
+                             class="img-fluid"
+                        >
                     </div>
                 </div>
             </div>

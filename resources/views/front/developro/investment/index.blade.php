@@ -64,19 +64,17 @@
         </div>
     </section>
 
-    <div class="container margin-below-breadcrumb">
+    <div class="container margin-below-breadcrumb" id="list">
         <div class="text-lg-center">
             <div class="header-section" data-aos="fade">Inwestycje - {{ $city->name }}</div>
         </div>
     </div>
-  
 
     <section class="mt-5">
         <div class="container">
             @include('components.currently-for-sale-list', [
                 'items' => $list,
             ])
-
         </div>
     </section>
 @endsection

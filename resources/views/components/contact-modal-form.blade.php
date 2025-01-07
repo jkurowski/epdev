@@ -17,24 +17,22 @@
             {{-- Name Field --}}
             <div class="col-12">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="user-name" placeholder="Imię i nazwisko"
-                           name="name" />
-                    <label for="user-name">Imię i nazwisko*</label>
+                    <input type="text" class="form-control" id="user-name" placeholder="Imię i nazwisko" name="name" required />
+                    <label for="user-name">Imię i nazwisko <span class="required">*</span></label>
                 </div>
             </div>
 
             {{-- Email and Phone Fields --}}
             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="user-email" placeholder="Adres e-mail" name="email"
-                           required />
-                    <label for="user-email">Adres e-mail*</label>
+                    <input type="email" class="form-control" id="user-email" placeholder="Adres e-mail" name="email" required />
+                    <label for="user-email">Adres e-mail <span class="required">*</span></label>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <div class="form-floating mb-3">
                     <input type="tel" class="form-control" id="user-tel" placeholder="Telefon" name="phone" />
-                    <label for="user-tel">Telefon*</label>
+                    <label for="user-tel">Telefon <span class="required">*</span></label>
                 </div>
             </div>
 
@@ -55,7 +53,7 @@
             <div class="col-12">
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Wiadomość" id="user-message" style="height: 100px" name="message"></textarea>
-                    <label for="user-message">Wiadomość</label>
+                    <label for="user-message">Wiadomość <span class="required">*</span></label>
                 </div>
             </div>
 
@@ -64,7 +62,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ZAMKNIJ</button>
+        <button type="button" class="btn btn-primary btn-submit" data-bs-dismiss="modal">ZAMKNIJ</button>
         <button type="submit" class="btn btn-primary btn-submit">WYŚLIJ WIADOMOŚĆ
             <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293">
                 <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24" d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z" transform="translate(4.553 8.293) rotate(180)" fill="currentColor" />

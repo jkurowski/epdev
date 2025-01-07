@@ -11,7 +11,6 @@
                                 pngSmall="images/reusable/footer-logo.png" pngLarge="images/reusable/footer-logo@2x.png"
                                 defaultSrc="images/reusable/footer-logo@2x.png" alt="Logo EP Development"
                                 class="img-fluid" />
-
                         </div>
                         <div class="col-6">
                             <div class="footer-logo-title">
@@ -20,7 +19,7 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="d-flex align-items-center justify-content-center mt-5">
-                                <a href="{{ route('pages.contact-office') . '#kontakt' }}" class="btn btn-footer">napisz do nas</a>
+                                <a href="#modalContact" data-bs-toggle="modal" data-bs-target="#modalContact" class="btn btn-footer">napisz do nas</a>
                             </div>
                         </div>
                     </div>

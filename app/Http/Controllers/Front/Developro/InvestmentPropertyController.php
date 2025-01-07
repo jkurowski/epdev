@@ -42,6 +42,11 @@ class InvestmentPropertyController extends Controller
         $citySlug = $request->input('apartments-city');
         $investmentSlug = $request->input('apartments-invest');
 
+        if ($citySlug && $investmentSlug == null) {
+            $redirectUrl = route('front.developro.index', ['citySlug' => $citySlug]);
+            return redirect()->to($redirectUrl.'#list');
+        }
+
         if ($citySlug && $investmentSlug) {
             // Prepare the query parameters to include all except 'apartments-city' and 'apartments-invest'
             $queryParams = $request->except(['apartments-city', 'apartments-invest']);
@@ -58,7 +63,7 @@ class InvestmentPropertyController extends Controller
             }
 
             // Redirect to the investment show page with the additional query parameters
-            return redirect()->to($redirectUrl.'#mieszkania');
+            return redirect()->to($redirectUrl.'#top');
         }
 
         if (!$citySlug && $investmentSlug) {
@@ -79,7 +84,7 @@ class InvestmentPropertyController extends Controller
             }
 
             // Redirect to the investment show page with the additional query parameters
-            return redirect()->to($redirectUrl.'#mieszkania');
+            return redirect()->to($redirectUrl.'#top');
         }
 
         $page = Page::where('id', $this->pageId)->first();

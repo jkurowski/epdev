@@ -27,7 +27,7 @@
     <script src="{{ asset('/js/jquery.min.js') }}" charset="utf-8"></script>
     <script type="module" src="{{ asset('build/assets/app-C1yeRISt.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('build/assets/app-Banrqkr2.css') }}" />
-    <link rel="stylesheet" href="{{ asset('build/assets/app-Cqpn3nfT.css') }}" />
+    <link rel="stylesheet" href="{{ asset('build/assets/app-zo75ZDso.css') }}" />
 
 {{--    @vite()--}}
 
