@@ -69,12 +69,16 @@
                 <div class="col-12 col-lg-6 col-xl-4" data-location="{{ $street['data_location'] }}"
                     data-target-box="{{ $street['boxId'] }}">
                     <div class="construction-box">
-                        <x-picture :defaultSrc="asset('investment/articles/thumbs/' . $street['defaultSrc'])" :alt="$street['alt']" class="img-fluid" />
+                        <div class="position-relative">
+                            @if($street['subtitle'])
+                                <div class="date-start date-start-sm">{{ $street['subtitle'] }}</div>
+                            @endif
+                            <x-picture :defaultSrc="asset('investment/articles/thumbs/' . $street['defaultSrc'])" :alt="$street['alt']" class="img-fluid" />
+                        </div>
                         <div class="construction-inner">
 
                             <div class="construction-date">{{ $street['date'] }}</div>
                             <div class="construction-title">{{ $street['name'] }}</div>
-                            <p class="construction-subtitle">{{ $street['subtitle'] }}</p>
                             <hr class="construction-hr" />
                             <a href="{{ $street['href'] }}" class="construction-btn">
                                 SPRAWDŹ

@@ -8,13 +8,18 @@
     'subtitle' => 'Location',
     'title' => 'Title',
     'link' => '#',
+    'start' => '',
     'file_thumb' => ''
 ])
 
 <div class="col-lg-6 position-relative">
     <div class="currently-for-sale-box" data-aos="fade">
-        <div class="image">
+        <div class="image position-relative">
             <img class="img-fluid currently-for-sale--img" src="{{asset('investment/thumbs/'. $file_thumb) }}" alt="{{ $title }}">
+
+            @if($start)
+                <div class="date-start">{{ $start }}</div>
+            @endif
         </div>
         <div class="subtitle mt-3">{{ $subtitle }}</div>
         <div class="title-box d-flex justify-content-between align-items-center">
