@@ -38,7 +38,7 @@
         <div class="col-12">
             <div class="form-floating mb-3">
                 <input type="text" class="validate[required] form-control" id="user-name" placeholder="Imię i nazwisko" name="name" />
-                <label for="user-name">Imię i nazwisko*</label>
+                <label for="user-name">Imię i nazwisko <span class="required">*</span></label>
             </div>
         </div>
 
@@ -46,13 +46,13 @@
         <div class="col-12 ">
             <div class="form-floating mb-3">
                 <input type="email" class="validate[required] form-control" id="user-email" placeholder="Adres e-mail" name="email" required />
-                <label for="user-email">Adres e-mail*</label>
+                <label for="user-email">Adres e-mail <span class="required">*</span></label>
             </div>
         </div>
         <div class="col-12 ">
             <div class="form-floating mb-3">
                 <input type="tel" class="validate[required] form-control" id="user-tel" placeholder="Telefon" name="phone" />
-                <label for="user-tel">Telefon*</label>
+                <label for="user-tel">Telefon <span class="required">*</span></label>
             </div>
         </div>
 
@@ -61,14 +61,12 @@
             <div class="form-floating">
                 <textarea class="form-control form-control-min" placeholder="Wiadomość" id="user-message" style="height: 100px"
                     name="message">Dzień dobry, interesuje mnie mieszkanie {{$textareaProperty}} w inwestycji {{$textareaInvestment}}. Proszę o kontakt.</textarea>
-                <label for="user-message">Wiadomość</label>
+                <label for="user-message">Wiadomość <span class="required">*</span></label>
             </div>
         </div>
 
-
         {{-- Terms and Conditions Accordion --}}
         <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" :textareaProperty="$textareaProperty" :textareaInvestment="$textareaInvestment" />
-        
 
         {{-- Submit Button --}}
         <div class="col-12 d-flex justify-content-end">
