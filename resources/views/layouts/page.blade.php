@@ -20,6 +20,8 @@
     <meta name="robots" content="@yield('seo_robots', settings()->get('page_robots'))">
     <meta name="author" content="{{ settings()->get('page_author') }}">
 
+    <link rel="shortcut icon" href="/uploads/{{ settings()->get("page_favicon") }}">
+
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     {{-- <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
     {{-- <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet"> --}}
