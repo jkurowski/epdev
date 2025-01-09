@@ -30,12 +30,12 @@
             @else
                 <div class="row g-4 gy-5">
                     @foreach ($allInvestments as $index => $investment)
-                        <div class="col-12 col-lg-4 col-xl-3" data-location="{{ $investment['city']['name'] }}">
+                        <div class="col-12 col-lg-4" data-location="{{ $investment['city']['name'] }}">
                             <a class="investment-box" href="{{ route('front.developro.show', ['citySlug' => $investment['city']['slug'], 'slug' => $investment['slug']]) }}" data-aos="fade-right"
                                 data-aos-delay="{{ $index * 50 }}">
                                 {{-- <x-picture :webpSmall="$investment['webpSmall']" :webpLarge="$investment['webpLarge']" :pngSmall="$investment['pngSmall']" :pngLarge="$investment['pngLarge']"
                                     :defaultSrc="$investment['defaultSrc']" :alt="$investment['alt']" class="img-fluid" /> --}}
-                                    <img class="img-fluid currently-for-sale--img" src="{{asset('investment/thumbs/'.$investment['file_thumb']) }}" alt="{{ $investment['name'] }}">
+                                    <img class="img-fluid mh-100" src="{{asset('investment/thumbs/'.$investment['file_thumb']) }}" alt="{{ $investment['name'] }}">
 
                                 <div class="investment-inner">
                                     <div class="investment-subtitle">{{ $investment['city']['name'] }}</div>
@@ -56,9 +56,9 @@
                 @else
                     <div class="row g-4 gy-5">
                         @foreach ($tab['investments'] as $investment)
-                            <div class="col-12 col-lg-4 col-xl-3" data-location="{{ $investment['city']['name'] }}">
+                            <div class="col-12 col-lg-4" data-location="{{ $investment['city']['name'] }}">
                                 <a class="investment-box" href="{{ route('front.developro.show', ['citySlug' => $investment['city']['slug'], 'slug' => $investment['slug']]) }}">
-                                    <img class="img-fluid currently-for-sale--img" src="{{asset('investment/thumbs/'.$investment['file_thumb']) }}" alt="{{ $investment['name'] }}">
+                                    <img class="img-fluid mh-100" src="{{asset('investment/thumbs/'.$investment['file_thumb']) }}" alt="{{ $investment['name'] }}">
                                         
                                     <div class="investment-inner">
                                         <div class="investment-subtitle">{{ $investment['city']['name'] }}</div>
