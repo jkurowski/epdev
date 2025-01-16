@@ -52,9 +52,14 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'front.'], function () {
 
-    Route::get('/', function () {
-        return redirect()->route('login');
-    })->name('index');
+//    Route::get('/', function () {
+//        return redirect()->route('login');
+//    })->name('index');
+//
+//    Route::get('/', function () {
+//        //return view('pages.homepage');
+//    })->name('homepage');
+//
 
     Route::get('/oferta/{offer}', 'Offer\IndexController@show')->name('show')->middleware('count.views');
     Route::post('/oferta/{offer}/nowy-klient', 'Offer\IndexController@store')->name('store-client');
@@ -166,9 +171,7 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
 
 Route::group(['as' => 'pages.'], function () {
 
-    Route::get('/', function () {
-        return view('pages.homepage');
-    })->name('homepage');
+    Route::get('/', 'App\Http\Controllers\Front\IndexController@index')->name('homepage');
 
     //
     // Apartments

@@ -462,9 +462,10 @@
                             defaultSrc="images/apartments/ap-3@2x.png" alt="EP Development Blok mieszkalny"
                             class="img-fluid" />
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
+
+    {{ Route::currentRouteName() }}
 @endsection

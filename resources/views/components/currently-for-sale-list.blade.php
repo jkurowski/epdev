@@ -8,6 +8,7 @@
                 :subtitle="$item->city->name"
                 :title="$item->name"
                 :start="$item->date_start"
+                :id="$item->id"
                 :link="route('front.developro.show', ['citySlug' => $item->city->slug, 'slug' => $item->slug])"
         />
     @endforeach
