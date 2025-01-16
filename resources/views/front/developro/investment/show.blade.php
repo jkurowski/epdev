@@ -134,6 +134,7 @@
 
         {!! $investment->content !!}
 
+        @if($investment->status == 1))
         <div class="container margin-xs" id="znajdz-swoje-mieszkanie">
             <div class="text-center">
                 <div class="title-tag-sm" data-aos="fade">{{ $investment->name }}</div>
@@ -154,6 +155,8 @@
             </div>
         </div>
         @include('front.developro.investment_shared.list', ['investment' => $investment, 'properties' => $properties])
+        @endif
+
 
         <section class="margin-xs contact-section">
             <div class="container">
@@ -175,7 +178,7 @@
             </div>
         </section>
 
-        @if($progressData->count() > 0)
+        @if($progressData->count() > 0 && $investment->status == 1)
         <section class="margin-xs overflow-x-hidden">
             <div class="container">
                 <div class="header-1 mb-5" data-aos="fade">Postęp prac</div>
