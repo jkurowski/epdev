@@ -137,7 +137,7 @@
                         <div class="title">Piętro:</div>
                     </div>
 
-                    <div class="data">{{ $property->floor->name }}</div>
+                    <div class="data">{{ $property->floor }}</div>
                 </div>
                 <div class="vr"></div>
 
