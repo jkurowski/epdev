@@ -62,7 +62,7 @@
         </div>
 
 
-        @if ($property->file)
+        @if ($property->file && $property->building_name <> 'i' && $property->building_name <> 'J')
             <!-- PICTURE -->
             @php
                 $image_url = '/investment/property/list/' . $property->file;

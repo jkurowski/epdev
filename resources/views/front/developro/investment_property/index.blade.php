@@ -191,7 +191,7 @@
                     @endif
                 </div>
 
-                @if ($property->file_pdf)
+                @if ($property->file_pdf && $property->building_name <> 'i' && $property->building_name <> 'J')
                     @php
                         $pdf_url = asset('/investment/property/pdf/' . $property->file_pdf);
                         if ($property->vox_id) {
