@@ -35,6 +35,7 @@ class RealEstateParser
                     'vox_id' => $propertyData['id'],
                     'name' => 'Mieszkanie ' . ($propertyData['name'] ?? 'N/A'), // Ensure name is always set
                     'number' => $propertyData['name'] ?? null,
+                    'building_name' => $propertyData['building'] ?? null,
                     'status' => $propertyData['status']['id'] ?? null,
                     'area' => $propertyData['area'] ?? null,
                     'area_search' => round($propertyData['area']) ?? null,
@@ -42,6 +43,7 @@ class RealEstateParser
                     'floor_id' => $propertyData['floor'] ?? null,
                     'price' => $propertyData['price']['net'] ?? null,
                     'price_brutto' => $propertyData['price']['gross'] ?? null,
+                    'ask_for_price' => $propertyData['ask_for_price'] ?? 0,
                     'file' => $propertyData['links']['plan'] ?? null,
                     'file_pdf' => $propertyData['links']['card'] ?? null,
                 ];
