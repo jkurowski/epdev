@@ -191,7 +191,7 @@
                     @endif
                 </div>
 
-                @if ($property->file_pdf && $property->building_name <> 'i' && $property->building_name <> 'J')
+                @if ($property->file_pdf)
                     @php
                         $pdf_url = asset('/investment/property/pdf/' . $property->file_pdf);
                         if ($property->vox_id) {
@@ -237,19 +237,20 @@
                                 class="single-apartment-box--img" />
                         </a> --}}
 
-                        @php
-                            $image_url = '/investment/property/list/' . $property->file;
-                            if ($property->vox_id) {
-                                $image_url = $property->file . '.jpg';
-                            }
-                        @endphp
+                        @if($property->building_name <> 'i' && $property->building_name <> 'J')
+                            @php
+                                $image_url = '/investment/property/list/' . $property->file;
+                                if ($property->vox_id) {
+                                    $image_url = $property->file . '.jpg';
+                                }
+                            @endphp
 
 
 
-                        <a href="{{ $image_url }}" data-gallery="single-apartment-gallery" class="glightbox">
-                            <x-picture :defaultSrc="$image_url" class="single-apartment-box--img" />
-                        </a>
-
+                            <a href="{{ $image_url }}" data-gallery="single-apartment-gallery" class="glightbox">
+                                <x-picture :defaultSrc="$image_url" class="single-apartment-box--img" />
+                            </a>
+                        @endif
 
                     </div>
                 </div>
