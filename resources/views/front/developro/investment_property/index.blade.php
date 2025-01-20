@@ -176,7 +176,10 @@
                     <div class="vr"></div>
                 @endif
                 {{-- Price --}}
-                <div class="box price d-none">
+                <div class="box price">
+                    @if ($property->ask_for_price)
+                        <a href="#contact-form">Zapytaj o cenę</a>
+                    @else
                     <div class="title">Cena:</div>
                     <div class="data">
                         @if ($property->promotion_price)
@@ -185,6 +188,7 @@
                             @money($property->price)
                         @endif
                     </div>
+                    @endif
                 </div>
 
                 @if ($property->file_pdf)
@@ -194,7 +198,7 @@
                             $pdf_url = $property->file_pdf;
                         }
                     @endphp
-                    <div class="vr d-none"></div>
+                    <div class="vr"></div>
                     {{-- PDF --}}
                     <div class="box pdf">
                         <a class="btn btn-underline " href="{{ $pdf_url }}" target="_blank">
