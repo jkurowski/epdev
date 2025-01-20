@@ -137,7 +137,7 @@
                         <div class="title">Piętro:</div>
                     </div>
 
-                    <div class="data">{{ $property->floor }}</div>
+                    <div class="data">{{ $property->floor_id }}</div>
                 </div>
                 <div class="vr"></div>
 
@@ -176,7 +176,7 @@
                     <div class="vr"></div>
                 @endif
                 {{-- Price --}}
-                <div class="box price">
+                <div class="box price d-none">
                     <div class="title">Cena:</div>
                     <div class="data">
                         @if ($property->promotion_price)
