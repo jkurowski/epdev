@@ -179,6 +179,7 @@
                 <div class="box price">
                     @if ($property->ask_for_price)
                         <a href="#contact-form">Zapytaj o cenę</a>
+                        <div class="vr"></div>
                     @else
                         @if ($property->price > 0)
                             <div class="title">Cena:</div>
@@ -191,7 +192,6 @@
                             </div>
                             <div class="vr"></div>
                         @endif
-                        <div class="vr"></div>
                     @endif
                 </div>
 
