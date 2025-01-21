@@ -13,6 +13,7 @@
                 <th>Pokoje</th>
                 <th>Powierzchnia (m²)</th>
                 <th>Powierzchnia szukana</th>
+                <th>Pytaj o cenę</th>
                 <th>Cena netto (PLN)</th>
                 <th>Cena brutto (PLN)</th>
             </tr>
@@ -29,6 +30,7 @@
                     <td>{{ $item['rooms'] }}</td>
                     <td>{{ $item['area'] }}</td>
                     <td>{{ round($item['area']) }}</td>
+                    <td>{{ $item['ask_for_price'] }}</td>
                     <td>{{ $item['price']['net'] }}</td>
                     <td>{{ $item['price']['gross'] }}</td>
                 </tr>
