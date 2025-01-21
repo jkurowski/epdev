@@ -30,7 +30,7 @@
                     <td>{{ $item['rooms'] }}</td>
                     <td>{{ $item['area'] }}</td>
                     <td>{{ round($item['area']) }}</td>
-                    <td>{{ $item['ask_for_price'] }}</td>
+                    <td>{{ ($item['ask_for_price'] ?: 'Brak') }}</td>
                     <td>{{ $item['price']['net'] }}</td>
                     <td>{{ $item['price']['gross'] }}</td>
                 </tr>
