@@ -83,6 +83,7 @@ class RealEstateParser
             'area' => (float) $realEstate->area,
             'rooms' => (int) $realEstate->rooms,
             'floor' => (int) $realEstate->floor,
+            'ask_for_price' => (int) $realEstate->ask_for_price,
             'completion_date' => (string) $realEstate->completion_date,
             'price' => [
                 'gross' => (float) $realEstate->price,
