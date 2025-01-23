@@ -37,6 +37,7 @@ class RealEstateParser
                     'number' => $propertyData['name'] ?? null,
                     'building_name' => $propertyData['building'] ?? null,
                     'status' => $propertyData['status']['id'] ?? null,
+                    'active' => $propertyData['active'] ?? null,
                     'area' => $propertyData['area'] ?? null,
                     'area_search' => round($propertyData['area']) ?? null,
                     'rooms' => $propertyData['rooms'] ?? null,
@@ -99,6 +100,7 @@ class RealEstateParser
             'staircase' => (string) $realEstate->staircase,
             'description' => (string) $realEstate->description->asXML(),
             'direction' => (string) $realEstate->direction,
+            'active' => (string) $realEstate->dont_send_to_www,
             'promotion' => [
                 'is_promoted' => (bool) $realEstate->promotion,
                 'price' => (string) $realEstate->promotion_price,

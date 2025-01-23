@@ -61,25 +61,20 @@
 
         </div>
 
+        <!-- PICTURE -->
+        @php
+            $image_url = '/investment/property/list/' . $property->file;
+            if ($property->vox_id) {
+                $image_url = $property->file . '.jpg';
+            }
+        @endphp
 
-        @if ($property->file && $property->building_name <> 'i' && $property->building_name <> 'J')
-            <!-- PICTURE -->
-            @php
-                $image_url = '/investment/property/list/' . $property->file;
-                if ($property->vox_id) {
-                    $image_url = $property->file . '.jpg';
-                }
-            @endphp
+        <div>
 
-            <div>
-
-                <a href="{{ $image_url }}" data-gallery="apartment-gallery" class="glightbox ap-column-glightbox">
-                    <x-picture :defaultSrc="$image_url" class="ap-column--img" />
-                </a>
-            </div>
-        @endif
-
-
+            <a href="{{ $image_url }}" data-gallery="apartment-gallery" class="glightbox ap-column-glightbox">
+                <x-picture :defaultSrc="$image_url" class="ap-column--img" />
+            </a>
+        </div>
 
         <!-- TITLE -->
         <div>
