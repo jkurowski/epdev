@@ -34,7 +34,7 @@ class InvestmentController extends Controller
         //apartments-floor=3&rooms=3&area-min=27&area-max=65#mieszkania
 
         $query->where('investment_id', $investment->id);
-        $query->where('active', 1);
+        $query->where('active', 0);
 
         // Filter properties where the associated investment status is 1
         $query->whereHas('investment', function ($query) {
