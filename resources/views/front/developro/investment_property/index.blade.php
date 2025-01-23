@@ -185,7 +185,7 @@
 
                 {{-- Facilities  --}}
                 @if ($property->balcony_area > 0)
-                    <div class="box facilities ">
+                    <div class="box squares ">
                         <div class="d-flex">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="21.457" height="21.458"
@@ -204,7 +204,7 @@
 
                 {{-- Facilities  --}}
                 @if ($property->terrace_area > 0)
-                    <div class="box facilities ">
+                    <div class="box squares ">
                         <div class="d-flex">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="21.457" height="21.458"
