@@ -72,7 +72,7 @@ class Property extends Model
      */
     public function findNext(int $investment, int $number_order): ?Property
     {
-        return $this->where('investment_id', $investment)->where('number_order', '>', $number_order)->first();
+        return $this->where('investment_id', $investment)->where('vox_id', '>', $number_order)->where('status', 1)->first();
     }
 
     /**
@@ -83,7 +83,7 @@ class Property extends Model
      */
     public function findPrev(int $investment, int $number_order): ?Property
     {
-        return $this->where('investment_id', $investment)->where('number_order', '<', $number_order)->first();
+        return $this->where('investment_id', $investment)->where('vox_id', '<', $number_order)->where('status', 1)->first();
     }
 
     /**

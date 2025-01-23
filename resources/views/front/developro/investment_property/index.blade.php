@@ -25,7 +25,16 @@
     ]" />
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-5">
-            <a href="#" class="btn btn-underline-sm rotate-180">
+            @if($prev)
+                @php
+                    $propertyPrevLink = route('front.developro.property', [
+                        'citySlug' => $investment->city->slug,
+                        'slug' => $investment->slug,
+                        'floor' => $prev->floor_id,
+                        'property' => $prev->id,
+                    ]);
+                @endphp
+            <a href="{{ $propertyPrevLink }}" class="btn btn-underline-sm rotate-180">
                 <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293">
                     <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
                         d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z"
@@ -33,7 +42,20 @@
                 </svg>
                 poprzednie
             </a>
-            <a href="#" class="btn btn-underline-sm">
+            @else
+                <span></span>
+            @endif
+
+            @if($next)
+                @php
+                    $propertyNextLink = route('front.developro.property', [
+                        'citySlug' => $investment->city->slug,
+                        'slug' => $investment->slug,
+                        'floor' => $next->floor_id,
+                        'property' => $next->id,
+                    ]);
+                @endphp
+            <a href="{{ $propertyNextLink }}" class="btn btn-underline-sm">
                 następne
                 <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293">
                     <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
@@ -41,6 +63,9 @@
                         transform="translate(4.553 8.293) rotate(180)" fill="currentColor" />
                 </svg>
             </a>
+            @else
+                <span></span>
+            @endif
         </div>
     </div>
 

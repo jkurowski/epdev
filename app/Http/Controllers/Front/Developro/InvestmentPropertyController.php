@@ -20,20 +20,25 @@ class InvestmentPropertyController extends Controller
         $this->pageId = 2;
     }
     // miasto/{citySlug}/i/{slug}/pietro/{floor}/m/{property}
-    public function index($citySlug, $slug, Floor $floor, Property $property)
+    public function index($citySlug, $slug, $floor, Property $property)
     {
         $property->timestamps = false;
         $property->increment('views');
         $page = Page::where('id', $this->pageId)->first();
         $similarProperties = Property::where('investment_id', $property->investment_id)->where('status', 1)->where('id', '!=', $property->id)->limit(3)->get();
 
+        $next = $property->findNext($property->investment_id, $property->vox_id);
+        $prev = $property->findPrev($property->investment_id, $property->vox_id);
+
         return view('front.developro.investment_property.index', [
-            'floor' => $floor,
+            'floor' => $property->floor_id,
             'property' => $property,
             'investment' => $property->investment,
             'city' => $property->investment->city,
             'similarProperties' => $similarProperties,
-            'page' => $page
+            'page' => $page,
+            'next' => $next,
+            'prev' => $prev
         ]);
     }
 
