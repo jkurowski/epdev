@@ -56,7 +56,7 @@
                 <label for="user-tel">Telefon <span class="required">*</span></label>
             </div>
         </div>
-
+        @if($investment->status == 1 && $investment->show_properties)
         {{-- City Selection --}}
         <x-form-cities />
 
@@ -69,7 +69,7 @@
                 <input type="hidden" name="area-max" id="ap-range-contact-max" value="{{ $maxRoomArea }}">
             </div>
         </div>
-
+        @endif
         {{-- Message Field --}}
         <div class="col-12">
             <div class="form-floating">

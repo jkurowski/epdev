@@ -151,16 +151,15 @@
                             'value' => $entry->floor_range,
                         ])
                     </div>
-                    <div class="col-4 d-none">
+                    <div class="col-4">
                         @include('form-elements.html-select', [
-                            'label' => 'Pokaż mieszkania jako',
+                            'label' => 'Pokaż mieszkania',
                             'sublabel' => '()',
                             'name' => 'show_properties',
                             'selected' => $entry->show_properties,
                             'select' => [
-                                '1' => 'Plan z wyborem i lista',
-                                '2' => 'Tylko lista',
-                                '3' => 'Tylko lista dostępnych',
+                                '1' => 'Tak',
+                                '0' => 'Nie',
                             ],
                         ])
                     </div>

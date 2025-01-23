@@ -3,8 +3,8 @@
     'selectAllId' => 'select-all',
 ])
 
-<div class="form-check mt-4 mb-2 accordion-form-check">
-    <input type="checkbox" id="{{ $selectAllId }}" class="form-check-input select-all-checkbox">
+<div class="form-check mt-4 mb-2 ps-3 accordion-form-check">
+    <input type="checkbox" id="{{ $selectAllId }}" class="form-check-input select-all-checkbox d-none">
     <label for="{{ $selectAllId }}" class="form-check-label">Zaznacz wszystkie zgody</label>
 </div>
 
@@ -16,8 +16,7 @@
                        name="rule_{{ $rule->id }}"
                        value="1"
                        class="form-check-input term-checkbox @if ($rule->required === 1) validate[required] @endif"
-                       data-prompt-position="topLeft:0"
-                       onclick="event.stopPropagation();">
+                       data-prompt-position="topLeft:0">
                 <button class="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
@@ -45,27 +44,26 @@
 
 </div>
 @push('scripts')
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const selectAllCheckbox = document.querySelector(".select-all-checkbox");
+            const termCheckboxes = document.querySelectorAll(".term-checkbox");
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const selectAllCheckbox = document.querySelector(".select-all-checkbox");
-        const termCheckboxes = document.querySelectorAll(".term-checkbox");
+            selectAllCheckbox.addEventListener("change", function () {
+                termCheckboxes.forEach((checkbox) => {
+                    checkbox.checked = selectAllCheckbox.checked;
+                });
+            });
 
-        selectAllCheckbox.addEventListener("change", function() {
             termCheckboxes.forEach((checkbox) => {
-                checkbox.checked = selectAllCheckbox.checked;
+                checkbox.addEventListener("change", function () {
+                    if (!checkbox.checked) {
+                        selectAllCheckbox.checked = false;
+                    } else if (Array.from(termCheckboxes).every((chk) => chk.checked)) {
+                        selectAllCheckbox.checked = true;
+                    }
+                });
             });
         });
-
-        termCheckboxes.forEach((checkbox) => {
-            checkbox.addEventListener("change", function() {
-                if (!checkbox.checked) {
-                    selectAllCheckbox.checked = false;
-                } else if (Array.from(termCheckboxes).every((chk) => chk.checked)) {
-                    selectAllCheckbox.checked = true;
-                }
-            });
-        });
-    });
-</script>
+    </script>
 @endpush

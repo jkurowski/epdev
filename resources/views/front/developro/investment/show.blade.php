@@ -134,7 +134,7 @@
 
         {!! $investment->content !!}
 
-        @if($investment->status == 1))
+        @if($investment->status == 1 && $investment->show_properties)
         <div class="container margin-xs" id="znajdz-swoje-mieszkanie">
             <div class="text-center">
                 <div class="title-tag-sm" data-aos="fade">{{ $investment->name }}</div>
@@ -166,9 +166,11 @@
                             <div class="title-tag-sm mb-2" data-aos="fade" data-aos-delay="150">
                                 EP DEVELOPMENT
                             </div>
-                            <h2 class="header-1" data-aos="fade-up">
-                                Zapytaj o mieszkanie
-                            </h2>
+                            @if($investment->status == 1 && $investment->show_properties)
+                            <h2 class="header-1" data-aos="fade-up">Zapytaj o mieszkanie</h2>
+                            @else
+                                <h2 class="header-1" data-aos="fade-up">Zapytaj o inwestycje</h2>
+                            @endif
                         </div>
                     </div>
                     <div class="col col-lg-8 offset-lg-2 col-xxl-6 offset-xxl-3">
