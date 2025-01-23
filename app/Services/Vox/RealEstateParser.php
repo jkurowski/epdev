@@ -38,6 +38,8 @@ class RealEstateParser
                     'building_name' => $propertyData['building'] ?? null,
                     'status' => $propertyData['status']['id'] ?? null,
                     'active' => $propertyData['active'] ?? null,
+                    'balcony_area' => $propertyData['balcony_area'] ?? null,
+                    'terrace_area' => $propertyData['terrace_area'] ?? null,
                     'area' => $propertyData['area'] ?? null,
                     'area_search' => round($propertyData['area']) ?? null,
                     'rooms' => $propertyData['rooms'] ?? null,
@@ -84,6 +86,8 @@ class RealEstateParser
             'area' => (float) $realEstate->area,
             'rooms' => (int) $realEstate->rooms,
             'floor' => (int) $realEstate->floor,
+            'balcony_area' => (int) $realEstate->balkon,
+            'terrace_area' => (int) $realEstate->taras,
             'ask_for_price' => (int) $realEstate->ask_for_price,
             'completion_date' => (string) $realEstate->completion_date,
             'price' => [

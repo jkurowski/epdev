@@ -94,16 +94,22 @@
             @endif
 
             <!-- TYPE -->
-            
+                @if($property->balcony_area > 0)
                 <div>
                     <div class="info-row">
                         <div>Balkon: </div>
-                        <span>{{ $property->garden_area ? $property->garden_area . ' m<sup>2</sup>' : 'Nie' }}</span>
+                        <span>{{ $property->balcony_area ? $property->balcony_area . ' m<sup>2</sup>' : 'Nie' }}</span>
                     </div>
                 </div>
-           
-
-
+               @endif
+            @if($property->terrace_area > 0)
+                <div>
+                    <div class="info-row">
+                        <div>Taras: </div>
+                        <span>{{ $property->terrace_area ? $property->terrace_area . ' m<sup>2</sup>' : 'Nie' }}</span>
+                    </div>
+                </div>
+            @endif
             <!-- LEVEL -->
 
            

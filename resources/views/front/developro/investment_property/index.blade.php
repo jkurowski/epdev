@@ -204,7 +204,7 @@
                 <div class="box price">
                     @if ($property->ask_for_price)
                         <a href="#contact-form">Zapytaj o cenę</a>
-                        <div class="vr"></div>
+                        <div class="data"></div>
                     @else
                         @if ($property->price > 0)
                             <div class="title">Cena:</div>
@@ -219,7 +219,7 @@
                         @endif
                     @endif
                 </div>
-
+                <div class="vr"></div>
                 @if ($property->file_pdf)
                     @php
                         $pdf_url = asset('/investment/property/pdf/' . $property->file_pdf);
