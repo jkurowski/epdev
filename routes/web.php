@@ -202,9 +202,7 @@ Route::group(['as' => 'pages.'], function () {
     // About us
     //
 
-    Route::get('/o-ep-development', function () {
-        return view('pages.about-ep-development');
-    })->name('about-ep-development');
+    Route::get('/o-ep-development', 'Front\Static\IndexController@about')->name('about-ep-development');
 
     //
     // Construction diary

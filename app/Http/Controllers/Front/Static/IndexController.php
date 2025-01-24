@@ -28,6 +28,12 @@ class IndexController extends Controller
         return view('test-page', compact('investment'));
     }
 
+    public function about()
+    {
+        $completed = Investment::where('status', 2)->get();
+        return view('pages.about-ep-development', compact('completed'));
+    }
+
     public function store(Request $request)
     {
         try {
