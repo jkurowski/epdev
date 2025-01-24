@@ -25,15 +25,45 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 offset-lg-1">
-                {{--  --}}
-                <x-contact-list listTitle="Biuro Sprzedaży Warszawa"
-                    location="ul. Modlińska 201 lok. 32<br />03-122 Warszawa" phoneNumber="+48 531 329 392"
-                    email="lead@epdevelopment.com.pl" />
-                {{--  --}}
-                <x-contact-list listTitle="Biuro Sprzedaży Nowy Dwór Mazowiecki"
-                    location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki" phoneNumber="+48 793 501 501"
-                    phoneNumberSecond="+48 513 231 231" email="lead@epdevelopment.com.pl" />
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-12 col-xxl-6">
+                        {{--  --}}
+                        <x-contact-list listTitle="Biuro Sprzedaży Warszawa"
+                            location="ul. Modlińska 201 lok. 32<br />03-122 Warszawa" phoneNumber="+48 531 329 392"
+                            email="lead@epdevelopment.com.pl" />
+                        {{--  --}}
+                        <x-contact-list listTitle="Biuro Sprzedaży Nowy Dwór Mazowiecki"
+                            location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki" phoneNumber="+48 793 501 501"
+                            phoneNumberSecond="+48 513 231 231" email="lead@epdevelopment.com.pl" />
+                            </div>
+                    <div class="col-12 col-md-6 col-lg-12 col-xxl-6">
+                        {{--  --}}
+                        <x-contact-list listTitle="Siedziba EP Development"
+                            location="ul. Modlińska 201/32<br/>03-122 Warszawa" phoneNumber="+48 517 115 888"
+                            email="sekretariat.waw@epdevelopment.com.pl" />
+                        {{--  --}}
+                        <div class='adjust-margin'>
+                            <x-contact-list listTitle="Oddział EP Development"
+                            location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki" phoneNumber="+48 517 115 777"
+                            phoneNumberSecond="+48 513 231 231" email="sekretariat.ndm@epdevelopment.com.pl" />
+                        </div>
+                        <style>
+                            @media (min-width: 768px) and (max-width: 991px) {
+                                .adjust-margin .list-title {    
+                                    margin-bottom: 3.4rem !important;
+                                }
+                            } 
+                            @media (min-width: 1400px) {
+                                .adjust-margin .list-title {
+                                    margin-bottom: 3.4rem !important;
+                                }
+                            }
+                        </style>
+                    </div>
+                </div>
+
+
                 {{-- TIME --}}
                 <ul class="list-unstyled contacts mt-4">
                     <li class="pb-3 contact-box location">
