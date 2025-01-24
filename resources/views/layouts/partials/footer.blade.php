@@ -7,10 +7,10 @@
                     <div class="row align-items-center">
                         <div class="col-6">
                             <x-picture webpSmall="images/reusable/footer-logo.webp"
-                                webpLarge="images/reusable/footer-logo@2x.webp"
-                                pngSmall="images/reusable/footer-logo.png" pngLarge="images/reusable/footer-logo@2x.png"
-                                defaultSrc="images/reusable/footer-logo@2x.png" alt="Logo EP Development"
-                                class="img-fluid" />
+                                       webpLarge="images/reusable/footer-logo@2x.webp"
+                                       pngSmall="images/reusable/footer-logo.png" pngLarge="images/reusable/footer-logo@2x.png"
+                                       defaultSrc="images/reusable/footer-logo@2x.png" alt="Logo EP Development"
+                                       class="img-fluid" />
                         </div>
                         <div class="col-6">
                             <div class="footer-logo-title">
@@ -30,30 +30,30 @@
                     <div class="col-12 col-md-6 col-lg-12 col-xxl-6">
                         {{--  --}}
                         <x-contact-list listTitle="Biuro Sprzedaży Warszawa"
-                            location="ul. Modlińska 201 lok. 32<br />03-122 Warszawa" phoneNumber="+48 531 329 392"
-                            email="lead@epdevelopment.com.pl" />
+                                        location="ul. Modlińska 201 lok. 32<br />03-122 Warszawa" phoneNumber="+48 531 329 392"
+                                        email="lead@epdevelopment.com.pl" />
                         {{--  --}}
                         <x-contact-list listTitle="Biuro Sprzedaży Nowy Dwór Mazowiecki"
-                            location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki" phoneNumber="+48 793 501 501"
-                            phoneNumberSecond="+48 513 231 231" email="lead@epdevelopment.com.pl" />
-                            </div>
+                                        location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki" phoneNumber="+48 793 501 501"
+                                        phoneNumberSecond="+48 513 231 231" email="lead@epdevelopment.com.pl" />
+                    </div>
                     <div class="col-12 col-md-6 col-lg-12 col-xxl-6">
                         {{--  --}}
                         <x-contact-list listTitle="Siedziba EP Development"
-                            location="ul. Modlińska 201/32<br/>03-122 Warszawa" phoneNumber="+48 517 115 888"
-                            email="sekretariat.waw@epdevelopment.com.pl" />
+                                        location="ul. Modlińska 201/32<br/>03-122 Warszawa" phoneNumber="+48 517 115 888"
+                                        email="sekretariat.waw@epdevelopment.com.pl" />
                         {{--  --}}
                         <div class='adjust-margin'>
                             <x-contact-list listTitle="Oddział EP Development"
-                            location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki" phoneNumber="+48 517 115 777"
-                            phoneNumberSecond="+48 513 231 231" email="sekretariat.ndm@epdevelopment.com.pl" />
+                                            location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki" phoneNumber="+48 517 115 777"
+                                            phoneNumberSecond="+48 513 231 231" email="sekretariat.ndm@epdevelopment.com.pl" />
                         </div>
                         <style>
                             @media (min-width: 768px) and (max-width: 991px) {
-                                .adjust-margin .list-title {    
+                                .adjust-margin .list-title {
                                     margin-bottom: 3.4rem !important;
                                 }
-                            } 
+                            }
                             @media (min-width: 1400px) {
                                 .adjust-margin .list-title {
                                     margin-bottom: 3.4rem !important;
@@ -70,11 +70,11 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                             <g id="Group_1290" data-name="Group 1290" transform="translate(-1092 -6521)">
                                 <circle id="Ellipse_15" data-name="Ellipse 15" cx="16" cy="16" r="16"
-                                    transform="translate(1092 6521)" fill="#d7007a" />
+                                        transform="translate(1092 6521)" fill="#d7007a" />
                                 <g id="clock" transform="translate(1099.514 6528.514)">
                                     <path id="Path_345" data-name="Path 345"
-                                        d="M8.486,0a8.486,8.486,0,1,0,8.486,8.486A8.482,8.482,0,0,0,8.486,0Zm.663,15.616v-.61a.663.663,0,1,0-1.326,0v.61A7.157,7.157,0,0,1,1.357,9.149h.61a.663.663,0,0,0,0-1.326h-.61A7.157,7.157,0,0,1,7.823,1.357v.61a.663.663,0,1,0,1.326,0v-.61a7.157,7.157,0,0,1,6.467,6.467h-.61a.663.663,0,1,0,0,1.326h.61a7.157,7.157,0,0,1-6.467,6.467Zm2.414-4.991a.663.663,0,0,1-.938.938L8.018,8.955a.663.663,0,0,1-.194-.469V4.575a.663.663,0,1,1,1.326,0V8.212Z"
-                                        fill="#fff" />
+                                          d="M8.486,0a8.486,8.486,0,1,0,8.486,8.486A8.482,8.482,0,0,0,8.486,0Zm.663,15.616v-.61a.663.663,0,1,0-1.326,0v.61A7.157,7.157,0,0,1,1.357,9.149h.61a.663.663,0,0,0,0-1.326h-.61A7.157,7.157,0,0,1,7.823,1.357v.61a.663.663,0,1,0,1.326,0v-.61a7.157,7.157,0,0,1,6.467,6.467h-.61a.663.663,0,1,0,0,1.326h.61a7.157,7.157,0,0,1-6.467,6.467Zm2.414-4.991a.663.663,0,0,1-.938.938L8.018,8.955a.663.663,0,0,1-.194-.469V4.575a.663.663,0,1,1,1.326,0V8.212Z"
+                                          fill="#fff" />
                                 </g>
                             </g>
                         </svg>
@@ -87,27 +87,27 @@
                     $footer_text = settings()->get("page_footer_text");
                 @endphp
                 @if($footer_text)
-                {{--  --}}
-                <hr class="footer-divider" />
-                {{--  --}}
-                <ul class="list-unstyled contacts mt-3">
-                    {{-- Location --}}
-                    <li class="pb-3 contact-box location">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34.875" height="34.875"
-                            viewBox="0 0 34.875 34.875">
-                            <path id="Icon_awesome-info-circle" data-name="Icon awesome-info-circle"
-                                d="M18,.563A17.438,17.438,0,1,0,35.438,18,17.44,17.44,0,0,0,18,.563ZM18,8.3a2.953,2.953,0,1,1-2.953,2.953A2.953,2.953,0,0,1,18,8.3Zm3.938,17.859a.844.844,0,0,1-.844.844H14.906a.844.844,0,0,1-.844-.844V24.469a.844.844,0,0,1,.844-.844h.844v-4.5h-.844a.844.844,0,0,1-.844-.844V16.594a.844.844,0,0,1,.844-.844h4.5a.844.844,0,0,1,.844.844v7.031h.844a.844.844,0,0,1,.844.844Z"
-                                transform="translate(-0.563 -0.563)" fill="#d7007a" />
-                        </svg>
-                        <span class="location-info ">
+                    {{--  --}}
+                    <hr class="footer-divider" />
+                    {{--  --}}
+                    <ul class="list-unstyled contacts mt-3">
+                        {{-- Location --}}
+                        <li class="pb-3 contact-box location">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34.875" height="34.875"
+                                 viewBox="0 0 34.875 34.875">
+                                <path id="Icon_awesome-info-circle" data-name="Icon awesome-info-circle"
+                                      d="M18,.563A17.438,17.438,0,1,0,35.438,18,17.44,17.44,0,0,0,18,.563ZM18,8.3a2.953,2.953,0,1,1-2.953,2.953A2.953,2.953,0,0,1,18,8.3Zm3.938,17.859a.844.844,0,0,1-.844.844H14.906a.844.844,0,0,1-.844-.844V24.469a.844.844,0,0,1,.844-.844h.844v-4.5h-.844a.844.844,0,0,1-.844-.844V16.594a.844.844,0,0,1,.844-.844h4.5a.844.844,0,0,1,.844.844v7.031h.844a.844.844,0,0,1,.844.844Z"
+                                      transform="translate(-0.563 -0.563)" fill="#d7007a" />
+                            </svg>
+                            <span class="location-info ">
                             <div class=" text-uppercase pb-2">
                                 <strong>komunikat</strong>
                             </div>
                             <p class="paragraph text-white first-upper">{{ $footer_text }}</p>
                             <style>.first-upper::first-letter {text-transform: uppercase;}</style>
                         </span>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
                 @endif
             </div>
         </div>
