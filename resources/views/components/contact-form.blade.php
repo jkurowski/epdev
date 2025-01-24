@@ -56,20 +56,23 @@
                 <label for="user-tel">Telefon <span class="required">*</span></label>
             </div>
         </div>
-        @if($investment->status == 1 && $investment->show_properties)
-        {{-- City Selection --}}
-        <x-form-cities />
+        @if($investment)
+            @if($investment->status == 1 && $investment->show_properties)
+            {{-- City Selection --}}
+            <x-form-cities />
 
-        {{-- Area Selection --}}
-        <div class="col-12">
-            <div class="form-subtitle mt-3">Powierzchnia</div>
-            <div class="d-flex gap-4 align-items-center justify-content-center">
-                <div id="ap-range-contact" data-range-min="{{ $minRoomArea }}" data-range-max="{{ $maxRoomArea }}"></div>
-                <input type="hidden" name="area-min" id="ap-range-contact-min" value="{{ $minRoomArea }}">
-                <input type="hidden" name="area-max" id="ap-range-contact-max" value="{{ $maxRoomArea }}">
+            {{-- Area Selection --}}
+            <div class="col-12">
+                <div class="form-subtitle mt-3">Powierzchnia</div>
+                <div class="d-flex gap-4 align-items-center justify-content-center">
+                    <div id="ap-range-contact" data-range-min="{{ $minRoomArea }}" data-range-max="{{ $maxRoomArea }}"></div>
+                    <input type="hidden" name="area-min" id="ap-range-contact-min" value="{{ $minRoomArea }}">
+                    <input type="hidden" name="area-max" id="ap-range-contact-max" value="{{ $maxRoomArea }}">
+                </div>
             </div>
-        </div>
+            @endif
         @endif
+
         {{-- Message Field --}}
         <div class="col-12">
             <div class="form-floating">
