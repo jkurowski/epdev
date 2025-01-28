@@ -30,7 +30,9 @@
     <script type="module" src="{{ asset('build/assets/app-C1yeRISt.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('build/assets/app-Banrqkr2.css') }}" />
     <link rel="stylesheet" href="{{ asset('build/assets//app-CWR4YbLS.css') }}" />
-
+    @if(Route::is('pages.homepage'))
+        <link rel="preload" as='image' src="{{asset('images/reusable/bg-hero_mobile.webp')}}">
+    @endif
 {{--    @vite()--}}
 
     @stack('styles')

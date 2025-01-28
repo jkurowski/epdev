@@ -30,9 +30,9 @@
     <section class="search-hero">
 
             <picture>
-                <source media="(max-width: 767.98px)" srcset="{{asset('images/reusable/bg-hero-mobile.webp')}}" type="image/webp">
-                <source media="(min-width: 768px)" srcset="{{asset('images/reusable/bg-hero.webp')}}" type="image/webp">
-                <img src="{{asset('images/reusable/bg-hero.webp')}}" alt="EP Development Blok mieszkalny" class="search-hero--img" width="1920" height="838">
+                <source media="(max-width: 767.98px)" srcset="{{asset('images/reusable/bg-hero-mobile.webp')}}" type="image/webp" width='768' height='800'>
+                <source media="(min-width: 768px)" srcset="{{asset('images/reusable/bg-hero.webp')}}" type="image/webp" width="1920" height="838">
+                <img src="{{asset('images/reusable/bg-hero.webp')}}" alt="EP Development Blok mieszkalny" class="search-hero--img" width="1920" height="838" loading='eager'>
             </picture>
         <div class="container">
             <div class="row justify-content-end">
