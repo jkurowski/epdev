@@ -15,7 +15,7 @@
                         <source media="(max-width: 767.98px)" srcset="{{  $image['mobileSrc']}}">
                     @endif
                     <source media="(min-width: 768px)" srcset="{{ $image['defaultSrc'] }}">
-                    <img src="{{ $image['defaultSrc'] }}" alt="{{$image['alt']}}" class="img-fluid" width="{{isset($image['width']) ? : 1920}}" height="{{isset($image['height']) ? : 1080}}">
+                    <img loading='{{$image['loading']?? 'lazy'}}' src="{{ $image['defaultSrc'] }}" alt="{{$image['alt']}}" class="img-fluid" width="{{isset($image['width']) ? : 1920}}" height="{{isset($image['height']) ? : 1080}}">
                 </picture>
         </div>
     @endforeach
