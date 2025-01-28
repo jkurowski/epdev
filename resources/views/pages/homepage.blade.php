@@ -7,11 +7,13 @@
     @php
         $sliderImages = [
             [
-                'defaultSrc' => 'images/investments/apartamenty-talarowa-3/WARSZAWA, TALAROWA 3, NR.1 (1).jpg',
+                'defaultSrc' => asset('images/investments/apartamenty-talarowa-3/WARSZAWA,%20TALAROWA%203,%20NR.1%20(1).webp'),
+                'mobileSrc' => asset('images/investments/apartamenty-talarowa-3/WARSZAWA,%20TALAROWA%203,%20NR.1%20(1)_mobile.webp'),
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'defaultSrc' => 'images/investments/apartamenty-talarowa-3/WARSZAWA, TALAROWA 3, NR.2 (1).jpg',
+                'defaultSrc' => asset('images/investments/apartamenty-talarowa-3/WARSZAWA,%20TALAROWA%203,%20NR.2%20(1).webp'),
+                'mobileSrc' => asset('images/investments/apartamenty-talarowa-3/WARSZAWA,%20TALAROWA%203,%20NR.2%20(1)_mobile.webp'),
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             // [
@@ -26,9 +28,12 @@
     @endphp
 
     <section class="search-hero">
-        <x-picture webpSmall="images/reusable/bg-hero.webp" webpLarge="images/reusable/bg-hero@2x.webp"
-            pngSmall="images/reusable/bg-hero.png" pngLarge="images/reusable/bg-hero@2x.png"
-            defaultSrc="images/reusable/bg-hero.png" alt="EP Development Blok mieszkalny" class="search-hero--img" />
+
+            <picture>
+                <source media="(max-width: 767.98px)" srcset="{{asset('images/reusable/bg-hero-mobile.webp')}}" type="image/webp">
+                <source media="(min-width: 768px)" srcset="{{asset('images/reusable/bg-hero.webp')}}" type="image/webp">
+                <img src="{{asset('images/reusable/bg-hero.webp')}}" alt="EP Development Blok mieszkalny" class="search-hero--img" width="1920" height="838">
+            </picture>
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-md-8 col-lg-4 col-xxl-2 ">
@@ -86,19 +91,23 @@
     @php
         $sliderImages = [
             [
-                'defaultSrc' => 'images/investments/jarzębinowa-ii/1.jpeg',
+                'defaultSrc' => 'images/investments/jarzębinowa-ii/1.webp',
+                'mobileSrc' => 'images/investments/jarzębinowa-ii/1_mobile.webp',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'defaultSrc' => 'images/investments/jarzębinowa-ii/2.jpeg',
+                'defaultSrc' => 'images/investments/jarzębinowa-ii/2.webp',
+                'mobileSrc' => 'images/investments/jarzębinowa-ii/2_mobile.webp',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'defaultSrc' => 'images/investments/jarzębinowa-ii/3.jpeg',
+                'defaultSrc' => 'images/investments/jarzębinowa-ii/3.webp',
+                'mobileSrc' => 'images/investments/jarzębinowa-ii/3_mobile.webp',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'defaultSrc' => 'images/investments/jarzębinowa-ii/budowa-1.jpg',
+                'defaultSrc' => 'images/investments/jarzębinowa-ii/budowa-1.webp',
+                'mobileSrc' => 'images/investments/jarzębinowa-ii/budowa-1_mobile.webp',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
         ];
@@ -136,19 +145,23 @@
     @php
         $sliderImages = [
             [
-                'defaultSrc' => 'images/investments/osiedle-pogodne/1.jpg',
+                'defaultSrc' => 'images/investments/osiedle-pogodne/1.webp',
+                'mobileSrc' => 'images/investments/osiedle-pogodne/1_mobile.webp',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'defaultSrc' => 'images/investments/osiedle-pogodne/2.jpg',
+                'defaultSrc' => 'images/investments/osiedle-pogodne/2.webp',
+                'mobileSrc' => 'images/investments/osiedle-pogodne/2_mobile.webp',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'defaultSrc' => 'images/investments/osiedle-pogodne/4.jpg',
+                'defaultSrc' => 'images/investments/osiedle-pogodne/4.webp',
+                'mobileSrc' => 'images/investments/osiedle-pogodne/4_mobile.webp',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
             [
-                'defaultSrc' => 'images/investments/osiedle-pogodne/5.jpg',
+                'defaultSrc' => 'images/investments/osiedle-pogodne/5.webp',
+                'mobileSrc' => 'images/investments/osiedle-pogodne/5_mobile.webp',
                 'alt' => 'EP Development Blok mieszkalny',
             ],
         ];

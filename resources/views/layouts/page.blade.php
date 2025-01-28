@@ -38,6 +38,7 @@
 </head>
 
 <body class="bg-custom-full overflow-x-hidden">
+    <img src={{ asset('images/reusable/main-bg.webp')}} alt='' width="1920" height="6280" class="position-absolute" style="z-index: -1">
 {!! settings()->get('scripts_afterbody') !!}
 
 @include('layouts.partials.header')

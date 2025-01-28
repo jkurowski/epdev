@@ -1,3 +1,19 @@
+@props(
+    [
+        'webpSmall' => null,
+        'webpLarge' => null,
+        'pngSmall' => null,
+        'pngLarge' => null,
+        'jpgSmall' => null,
+        'jpgLarge' => null,
+        'defaultSrc' => null,
+        'alt' => '',
+        'class' => '',
+        'width' => null,
+        'height' => null,
+        'loading' => 'lazy',
+    ]
+)
 @if ($webpSmall || $webpLarge || $pngSmall || $pngLarge || $defaultSrc)
     <picture>
         @if ($webpSmall)
@@ -25,7 +41,7 @@
         @endif
 
         @if ($defaultSrc)
-            <img loading="lazy" class="{{ $class }}" src="{{ asset($defaultSrc) }}"
+            <img loading="{{$loading}}" class="{{ $class }}" src="{{ asset($defaultSrc) }}"
                 @if ($width) width="{{ $width }}" @endif
                 @if ($height) height="{{ $height }}" @endif alt="{{ $alt }}" />
         @endif
