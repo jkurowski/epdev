@@ -92,6 +92,8 @@
             if (isValid) {
                 sendModal();
             } else {
+                alert.hide().html('');
+                $("#modalMessage").html('');
                 grecaptcha.reset();
             }
         }
@@ -100,6 +102,7 @@
             // Get the reCAPTCHA token
             const token = grecaptcha.getResponse();
             const alert = $('#formErrors');
+
 
             // Check if the token is available
             if (!token) {
@@ -123,7 +126,9 @@
                 },
                 success: function(response) {
                     $("#modalMessage").html('<div class="alert alert-success m-3 text-center" role="alert">Formularz został wysłany pomyślnie.</div>');
+                    alert.hide().html('');
                     $(".validateForm").trigger("reset");
+                    grecaptcha.reset();
                 },
                 error: function (result) {
                     if (result.responseJSON.errors) {

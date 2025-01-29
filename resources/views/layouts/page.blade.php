@@ -57,6 +57,9 @@
     <script>
         $('#modalContact').on('show.bs.modal', function (e) {
             $(".validateForm").trigger("reset");
+            $("#modalMessage").html('');
+            $('#formErrors').hide().html('');
+            grecaptcha.reset();
         })
     </script>
     {!! settings()->get('scripts_beforebody') !!}
