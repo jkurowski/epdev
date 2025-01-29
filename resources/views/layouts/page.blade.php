@@ -27,9 +27,9 @@
     {{-- <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet"> --}}
 
     <script src="{{ asset('/js/jquery.min.js') }}" charset="utf-8"></script>
-    <script type="module" src="{{ asset('build/assets/app-C1yeRISt.min.js') }}"></script>
+    <script type="module" src="{{ asset('build/assets/app-BRaiZ5mk.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('build/assets/app-Banrqkr2.css') }}" />
-    <link rel="stylesheet" href="{{ asset('build/assets//app-CWR4YbLS.css') }}" />
+    <link rel="stylesheet" href="{{ asset('build/assets//app-DdLKEYdW.css') }}" />
     @if(Route::is('pages.homepage'))
         <link rel="preload" as='image' src="{{asset('images/reusable/bg-hero_mobile.webp')}}">
     @endif
@@ -54,6 +54,11 @@
     @include('layouts.partials.cookies')
 
     @stack('scripts')
+    <script>
+        $('#modalContact').on('show.bs.modal', function (e) {
+            $(".validateForm").trigger("reset");
+        })
+    </script>
     {!! settings()->get('scripts_beforebody') !!}
 
     @if (Route::currentRouteName() === 'pages.homepage')

@@ -5,19 +5,21 @@
     'terms' => [],
     'investment' => null,
 ])
-<form id="fastForm" autocomplete="on" action="/submit-form" method="POST">
-    <div class="modal-body">
+<form id="fastForm" autocomplete="on" action="/submit-form" method="POST" class="validateForm">
+    <div id="modalMessage"></div>
+    <div id="formBody">
+        <div class="modal-body">
         @csrf
         <div class="row">
             <div class="col-12">
-                <div id="form-errors" class="alert alert-danger hide-empty"></div>
+                <div id="formErrors" class="alert alert-danger hide-empty"></div>
                 <div id="form-success" class="alert alert-success hide-empty"></div>
             </div>
 
             {{-- Name Field --}}
             <div class="col-12">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="user-name" placeholder="Imię i nazwisko" name="name" required />
+                    <input type="text" class="validate[required] form-control" id="user-name" placeholder="Imię i nazwisko" name="name" required />
                     <label for="user-name">Imię i nazwisko <span class="required">*</span></label>
                 </div>
             </div>
@@ -25,13 +27,13 @@
             {{-- Email and Phone Fields --}}
             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="user-email" placeholder="Adres e-mail" name="email" required />
+                    <input type="email" class="validate[required] form-control" id="user-email" placeholder="Adres e-mail" name="email" required />
                     <label for="user-email">Adres e-mail <span class="required">*</span></label>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <div class="form-floating mb-3">
-                    <input type="tel" class="form-control" id="user-tel" placeholder="Telefon" name="phone" />
+                    <input type="tel" class="validate[required] form-control" id="user-tel" placeholder="Telefon" name="phone" />
                     <label for="user-tel">Telefon <span class="required">*</span></label>
                 </div>
             </div>
@@ -61,12 +63,89 @@
             <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" />
         </div>
     </div>
-    <div class="modal-footer">
+        <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-submit" data-bs-dismiss="modal">ZAMKNIJ</button>
-        <button type="submit" class="btn btn-primary btn-submit">WYŚLIJ WIADOMOŚĆ
-            <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293">
-                <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24" d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z" transform="translate(4.553 8.293) rotate(180)" fill="currentColor" />
-            </svg>
-        </button>
+        <script type="text/javascript">
+            document.write("<button data-btn-submit type=\"submit\" class=\"g-recaptcha btn btn-primary btn-submit {{ $button_class ?? '' }} \" data-sitekey=\"{{ config('services.recaptcha_v3.siteKey') }}\" data-callback=\"onRecaptchaSuccess\" data-action=\"submitContact\">WYŚLIJ WIADOMOŚĆ<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"4.553\" height=\"8.293\" viewBox=\"0 0 4.553 8.293\"><path id=\"chevron_right_24dp_FILL0_wght100_GRAD0_opsz24\" d=\"M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z\" transform=\"translate(4.553 8.293) rotate(180)\" fill=\"currentColor\" /></svg></button>");
+        </script>
+        <noscript>Do poprawnego działania, Java musi być włączona.</noscript>
+    </div>
     </div>
 </form>
+@push('scripts')
+    <script src="{{ asset('js/validation.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('js/pl.js') }}" charset="utf-8"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".validateForm").validationEngine({
+                validateNonVisibleFields: true,
+                updatePromptsPosition:true,
+                promptPosition : "topRight:-137px",
+                autoPositionUpdate: false
+            });
+        });
+
+        function onRecaptchaSuccess(token) {
+            $(".validateForm").validationEngine('updatePromptsPosition');
+            const isValid = $(".validateForm").validationEngine('validate');
+            if (isValid) {
+                sendModal();
+            } else {
+                grecaptcha.reset();
+            }
+        }
+
+        function sendModal(){
+            // Get the reCAPTCHA token
+            const token = grecaptcha.getResponse();
+            const alert = $('#formErrors');
+
+            // Check if the token is available
+            if (!token) {
+                console.error("reCAPTCHA token is missing");
+                return;
+            }
+
+            // Serialize the form data
+            const formData = $(".validateForm").serialize();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: $(".validateForm").attr("action"),
+                method: $(".validateForm").attr("method") || "POST",
+                data: formData,
+                beforeSend: function() {
+                    console.log("Submitting form...");
+                },
+                success: function(response) {
+                    $("#modalMessage").html('<div class="alert alert-success m-3 text-center" role="alert">Formularz został wysłany pomyślnie.</div>');
+                    $(".validateForm").trigger("reset");
+                },
+                error: function (result) {
+                    if (result.responseJSON.errors) {
+                        alert.html('');
+                        $.each(result.responseJSON.errors, function (key, value) {
+                            alert.show();
+                            alert.append('<span class="d-block">' + value + '</span>');
+                        });
+                    }
+                    grecaptcha.reset();
+                },
+            });
+        }
+
+        @if (session('success') || session('warning') || $errors->any())
+        $(window).load(function() {
+            const aboveHeight = $('header').outerHeight();
+            $('html, body').stop().animate({
+                scrollTop: $('.validateForm').offset().top-aboveHeight
+            }, 1500, 'easeInOutExpo');
+        });
+        @endif
+    </script>
+@endpush
+

@@ -99,13 +99,11 @@ class IndexController extends Controller
 
     public function show ($article)
     {
-
         $investmentArticle = $this->articleRepository->findBySlug($article);
         $menu_page = Page::where('id', $this->pageId)->first();
 
         $progressData = collect([]);
         $investment = $investmentArticle->investment;
-
 
         if (!is_null($investment->progress)) {
             $lines = explode("\n", $investment->progress);
