@@ -5,7 +5,7 @@
     'terms' => [],
     'investment' => null,
 ])
-<form id="fastForm" autocomplete="on" action="/submit-form" method="POST" class="validateForm">
+<form id="fastForm" autocomplete="on" action="/submit-form" method="POST" class="validateModalForm">
     <div id="modalMessage"></div>
     <div id="formBody">
         <div class="modal-body">
@@ -78,7 +78,7 @@
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $(".validateForm").validationEngine({
+            $(".validateModalForm").validationEngine({
                 validateNonVisibleFields: true,
                 updatePromptsPosition:true,
                 promptPosition : "topRight:-137px",
@@ -87,8 +87,8 @@
         });
 
         function onRecaptchaSuccess(token) {
-            $(".validateForm").validationEngine('updatePromptsPosition');
-            const isValid = $(".validateForm").validationEngine('validate');
+            $(".validateModalForm").validationEngine('updatePromptsPosition');
+            const isValid = $(".validateModalForm").validationEngine('validate');
             if (isValid) {
                 sendModal();
             } else {
@@ -111,15 +111,15 @@
             }
 
             // Serialize the form data
-            const formData = $(".validateForm").serialize();
+            const formData = $(".validateModalForm").serialize();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
             $.ajax({
-                url: $(".validateForm").attr("action"),
-                method: $(".validateForm").attr("method") || "POST",
+                url: $(".validateModalForm").attr("action"),
+                method: $(".validateModalForm").attr("method") || "POST",
                 data: formData,
                 beforeSend: function() {
                     console.log("Submitting form...");
@@ -127,7 +127,7 @@
                 success: function(response) {
                     $("#modalMessage").html('<div class="alert alert-success m-3 text-center" role="alert">Formularz został wysłany pomyślnie.</div>');
                     alert.hide().html('');
-                    $(".validateForm").trigger("reset");
+                    $(".validateModalForm").trigger("reset");
                     grecaptcha.reset();
                 },
                 error: function (result) {
@@ -142,15 +142,6 @@
                 },
             });
         }
-
-        @if (session('success') || session('warning') || $errors->any())
-        $(window).load(function() {
-            const aboveHeight = $('header').outerHeight();
-            $('html, body').stop().animate({
-                scrollTop: $('.validateForm').offset().top-aboveHeight
-            }, 1500, 'easeInOutExpo');
-        });
-        @endif
     </script>
 @endpush
 

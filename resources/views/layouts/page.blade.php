@@ -56,7 +56,7 @@
     @stack('scripts')
     <script>
         $('#modalContact').on('show.bs.modal', function (e) {
-            $(".validateForm").trigger("reset");
+            $(".validateModalForm").trigger("reset");
             $("#modalMessage").html('');
             $('#formErrors').hide().html('');
             grecaptcha.reset();
