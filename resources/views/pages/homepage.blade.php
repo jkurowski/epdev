@@ -479,6 +479,4 @@
             </div>
         </div>
     </section>
-
-    {{ Route::currentRouteName() }}
 @endsection
