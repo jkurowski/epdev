@@ -80,7 +80,7 @@
         $(document).ready(function(){
             $(".validateModalForm").validationEngine({
                 validateNonVisibleFields: true,
-                updatePromptsPosition:true,
+                updatePromptsPosition:false,
                 promptPosition : "topRight:-137px",
                 autoPositionUpdate: false
             });
