@@ -370,7 +370,7 @@
             });
         });
 
-        function onRecaptchaSuccess(token) {
+        function onFormRecaptchaSuccess(token) {
             $(".validateForm").validationEngine('updatePromptsPosition');
             const isValid = $(".validateForm").validationEngine('validate');
             if (isValid) {
