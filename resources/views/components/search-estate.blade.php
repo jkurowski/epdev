@@ -1,8 +1,8 @@
 <div class="search-estate">
     @isset($route)
-    <form action="{{ $route }}" method="GET">
+    <form action="{{ $route }}" method="GET" id="searchEstate">
     @else
-    <form action="{{route('front.developro.properties')}}" method="GET">
+    <form action="{{route('front.developro.properties')}}" method="GET" id="searchEstate">
     @endif
         <div class="form-box d-flex flex-column flex-lg-row justify-content-between gap-5 gap-lg-3">
             {{-- Dropdown for floor selection --}}
@@ -46,9 +46,12 @@
         </div>
 
         {{-- Search button --}}
-        <button class="mt-3 btn btn-primary btn-primary-big" type="submit">
-            pokaż dopasowane dla mnie układy
-        </button>
+        <div class="row">
+            <div class="col-12 column-gap-3 row-gap-2 pt-3 d-flex flex-column flex-md-row justify-content-center align-items-center">
+                <button class="m-0 btn btn-primary btn-primary-big" type="submit">pokaż dopasowane dla mnie układy</button>
+                <button class="m-0 btn btn-primary btn-primary-big" type="reset">Wyczyść filtry</button>
+            </div>
+        </div>
     </form>
 </div>
 <script>

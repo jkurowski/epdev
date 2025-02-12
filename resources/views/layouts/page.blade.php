@@ -27,9 +27,9 @@
     {{-- <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet"> --}}
 
     <script src="{{ asset('/js/jquery.min.js') }}" charset="utf-8"></script>
-    <script type="module" src="{{ asset('build/assets/app-BRaiZ5mk.js') }}"></script>
+    <script type="module" src="{{ asset('build/assets/app-7I0QT2GO.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('build/assets/app-Banrqkr2.css') }}" />
-    <link rel="stylesheet" href="{{ asset('build/assets//app-DdLKEYdW.css') }}" />
+    <link rel="stylesheet" href="{{ asset('build/assets/app-BUzhzLX1.css') }}" />
     @if(Route::is('pages.homepage'))
         <link rel="preload" as='image' src="{{asset('images/reusable/bg-hero_mobile.webp')}}">
     @endif

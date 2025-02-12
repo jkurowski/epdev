@@ -79,7 +79,7 @@
     <section class="margin-below-vreadcrumb">
         <div class="container">
             <div class="row gy-5 gy-lg-0 align-items-center">
-                <div class=" col-12 col-lg-5 ">
+                <div class=" col-12 col-lg-5">
                     <x-text-container title="O nas" titleTag="EP DEVELOPMENT" :paragraphs="[
                         '<strong>Jesteśmy dynamicznie rozwijającą się firmą developerską. Od 12 lat z powodzeniem realizujemy
                                         projekty mieszkaniowe na terenie Warszawy i okolic.</strong>',

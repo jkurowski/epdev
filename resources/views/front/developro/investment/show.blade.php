@@ -38,7 +38,7 @@
                                     <div class="header-1">{{ $section->title }}</div>
                                 </div>
                                 @endif
-                                <div class="text-container d-flex flex-column gap-3 text-pretty paragraph">
+                                <div class="text-container d-flex flex-column gap-3 text-pretty paragraph text-justify">
                                     {!! $section->text !!}
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                                 <div class="header-1">{{ $section->title }}</div>
                                             </div>
                                         @endif
-                                        <div class="text-container d-flex flex-column gap-3 text-pretty paragraph">
+                                        <div class="text-container d-flex flex-column gap-3 text-pretty paragraph text-justify">
                                             {!! $section->text !!}
                                         </div>
                                     </div>
@@ -110,7 +110,7 @@
                                                 <div class="header-1">{{ $section->title }}</div>
                                             </div>
                                         @endif
-                                        <div class="text-container d-flex flex-column gap-3 text-pretty paragraph">
+                                        <div class="text-container d-flex flex-column gap-3 text-pretty paragraph text-justify">
                                             {!! $section->text !!}
                                         </div>
                                     </div>
@@ -232,7 +232,7 @@
                         <div class="title-container">
                             <div class="header-1">Interesuje Cię<br>wykończenie pod klucz?</div>
                         </div>
-                        <div class="text-container d-flex flex-column gap-3">
+                        <div class="text-container d-flex flex-column gap-3 text-justify">
                             <p class="text-pretty paragraph">
                                 <strong>Pragnąc zapewnić Państwu kompleksową obsługę, nawiązaliśmy współpracę z&nbsp;Pracownią Architektury Wnętrz INTERIOR DESIGN STUDIO</strong>
                             </p>
@@ -261,7 +261,7 @@
                         <div class="title-container">
                             <div class="header-1">Kredyty hipoteczne</div>
                         </div>
-                        <div class="text-container d-flex flex-column gap-3">
+                        <div class="text-container d-flex flex-column gap-3 text-justify">
                             <p class="text-pretty paragraph">
                                 <strong>Dla naszych Klientów ubiegających się o&nbsp;kredyt hipoteczny oferujemy bezpłatne wsparcie ekspertów finansowych.</strong>
                             </p>

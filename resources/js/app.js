@@ -45,19 +45,19 @@ window.bootstrap = bootstrap;
 
 document.addEventListener('DOMContentLoaded', function () {
     window.matchMedia('(min-width: 1400px)').matches &&
-        AOS.init({
-            offset: 50,
-            duration: 1000,
-            // once: true,
-        });
+    AOS.init({
+        offset: 50,
+        duration: 1000,
+        // once: true,
+    });
     innerWidth<1199.98
     window.matchMedia('(max-width: 1399px)').matches &&
-        AOS.init({
-            offset: 120,
-            duration: 1000,
-            disable: () => window.matchMedia('(max-width: 990px)').matches,
-            // once: true,
-        });
+    AOS.init({
+        offset: 120,
+        duration: 1000,
+        disable: () => window.matchMedia('(max-width: 990px)').matches,
+        // once: true,
+    });
 });
 
 // Easing
@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const rangeMax = parseInt(rangeSlider.getAttribute('data-range-max'));
         const rangeMinInput = document.getElementById('ap-range-min');
         const rangeMaxInput = document.getElementById('ap-range-max');
+        const form = document.getElementById('searchEstate');
 
         noUiSlider.create(rangeSlider, {
             start: [rangeMinInput.value, rangeMaxInput.value],
@@ -150,9 +151,16 @@ document.addEventListener('DOMContentLoaded', function () {
             const inputMax = document.getElementById('ap-range-max');
             updateRangeValues(inputMin, inputMax, values);
         });
+
+        // Reset the slider when the form is reset
+        form.addEventListener('reset', function () {
+            setTimeout(() => {
+                rangeSlider.noUiSlider.set([rangeMin, rangeMax]);
+            }, 10); // Small timeout to ensure form inputs reset first
+        });
     }
 
-  
+
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -494,77 +502,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const tabs = document.querySelectorAll('#pills-tab .grid-btn');
-        const pillsTab = document.getElementById('pills-tab');
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('#pills-tab .grid-btn');
+    const pillsTab = document.getElementById('pills-tab');
 
-        const elements = [{
-                selector: '.apartments-titles',
-                classToToggle: 'apartments-titles-hide'
-            },
-            {
-                selector: '.apartment-box-container',
-                classToToggle: 'switch'
-            },
-            {
-                selector: '.ap-column-box',
-                classToToggle: 'ap-column-switch'
-            }
-        ];
-
-        function setColumnView() {
-            tabs.forEach(t => t.classList.remove('active'));
-            document.getElementById('column-tab').classList.add('active');
-
-            elements.forEach(({
-                selector,
-                classToToggle
-            }) => {
-                document.querySelectorAll(selector).forEach(element => {
-                    element.classList.add(classToToggle);
-                });
-            });
+    const elements = [{
+        selector: '.apartments-titles',
+        classToToggle: 'apartments-titles-hide'
+    },
+        {
+            selector: '.apartment-box-container',
+            classToToggle: 'switch'
+        },
+        {
+            selector: '.ap-column-box',
+            classToToggle: 'ap-column-switch'
         }
+    ];
 
-        function setRowView() {
-            tabs.forEach(t => t.classList.remove('active'));
-            document.getElementById('row-tab').classList.add('active');
+    function setColumnView() {
+        tabs.forEach(t => t.classList.remove('active'));
+        document.getElementById('column-tab').classList.add('active');
 
-            elements.forEach(({
-                selector,
-                classToToggle
-            }) => {
-                document.querySelectorAll(selector).forEach(element => {
-                    element.classList.remove(classToToggle);
-                });
-            });
-        }
-
-        function updateViewBasedOnScreenSize() {
-            if (!pillsTab) return; // Exit the function if pillsTab does not exist
-
-            if (window.innerWidth < 1199.98) {
-                setColumnView();
-                pillsTab.style.display = 'none';
-            } else {
-                pillsTab.style.display = 'flex';
-            }
-        }
-
-        // Initial check on page load
-        updateViewBasedOnScreenSize();
-
-        // Listen to window resize event
-        window.addEventListener('resize', updateViewBasedOnScreenSize);
-
-        // Tab click handling
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                if (tab.id === 'column-tab') {
-                    setColumnView();
-                } else if (tab.id === 'row-tab') {
-                    setRowView();
-                }
+        elements.forEach(({
+                              selector,
+                              classToToggle
+                          }) => {
+            document.querySelectorAll(selector).forEach(element => {
+                element.classList.add(classToToggle);
             });
         });
+    }
+
+    function setRowView() {
+        tabs.forEach(t => t.classList.remove('active'));
+        document.getElementById('row-tab').classList.add('active');
+
+        elements.forEach(({
+                              selector,
+                              classToToggle
+                          }) => {
+            document.querySelectorAll(selector).forEach(element => {
+                element.classList.remove(classToToggle);
+            });
+        });
+    }
+
+    function updateViewBasedOnScreenSize() {
+        if (!pillsTab) return; // Exit the function if pillsTab does not exist
+
+        if (window.innerWidth < 1199.98) {
+            setColumnView();
+            pillsTab.style.display = 'none';
+        } else {
+            pillsTab.style.display = 'flex';
+        }
+    }
+
+    // Initial check on page load
+    updateViewBasedOnScreenSize();
+
+    // Listen to window resize event
+    window.addEventListener('resize', updateViewBasedOnScreenSize);
+
+    // Tab click handling
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            if (tab.id === 'column-tab') {
+                setColumnView();
+            } else if (tab.id === 'row-tab') {
+                setRowView();
+            }
+        });
     });
+});
