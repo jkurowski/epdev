@@ -5,11 +5,9 @@
           
             {{-- Dropdown for city selection --}}
             <div class="d-flex flex-column">
-                <label for="apartments-city" class="subtitle mt-4 mb-3">
-                    MIASTO
-                </label>
+                <label for="apartments-city" class="subtitle mt-4 mb-3">MIASTO</label>
                 <select id="apartments-city" class="apartments-city" name="apartments-city">
-                    <option value="">WYBIERZ Z LISTY</option>
+                    <option value="">Wszystkie</option>
                     @foreach ($active_cities as $city)
                         <option value="{{ $city->slug }}" {{ request('apartments-city') == $city->slug ? 'selected' : '' }}>
                             {{ $city->name }}
@@ -19,11 +17,9 @@
             </div>
 
             <div class="d-flex flex-column">
-                <label for="apartments-city" class="subtitle mt-4 mb-3">
-                    INWESTYCJA
-                </label>
+                <label for="apartments-city" class="subtitle mt-4 mb-3">INWESTYCJA</label>
                 <select id="apartments-invest" class="apartments-city" name="apartments-invest">
-                    <option value="">WYBIERZ Z LISTY</option>
+                    <option value="">Wszystkie</option>
                     @foreach ($active_investments as $i)
                         <option value="{{ $i->slug }}" {{ request('apartments-invest') == $i->slug ? 'selected' : '' }} data-city="{{ $i->city ? $i->city->slug : '' }}">
                             {{ $i->name }}
