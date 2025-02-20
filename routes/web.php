@@ -68,6 +68,9 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     Route::post('/kontakt', 'ContactController@send')->name('contact.send');
     Route::post('/kontakt/{property}', 'ContactController@property')->name('contact.property');
 
+    //Cron
+    Route::get('/cron/investment/{id}', 'Cron\IndexController@updateVOX')->name('cron.vox');
+
 
     Route::resources([
         '/news' => 'ArticleController',
