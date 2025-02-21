@@ -1,3 +1,136 @@
-/* Developro
-================================================== */
-@import url(less-partials/developro);
+header {
+  .navbar {
+    min-height: auto;
+  }
+  .nav-logo {
+    max-width: 90px;
+  }
+  .nav-text {
+    text-align: start !important;
+    font-size: 23px;
+    br {
+      display: none;
+    }
+  }
+  .nav-logo-container {
+    min-width: 300px;
+  }
+
+  #navbarNav {
+    justify-content: end !important;
+    padding-right: 20px;
+  }
+  .navbar .navbar-nav a:not(.btn-phone) {
+    font-size: 17px;
+    font-weight: 600;
+    color: #d7007a;
+    text-decoration: none;
+  }
+}
+
+footer {
+  .contact-box svg {
+    min-width: 27px;
+    min-height: 27px;
+    width: 27px;
+    height: 27px;
+  }
+  .contact-box {
+    font-size: 13px !important;
+    line-height: 15px;
+    padding-bottom: 10px !important;
+  }
+  .contact-box.phone a {
+    font-size: 13px !important;
+  }
+  .list-title {
+    color: #fff;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 23px;
+    border-bottom: 1px solid #464444;
+    margin-bottom: 10px !important;
+    padding-bottom: 13px;
+  }
+  .contact-box.location .location-info strong {
+    font-size: 13px;
+  }
+
+  .footer-logo-title {
+    font-size: 20px;
+    br {
+      display: none;
+    }
+  }
+  .location-info {
+    .paragraph {
+      margin-bottom: 0;
+    }
+  }
+  .second-footer {
+    padding-block: 17px;
+  }
+  .second-footer-link {
+    font-size: 20px;
+  }
+  .footer-socials a svg {
+    max-width: 24px;
+    max-height: 24px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .footer-bg {
+    background: #171717;
+  }
+}
+
+.construction-tabs {
+  .nav-item {
+    .nav-link {
+      padding: 15px 40px;
+      width: auto;
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+}
+@media (max-width: 991.98px){
+  footer {
+    .img-fluid{
+      width: 80px;
+      margin: 0 auto;
+      display: block;
+    }
+    .footer-logo-title {
+      text-align: center;
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  footer {
+    .contact-box svg {
+      display: none;
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  header {
+    .nav-logo-container {
+      min-width: 70px;
+      padding: 0;
+    }
+    .nav-logo {
+      max-width: 70px;
+    }
+  }
+  .construction-tabs {
+    .nav-item {
+      .nav-link {
+        padding: 15px 0;
+        width: 100%;
+      }
+    }
+  }
+}

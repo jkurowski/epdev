@@ -222,11 +222,8 @@
                 @endif
 
                 {{-- Price --}}
-                <div class="box price">
-                    @if ($property->ask_for_price)
-                        <a href="#contact-form">Zapytaj o cenę</a>
-                        <div class="data"></div>
-                    @else
+                @if (!$property->ask_for_price)
+                    <div class="box price">
                         @if ($property->price > 0)
                             <div class="title">Cena:</div>
                             <div class="data">
@@ -238,9 +235,9 @@
                             </div>
                             <div class="vr"></div>
                         @endif
-                    @endif
-                </div>
-                <div class="vr"></div>
+                    </div>
+                @endif
+
                 @if ($property->file_pdf)
                     @php
                         $pdf_url = asset('/investment/property/pdf/' . $property->file_pdf);
@@ -305,9 +302,13 @@
                 </div>
                 <div class="col-md-6 col-xl-4">
                     <div class="bg-white p-3 h-100">
+                        <div class="title-container">
+                            <div class="header-1 aos-init aos-animate text-center" data-aos="fade-up">
+                                Zapytaj o cenę
+                            </div>
+                        </div>
                         <x-contact-form-simple :textareaProperty="$property->name" :textareaInvestment="$property->investment->name" :investment="$property->investment" />
                     </div>
-
                 </div>
             </div>
         </div>

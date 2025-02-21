@@ -1,73 +1,12 @@
 <footer id="footer" class="bg-black margin-xs">
     {{-- MAIN FOOTER --}}
-    <div class="container pt-lg-100px">
-        <div class="row gy-5 ">
-            <div class="col-lg-6">
-                <div class="d-flex align-items-center">
-                    <div class="row align-items-center">
-                        <div class="col-6">
-                            <x-picture webpSmall="images/reusable/footer-logo.webp"
-                                       webpLarge="images/reusable/footer-logo@2x.webp"
-                                       pngSmall="images/reusable/footer-logo.png" pngLarge="images/reusable/footer-logo@2x.png"
-                                       defaultSrc="images/reusable/footer-logo@2x.png" alt="Logo EP Development"
-                                       class="img-fluid" />
-                        </div>
-                        <div class="col-6">
-                            <div class="footer-logo-title">
-                                Witamy <br /> w okolicy.
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="d-flex align-items-center justify-content-center mt-5">
-                                <a href="#modalContact" data-bs-toggle="modal" data-bs-target="#modalContact" class="btn btn-footer">napisz do nas</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-12 col-xxl-6">
-                        {{--  --}}
-                        <x-contact-list listTitle="Biuro Sprzedaży Warszawa"
-                                        location="ul. Modlińska 201 lok. 32<br />03-122 Warszawa"
-                                        phoneNumber="+48 531 329 392"
-                                        email="lead@epdevelopment.com.pl" />
-                        {{--  --}}
-                        <x-contact-list listTitle="Biuro Sprzedaży Nowy Dwór Mazowiecki"
-                                        location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki"
-                                        phoneNumber="+48 793 501 501"
-                                        phoneNumberSecond="+48 513 231 231" email="lead@epdevelopment.com.pl" />
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-12 col-xxl-6">
-                        {{--  --}}
-                        <x-contact-list listTitle="Sekretariaty"
-                                        location="ul. Modlińska 201/32<br/>03-122 Warszawa"
-                                        phoneNumber="+48 517 115 888"
-                                        email="sekretariat.waw@epdevelopment.com.pl" />
-                        {{--  --}}
-                        <div class='adjust-margin'>
-                            <x-contact-list location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki"
-                                            phoneNumber="+48 517 115 777"
-                                            email="sekretariat.ndm@epdevelopment.com.pl" />
-                        </div>
-                        <style>
-                            @media (min-width: 768px) and (max-width: 991px) {
-                                .adjust-margin .list-title {
-                                    margin-bottom: 3.4rem !important;
-                                }
-                            }
-                            @media (min-width: 1400px) {
-                                .adjust-margin .list-title {
-                                    margin-bottom: 3.4rem !important;
-                                }
-                            }
-                        </style>
-                    </div>
-                </div>
-
-
-                {{-- TIME --}}
+    <div class="container pt-5 pb-5">
+        <div class="row gy-3 gy-lg-5 ">
+            <div class="col-12 col-md-6 col-lg-4">
+                <x-contact-list listTitle="Biuro Sprzedaży Warszawa"
+                                location="ul. Modlińska 201 lok. 32<br />03-122 Warszawa"
+                                phoneNumber="+48 531 329 392"
+                                email="lead@epdevelopment.com.pl" />
                 <ul class="list-unstyled contacts mt-4">
                     <li class="pb-3 contact-box location">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -86,14 +25,70 @@
                         </span>
                     </li>
                 </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <x-contact-list listTitle="Biuro Sprzedaży Nowy Dwór Mazowiecki"
+                                location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki"
+                                phoneNumber="+48 793 501 501"
+                                phoneNumberSecond="+48 513 231 231" email="lead@epdevelopment.com.pl" />
+                <ul class="list-unstyled contacts mt-4">
+                    <li class="pb-3 contact-box location">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <g id="Group_1290" data-name="Group 1290" transform="translate(-1092 -6521)">
+                                <circle id="Ellipse_15" data-name="Ellipse 15" cx="16" cy="16" r="16"
+                                        transform="translate(1092 6521)" fill="#d7007a" />
+                                <g id="clock" transform="translate(1099.514 6528.514)">
+                                    <path id="Path_345" data-name="Path 345"
+                                          d="M8.486,0a8.486,8.486,0,1,0,8.486,8.486A8.482,8.482,0,0,0,8.486,0Zm.663,15.616v-.61a.663.663,0,1,0-1.326,0v.61A7.157,7.157,0,0,1,1.357,9.149h.61a.663.663,0,0,0,0-1.326h-.61A7.157,7.157,0,0,1,7.823,1.357v.61a.663.663,0,1,0,1.326,0v-.61a7.157,7.157,0,0,1,6.467,6.467h-.61a.663.663,0,1,0,0,1.326h.61a7.157,7.157,0,0,1-6.467,6.467Zm2.414-4.991a.663.663,0,0,1-.938.938L8.018,8.955a.663.663,0,0,1-.194-.469V4.575a.663.663,0,1,1,1.326,0V8.212Z"
+                                          fill="#fff" />
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="location-info text-capitalize">
+                            <strong>Poniedziałek - Piątek</strong> <br /> 9:00 - 17:00
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-4">
+                <x-contact-list listTitle="Sekretariaty"
+                                location="ul. Modlińska 201/32<br/>03-122 Warszawa"
+                                phoneNumber="+48 517 115 888"
+                                email="sekretariat.waw@epdevelopment.com.pl" />
+                <x-contact-list location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki"
+                                phoneNumber="+48 517 115 777"
+                                email="sekretariat.ndm@epdevelopment.com.pl" />
+            </div>
+
+            <div class="col-12 col-lg-4 d">
+                <div class="d-flex align-items-center w-100">
+                    <div class="row align-items-center w-100">
+                        <div class="col-12 col-lg-3">
+                            <x-picture webpSmall="images/reusable/footer-logo.webp"
+                                       webpLarge="images/reusable/footer-logo@2x.webp"
+                                       pngSmall="images/reusable/footer-logo.png" pngLarge="images/reusable/footer-logo@2x.png"
+                                       defaultSrc="images/reusable/footer-logo@2x.png" alt="Logo EP Development"
+                                       class="img-fluid" />
+                        </div>
+                        <div class="col-12 col-lg-9">
+                            <div class="footer-logo-title">
+                                Witamy <br /> w okolicy.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="d-flex align-items-center justify-content-center h-100 w-100">
+                    <a href="#modalContact" data-bs-toggle="modal" data-bs-target="#modalContact" class="btn btn-footer">napisz do nas</a>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
                 @php
                     $footer_text = settings()->get("page_footer_text");
                 @endphp
                 @if($footer_text)
-                    {{--  --}}
-                    <hr class="footer-divider" />
-                    {{--  --}}
-                    <ul class="list-unstyled contacts mt-3">
+                    <ul class="list-unstyled contacts mt-3 mb-0">
                         {{-- Location --}}
                         <li class="pb-3 contact-box location">
                             <svg xmlns="http://www.w3.org/2000/svg" width="34.875" height="34.875"

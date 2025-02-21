@@ -1,212 +1,113 @@
-/* Developro
-================================================== */
-#list {
-  margin-left: 16px;
-  padding-left: 20px;
-  border-left: 1px solid #dee2e6;
+header .navbar {
+  min-height: auto;
 }
-#planNav .bttn {
-  text-transform: uppercase;
-  margin: 0 0 30px 0;
+header .nav-logo {
+  max-width: 90px;
 }
-.ribbon1 {
-  position: absolute;
-  top: -6.1px;
-  left: 10px;
+header .nav-text {
+  text-align: start !important;
+  font-size: 23px;
 }
-.ribbon1:after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 76px solid transparent;
-  border-right: 76px solid transparent;
-  border-top: 10px solid #b79a5e;
+header .nav-text br {
+  display: none;
 }
-.ribbon1 span {
-  position: relative;
-  display: block;
-  text-align: center;
-  background: #b79a5e;
-  font-size: 14px;
-  line-height: 1;
-  padding: 12px 8px 10px;
-  border-top-right-radius: 8px;
-  width: 152px;
-  color: white;
-  font-weight: 500;
+header .nav-logo-container {
+  min-width: 300px;
 }
-.ribbon1 span:before,
-.ribbon1 span:after {
-  position: absolute;
-  content: "";
+header #navbarNav {
+  justify-content: end !important;
+  padding-right: 20px;
 }
-.ribbon1 span:before {
-  height: 6px;
-  width: 6px;
-  left: -6px;
-  top: 0;
-  background: #b79a5e;
-}
-.ribbon1 span:after {
-  height: 6px;
-  width: 8px;
-  left: -8px;
-  top: 0;
-  border-radius: 8px 8px 0 0;
-  background: #957d4c;
-}
-#roomsList {
-  border-bottom: 1px solid #e5e5e5;
-}
-#roomsList .row {
-  background: white;
-  border-top: 1px solid #e5e5e5;
-  position: relative;
-  -webkit-transition: all 200ms linear;
-  -moz-transition: all 200ms linear;
-  -o-transition: all 200ms linear;
-  transition: all 200ms linear;
-  -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0);
-  -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0);
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0);
-}
-#roomsList .row:hover {
-  top: -5px;
-  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.38);
-  -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.38);
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.38);
-}
-#roomsList .col {
-  padding: 30px;
-  display: flex;
-  align-items: center;
-}
-#roomsList .col img {
-  width: 150px;
-}
-#roomsList .bttn {
-  margin: 0;
-  width: 100%;
-  padding: 22px 0;
-}
-#roomsList h2 {
-  font-size: 30px;
-}
-#roomsList h2 span {
-  font-size: 42px;
+header .navbar .navbar-nav a:not(.btn-phone) {
+  font-size: 17px;
   font-weight: 600;
+  color: #d7007a;
+  text-decoration: none;
 }
-#roomsList ul {
-  width: 100%;
+footer .contact-box svg {
+  min-width: 27px;
+  min-height: 27px;
+  width: 27px;
+  height: 27px;
 }
-#roomsList ul b {
-  float: right;
+footer .contact-box {
+  font-size: 13px !important;
+  line-height: 15px;
+  padding-bottom: 10px !important;
 }
-#roomsList ul li {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+footer .contact-box.phone a {
+  font-size: 13px !important;
 }
-#roomsList ul li:last-child {
-  border-bottom: 0 solid #ddd;
+footer .list-title {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px;
+  border-bottom: 1px solid #464444;
+  margin-bottom: 10px !important;
+  padding-bottom: 13px;
+}
+footer .contact-box.location .location-info strong {
+  font-size: 13px;
+}
+footer .footer-logo-title {
+  font-size: 20px;
+}
+footer .footer-logo-title br {
+  display: none;
+}
+footer .location-info .paragraph {
   margin-bottom: 0;
-  padding-bottom: 0;
 }
-#roomsList .badge {
-  color: #fff;
-  font-size: 15px;
-  line-height: normal;
-  font-weight: 400;
-  min-width: 210px;
-  height: 38px;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+footer .second-footer {
+  padding-block: 17px;
 }
-#roomsList .badge.room-list-status-1 {
-  background: green;
+footer .second-footer-link {
+  font-size: 20px;
 }
-#roomsList .badge.room-list-status-2 {
-  background: #0063a9;
+footer .footer-socials a svg {
+  max-width: 24px;
+  max-height: 24px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
-#roomsList .badge.room-list-status-3 {
-  background: #b71c1c;
+footer .footer-bg {
+  background: #171717;
 }
-#roomsList .badge.room-list-status-4 {
-  background: #e17f00;
+.construction-tabs .nav-item .nav-link {
+  padding: 15px 40px;
+  width: auto;
 }
-.property #page {
-  padding-top: 0;
-  padding-bottom: 1px;
+.construction-tabs .nav-item .nav-link:hover {
+  background: #eee;
 }
-.property #property {
-  background: #213c13 url("../../gfx/green-bg.png");
-  padding: 60px 0;
-}
-.property #property h6 {
-  font-size: 30px;
-  color: white;
-  font-weight: 600;
-}
-.property #property #notifications {
-  background: white;
-}
-.property .property-desc ul li {
-  color: #fff;
-  font-size: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 5px 0;
-}
-.property .property-desc ul li span {
-  float: right;
-  font-weight: 600;
-}
-.property .property-desc .bttn {
-  color: white;
-  text-transform: uppercase;
-  padding: 14px 25px;
-  margin: 0 0 15px 0;
-}
-.property .property-img {
-  padding: 30px;
-}
-.property .property-img img {
-  border: 10px solid white;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.38);
-  -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.38);
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.38);
-}
-.property #contact-form {
-  margin: 0;
-  padding: 40px;
-}
-.property #property-form h2 {
-  margin-bottom: 20px;
-}
-.property #property-form .alert {
-  line-height: normal;
-  margin: 0;
-}
-#propertyNav .bttn {
-  width: 100%;
-  color: white;
-  text-transform: uppercase;
-  padding: 14px 0;
-  margin: 0 0 15px 0;
-  font-size: 12px;
-}
-/* end of 1389.98 */
-/* end of 1199.98 */
-/* end of 991.98 */
-/* end of 767.98 */
-/* end of 575.98 */
-/* end of 359.98 */
-@media (max-width: 359.98px) {
-  .property .property-img img {
-    width: 150px;
+@media (max-width: 991.98px) {
+  footer .img-fluid {
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+  }
+  footer .footer-logo-title {
+    text-align: center;
   }
 }
-/* end of 359.98 */
+@media (max-width: 767.98px) {
+  footer .contact-box svg {
+    display: none;
+  }
+}
+@media (max-width: 575.98px) {
+  header .nav-logo-container {
+    min-width: 70px;
+    padding: 0;
+  }
+  header .nav-logo {
+    max-width: 70px;
+  }
+  .construction-tabs .nav-item .nav-link {
+    padding: 15px 0;
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
