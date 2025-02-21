@@ -16,11 +16,10 @@
                         <p class="paragraph mb-4">Posiadasz na sprzedaż atrakcyjną nieruchomość w Warszawie i okolicach?</p>
                         <div class="header-3 fw-bold">ZADZWOŃ</div>
                         <x-contact-list phoneNumber='+48 517 115 888' />
-                        <div class="date">pn.-pt.: 9:00-17:00</div>
+                        <div class="date">Pn - Pt: 9:00 - 17:00</div>
                         <div class="header-3 fw-bold text-uppercase">napisz</div>
                         <x-contact-list email='sekretariat.waw@epdevelopment.com.pl' />
-                        <p class="paragraph mb-4">Aktywnie poszukujemy gruntów inwestycyjnych pod zabudowę wielorodzinną,
-                            zapraszamy do kontaktu</p>
+                        <p class="paragraph mb-4">Aktywnie poszukujemy gruntów inwestycyjnych pod zabudowę wielorodzinną, zapraszamy do kontaktu</p>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 offset-lg-1">
