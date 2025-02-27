@@ -1,7 +1,7 @@
 @props([
     'id' => 'contact-form',
-    'termsAccordionId' => 'termsAccordion',
-    'selectAllId' => 'select-all',
+    'termsAccordionId' => 'termsAccordion-modal',
+    'selectAllId' => 'select-all-modal',
     'terms' => [],
     'investment' => null,
 ])
@@ -60,7 +60,7 @@
             </div>
 
             {{-- Terms and Conditions Accordion --}}
-            <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" />
+            <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" rowId="modalRodo" :items="$terms" />
         </div>
     </div>
         <div class="modal-footer">

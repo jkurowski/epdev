@@ -1,10 +1,9 @@
 @props([
     'id' => 'accordionExample',
     'selectAllId' => 'selectall',
-    'rowId' => $rowId ?? 'rodo'
 ])
 
-<div id="{{ $rowId }}" class="row">
+<div id="rodomodal" class="row">
     <div class="col-12">
         <div class="form-check mt-4 mb-2 accordion-form-check p-0">
             <input type="checkbox" id="{{ $selectAllId }}" class="form-check-input select-all-checkbox">
@@ -50,52 +49,38 @@
 @push('scripts')
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            function setupCheckboxHandler(formId) {
-                const form = document.querySelector(`#${formId}`);
-                if (!form) return;
+            document.querySelectorAll(".select-all-checkbox").forEach(selectAllCheckbox => {
+                selectAllCheckbox.addEventListener("change", function () {
+                    const form = this.closest(".row"); // Find the closest form section
+                    const termCheckboxes = form.querySelectorAll(".term-checkbox");
 
-                const selectAllCheckbox = form.querySelector(".select-all-checkbox");
-                const termCheckboxes = form.querySelectorAll(".term-checkbox");
+                    console.log("Select All Changed:", this.checked, "Form ID:", form.id);
 
-                if (!selectAllCheckbox || termCheckboxes.length === 0) return;
-
-                // Remove existing event listeners before adding new ones
-                selectAllCheckbox.removeEventListener("change", handleSelectAll);
-                termCheckboxes.forEach(checkbox => {
-                    checkbox.removeEventListener("change", handleCheckboxChange);
-                });
-
-                function handleSelectAll() {
-                    console.log(`Select All Changed: ${this.checked} Form ID: ${formId}`);
-
-                    termCheckboxes.forEach((checkbox) => {
+                    termCheckboxes.forEach((checkbox, index) => {
                         checkbox.checked = this.checked;
-                        console.log(`Checkbox (${checkbox.id}) checked: ${checkbox.checked}`);
+                        console.log(`Checkbox ${index} (${checkbox.id}) checked:`, checkbox.checked);
                     });
-                }
+                });
+            });
 
-                function handleCheckboxChange() {
-                    console.log(`Checkbox (${this.id}) changed - Checked: ${this.checked} Form ID: ${formId}`);
+            document.querySelectorAll(".term-checkbox").forEach(checkbox => {
+                checkbox.addEventListener("change", function () {
+                    const form = this.closest(".row"); // Find the closest form section
+                    const selectAllCheckbox = form.querySelector(".select-all-checkbox");
+                    const termCheckboxes = form.querySelectorAll(".term-checkbox");
 
-                    if (![...termCheckboxes].every(chk => chk.checked)) {
+                    console.log(`Checkbox (${this.id}) changed - Checked:`, this.checked);
+
+                    if (!this.checked) {
                         selectAllCheckbox.checked = false;
                         console.log("A checkbox was unchecked, so Select All is now false.");
-                    } else {
+                    } else if ([...termCheckboxes].every(chk => chk.checked)) {
                         selectAllCheckbox.checked = true;
                         console.log("All checkboxes are checked, so Select All is now true.");
                     }
-                }
-
-                // Attach event listeners only once
-                selectAllCheckbox.addEventListener("change", handleSelectAll);
-                termCheckboxes.forEach(checkbox => {
-                    checkbox.addEventListener("change", handleCheckboxChange);
                 });
-            }
-
-            // Initialize separate handlers for each form
-            setupCheckboxHandler("rodo");
-            setupCheckboxHandler("modalRodo");
+            });
         });
+
     </script>
 @endpush

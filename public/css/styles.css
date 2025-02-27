@@ -171,4 +171,16 @@ footer .footer-bg {
 .main-search-box .dropdown:hover .dropdown-menu.show {
   display: block;
 }
+.accordion-form-check {
+  padding-inline: calc(var(--bs-gutter-x) * 0.5);
+}
+.accordion-form-check .accordion-header {
+  padding-inline: 0;
+}
+.form-check .form-check-input {
+  margin-left: 0;
+}
+.form-check-input[type="checkbox"] {
+  border-radius: 0;
+}
 /*# sourceMappingURL=styles.css.map */
