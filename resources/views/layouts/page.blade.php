@@ -30,7 +30,7 @@
     <script type="module" src="{{ asset('build/assets/app-7I0QT2GO.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('build/assets/app-Banrqkr2.css') }}" />
     <link rel="stylesheet" href="{{ asset('build/assets/app-BUzhzLX1.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}?v=2" />
     @if(Route::is('pages.homepage'))
         <link rel="preload" as='image' src="{{asset('images/reusable/bg-hero_mobile.webp')}}">
     @endif
@@ -55,6 +55,7 @@
     @include('layouts.partials.cookies')
 
     @stack('scripts')
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}" charset="utf-8"></script>
     <script>
         $('#modalContact').on('show.bs.modal', function (e) {
             $(".validateModalForm").trigger("reset");
@@ -66,7 +67,6 @@
     {!! settings()->get('scripts_beforebody') !!}
 
     @if (Route::currentRouteName() === 'pages.homepage')
-        <script src="{{ asset('/js/bootstrap.bundle.min.js') }}" charset="utf-8"></script>
         @if(settings()->get("popup_status") == 1)
             <div class="modal" tabindex="-1" id="popModal">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -82,7 +82,7 @@
             </div>
         @endif
         <script type="text/javascript">
-            @if(settings()->get("popup_status") == 1)
+            @if(settings()->get("popup_status") == 66)
             const popModal = new bootstrap.Modal(document.getElementById('popModal'), {
                 keyboard: false
             });
