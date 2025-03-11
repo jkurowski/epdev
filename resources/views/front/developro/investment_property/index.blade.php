@@ -302,7 +302,7 @@
                 </div>
                 <div class="col-md-6 col-xl-4">
                     <div class="bg-white p-3 h-100">
-                        <div class="title-container">
+                        <div class="title-container title-property">
                             <div class="header-1 aos-init aos-animate text-center" data-aos="fade-up">
                                 Zapytaj o cenę
                             </div>

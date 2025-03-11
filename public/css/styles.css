@@ -171,6 +171,9 @@ footer .footer-bg {
 .main-search-box .dropdown:hover .dropdown-menu.show {
   display: block;
 }
+.title-property .header-1 {
+  font-size: 28px;
+}
 .accordion-form-check {
   padding-inline: calc(var(--bs-gutter-x) * 0.5);
 }
