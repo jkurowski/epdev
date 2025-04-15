@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="{{ asset('build/assets/app-BUzhzLX1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}?v=3">
     @if(Route::is('pages.homepage'))
-        <link rel="preload" as='image' src="{{asset('images/reusable/bg-hero_mobile.webp')}}">
+        <link rel="preload" as='image' href="{{asset('images/reusable/bg-hero_mobile.webp')}}">
     @endif
 {{--    @vite()--}}
 
