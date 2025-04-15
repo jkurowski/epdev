@@ -43,7 +43,7 @@
         @if ($defaultSrc)
             <img loading="{{$loading}}" class="{{ $class }}" src="{{ asset($defaultSrc) }}"
                 @if ($width) width="{{ $width }}" @endif
-                @if ($height) height="{{ $height }}" @endif alt="{{ $alt }}" />
+                @if ($height) height="{{ $height }}" @endif alt="{{ $alt }}">
         @endif
     </picture>
 @endif

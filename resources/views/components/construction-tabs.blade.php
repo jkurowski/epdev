@@ -79,7 +79,7 @@
 
                             <div class="construction-date">{{ $street['date'] }}</div>
                             <div class="construction-title">{{ $street['name'] }}</div>
-                            <hr class="construction-hr" />
+                            <hr class="construction-hr">
                             <a href="{{ $street['href'] }}" class="construction-btn">
                                 SPRAWDŹ
                                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"

@@ -46,7 +46,7 @@
                 </form>
                 @endsection
                 @push('scripts')
-                    <script src="{{ asset('/js/editor/tinymce.min.js') }}" charset="utf-8"></script>
+                    <script src="{{ asset('/js/editor/tinymce.min.js') }}"></script>
                     <script>
                         tinymce.init({
                             selector: ".tinymce",

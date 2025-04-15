@@ -102,7 +102,7 @@
                 </g>
             </svg>
             <span class="location-info text-capitalize">
-                <strong>{{ $openingHours['days'] ?? 'Poniedziałek - Piątek' }}</strong> <br />
+                <strong>{{ $openingHours['days'] ?? 'Poniedziałek - Piątek' }}</strong> <br>
                 {{ $openingHours['hours'] ?? '9:00 - 17:00' }}
             </span>
         </li>

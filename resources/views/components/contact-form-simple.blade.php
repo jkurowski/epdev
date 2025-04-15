@@ -37,7 +37,7 @@
         {{-- Name Field --}}
         <div class="col-12">
             <div class="form-floating mb-3">
-                <input type="text" class="validate[required] form-control" id="user-name" placeholder="Imię i nazwisko" name="name" />
+                <input type="text" class="validate[required] form-control" id="user-name" placeholder="Imię i nazwisko" name="name">
                 <label for="user-name">Imię i nazwisko <span class="required">*</span></label>
             </div>
         </div>
@@ -45,13 +45,13 @@
         {{-- Email and Phone Fields --}}
         <div class="col-12 ">
             <div class="form-floating mb-3">
-                <input type="email" class="validate[required] form-control" id="user-email" placeholder="Adres e-mail" name="email" required />
+                <input type="email" class="validate[required] form-control" id="user-email" placeholder="Adres e-mail" name="email" required>
                 <label for="user-email">Adres e-mail <span class="required">*</span></label>
             </div>
         </div>
         <div class="col-12 ">
             <div class="form-floating mb-3">
-                <input type="tel" class="validate[required] form-control" id="user-tel" placeholder="Telefon" name="phone" />
+                <input type="tel" class="validate[required] form-control" id="user-tel" placeholder="Telefon" name="phone">
                 <label for="user-tel">Telefon <span class="required">*</span></label>
             </div>
         </div>

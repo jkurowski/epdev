@@ -19,7 +19,7 @@
             {{-- Name Field --}}
             <div class="col-12">
                 <div class="form-floating mb-3">
-                    <input type="text" class="validate[required] form-control" id="user-name" placeholder="Imię i nazwisko" name="name" required />
+                    <input type="text" class="validate[required] form-control" id="user-name" placeholder="Imię i nazwisko" name="name" required>
                     <label for="user-name">Imię i nazwisko <span class="required">*</span></label>
                 </div>
             </div>
@@ -27,13 +27,13 @@
             {{-- Email and Phone Fields --}}
             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <div class="form-floating mb-3">
-                    <input type="email" class="validate[required] form-control" id="user-email" placeholder="Adres e-mail" name="email" required />
+                    <input type="email" class="validate[required] form-control" id="user-email" placeholder="Adres e-mail" name="email" required>
                     <label for="user-email">Adres e-mail <span class="required">*</span></label>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <div class="form-floating mb-3">
-                    <input type="tel" class="validate[required] form-control" id="user-tel" placeholder="Telefon" name="phone" />
+                    <input type="tel" class="validate[required] form-control" id="user-tel" placeholder="Telefon" name="phone">
                     <label for="user-tel">Telefon <span class="required">*</span></label>
                 </div>
             </div>
@@ -73,8 +73,8 @@
     </div>
 </form>
 @push('scripts')
-    <script src="{{ asset('js/validation.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('js/pl.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script src="{{ asset('js/pl.js') }}"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){

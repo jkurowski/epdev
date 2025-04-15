@@ -2,8 +2,7 @@
     <div class="h-100 d-flex flex-column">
         <div class="box-name">
             <div class="avatar">
-                <img src="{{ asset($avatarSrc) }}" alt="{{ $name }}" class="img-fluid gallery-img" width="46"
-                    height="46" />
+                <img src="{{ asset($avatarSrc) }}" alt="{{ $name }}" class="img-fluid gallery-img" width="46" height="46">
             </div>
             <div class="name fw-bolder">{{ $name }}</div>
         </div>

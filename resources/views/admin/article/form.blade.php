@@ -74,8 +74,8 @@
 @include('form-elements.tintmce')
 @endsection
 @push('scripts')
-    <script src="{{ asset('/js/datepicker/bootstrap-datepicker.min.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/datepicker/bootstrap-datepicker.pl.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/datepicker/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('/js/datepicker/bootstrap-datepicker.pl.min.js') }}"></script>
     <link href="{{ asset('/js/datepicker/bootstrap-datepicker3.css') }}" rel="stylesheet">
     <script>
         $('.datepicker').datepicker({

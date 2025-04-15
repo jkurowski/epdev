@@ -41,7 +41,7 @@
         
                                     <div class="construction-date">{{ $investment['city']['name'] }}</div>
                                     <div class="construction-title">{{ $investment['name'] }}</div>
-                                    <hr class="construction-hr" />
+                                    <hr class="construction-hr">
                                     <a href="{{ route('front.developro.show', ['citySlug' => $investment['city']['slug'], 'slug' => $investment['slug']]) }}" class="construction-btn">
                                         SPRAWDŹ
                                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
@@ -87,7 +87,7 @@
             
                                         <div class="construction-date">{{ $investment['city']['name'] }}</div>
                                         <div class="construction-title">{{ $investment['name'] }}</div>
-                                        <hr class="construction-hr" />
+                                        <hr class="construction-hr">
                                         <a href="{{ route('front.developro.show', ['citySlug' => $investment['city']['slug'], 'slug' => $investment['slug']]) }}" class="construction-btn">
                                             SPRAWDŹ
                                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"

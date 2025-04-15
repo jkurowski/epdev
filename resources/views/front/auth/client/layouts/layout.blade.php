@@ -99,10 +99,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- jQuery -->
-<script src="{{ asset('/js/jquery.min.js') }}" charset="utf-8"></script>
-<script src="{{ asset('/js/bootstrap.bundle.min.js') }}" charset="utf-8"></script>
-<script src="{{ asset('/js/jquery-ui.min.js') }}" charset="utf-8"></script>
-<script src="{{ asset('/js/cms.min.js') }}" charset="utf-8"></script>
+<script src="{{ asset('/js/jquery.min.js') }}"></script>
+<script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('/js/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('/js/cms.min.js') }}"></script>
 @stack('scripts')
 
 </body>

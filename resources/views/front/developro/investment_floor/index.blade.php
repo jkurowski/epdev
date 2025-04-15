@@ -50,7 +50,7 @@
         @include('front.developro.investment_shared.list', ['investment' => $investment])
 @endsection
 @push('scripts')
-    <script src="{{ asset('/js/plan/imagemapster.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/plan/tip.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/plan/floor.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/plan/imagemapster.js') }}"></script>
+    <script src="{{ asset('/js/plan/tip.js') }}"></script>
+    <script src="{{ asset('/js/plan/floor.js') }}"></script>
 @endpush

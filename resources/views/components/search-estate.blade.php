@@ -27,7 +27,7 @@
                 <div class="rooms-box">
                     @for ($i = 1; $i <= $rooms; $i++)
                         <input type="radio" id="room{{ $i }}" class="room-input" name="rooms"
-                            value="{{ $i }}" {{ request('rooms') == $i ? 'checked' : '' }} />
+                            value="{{ $i }}" {{ request('rooms') == $i ? 'checked' : '' }}>
                         <label for="room{{ $i }}" class="room-label">
                             <span class="room-name">{{ $i }}</span>
                         </label>

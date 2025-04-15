@@ -64,7 +64,7 @@
 @endsection
 @push('scripts')
     <link href="{{ asset('/css/leaflet.css') }}" rel="stylesheet">
-    <script src="{{ asset('/js/leaflet.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/leaflet.min.js') }}"></script>
     <script>
         const tileLayer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             'attribution': 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'

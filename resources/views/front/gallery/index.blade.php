@@ -32,7 +32,7 @@
 </div>
 @endsection
 @push('scripts')
-    <script src="{{ asset('/js/slick.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/slick.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('.gallery-carousel').slick({

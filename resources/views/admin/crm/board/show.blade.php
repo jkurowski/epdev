@@ -75,9 +75,9 @@
     @endpush
     @routes('board')
     @push('scripts')
-        <script src="{{ asset('/js/ui/jquery-ui.js') }}" charset="utf-8"></script>
-        <script src="{{ asset('/js/typeahead.min.js') }}" charset="utf-8"></script>
-        <script src="{{ asset('/js/board.min.js') }}" charset="utf-8"></script>
+        <script src="{{ asset('/js/ui/jquery-ui.js') }}"></script>
+        <script src="{{ asset('/js/typeahead.min.js') }}"></script>
+        <script src="{{ asset('/js/board.min.js') }}"></script>
 
         <link href="{{ asset('/js/ui/jquery-ui.css') }}" rel="stylesheet">
         <script>

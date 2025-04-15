@@ -45,6 +45,6 @@
     </div>
 @endsection
 @push('scripts')
-    <script src="{{ asset('/js/plan/imagemapster.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/plan/floor.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/plan/imagemapster.js') }}"></script>
+    <script src="{{ asset('/js/plan/floor.js') }}"></script>
 @endpush

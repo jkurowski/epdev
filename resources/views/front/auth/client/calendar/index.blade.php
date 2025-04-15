@@ -19,10 +19,10 @@
 @endsection
 @routes('client_area_calendar')
 @push('scripts')
-    <script src="{{ asset('/js/fullcalendar/main.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/fullcalendar/pl.min.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/moment.min.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/datepicker/bootstrap-datepicker.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/fullcalendar/main.js') }}"></script>
+    <script src="{{ asset('/js/fullcalendar/pl.min.js') }}"></script>
+    <script src="{{ asset('/js/moment.min.js') }}"></script>
+    <script src="{{ asset('/js/datepicker/bootstrap-datepicker.min.js') }}"></script>
 
     <link href="{{ asset('/js/fullcalendar/main.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/js/datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet">

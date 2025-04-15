@@ -40,11 +40,11 @@
     </div>
     @routes('events')
     @push('scripts')
-        <script src="{{ asset('/js/datatables.min.js') }}" charset="utf-8"></script>
-        <script src="{{ asset('/js/bootstrap-select/bootstrap-select.min.js') }}" charset="utf-8"></script>
-        <script src="{{ asset('/js/moment.min.js') }}" charset="utf-8"></script>
-        <script src="{{ asset('/js/datepicker/bootstrap-datepicker.min.js') }}" charset="utf-8"></script>
-        <script src="{{ asset('/js/calendar.js') }}" charset="utf-8"></script>
+        <script src="{{ asset('/js/datatables.min.js') }}""></script>
+        <script src="{{ asset('/js/bootstrap-select/bootstrap-select.min.js') }}"></script>
+        <script src="{{ asset('/js/moment.min.js') }}"></script>
+        <script src="{{ asset('/js/datepicker/bootstrap-datepicker.min.js') }}"></script>
+        <script src="{{ asset('/js/calendar.js') }}"></script>
 
         <link href="{{ asset('/js/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/datatables.min.css') }}" rel="stylesheet">

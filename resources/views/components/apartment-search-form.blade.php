@@ -1,5 +1,5 @@
 <div class="main-search-box">
-    <div class="title">Znajdź mieszkanie<br />dla siebie</div>
+    <div class="title">Znajdź mieszkanie<br>dla siebie</div>
     <div>
         <form action="{{route('front.developro.properties')}}" method="GET">
           
@@ -66,7 +66,7 @@
                                class="level-input"
                                name="rooms"
                                value="{{ $i }}" {{ request('rooms') == $i ? 'checked' : '' }}
-                        />
+                        >
                         <label for="level{{ $i }}" class="level-label">
                             <span class="level-name">{{ $i }}</span>
                         </label>

@@ -72,7 +72,7 @@
 
 
 @push('scripts')
-    <script src="{{ asset('/js/datatables.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/datatables.min.js') }}"></script>
     <link href="{{ asset('/css/datatables.min.css') }}" rel="stylesheet">
     <script>
         // Main initialization
