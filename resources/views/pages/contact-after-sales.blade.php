@@ -29,7 +29,7 @@
             <div class="row align-items-center gy-5 gy-lg-0 d-none">
                 <div class="col-12 col-lg-5 col-xxl-4">
                     <div class="complaint-box">
-                        <h1 class="section-title fw-bold mb-4">Zgłoszenia serwisowe, <br /> reklamcje</h1>
+                        <h1 class="section-title fw-bold mb-4">Zgłoszenia serwisowe, <br> reklamcje</h1>
                         <p class="paragraph mb-4">W celu złożenia reklamacji proszę kliknąć w poniższy link.</p>
                         <p class="paragraph mb-4">ZGŁOSZENIE REKLAMACJI NA FORMULARZU I W POROZUMIENIU Z VOX</p>
                         <a href="#" class="btn btn-complaint">

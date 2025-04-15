@@ -247,7 +247,7 @@
                             <div class="number">
                                 <span data-number="12">12</span>
                             </div>
-                            <span class="number-title">LAT <br />DOŚWIADCZENIA</span>
+                            <span class="number-title">LAT <br>DOŚWIADCZENIA</span>
                         </div>
                         <div class="number-box " data-aos="fade" data-aos-delay="200">
                             <div class="number-box--img">

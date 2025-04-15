@@ -132,7 +132,7 @@
                     <div class="gallery-ap--box" data-aos="fade-right" data-aos-delay="{{ $index * 50 }}">
                         {{-- Picture component --}}
                         <a href="{{asset('investment/thumbs/'. $i->file_thumb) }}" data-gallery="gallery-gallery" class="glightbox ">
-                            <img src="{{asset('investment/thumbs/'. $i->file_thumb) }}" loading="lazy" class="img-fluid gallery-ap--img" alt="{{ $i->name }}" />
+                            <img src="{{asset('investment/thumbs/'. $i->file_thumb) }}" loading="lazy" class="img-fluid gallery-ap--img" alt="{{ $i->name }}">
 
                             {{-- Date overlay --}}
                             @if ($i->date_end)

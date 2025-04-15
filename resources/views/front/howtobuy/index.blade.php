@@ -30,7 +30,7 @@
                                         <div class="timeline-card_item">
                                             <div class="timeline-card_inner">
                                                 <div class="timeline-card_img-box">
-                                                    <img src="{{asset('uploads/krok_1.jpg') }}" class="timeline-card_img" width="630" height="355" />
+                                                    <img src="{{asset('uploads/krok_1.jpg') }}" alt="Jak kupić - krok 1" class="timeline-card_img" width="630" height="355" />
                                                 </div>
                                                 <div class="timeline-card_info">
                                                     <div class="timeline-card_desc">
