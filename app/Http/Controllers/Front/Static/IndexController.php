@@ -21,6 +21,16 @@ class IndexController extends Controller
         $page = Page::find(5);
         return view('pages.privacy-policy', compact('page'));
     }
+    public function office()
+    {
+        $page = Page::find(3);
+        return view('pages.contact-office', compact('page'));
+    }
+    public function sales()
+    {
+        $page = Page::find(7);
+        return view('pages.contact-after-sales', compact('page'));
+    }
 
     public function testPage()
     {
@@ -31,7 +41,8 @@ class IndexController extends Controller
     public function about()
     {
         $completed = Investment::where('status', 2)->get();
-        return view('pages.about-ep-development', compact('completed'));
+        $page = Page::find(6);
+        return view('pages.about-ep-development', compact('completed', 'page'));
     }
 
     public function store(Request $request)

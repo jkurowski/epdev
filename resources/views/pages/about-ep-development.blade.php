@@ -1,5 +1,9 @@
 @extends('layouts.page')
-@section('meta_title', 'o EP Development')
+
+@section('meta_title', $page->title)
+@section('seo_title', $page->meta_title)
+@section('seo_description', $page->meta_description)
+@section('seo_robots', $page->meta_robots)
 
 @php
     $galleryItems = [

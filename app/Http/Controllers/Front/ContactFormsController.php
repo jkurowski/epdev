@@ -9,6 +9,7 @@ use App\Models\RodoRules;
 use App\Repositories\Client\ClientRepository;
 use App\Rules\ReCaptchaV3;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ContactFormsController extends Controller
@@ -113,17 +114,20 @@ class ContactFormsController extends Controller
         $this->sendToVox($validated);
 
         $email = settings()->get("page_email");
+        Log::info('Email addresses from settings:', ['email' => $email]);
 
         if (!is_array($email)) {
             $email = json_decode($email, true); // Decode JSON string if not already an array
         }
 
         if (is_array($email)) {
+            $emailAddresses = [];
             foreach ($email as $entry) {
                 if (isset($entry['value'])) {
                     $emailAddresses[] = $entry['value'];
                 }
             }
+            Log::info('Email addresses to send to:', ['emailAddresses' => $emailAddresses]);
             Mail::to($emailAddresses)->send(new ChatSend($request, $client));
         }
 
@@ -135,9 +139,22 @@ class ContactFormsController extends Controller
 
     private function sendToVox(array $validated)
     {
-        $voxContactMail = new VoxContactMail($this->mapDataToVoxEmailView($validated));
-        Mail::to(env('VOX_MAIL'))->send($voxContactMail);
+        $recipient = env('VOX_MAIL');
+        Log::info('sendToVox called');
+
+        $emailData = $this->mapDataToVoxEmailView($validated);
+        Log::info('Mapped Email Data');
+
+        if (empty($emailData)) {
+            Log::error('Email data is empty! Not sending email.');
+            return;
+        }
+
+        $voxContactMail = new VoxContactMail($emailData);
+        Mail::to($recipient)->send($voxContactMail);
     }
+
+
 
     private function mapDataToVoxEmailView(array $validated)
     {

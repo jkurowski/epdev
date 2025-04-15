@@ -26,10 +26,9 @@ class CityFormRequest extends FormRequest
         $rules = [
             'name' => 'required|string|min:3|max:100',
             'active' => 'required|boolean',
+            'meta_title' => '',
+            'meta_description' => ''
         ];
-
-
-
         return $rules;
     }
 

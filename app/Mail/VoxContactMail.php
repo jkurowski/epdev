@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class VoxContactMail extends Mailable
 {
@@ -19,8 +20,10 @@ class VoxContactMail extends Mailable
      */
     public function __construct(array $data)
     {
+        Log::info('VoxContactMail initialized');
         $this->data = $data;
     }
+
 
     /**
      * Get the message envelope.

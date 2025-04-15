@@ -42,9 +42,12 @@
                         'select' => ['1' => 'Pokaż na liście', '0' => 'Ukryj na liście'],
                     ])
                 </div>
-
-
-
+                <div class="row w-100 form-group">
+                    @include('form-elements.html-input-text-count', ['label' => 'Nagłówek strony', 'sublabel'=> 'Meta tag - title', 'name' => 'meta_title', 'value' => $entry->meta_title, 'maxlength' => 60])
+                </div>
+                <div class="row w-100 form-group">
+                    @include('form-elements.html-input-text-count', ['label' => 'Opis strony', 'sublabel'=> 'Meta tag - description', 'name' => 'meta_description', 'value' => $entry->meta_description, 'maxlength' => 158])
+                </div>
                 <div class="row w-100 form-group">
                     @include('form-elements.html-input-text', [
                         'label' => 'Nazwa',

@@ -32,7 +32,11 @@
 @endsection --}}
 
 @extends('layouts.page')
-@section('meta_title', $page->meta_title . ' - ' . $city->name)
+
+@section('meta_title', $page->title.' - '.$city->name)
+@section('seo_title', $city->meta_title)
+@section('seo_description', $city->meta_description)
+@section('seo_robots', $page->meta_robots)
 
 @section('content')
     <section class="search-hero">

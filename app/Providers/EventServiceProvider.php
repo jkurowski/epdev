@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Events\ClientDealsFieldsCreated;
 use App\Events\ClientDealsFieldsDeleted;
+use Illuminate\Mail\Events\MessageSent;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -33,6 +35,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         ClientDealsFieldsCreated::class => [
             SetPropertiesReserved::class,
+        ],
+        MessageSent::class => [
+            \App\Listeners\LogSentMail::class,
         ],
     ];
 

@@ -206,23 +206,6 @@ Route::group(['as' => 'pages.'], function () {
     //
 
     Route::get('/o-ep-development', 'Front\Static\IndexController@about')->name('about-ep-development');
-
-    //
-    // Construction diary
-    //
-
-    Route::get('/dziennik-budowy-old', function () {
-        return view('pages.construction-diary');
-    })->name('construction-diary');
-
-    Route::get('/dziennik-budowy-old/osiedle-pogodne', function () {
-        return view('pages.construction-diary-single');
-    })->name('construction-diary-single');
-
-    // 
-    // Currently for sale
-    // 
-
     Route::get('/aktualnie-w-sprzedazy', [\App\Http\Controllers\Front\Developro\IndexController::class, 'currentlyForSale'])->name('currently-for-sale');
 
     //
@@ -250,22 +233,8 @@ Route::group(['as' => 'pages.'], function () {
     //
 
     Route::get('/polityka-prywatnosci', 'Front\Static\IndexController@privacypolicy')->name('privacy-policy');
-
-    // 
-    // Contact
-    // 
-
-    Route::get('/kontakt', function () {
-        return view('pages.contact');
-    })->name('contact');
-
-    Route::get('/kontakt/biuro', function () {
-        return view('pages.contact-office');
-    })->name('contact-office');
-
-    Route::get('/kontakt/obsluga-posprzedazowa', function () {
-        return view('pages.contact-after-sales');
-    })->name('contact-after-sales');
+    Route::get('/kontakt/biuro', 'Front\Static\IndexController@office')->name('contact-office');
+    Route::get('/kontakt/obsluga-posprzedazowa', 'Front\Static\IndexController@sales')->name('contact-after-sales');
 });
 
 Route::post('/contact-form', [ContactFormsController::class, 'store'])->name('contact-form.store');
