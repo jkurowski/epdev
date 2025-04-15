@@ -4,7 +4,7 @@
         <div class="row gy-3 gy-lg-5 ">
             <div class="col-12 col-md-6 col-lg-4">
                 <x-contact-list listTitle="Biuro Sprzedaży Warszawa"
-                                location="ul. Modlińska 201 lok. 32<br />03-122 Warszawa"
+                                location="ul. Modlińska 201 lok. 32<br>03-122 Warszawa"
                                 phoneNumber="+48 531 329 392"
                                 email="lead@epdevelopment.com.pl" />
                 <ul class="list-unstyled contacts mt-4">
@@ -21,7 +21,7 @@
                             </g>
                         </svg>
                         <span class="location-info text-capitalize">
-                            <strong>Poniedziałek - Piątek</strong> <br /> 9:00 - 17:00
+                            <strong>Poniedziałek - Piątek</strong> <br> 9:00 - 17:00
                         </span>
                     </li>
                 </ul>
@@ -45,7 +45,7 @@
                             </g>
                         </svg>
                         <span class="location-info text-capitalize">
-                            <strong>Poniedziałek - Piątek</strong> <br /> 9:00 - 17:00
+                            <strong>Poniedziałek - Piątek</strong> <br> 9:00 - 17:00
                         </span>
                     </li>
                 </ul>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-12 col-lg-9">
                             <div class="footer-logo-title">
-                                Witamy <br /> w okolicy.
+                                Witamy <br> w okolicy.
                             </div>
                         </div>
                     </div>

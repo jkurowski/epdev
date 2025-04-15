@@ -13,7 +13,7 @@
                 </a>
                 <div class="nav-text flex-grow-1 text-center">
                     Witamy
-                    <br />
+                    <br>
                     w okolicy.
                 </div>
             </div>
