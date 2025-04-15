@@ -87,7 +87,7 @@
 
         {{-- Submit Button --}}
         <div class="col-12 d-flex justify-content-end">
-            <script type="text/javascript">
+            <script>
                 document.write("<button data-btn-submit type=\"submit\" class=\"g-recaptcha btn btn-primary mt-5 btn-submit {{ $button_class ?? '' }} \" data-sitekey=\"{{ config('services.recaptcha_v3.siteKey') }}\" data-callback=\"onFormRecaptchaSuccess\" data-action=\"submitFormContact\">WYŚLIJ WIADOMOŚĆ<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"4.553\" height=\"8.293\" viewBox=\"0 0 4.553 8.293\"><path id=\"chevron_right_24dp_FILL0_wght100_GRAD0_opsz24\" d=\"M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z\" transform=\"translate(4.553 8.293) rotate(180)\" fill=\"currentColor\" /></svg></button>");
             </script>
             <noscript>Do poprawnego działania, Java musi być włączona.</noscript>
@@ -100,7 +100,7 @@
     <script src="{{ asset('js/validation.js') }}"></script>
     <script src="{{ asset('js/pl.js') }}"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script type="text/javascript">
+    <script>
         $(document).ready(function(){
             $(".validateForm").validationEngine({
                 validateNonVisibleFields: true,
