@@ -71,7 +71,7 @@
                 <div class="input text-center">
                     <input name="page" type="hidden" value="{{ $investment->name }}">
                     <input name="investment_id" type="hidden" value="{{ $investment->id }}">
-                    <script type="text/javascript">
+                    <script>
                         document.write("<button class=\"bttn\" type=\"submit\">WYŚLIJ WIADOMOŚĆ</button>");
                     </script>
                     <noscript>Do poprawnego działania, Java musi być włączona.</noscript>
@@ -89,7 +89,7 @@
 
     <script src="{{ asset('/js/validation.js') }}"></script>
     <script src="{{ asset('/js/pl.js') }}"></script>
-    <script type="text/javascript">
+    <script>
         document.addEventListener('DOMContentLoaded', async () => {
             async function fetchToken(){
                 const response = await fetch("{{ route('front.iframe.token') }}")

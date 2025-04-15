@@ -81,7 +81,7 @@
                 </div>
             </div>
         @endif
-        <script type="text/javascript">
+        <script>
             @if(settings()->get("popup_status") == 66)
             const popModal = new bootstrap.Modal(document.getElementById('popModal'), {
                 keyboard: false

@@ -123,7 +123,6 @@
     <!-- jQuery -->
     <script src="{{ asset('/js/jquery.min.js') }}"></script>
     <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
-
     <script>
         const ws = new WebSocket('ws://127.0.0.1:6001/app/local?protocol=7&client=js&version=4.3.1&flash=false');
 

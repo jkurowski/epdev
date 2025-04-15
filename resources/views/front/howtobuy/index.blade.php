@@ -228,7 +228,7 @@
     </div>
 @endsection
 @push('scripts')
-    <script type="text/javascript">
+    <script>
         (function ($) {
             $(function () {
                 $(window).on('scroll', function () {

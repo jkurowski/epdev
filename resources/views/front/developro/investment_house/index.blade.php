@@ -136,7 +136,7 @@
                                             <div class="col-12 pt-3">
                                                 <div class="input text-center">
                                                     <input name="page" type="hidden" value="{{$property->name}}">
-                                                    <script type="text/javascript">
+                                                    <script>
                                                         document.write("<button class=\"bttn\" type=\"submit\">WYŚLIJ WIADOMOŚĆ</button>");
                                                     </script>
                                                     <noscript><p><b>Do poprawnego działania, Java musi być włączona.</b><p></noscript>
@@ -157,7 +157,7 @@
 @push('scripts')
     <script src="{{ asset('/js/validation.js') }}"></script>
     <script src="{{ asset('/js/pl.js') }}"></script>
-    <script type="text/javascript">
+    <script>
         document.getElementById('notification-form').addEventListener('submit', function(e) {
             e.preventDefault();
 

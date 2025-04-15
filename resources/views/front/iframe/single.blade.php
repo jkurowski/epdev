@@ -123,7 +123,7 @@
                                             <div class="col-12 pt-3">
                                                 <div class="input text-center">
                                                     <input name="page" type="hidden" value="{{ $property->name }}">
-                                                    <script type="text/javascript">
+                                                    <script>
                                                         document.write("<button class=\"bttn\" type=\"submit\">WYŚLIJ WIADOMOŚĆ</button>");
                                                     </script>
                                                     <noscript>Do poprawnego działania, Java musi być włączona.</noscript>
@@ -148,7 +148,7 @@
 
     <script src="{{ asset('/js/validation.js') }}"></script>
     <script src="{{ asset('/js/pl.js') }}"></script>
-    <script type="text/javascript">
+    <script>
         document.addEventListener('DOMContentLoaded', async () => {
             async function fetchToken(){
                 const response = await fetch("{{ route('front.iframe.token') }}")

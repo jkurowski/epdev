@@ -89,7 +89,7 @@
                                 <div class="col-12 pt-3">
                                     <div class="input text-center">
                                         <input name="page" type="hidden" value="Kontakt">
-                                        <script type="text/javascript">
+                                        <script>
                                             @if(settings()->get("recaptcha_site_key") && settings()->get("recaptcha_secret_key"))
                                                 document.write("<button type=\"submit\" class=\"bttn g-recaptcha\" data-sitekey=\"{{ settings()->get("recaptcha_site_key") }}\" data-callback=\"onRecaptchaSuccess\" data-action=\"submitContact\">WYŚLIJ WIADOMOŚĆ</button>");
                                             @else
@@ -114,7 +114,7 @@
     <script src="https://www.google.com/recaptcha/api.js"></script>
     @endif
 
-    <script type="text/javascript">
+    <script>
         $(document).ready(function(){
             $(".validateForm").validationEngine({
                 validateNonVisibleFields: true,

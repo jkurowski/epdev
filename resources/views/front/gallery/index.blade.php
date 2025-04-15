@@ -33,7 +33,7 @@
 @endsection
 @push('scripts')
     <script src="{{ asset('/js/slick.js') }}"></script>
-    <script type="text/javascript">
+    <script>
         $(document).ready(function(){
             $('.gallery-carousel').slick({
                 centerPadding: '300px',

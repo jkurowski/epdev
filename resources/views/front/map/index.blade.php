@@ -31,8 +31,7 @@
 @push('scripts')
     <link rel="stylesheet" href="{{ URL::asset('css/leaflet.css') }}">
     <script type="text/javascript" src="{{ URL::asset('js/leaflet.js') }}"></script>
-
-    <script type="text/javascript">
+    <script>
         let map = L.map('map').setView([52.227388, 21.011063], 13),
             theMarker = {},
             zoom = map.getZoom(),

@@ -361,7 +361,7 @@
     <script src="{{ asset('js/validation.js') }}"></script>
     <script src="{{ asset('js/pl.js') }}"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script type="text/javascript">
+    <script>
         $(document).ready(function(){
             $(".validateForm").validationEngine({
                 validateNonVisibleFields: true,

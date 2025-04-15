@@ -75,7 +75,7 @@
                     <div class="col-12 col-xxl-4 d-flex justify-content-end align-items-end">
                         <div class="form-submit">
                             <input name="form_page" type="hidden" value="{{ $page_name }}">
-                            <script type="text/javascript">
+                            <script>
                                 @if(settings()->get("recaptcha_site_key") && settings()->get("recaptcha_secret_key"))
                                 document.write("<button type=\"submit\" class=\"bttn g-recaptcha\" data-sitekey=\"{{ settings()->get("recaptcha_site_key") }}\" data-callback=\"onRecaptchaSuccess\" data-action=\"submitContact\">WYŚLIJ WIADOMOŚĆ</button>");
                                 @else
@@ -94,7 +94,7 @@
     <script src="{{ asset('js/validation.js') }}"></script>
     <script src="{{ asset('js/pl.js') }}"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script type="text/javascript">
+    <script>
         $(document).ready(function(){
             $(".validateForm").validationEngine({
                 validateNonVisibleFields: true,
