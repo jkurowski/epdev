@@ -82,7 +82,7 @@
         <div class="container">
             <div class="row gy-5 gy-lg-0 align-items-center" data-aos="fade" data-aos-delay="200">
                 <div class=" col-12 col-lg-5 ">
-                    <x-text-container titleTag="WARSZAWA, BIAŁOŁĘKA" title="Apartamenty <br/> Talarowa 3" :paragraphs="[
+                    <x-text-container titleTag="WARSZAWA, BIAŁOŁĘKA" title="Apartamenty <br> Talarowa 3" :paragraphs="[
                         '<strong>Apartamenty Talarowa to projekt o ciekawej minimalistycznej architekturze, zlokalizowany na warszawskim Tarchominie. Miejsce pełne wygód ze znakomitą komunikacją. Bogata infrastruktura miejska w okolicy oraz łatwy i szybki dostęp do centrum sprawiają, że Apartamenty Talarowa to znakomita propozycja dla ceniących komfort codziennego życia. </strong>',
                         'Obiekt zaprojektowano z ogromną troską o detale, komfort mieszkańców oraz w oparciu o wysokiej klasy materiały wykończeniowe. Wszystkie kondygnacje są dostępne bezpośrednio z poziomu parkingu podziemnego. Zaplanowano tu 52 mieszkania o metrażach od 38 m2 do 63 m2, w rozkładach od 1 do 4 pokojowych',
                     ]"
@@ -455,7 +455,7 @@
                         '<strong>Pragnąc zapewnić Państwu kompleksową obsługę, nawiązaliśmy współpracę z Pracownią Architektury Wnętrz INTERIOR DESIGN STUDIO</strong>',
                         'INTERIOR DESIGN STUDIO łączy pasję do projektowania z wieloletnim doświadczeniem w zakresie usług wykończeniowych.',
                         'Skontaktuj się z Ekspertem wnętrz!',
-                    ]" title="Interesuje Cię <br/> wykończenie pod klucz?" />
+                    ]" title="Interesuje Cię <br> wykończenie pod klucz?" />
                     <a href="tel:+48 698 719 562" class="btn btn-primary btn-phone-big" data-aos="fade-up"
                         data-aos-delay="200">
                         ZADZWOŃ +48 698 719 562

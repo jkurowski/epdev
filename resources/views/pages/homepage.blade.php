@@ -418,7 +418,7 @@
                             <div class="number">
                                 <span data-number="2000">2000</span>
                             </div>
-                            <span class="number-title">ZADOWOLONYCH <br /> KLIENTÓW</span>
+                            <span class="number-title">ZADOWOLONYCH <br> KLIENTÓW</span>
                         </div>
                     </div>
                 </div>

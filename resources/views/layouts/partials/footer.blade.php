@@ -28,7 +28,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <x-contact-list listTitle="Biuro Sprzedaży Nowy Dwór Mazowiecki"
-                                location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki"
+                                location="ul. Jasna 15<br>05-101 Nowy Dwór Mazowiecki"
                                 phoneNumber="+48 793 501 501"
                                 phoneNumberSecond="+48 513 231 231" email="lead@epdevelopment.com.pl" />
                 <ul class="list-unstyled contacts mt-4">
@@ -51,10 +51,10 @@
             </div>
             <div class="col-12 col-lg-4">
                 <x-contact-list listTitle="Sekretariaty"
-                                location="ul. Modlińska 201/32<br/>03-122 Warszawa"
+                                location="ul. Modlińska 201/32<br>03-122 Warszawa"
                                 phoneNumber="+48 517 115 888"
                                 email="sekretariat.waw@epdevelopment.com.pl" />
-                <x-contact-list location="ul. Jasna 15<br/>05-101 Nowy Dwór Mazowiecki"
+                <x-contact-list location="ul. Jasna 15<br>05-101 Nowy Dwór Mazowiecki"
                                 phoneNumber="+48 517 115 777"
                                 email="sekretariat.ndm@epdevelopment.com.pl" />
             </div>

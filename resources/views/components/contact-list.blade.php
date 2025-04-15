@@ -23,7 +23,7 @@
     {{-- Phone --}}
     @if (!empty($phoneNumber))
         <li class="pb-3 contact-box phone">
-            <a class="nav-link" href="tel:{{ $phoneNumber }}" aria-label="Zadzwoń">
+            <a class="nav-link" href="tel:{{ str_replace(' ', '', $phoneNumber) }}" aria-label="Zadzwoń">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                     <g transform="translate(-1209 -6066)">
                         <circle cx="16" cy="16" r="16"

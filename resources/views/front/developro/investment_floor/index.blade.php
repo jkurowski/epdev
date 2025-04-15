@@ -29,7 +29,7 @@
                                     shape="poly"
                                     href="{{route('front.investment.property.index', ['floor' => $r->floor_id, 'property' => $r->id])}}"
                                     data-item="{{$r->id}}"
-                                    title="{{$r->name}}<br>Powierzchnia: <b class=fr>{{$r->area}} m<sup>2</sup></b><br />Pokoje: <b class=fr>{{$r->rooms}}</b><br><b>{{ roomStatus($r->status) }}</b>"
+                                    title="{{$r->name}}<br>Powierzchnia: <b class=fr>{{$r->area}} m<sup>2</sup></b><br>Pokoje: <b class=fr>{{$r->rooms}}</b><br><b>{{ roomStatus($r->status) }}</b>"
                                     alt="{{$r->slug}}"
                                     data-roomnumber="{{$r->number}}"
                                     data-roomtype="{{$r->typ}}"
