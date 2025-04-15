@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="section-title fw-bold mb-4">Zgłoszenia serwisowe, reklamcje</h1>
+                    <h1 class="section-title fw-bold mb-4">Zgłoszenia serwisowe, reklamacje</h1>
                     <p class="paragraph mb-4">W celu złożenia reklamacji prosimy wypełnić formularz.</p>
                 </div>
                 <div class="col-12 mt-5">
