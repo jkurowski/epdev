@@ -1,5 +1,5 @@
 
-<script type="text/javascript">
+<script>
     $(document).ready(function(){
         const popModal = new bootstrap.Modal(document.getElementById('popModal'), {
             keyboard: false

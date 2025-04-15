@@ -31,7 +31,7 @@
 <div id="login" class="h-100">
     @yield('content')
 </div>
-<script type="text/javascript">
+<script>
     $(document).ready(function(){
         $(".validateForm").validationEngine({
             validateNonVisibleFields: true,

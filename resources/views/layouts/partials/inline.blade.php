@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <script type="text/javascript">
+    <script>
         function process_response(obj) {
             const f = $("#inlineModal form");
             const newObj = Object.keys(obj).filter(e => obj[e] !== null).reduce((o, e) => {
