@@ -28,11 +28,11 @@
         <input type="hidden" name="investment_id" value="{{ $investment->id }}">
         <input type="hidden" name="investment_name" value="{{ $investment->name }}">
     @endif
-    @csrf
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="row">
         <div class="col-12">
-            <div id="form-errors" class="alert-danger alert hide-empty"></div>
-            <div id="form-success" class="alert-success alert hide-empty"></div>
+            <div id="form-alert-errors" class="alert-danger alert hide-empty"></div>
+            <div id="form-alert-success" class="alert-success alert hide-empty"></div>
         </div>
 
         {{-- Name Field --}}
