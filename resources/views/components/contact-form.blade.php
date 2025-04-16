@@ -38,22 +38,22 @@
         {{-- Name Field --}}
         <div class="col-12">
             <div class="form-floating mb-3">
-                <input type="text" class="validate[required] form-control" id="user-name" placeholder="Imię i nazwisko" name="name">
-                <label for="user-name">Imię i nazwisko <span class="required">*</span></label>
+                <input type="text" class="validate[required] form-control" id="form-user-name" placeholder="Imię i nazwisko" name="name">
+                <label for="form-user-name">Imię i nazwisko <span class="required">*</span></label>
             </div>
         </div>
 
         {{-- Email and Phone Fields --}}
         <div class="col-12 col-sm-6 col-md-12 col-lg-6">
             <div class="form-floating mb-3">
-                <input type="email" class="validate[required] form-control" id="user-email" placeholder="Adres e-mail" name="email" required>
-                <label for="user-email">Adres e-mail <span class="required">*</span></label>
+                <input type="email" class="validate[required] form-control" id="form-user-email" placeholder="Adres e-mail" name="email" required>
+                <label for="form-user-email">Adres e-mail <span class="required">*</span></label>
             </div>
         </div>
         <div class="col-12 col-sm-6 col-md-12 col-lg-6">
             <div class="form-floating mb-3">
-                <input type="tel" class="validate[required] form-control" id="user-tel" placeholder="Telefon" name="phone">
-                <label for="user-tel">Telefon <span class="required">*</span></label>
+                <input type="tel" class="validate[required] form-control" id="form-user-tel" placeholder="Telefon" name="phone">
+                <label for="form-user-tel">Telefon <span class="required">*</span></label>
             </div>
         </div>
         @if($investment)
@@ -76,14 +76,13 @@
         {{-- Message Field --}}
         <div class="col-12">
             <div class="form-floating">
-                <textarea class="validate[required] form-control" placeholder="Wiadomość" id="user-message" style="height: 100px" name="message"></textarea>
-                <label for="user-message">Wiadomość <span class="required">*</span></label>
+                <textarea class="validate[required] form-control" placeholder="Wiadomość" id="form-user-message" style="height: 100px" name="message"></textarea>
+                <label for="form-user-message">Wiadomość <span class="required">*</span></label>
             </div>
         </div>
 
         {{-- Terms and Conditions Accordion --}}
         <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" />
-
 
         {{-- Submit Button --}}
         <div class="col-12 d-flex justify-content-end">
