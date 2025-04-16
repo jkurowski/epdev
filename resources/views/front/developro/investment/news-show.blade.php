@@ -1,7 +1,6 @@
 @extends('layouts.page')
 @section('meta_title', 'Dziennik budowy - ' . $article->title)
 
-
 @php
     $galleryItems = [
         [
@@ -74,9 +73,7 @@
 @section('title', 'Osiedle Pogodne')
 
 @section('content')
-
-
-    <section class="bg-white">
+    <div class="bg-white">
         @include('components.breadcrumbs', [
             'items' => [
                 ['label' => 'Dziennik budowy', 'url' => route('front.investment.news')],
@@ -85,10 +82,10 @@
             'title' => $article->title,
             'backLink' => true,
         ])
-    </section>
+    </div>
 
     @if($progressData->count() > 0)
-    <section class="margin-xs overflow-x-hidden mt-5">
+    <div class="margin-xs overflow-x-hidden mt-5">
         <div class="row">
             <div class="col-12">
                 <div class="site-record-book-slider mt-3">
@@ -108,10 +105,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     @endif
 
-    <section class="margin-xs overflow-x-hidden">
+    <div class="margin-xs overflow-x-hidden">
         <div class="container">
             <div class="row">
                 <div class="col-12 investment-news">
@@ -119,10 +116,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- 3. CONTACT FORM -->
-    <section class="margin-xs contact-section">
+    <div class="margin-xs contact-section">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-lg-center">
@@ -161,6 +158,5 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
 @endsection
