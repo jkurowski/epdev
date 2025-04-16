@@ -3,15 +3,15 @@
     @if (!empty($titleTag) || !empty($title))
         <div class="title-container">
             @if (!empty($titleTag))
-                <div class="title-tag mb-2" data-aos="fade" data-aos-delay="150">
+                <h1 class="title-tag mb-2" data-aos="fade" data-aos-delay="150">
                     {{ $titleTag }}
-                </div>
+                </h1>
             @endif
 
             @if (!empty($title))
-                <div class="header-1" data-aos="fade-up">
+                <h1 class="header-1 mb-0" data-aos="fade-up">
                     {!! $title !!}
-                </div>
+                </h1>
             @endif
         </div>
     @endif
