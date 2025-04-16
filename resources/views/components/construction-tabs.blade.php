@@ -29,9 +29,9 @@
                     @foreach ($tab['streets'] as $street)
                         <div class="form-check" data-location="{{ $street['data_location'] }}">
                             <input type="checkbox" class="form-check-input street-checkbox"
-                                id="{{ Str::slug($street['boxId']) }}" data-target="{{ $street['boxId'] }}"
+                                id="{{ Str::slug($street['boxId']) }}-{{ $street['data_location'] }}" data-target="{{ $street['boxId'] }}"
                                 name="streets[]" checked>
-                            <label class="form-check-label" for="{{ Str::slug($street['boxId']) }}">
+                            <label class="form-check-label" for="{{ Str::slug($street['boxId']) }}-{{ $street['data_location'] }}">
                                 {{ $street['name'] }}
                             </label>
                         </div>
