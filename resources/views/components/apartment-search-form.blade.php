@@ -5,7 +5,7 @@
           
             {{-- Dropdown for city selection --}}
             <div class="d-flex flex-column">
-                <label for="apartments-city" class="subtitle mt-4 mb-3">MIASTO</label>
+                <label class="subtitle mt-4 mb-3">MIASTO</label>
                 <div id="citySearch" class="dropdown dropdown-search">
                     <button class="btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>Wybierz z listy</span>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="d-flex flex-column">
-                <label for="apartments-city" class="subtitle mt-4 mb-3">INWESTYCJA</label>
+                <label class="subtitle mt-4 mb-3">INWESTYCJA</label>
                 <div id="investmentSearch" class="dropdown dropdown-search">
                     <button class="btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>Wybierz z listy</span>
