@@ -28,6 +28,7 @@ class InvestSectionFormRequest extends FormRequest
             'category' => 'integer',
             'title' => 'nullable|string|min:5|max:190',
             'subtitle' => 'nullable|string|min:5|max:190',
+            'file_alt' => '',
             'text' => '',
             'link' => '',
             'link_button' => '',

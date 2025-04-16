@@ -44,6 +44,9 @@
                                 </div>
                                 @endif
                                 <div class="row w-100 form-group">
+                                    @include('form-elements.html-input-text', ['label' => 'Atrybut ALT dla obrazka', 'name' => 'file_alt', 'value' => $entry->file_alt, 'required' => 0])
+                                </div>
+                                <div class="row w-100 form-group">
                                     @include('form-elements.html-input-text', ['label' => 'Przycisk - adres url', 'name' => 'link', 'value' => $entry->link, 'required' => 0])
                                 </div>
                                 <div class="row w-100 form-group">

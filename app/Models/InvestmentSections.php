@@ -21,6 +21,7 @@ class InvestmentSections extends Model
         'link_button',
         'file',
         'file_webp',
+        'file_alt',
         'active',
         'position'
     ];

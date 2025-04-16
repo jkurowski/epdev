@@ -48,7 +48,7 @@
                             <picture>
                                 <source type="image/webp" srcset="{{asset('investment/sections/webp/'.$section->file_webp) }}">
                                 <source type="image/jpeg" srcset="{{asset('investment/sections/'.$section->file) }}">
-                                <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$article->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
+                                <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$section->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
                             </picture>
                             @endif
                         </div>
@@ -84,7 +84,7 @@
                                         <picture>
                                             <source type="image/webp" srcset="{{asset('investment/sections/webp/'.$section->file_webp) }}">
                                             <source type="image/jpeg" srcset="{{asset('investment/sections/'.$section->file) }}">
-                                            <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$article->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
+                                            <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$section->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
                                         </picture>
                                     @endif
                                 </div>
@@ -120,7 +120,7 @@
                                         <picture>
                                             <source type="image/webp" srcset="{{asset('investment/sections/webp/'.$section->file_webp) }}">
                                             <source type="image/jpeg" srcset="{{asset('investment/sections/'.$section->file) }}">
-                                            <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$article->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
+                                            <img src="{{asset('investment/sections/'.$section->file) }}" alt="@if($section->file_alt){{$section->file_alt}}@else{{$section->title}}@endif" loading="lazy" class="img-fluid">
                                         </picture>
                                     @endif
                                 </div>
