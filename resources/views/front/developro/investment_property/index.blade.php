@@ -314,7 +314,7 @@
                                 {{ $property->investment->name }}
                             </div>
                             <h2 class="header-1" data-aos="fade-up">
-                                Wybierz spośród </br> podobnych mieszkań
+                                Wybierz spośród <br> podobnych mieszkań
                             </h2>
                         </div>
                     </div>

@@ -23,7 +23,7 @@
     </div>
 @endif
 <form id="{{ $id }}" autocomplete="off" action='{{ route('contact-form.store') }}' method="POST" class="p-0 p-lg-3">
-    @csrf
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     @if($investment)
         <input type="hidden" name="investment_id" value="{{ $investment->id }}">
         <input type="hidden" name="investment_name" value="{{ $investment->name }}">
