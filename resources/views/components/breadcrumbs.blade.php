@@ -26,7 +26,7 @@
                         </li>
                     @endif
                 </ol>
-                <div class="breadcrumb-title" data-aos="fade-right">{{ !empty($title) ? $title : '' }}</div>
+                <h1 class="breadcrumb-title mb-0" data-aos="fade-right">{{ !empty($title) ? $title : '' }}</h1>
             </div>
 
             @if (!empty($image))
