@@ -82,7 +82,7 @@
         </div>
 
         {{-- Terms and Conditions Accordion --}}
-        <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" />
+        <x-form-check-accordion-normal :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" />
 
         {{-- Submit Button --}}
         <div class="col-12 d-flex justify-content-end">
