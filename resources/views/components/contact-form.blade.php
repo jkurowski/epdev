@@ -59,7 +59,7 @@
         @if($investment)
             @if($investment->status == 1 && $investment->show_properties)
             {{-- City Selection --}}
-            <x-form-cities-normal />
+            <x-form-cities />
 
             {{-- Area Selection --}}
             <div class="col-12">
@@ -82,7 +82,7 @@
         </div>
 
         {{-- Terms and Conditions Accordion --}}
-        <x-form-check-accordion-normal :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" />
+        <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" />
 
         {{-- Submit Button --}}
         <div class="col-12 d-flex justify-content-end">
