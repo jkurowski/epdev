@@ -26,7 +26,9 @@
                             data-bs-target="#collapse_rule_{{ $rule->id }}"
                             aria-expanded="false"
                             aria-controls="collapse_rule_{{ $rule->id }}"
-                          role="button">
+                          role="button"
+                          tabindex="0"
+                          aria-pressed="false">
                         <label for="rule_{{ $rule->id }}" class="form-check-label rules-text ms-2">
                             {{ $rule->title }} <span class="required">*</span>
                         </label>
