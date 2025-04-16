@@ -21,7 +21,7 @@
                     <p class="paragraph mb-4">W celu złożenia reklamacji prosimy wypełnić formularz.</p>
                 </div>
                 <div class="col-12 mt-5">
-                    <iframe src="https://epdevelopment.voxdeveloper.com/webservice/faultnoticeform/api_key/e493bcb15b45cdf33368db18440023f4d806a6b3" frameborder="0" class="w-100" style="height: 1730px"></iframe>
+                    <iframe src="https://epdevelopment.voxdeveloper.com/webservice/faultnoticeform/api_key/e493bcb15b45cdf33368db18440023f4d806a6b3" class="w-100" style="height: 1730px"></iframe>
                 </div>
             </div>
 
