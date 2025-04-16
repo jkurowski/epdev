@@ -239,7 +239,7 @@
                             <p class="text-pretty paragraph">Skontaktuj się z&nbsp;Ekspertem wnętrz!</p>
                         </div>
                     </div>
-                    <a class="btn btn-primary btn-phone-big" href="tel:+48 698 719 562"> ZADZWOŃ +48 698 719 562 </a>
+                    <a class="btn btn-primary btn-phone-big" href="tel:+48698719562"> ZADZWOŃ +48 698 719 562 </a>
                 </div>
             </div>
         </div>
@@ -278,7 +278,7 @@
                                     <a class="nav-link" href="mailto:aneta.jasinska@grupaang.pl" aria-label="Contact us">aneta.jasinska@grupaang.pl </a>
                                 </div>
                                 <div class="pb-3 contact-box phone">
-                                    <a class="nav-link" href="tel:+48 790 023 189" aria-label="Call us"> +48 790 023 189 </a>
+                                    <a class="nav-link" href="tel:+48790023189" aria-label="Call us"> +48 790 023 189 </a>
                                 </div>
                             </div>
                         </div>
@@ -290,7 +290,7 @@
                                     <a class="nav-link" href="mailto:hubert.burkowski@hbfinanse.pl" aria-label="Contact us">hubert.burkowski@hbfinanse.pl </a>
                                 </div>
                                 <div class="pb-3 contact-box phone">
-                                    <a class="nav-link" href="tel:+48 793 353 021" aria-label="Call us"> +48 793 353 021 </a>
+                                    <a class="nav-link" href="tel:+48793353021" aria-label="Call us"> +48 793 353 021 </a>
                                 </div>
                             </div>
                         </div>
