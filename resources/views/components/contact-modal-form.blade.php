@@ -9,7 +9,7 @@
     <div id="modalMessage"></div>
     <div id="formBody">
         <div class="modal-body">
-        @csrf
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-12">
                 <div id="formErrors" class="alert alert-danger hide-empty"></div>
