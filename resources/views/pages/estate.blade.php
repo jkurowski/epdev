@@ -189,21 +189,21 @@
                         <!-- ROW -->
                         <li class="grid-btn" id="row-tab" role="tab" aria-controls="pills-row" aria-selected="true">
                             <svg xmlns="http://www.w3.org/2000/svg" width="53" height="28" viewBox="0 0 53 28">
-                                <g id="Group_236" data-name="Group 236" transform="translate(-1521 -3777)">
-                                    <g id="Group_226" data-name="Group 226" transform="translate(-73 -32)">
-                                        <g id="Rectangle_344" data-name="Rectangle 344" transform="translate(1594 3831)"
+                                <g transform="translate(-1521 -3777)">
+                                    <g transform="translate(-73 -32)">
+                                        <g transform="translate(1594 3831)"
                                             fill="none" stroke="#000" stroke-width="1">
                                             <rect width="53" height="6" rx="2" stroke="none" />
                                             <rect x="0.5" y="0.5" width="52" height="5" rx="1.5"
                                                 fill="none" />
                                         </g>
-                                        <g id="Rectangle_345" data-name="Rectangle 345" transform="translate(1594 3820)"
+                                        <g transform="translate(1594 3820)"
                                             fill="none" stroke="#000" stroke-width="1">
                                             <rect width="53" height="6" rx="2" stroke="none" />
                                             <rect x="0.5" y="0.5" width="52" height="5" rx="1.5"
                                                 fill="none" />
                                         </g>
-                                        <g id="Rectangle_346" data-name="Rectangle 346" transform="translate(1594 3809)"
+                                        <g transform="translate(1594 3809)"
                                             fill="none" stroke="#000" stroke-width="1">
                                             <rect width="53" height="6" rx="2" stroke="none" />
                                             <rect x="0.5" y="0.5" width="52" height="5" rx="1.5"
@@ -217,38 +217,38 @@
                         <li class="grid-btn active" id="column-tab" role="tab" aria-controls="pills-column"
                             aria-selected="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="39" height="28" viewBox="0 0 39 28">
-                                <g id="Group_235" data-name="Group 235" transform="translate(-1594 -3777)">
-                                    <g id="Rectangle_335" data-name="Rectangle 335" transform="translate(1594 3793)"
+                                <g transform="translate(-1594 -3777)">
+                                    <g transform="translate(1594 3793)"
                                         fill="none" stroke="#000" stroke-width="1">
                                         <rect width="11" height="12" rx="2" stroke="none" />
                                         <rect x="0.5" y="0.5" width="10" height="11" rx="1.5"
                                             fill="none" />
                                     </g>
-                                    <g id="Rectangle_343" data-name="Rectangle 343" transform="translate(1594 3777)"
+                                    <g transform="translate(1594 3777)"
                                         fill="none" stroke="#000" stroke-width="1">
                                         <rect width="11" height="12" rx="2" stroke="none" />
                                         <rect x="0.5" y="0.5" width="10" height="11" rx="1.5"
                                             fill="none" />
                                     </g>
-                                    <g id="Rectangle_337" data-name="Rectangle 337" transform="translate(1608 3793)"
+                                    <g transform="translate(1608 3793)"
                                         fill="none" stroke="#000" stroke-width="1">
                                         <rect width="11" height="12" rx="2" stroke="none" />
                                         <rect x="0.5" y="0.5" width="10" height="11" rx="1.5"
                                             fill="none" />
                                     </g>
-                                    <g id="Rectangle_342" data-name="Rectangle 342" transform="translate(1608 3777)"
+                                    <g transform="translate(1608 3777)"
                                         fill="none" stroke="#000" stroke-width="1">
                                         <rect width="11" height="12" rx="2" stroke="none" />
                                         <rect x="0.5" y="0.5" width="10" height="11" rx="1.5"
                                             fill="none" />
                                     </g>
-                                    <g id="Rectangle_338" data-name="Rectangle 338" transform="translate(1622 3793)"
+                                    <g transform="translate(1622 3793)"
                                         fill="none" stroke="#000" stroke-width="1">
                                         <rect width="11" height="12" rx="2" stroke="none" />
                                         <rect x="0.5" y="0.5" width="10" height="11" rx="1.5"
                                             fill="none" />
                                     </g>
-                                    <g id="Rectangle_341" data-name="Rectangle 341" transform="translate(1622 3777)"
+                                    <g transform="translate(1622 3777)"
                                         fill="none" stroke="#000" stroke-width="1">
                                         <rect width="11" height="12" rx="2" stroke="none" />
                                         <rect x="0.5" y="0.5" width="10" height="11" rx="1.5"
@@ -318,8 +318,7 @@
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="7.675" height="13.979"
                                             viewBox="0 0 7.675 13.979">
-                                            <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
-                                                d="M1.371,6.99l6.3-6.3L6.99,0,0,6.99l6.99,6.99.685-.685Z"
+                                            <path d="M1.371,6.99l6.3-6.3L6.99,0,0,6.99l6.99,6.99.685-.685Z"
                                                 fill="currentColor" />
                                         </svg>
                                     </span>
@@ -339,8 +338,7 @@
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="7.675" height="13.979"
                                             viewBox="0 0 7.675 13.979">
-                                            <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
-                                                d="M1.371,6.99l6.3-6.3L6.99,0,0,6.99l6.99,6.99.685-.685Z"
+                                            <path d="M1.371,6.99l6.3-6.3L6.99,0,0,6.99l6.99,6.99.685-.685Z"
                                                 transform="translate(7.675 13.979) rotate(180)" fill="currentColor" />
                                         </svg>
                                     </span>
