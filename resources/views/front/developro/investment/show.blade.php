@@ -21,11 +21,11 @@
                 ]),
             ],
         ]" />
-        <a name="top"></a>
+        <a id="top"></a>
         @if($investment->sections->count() <= 3)
         <div class="investment-carousel margin-below-breadcrumb">
         @foreach($investment->sections as $section)
-            <section>
+            <div>
                 <div class="container">
                     <div class="row gy-5 gy-lg-0 align-items-center">
                         <div class="col-12 col-lg-5">
@@ -54,14 +54,14 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
             @endforeach
             </div>
             <div id="invest-arrows"></div>
         @else
             <div class="investment-carousel-1 margin-below-breadcrumb">
                 @foreach($investment->sections->take(2) as $section)
-                    <section>
+                    <div>
                         <div class="container">
                             <div class="row gy-5 gy-lg-0 align-items-center">
                                 <div class="col-12 col-lg-5">
@@ -90,14 +90,14 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 @endforeach
             </div>
             <div id="invest-arrows-1"></div>
 
             <div class="investment-carousel-2 margin-below-breadcrumb mt-5">
                 @foreach($investment->sections->skip(2)->take(2) as $section)
-                    <section>
+                    <div>
                         <div class="container">
                             <div class="row gy-5 gy-lg-0 align-items-center flex-row-reverse">
                                 <div class="col-12 col-lg-5 offset-lg-1">
@@ -126,7 +126,7 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 @endforeach
             </div>
             <div id="invest-arrows-2"></div>
@@ -138,7 +138,7 @@
         <div class="container margin-xs" id="znajdz-swoje-mieszkanie">
             <div class="text-center">
                 <div class="title-tag-sm" data-aos="fade">{{ $investment->name }}</div>
-                <div class="header-1" data-aos="fade-up" data-aos-delay="200"r>Znajdź swoje mieszkanie</div>
+                <div class="header-1" data-aos="fade-up" data-aos-delay="200">Znajdź swoje mieszkanie</div>
             </div>
         </div>
         <div class="container mt-3 mt-lg-5 mb-5 mb-xl-3">
@@ -157,8 +157,7 @@
         @include('front.developro.investment_shared.list', ['investment' => $investment, 'properties' => $properties])
         @endif
 
-
-        <section class="margin-xs contact-section">
+        <div class="margin-xs contact-section">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-lg-center">
@@ -178,10 +177,10 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         @if($progressData->count() > 0 && $investment->status == 1)
-        <section class="margin-xs overflow-x-hidden">
+        <div class="margin-xs overflow-x-hidden">
             <div class="container">
                 <div class="header-1 mb-5" data-aos="fade">Postęp prac</div>
             </div>
@@ -204,19 +203,19 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
         @endif
 
         {!! $investment->end_content !!}
 
         @if ($investment->gallery && $investment->gallery->photos->count() > 0)
             {{-- Gallery --}}
-            <section class="margin-xs">
+            <div class="margin-xs">
                 <x-gallery :items="$investment->gallery->photos" />
-            </section>
+            </div>
         @endif
 
-        <section class="margin-xs bg-custom-gray halfs d-none">
+        <div class="margin-xs bg-custom-gray halfs d-none">
             <div class="half-section half-image">
                 <div class="half-image-cover">
                     <img src="{{ asset('images/half-left.jpg') }}"
@@ -243,9 +242,9 @@
                     <a class="btn btn-primary btn-phone-big" href="tel:+48 698 719 562"> ZADZWOŃ +48 698 719 562 </a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="margin-xs halfs flex-row-reverse">
+        <div class="margin-xs halfs flex-row-reverse">
             <div class="half-section half-image">
                 <div class="half-image-cover">
                     <img src="{{ asset('images/half-right.jpg') }}"
@@ -298,7 +297,9 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <style>#footer{margin-top:0 !important;}@media (max-width: 991.98px) {#footer{margin-top: max(65px,7.8125vw) !important;}}</style>
+        </div>
     @endsection
+    @push('styles')
+        <style>#footer{margin-top:0 !important;}@media (max-width: 991.98px) {#footer{margin-top: max(65px,7.8125vw) !important;}}</style>
+    @endpush
 @endif
