@@ -46,13 +46,11 @@
                                         SPRAWDŹ
                                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
                                             viewBox="0 0 48 48">
-                                            <g id="Group_1391" data-name="Group 1391" transform="translate(-718 -1066)">
-                                                <g id="Group_1390" data-name="Group 1390" transform="translate(-179 -918)">
-                                                    <path class="chevron" id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
-                                                        d="M1.371,6.99l6.3-6.3L6.99,0,0,6.99l6.99,6.99.685-.685Z"
+                                            <g transform="translate(-718 -1066)">
+                                                <g transform="translate(-179 -918)">
+                                                    <path class="chevron" d="M1.371,6.99l6.3-6.3L6.99,0,0,6.99l6.99,6.99.685-.685Z"
                                                         transform="translate(924.873 2015.367) rotate(180)" fill="#d7007a" />
-                                                    <g id="Ellipse_27" data-name="Ellipse 27"
-                                                        transform="translate(945 2032) rotate(180)" fill="none"
+                                                    <g transform="translate(945 2032) rotate(180)" fill="none"
                                                         stroke="#d7007a" stroke-width="1">
                                                         <circle cx="24" cy="24" r="24" stroke="none" />
                                                         <circle cx="24" cy="24" r="23.5" fill="none" />
@@ -92,13 +90,12 @@
                                             SPRAWDŹ
                                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
                                                 viewBox="0 0 48 48">
-                                                <g id="Group_1391" data-name="Group 1391" transform="translate(-718 -1066)">
-                                                    <g id="Group_1390" data-name="Group 1390" transform="translate(-179 -918)">
+                                                <g transform="translate(-718 -1066)">
+                                                    <g transform="translate(-179 -918)">
                                                         <path class="chevron" id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
                                                             d="M1.371,6.99l6.3-6.3L6.99,0,0,6.99l6.99,6.99.685-.685Z"
                                                             transform="translate(924.873 2015.367) rotate(180)" fill="#d7007a" />
-                                                        <g id="Ellipse_27" data-name="Ellipse 27"
-                                                            transform="translate(945 2032) rotate(180)" fill="none"
+                                                        <g transform="translate(945 2032) rotate(180)" fill="none"
                                                             stroke="#d7007a" stroke-width="1">
                                                             <circle cx="24" cy="24" r="24" stroke="none" />
                                                             <circle cx="24" cy="24" r="23.5" fill="none" />
