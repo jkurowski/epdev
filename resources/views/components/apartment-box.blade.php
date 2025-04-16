@@ -159,8 +159,7 @@
                 <a href="{{ $propertyLink }}" class="btn btn-primary btn-ap-check">
                     Sprawdź
                     <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293">
-                        <path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24"
-                            d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z"
+                        <path d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z"
                             transform="translate(4.553 8.293) rotate(180)" fill="currentColor" />
                     </svg>
                 </a>
