@@ -21,7 +21,7 @@
                            value="1"
                            class="form-check-input term-checkbox @if ($rule->required === 1) validate[required] @endif"
                            data-prompt-position="topLeft:0">
-                    <button class="accordion-button collapsed"
+                    <span class="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#collapse_rule_{{ $rule->id }}"
@@ -30,7 +30,7 @@
                         <label for="rule_{{ $rule->id }}" class="form-check-label rules-text ms-2">
                             {{ $rule->title }} <span class="required">*</span>
                         </label>
-                    </button>
+                    </span>
                 </h2>
                 <div id="collapse_rule_{{ $rule->id }}"
                      class="accordion-collapse collapse @error('rule_' . $rule->id) is-invalid @enderror"
