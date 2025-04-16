@@ -1,36 +1,3 @@
-{{-- @extends('layouts.page')
-
-@section('meta_title', 'Inwestycje')
-@if ($page)
-    @section('seo_title', $page->meta_title)
-
-    @section('seo_description', $page->meta_description)
-
-    @section('pageheader')
-        @include('layouts.partials.page-header', ['page' => $page, 'header_file' => 'rooms.jpg', 'heading' => ''])
-    @stop
-@endif
-
-@section('content')
-    <div class="container">
-        <div class="row">
-            @foreach ($list as $p)
-                <div class="col-4">
-                    <a href="{{ route('front.developro.plan', ['slug' => $p->slug]) }}" itemprop="url">
-                        <div class="card">
-                            <img src="{{asset('investment/thumbs/'.$p->file_thumb) }}" alt="{{ $p->name }}">
-                            <div class="card-body">
-                                <h1 class="card-title">{{$p->name}}</h1>
-                                <p>{{$p->entry_content}}</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
-        </div>
-    </div>
-@endsection --}}
-
 @extends('layouts.page')
 
 @section('meta_title', $page->title.' - '.$city->name)
@@ -39,7 +6,7 @@
 @section('seo_robots', $page->meta_robots)
 
 @section('content')
-    <section class="search-hero">
+    <div class="search-hero">
         <x-picture webpSmall="images/reusable/bg-hero.webp" webpLarge="images/reusable/bg-hero@2x.webp"
             pngSmall="images/reusable/bg-hero.png" pngLarge="images/reusable/bg-hero@2x.png"
             defaultSrc="images/reusable/bg-hero.png" alt="EP Development Blok mieszkalny" class="search-hero--img" />
@@ -66,7 +33,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <div class="container margin-below-breadcrumb" id="list">
         <div class="text-lg-center">
@@ -74,11 +41,11 @@
         </div>
     </div>
 
-    <section class="mt-5">
+    <div class="mt-5">
         <div class="container">
             @include('components.currently-for-sale-list', [
                 'items' => $list,
             ])
         </div>
-    </section>
+    </div>
 @endsection
