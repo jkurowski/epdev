@@ -21,18 +21,13 @@
                            value="1"
                            class="form-check-input term-checkbox @if ($rule->required === 1) validate[required] @endif"
                            data-prompt-position="topLeft:0">
-                    <span class="accordion-button collapsed"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapse_rule_{{ $rule->id }}"
-                            aria-expanded="false"
-                            aria-controls="collapse_rule_{{ $rule->id }}"
-                          role="button"
-                          tabindex="0"
-                          aria-pressed="false">
-                        <label for="rule_{{ $rule->id }}" class="form-check-label rules-text ms-2">
-                            {{ $rule->title }} <span class="required">*</span>
-                        </label>
-                    </span>
+                    <label for="rule_{{ $rule->id }}" class="accordion-button collapsed form-check-label rules-text ms-2"
+                           data-bs-toggle="collapse"
+                           data-bs-target="#collapse_rule_{{ $rule->id }}"
+                           aria-expanded="false"
+                           aria-controls="collapse_rule_{{ $rule->id }}">
+                        {{ $rule->title }} <span class="required">*</span>
+                    </label>
                 </h2>
                 <div id="collapse_rule_{{ $rule->id }}"
                      class="accordion-collapse collapse @error('rule_' . $rule->id) is-invalid @enderror"
