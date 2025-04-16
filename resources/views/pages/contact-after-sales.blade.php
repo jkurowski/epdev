@@ -49,5 +49,8 @@
             </div>
         </div>
     </section>
-    <style>#footer{margin-top:60px !important;}</style>
+
 @endsection
+@push('styles')
+    <style>#footer{margin-top:60px !important}</style>
+@endpush
