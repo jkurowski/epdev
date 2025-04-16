@@ -30,43 +30,43 @@
     @endif
     <div class="row">
         <div class="col-12">
-            <div id="form-errors" class="alert-danger alert hide-empty"></div>
-            <div id="form-success" class="alert-success alert hide-empty"></div>
+            <div id="form-alert-errors" class="alert-danger alert hide-empty"></div>
+            <div id="form-alert-success" class="alert-success alert hide-empty"></div>
         </div>
 
         {{-- Name Field --}}
         <div class="col-12">
             <div class="form-floating mb-3">
-                <input type="text" class="validate[required] form-control" id="user-name" placeholder="Imię i nazwisko" name="name">
-                <label for="user-name">Imię i nazwisko <span class="required">*</span></label>
+                <input type="text" class="validate[required] form-control" id="form-user-name" placeholder="Imię i nazwisko" name="name">
+                <label for="form-user-name">Imię i nazwisko <span class="required">*</span></label>
             </div>
         </div>
 
         {{-- Email and Phone Fields --}}
         <div class="col-12 ">
             <div class="form-floating mb-3">
-                <input type="email" class="validate[required] form-control" id="user-email" placeholder="Adres e-mail" name="email" required>
-                <label for="user-email">Adres e-mail <span class="required">*</span></label>
+                <input type="email" class="validate[required] form-control" id="form-user-email" placeholder="Adres e-mail" name="email" required>
+                <label for="form-user-email">Adres e-mail <span class="required">*</span></label>
             </div>
         </div>
         <div class="col-12 ">
             <div class="form-floating mb-3">
-                <input type="tel" class="validate[required] form-control" id="user-tel" placeholder="Telefon" name="phone">
-                <label for="user-tel">Telefon <span class="required">*</span></label>
+                <input type="tel" class="validate[required] form-control" id="form-user-tel" placeholder="Telefon" name="phone">
+                <label for="form-user-tel">Telefon <span class="required">*</span></label>
             </div>
         </div>
 
         {{-- Message Field --}}
         <div class="col-12">
             <div class="form-floating">
-                <textarea class="form-control form-control-min" placeholder="Wiadomość" id="user-message" style="height: 100px"
+                <textarea class="form-control form-control-min" placeholder="Wiadomość" id="form-user-message" style="height: 100px"
                     name="message">Dzień dobry, interesuje mnie mieszkanie {{$textareaProperty}} w inwestycji {{$textareaInvestment}}. Proszę o kontakt.</textarea>
-                <label for="user-message">Wiadomość <span class="required">*</span></label>
+                <label for="form-user-message">Wiadomość <span class="required">*</span></label>
             </div>
         </div>
 
         {{-- Terms and Conditions Accordion --}}
-        <x-form-check-accordion :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" :textareaProperty="$textareaProperty" :textareaInvestment="$textareaInvestment" />
+        <x-form-check-accordion-normal :id="$termsAccordionId" :selectAllId="$selectAllId" :items="$terms" :textareaProperty="$textareaProperty" :textareaInvestment="$textareaInvestment" />
 
         {{-- Submit Button --}}
         <div class="col-12 d-flex justify-content-end">
