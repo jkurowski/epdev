@@ -27,7 +27,8 @@
                                   data-bs-toggle="collapse"
                                   data-bs-target="#collapse_rule_{{ $rule->id }}"
                                   aria-expanded="false"
-                                  aria-controls="collapse_rule_{{ $rule->id }}">{{ $rule->title }} <span class="required">*</span></span>
+                                  aria-controls="collapse_rule_{{ $rule->id }}"
+                            role="button">{{ $rule->title }} <span class="required">*</span></span>
                         </label>
                 </h2>
                 <div id="collapse_rule_{{ $rule->id }}"
