@@ -15,7 +15,7 @@
     <div class="col-12 accordion-form-check" id="{{ $id }}">
         @foreach ($required_rodo_rules as $rule)
             <div class="accordion-item">
-                <h2 class="accordion-header" id="heading_rule_{{ $rule->id }}">
+                <h2 class="accordion-header" id="form-heading_rule_{{ $rule->id }}">
                     <input type="checkbox" id="form-rule_{{ $rule->id }}"
                            name="rule_{{ $rule->id }}"
                            value="1"
@@ -25,15 +25,15 @@
                         <label for="form-rule_{{ $rule->id }}" class="accordion-button form-check-label rules-text ms-2">
                             <span class="collapsed"
                                   data-bs-toggle="collapse"
-                                  data-bs-target="#collapse_rule_{{ $rule->id }}"
+                                  data-bs-target="#form_collapse_rule_{{ $rule->id }}"
                                   aria-expanded="false"
-                                  aria-controls="collapse_rule_{{ $rule->id }}"
+                                  aria-controls="form_collapse_rule_{{ $rule->id }}"
                             role="button">{{ $rule->title }} <span class="required">*</span></span>
                         </label>
                 </h2>
-                <div id="collapse_rule_{{ $rule->id }}"
+                <div id="form_collapse_rule_{{ $rule->id }}"
                      class="accordion-collapse collapse @error('rule_' . $rule->id) is-invalid @enderror"
-                     aria-labelledby="heading_rule_{{ $rule->id }}"
+                     aria-labelledby="form-heading_rule_{{ $rule->id }}"
                      data-bs-parent="#{{ $id }}">
                     <div class="accordion-body">
                         {!! $rule->text !!}
