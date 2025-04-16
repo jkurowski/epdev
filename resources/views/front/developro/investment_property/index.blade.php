@@ -87,8 +87,6 @@
                                 $statusClass = ['class' => 'bg-info'];
                         }
                     @endphp
-
-
                     <div class="apartment-type apartment-hero-type {{ $statusClass['class'] }} mb-5">
                         {{ roomStatus($property->status) }}
                     </div>
@@ -100,7 +98,6 @@
                 {{-- Rooms --}}
                 <div class="box rooms">
                     <div class="d-flex">
-
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16.481" height="16.481"
                                 viewBox="0 0 16.481 16.481">
@@ -123,7 +120,6 @@
                                 </g>
                             </svg>
                         </div>
-
                         <div class="title">Liczba pokoi:</div>
                     </div>
 
@@ -152,10 +148,8 @@
                                 </g>
                             </svg>
                         </div>
-
                         <div class="title">Piętro:</div>
                     </div>
-
                     <div class="data">{{ $property->floor_id }}</div>
                 </div>
                 <div class="vr"></div>
@@ -247,14 +241,12 @@
                             POBIERZ KARTĘ PDF
                             <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293"
                                 viewBox="0 0 4.553 8.293">
-                                <path d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z"
-                                    transform="translate(4.553 8.293) rotate(180)" fill="currentColor"></path>
+                                <path d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z" transform="translate(4.553 8.293) rotate(180)" fill="currentColor"></path>
                             </svg>
                         </a>
                     </div>
                 @endif
             </div>
-        </div>
         </div>
     </section>
 
