@@ -22,7 +22,6 @@
                            class="form-check-input term-checkbox @if ($rule->required === 1) validate[required] @endif"
                            data-prompt-position="topLeft:0">
                     <span class="accordion-button collapsed"
-                            type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#collapse_rule_{{ $rule->id }}"
                             aria-expanded="false"
