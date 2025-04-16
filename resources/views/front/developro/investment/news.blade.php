@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <section class="bg-white">
+    <div class="bg-white">
         @include('components.breadcrumbs', [
             'items' => [['label' => 'Dziennik budowy']],
             'title' => 'Dziennik budowy',
@@ -17,11 +17,11 @@
                 'alt' => 'Dziennik budowy - zdjęcie budowy',
             ],
         ])
-    </section>
+    </div>
 
-    <section class="margin-below-breadcrumb">
+    <div class="margin-below-breadcrumb">
         <div class="container">
             <x-construction-tabs :tabs="$tabs" />
         </div>
-    </section>
+    </div>
 @endsection
