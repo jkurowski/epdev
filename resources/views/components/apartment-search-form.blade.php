@@ -18,12 +18,12 @@
                     <ul class="dropdown-menu">
                         <li>
                             <span class="dropdown-item">Wszystkie</span>
-                            <input type="radio" name="apartments-city" id="" value="" class="d-none">
+                            <input type="radio" name="apartments-city" id="input-all" value="" class="d-none">
                         </li>
                         @foreach ($active_cities as $city)
                             <li>
                                 <span class="dropdown-item" data-slug="{{ $city->slug }}">{{ $city->name }}</span>
-                                <input type="radio" name="apartments-city" id="" value="{{ $city->slug }}" class="d-none">
+                                <input type="radio" name="apartments-city" id="input-{{ $city->slug }}" value="{{ $city->slug }}" class="d-none">
                             </li>
                         @endforeach
                     </ul>
@@ -44,12 +44,12 @@
                     <ul class="dropdown-menu">
                         <li>
                             <span class="dropdown-item">Wszystkie</span>
-                            <input type="radio" name="apartments-invest" id="" value="" class="d-none">
+                            <input type="radio" name="apartments-invest" id="invest-all" value="" class="d-none">
                         </li>
                         @foreach ($active_investments as $i)
                             <li data-city="{{ $i->city ? $i->city->slug : '' }}">
                                 <span class="dropdown-item" data-slug="{{ $i->slug }}">{{ $i->name }}</span>
-                                <input type="radio" name="apartments-invest" id="" value="{{ $i->slug }}" class="d-none">
+                                <input type="radio" name="apartments-invest" id="invest-{{ $i->slug }}" value="{{ $i->slug }}" class="d-none">
                             </li>
                         @endforeach
                     </ul>
@@ -83,7 +83,7 @@
             {{-- Search button --}}
             <button class="mt-3 btn btn-primary" type="submit">
                 ZNAJDŹ MIESZKANIE
-                <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293"><path id="chevron_right_24dp_FILL0_wght100_GRAD0_opsz24" d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z" transform="translate(4.553 8.293) rotate(180)" fill="currentColor"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293"><path d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z" transform="translate(4.553 8.293) rotate(180)" fill="currentColor"></path></svg>
             </button>
         </form>
     </div>
