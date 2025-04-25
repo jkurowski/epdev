@@ -25,6 +25,7 @@ Route::group([
     Route::post('image/set', 'Gallery\ImageController@sort')->name('image.sort');
     Route::post('box/set', 'Box\IndexController@sort')->name('box.sort');
     Route::post('invest-page/set', 'Developro\Page\IndexController@sort')->name('investment_page.sort');
+    Route::post('footer/set', 'Footer\IndexController@sort')->name('footer.sort');
 
     Route::post('ux/properties', 'UX\IndexController@properties')->name('ux.properties');
 
@@ -69,7 +70,8 @@ Route::group([
         'article' => 'Article\IndexController',
         'ux' => 'UX\IndexController',
         'box' => 'Box\IndexController',
-        'city'=> 'City\IndexController'
+        'city'=> 'City\IndexController',
+        'footer'=> 'Footer\IndexController'
     ]);
 
     Route::post('city/set', 'City\IndexController@sort')->name('city.sort');

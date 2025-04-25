@@ -64,6 +64,12 @@
                                         </span> Slider</a>
                                 </li>
                             @endif
+                            <li {{ Request::routeIs('admin.footer.*') ? 'class=active' : '' }}>
+                                <a href="{{ route('admin.footer.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span> Footer</a>
+                            </li>
                             @if (in_array('map', $modules))
                                 <li {{ Request::routeIs('admin.map.*') ? 'class=active' : '' }}>
                                     <a href="{{ route('admin.map.index') }}">

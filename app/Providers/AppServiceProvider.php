@@ -16,6 +16,7 @@ use App\Models\EmailTemplateSection;
 use App\Models\Event;
 use App\Models\File;
 use App\Models\Floor;
+use App\Models\Footer;
 use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\Investment;
@@ -181,6 +182,10 @@ class AppServiceProvider extends ServiceProvider
         View::share('active_cities', City::whereActive(1)
             ->orderBy('name')
             ->get(['id', 'name', 'slug'])
+        );
+
+        View::share('footer', Footer::orderBy('sort')
+            ->get(['id', 'name', 'sort', 'class', 'items'])
         );
 
         View::share('active_investments', Investment::whereStatus(1)
