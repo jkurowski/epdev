@@ -99,41 +99,6 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     Route::get('/email-template-preview', [EmailTemplatePreviewController::class, 'index'])->name('email-template-preview');
     Route::get('/email-template-preview/{id}', [EmailTemplatePreviewController::class, 'show'])->name('email-template-preview.show');
 
-    //Testowanie integracji z sms api
-    // Route::get('/sms/send', [SMSController::class, 'index']);
-    // Route::post('/sms/send', [SMSController::class, 'send']);
-
-
-    // Client area
-    Route::middleware('guest.client')->group(function () {
-        Route::get('client/login', 'Auth\LoginController@showLoginForm')->name('login');
-        Route::post('client/login/request-code', 'Auth\LoginController@requestCode')->name('login.request-code');
-        Route::post('client/login/verify-code', 'Auth\LoginController@verifyCode')->name('login.verify-code');
-    });
-
-    Route::middleware(['auth.client'])->group(function () {
-        Route::get('client/area', 'Client\IndexController@index')->name('client.area');
-
-        Route::get('client/area/chat', 'Client\Chat\IndexController@index')->name('client.area.chat');
-        Route::get('client/area/chat/messages/{clientId}', 'Client\Chat\IndexController@fetchMessages')->name('client.area.fetchMessages');
-        Route::post('client/area/chat/send', 'Client\Chat\IndexController@sendMessage')->name('client.area.sendMessage');
-
-
-
-        Route::get('client/area/file', 'Client\Files\IndexController@index')->name('client.area.files');
-        Route::get('client/area/calendar', 'Client\Calendar\IndexController@index')->name('client.area.calendar');
-        Route::get('client/area/calendar/events', 'Client\Calendar\IndexController@show')->name('client.area.calendar.events.show');
-
-        Route::get('client/area/offer', 'Client\Offer\IndexController@index')->name('client.area.offer');
-
-        Route::get('client/area/special', 'Client\Special\IndexController@index')->name('client.area.special');
-
-        Route::get('client/area/rodo', 'Client\Rodo\IndexController@index')->name('client.area.rodo');
-        Route::post('client/area/rodo/change-rule', 'Client\Rodo\IndexController@editRule')->name('client.area.rodo.change-rule');
-
-        Route::post('client/logout', 'Auth\LoginController@logout')->name('client.logout');
-    });
-
     // DeveloPro
     Route::get('/mieszkania', 'Developro\InvestmentPropertyController@properties')->name('developro.properties');
     Route::group(['namespace' => 'Developro', 'prefix' => '/miasto', 'as' => 'developro.'], function () {
@@ -169,8 +134,17 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
 
     Route::get('/test-page', [App\Http\Controllers\Front\Static\IndexController::class, 'testPage'])->name('test-page');
     Route::post('/test-page', [App\Http\Controllers\Front\Static\IndexController::class, 'store'])->name('test-page.store');
+
+
+    // Inline
+
 });
 
+Route::group(['prefix' => '/inline', 'as' => 'front.inline.'], function () {
+    Route::get('/', 'Front\InlineController@index')->name('index');
+    Route::get('/loadinline/{inline}', 'Front\InlineController@show')->name('show');
+    Route::post('/update/{inline}', 'Front\InlineController@update')->name('update');
+});
 
 Route::group(['as' => 'pages.'], function () {
 

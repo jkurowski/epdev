@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactFormRequest;
+use App\Models\Inline;
 use Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Cookie;

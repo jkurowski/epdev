@@ -54,8 +54,11 @@
     @include('layouts.partials.footer')
     @include('layouts.partials.cookies')
 
+    @auth
+        @include('layouts.partials.inline')
+    @endauth
+
     @stack('scripts')
-    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
     <script>
         $('#modalContact').on('show.bs.modal', function (e) {
             $(".validateModalForm").trigger("reset");

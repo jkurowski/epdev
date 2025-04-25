@@ -9,12 +9,12 @@ use Spatie\Translatable\HasTranslations;
 
 class Inline extends Model
 {
-    use HasTranslations;
+    //use HasTranslations;
 
     const UPDATED_AT = null;
     const CREATED_AT = null;
 
-    public $translatable = ['modaltytul', 'modaleditor', 'modaleditortext', 'modallink', 'modallinkbutton', 'file_alt'];
+    //public $translatable = ['modaltytul', 'modaleditor', 'modaleditortext', 'modallink', 'modallinkbutton', 'file_alt'];
 
     /**
      * The attributes that are mass assignable.
@@ -54,8 +54,8 @@ class Inline extends Model
         $filename = Str::slug($name) . '_' . Str::random(3) . '.' .$uploadfile->getClientOriginalExtension();
         $uploadfile->storeAs('inline', $filename, 'public_uploads');
 
-        $filepath = public_path('uploads/inline/' . $filename);
-        Image::make($filepath)->fit($width, $height)->save($filepath);
+//        $filepath = public_path('uploads/inline/' . $filename);
+//        Image::make($filepath)->fit($width, $height)->save($filepath);
 
         $this->update(['file' => $filename ]);
 

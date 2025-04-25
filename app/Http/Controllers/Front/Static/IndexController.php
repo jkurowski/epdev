@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front\Static;
 
 use App\Http\Controllers\Controller;
+use App\Models\Inline;
 use App\Models\Investment;
 use App\Models\Page;
 use App\Repositories\Client\ClientRepository;
@@ -23,13 +24,15 @@ class IndexController extends Controller
     }
     public function office()
     {
+        $array = Inline::whereSlug('kontakt')->get()->toArray();
         $page = Page::find(3);
-        return view('pages.contact-office', compact('page'));
+        return view('pages.contact-office', compact('page', 'array'));
     }
     public function sales()
     {
+        $array = Inline::whereSlug('obsluga')->get()->toArray();
         $page = Page::find(7);
-        return view('pages.contact-after-sales', compact('page'));
+        return view('pages.contact-after-sales', compact('page', 'array'));
     }
 
     public function testPage()
@@ -40,9 +43,10 @@ class IndexController extends Controller
 
     public function about()
     {
+        $array = Inline::whereSlug('about')->get()->toArray();
         $completed = Investment::where('status', 2)->get();
         $page = Page::find(6);
-        return view('pages.about-ep-development', compact('completed', 'page'));
+        return view('pages.about-ep-development', compact('completed', 'page', 'array'));
     }
 
     public function store(Request $request)
