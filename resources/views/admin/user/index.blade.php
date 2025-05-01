@@ -16,7 +16,6 @@
         <div class="card-header border-bottom card-nav">
             <nav class="nav">
                 <a class="nav-link {{ Request::routeIs('admin.user.index') ? 'active' : '' }}" href="{{route('admin.user.index')}}"><span class="fe-list"></span> Lista użytkowników</a>
-                <a class="nav-link" href="{{route('admin.role.index')}}"><span class="fe-shield"></span> Grupy użytkowników</a>
             </nav>
         </div>
 

@@ -28,14 +28,14 @@ class UserFormRequest extends FormRequest
                 'name' => 'required',
                 'email' => 'required|email|unique:users,email,' . $this->route()->user,
                 'password' => 'same:confirm-password',
-                'roles' => 'required'
+                //'roles' => 'required'
             ];
         } else {
             return [
                 'name' => 'required',
                 'email' => 'required|email|unique:users,email',
                 'password' => 'required|same:confirm-password',
-                'roles' => 'required'
+                //'roles' => 'required'
             ];
         }
     }

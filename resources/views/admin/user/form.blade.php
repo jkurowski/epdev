@@ -22,7 +22,7 @@
                             <div class="card-body control-col12">
 
                                 <div class="row w-100 form-group">
-                                    @include('form-elements.html-select', ['label' => 'Status', 'name' => 'active', 'selected' => $entry->active, 'select' => ['0' => 'Nieaktywny', '1' => 'Aktywny']])
+                                    @include('form-elements.html-select', ['label' => 'Status', 'name' => 'active', 'selected' => $entry->active, 'select' => ['1' => 'Aktywny', '0' => 'Nieaktywny']])
                                 </div>
                                 <div class="row w-100 form-group">
                                     @include('form-elements.html-select', [
@@ -38,7 +38,7 @@
                                 <div class="row w-100 form-group">
                                     @include('form-elements.html-input-text', ['label' => 'Nazwisko', 'name' => 'surname', 'value' => $entry->surname, 'required' => 1])
                                 </div>
-                                <div class="row w-100 form-group">
+                                <div class="row w-100 form-group d-none">
                                     @include('form-elements.html-select', [
                                         'label' => 'Miasto',
                                         'name' => 'city',
@@ -46,14 +46,14 @@
                                         'select' => $cities
                                     ])
                                 </div>
-                                <div class="row w-100 form-group">
+                                <div class="row w-100 form-group d-none">
                                     @isset($selected)
                                         @include('form-elements.html-select-multiple', ['label' => 'Role CRM', 'name' => 'roles', 'select' => $roles, 'selected' => $selected, 'required' => 1])
                                     @else
                                         @include('form-elements.html-select-multiple', ['label' => 'Role CRM', 'name' => 'roles', 'select' => $roles, 'required' => 1])
                                     @endif
                                 </div>
-                                <div class="row w-100 form-group">
+                                <div class="row w-100 form-group d-none">
                                     @include('form-elements.html-textarea', [
                                           'label' => 'Podpis e-mail',
                                           'name' => 'signature',
@@ -74,11 +74,11 @@
                                     @include('form-elements.html-input-text', ['label' => 'E-mail', 'name' => 'email', 'value' => $entry->email, 'required' => 1])
                                 </div>
 
-                                <div class="row w-100 form-group">
+                                <div class="row w-100 form-group d-none">
                                     @include('form-elements.html-input-text', ['label' => 'Telefon', 'name' => 'phone', 'value' => $entry->phone])
                                 </div>
 
-                                <div class="row w-100 form-group">
+                                <div class="row w-100 form-group d-none">
                                     @include('form-elements.html-input-text', ['label' => 'Telefon', 'name' => 'phone_additional', 'value' => $entry->phone_additional])
                                 </div>
 

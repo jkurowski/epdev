@@ -14,7 +14,7 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        $user->notify(new UserCreatedNotification($user));
+        //$user->notify(new UserCreatedNotification($user));
     }
 
     /**
@@ -22,10 +22,10 @@ class UserObserver
      */
     public function updated(User $user): void
     {
-        if ($user->isDirty('active')) {
-            $active = $user->active;
-            $user->notify(new UserChangeStatusNotification($active, $user));
-        }
+//        if ($user->isDirty('active')) {
+//            $active = $user->active;
+//            $user->notify(new UserChangeStatusNotification($active, $user));
+//        }
     }
 
     /**

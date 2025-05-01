@@ -30,18 +30,18 @@ class IndexController extends Controller
 
     public function __construct(UserRepositoryInterface $repository)
     {
-        $this->middleware('permission:user-list|user-create|user-edit|user-delete', [
-            'only' => ['index','store']
-        ]);
-        $this->middleware('permission:user-create', [
-            'only' => ['create','store']
-        ]);
-        $this->middleware('permission:user-edit', [
-            'only' => ['edit','update']
-        ]);
-        $this->middleware('permission:user-delete', [
-            'only' => ['destroy']
-        ]);
+//        $this->middleware('permission:user-list|user-create|user-edit|user-delete', [
+//            'only' => ['index','store']
+//        ]);
+//        $this->middleware('permission:user-create', [
+//            'only' => ['create','store']
+//        ]);
+//        $this->middleware('permission:user-edit', [
+//            'only' => ['edit','update']
+//        ]);
+//        $this->middleware('permission:user-delete', [
+//            'only' => ['destroy']
+//        ]);
         $this->repository = $repository;
     }
 
@@ -69,9 +69,11 @@ class IndexController extends Controller
     {
         $user = User::create($request->merge([
             'password' => Hash::make($request->get('password')),
+            'email_verified_at' => now(),
         ])->except(['_token', 'submit', 'confirm-password', 'roles']));
 
-        $user->assignRole($request->input('roles'));
+        //$user->assignRole($request->input('roles'));
+        $user->assignRole('Administrator');
 
         return redirect(route('admin.user.index'))->with('success', 'Użytkownik dodany');
     }
@@ -83,14 +85,14 @@ class IndexController extends Controller
         }
 
         $user = $this->repository->find($id);
-        $userRole = $user->roles->pluck('name', 'name')->all();
+        //$userRole = $user->roles->pluck('name', 'name')->all();
 
         return view('admin.user.form', [
             'cardTitle' => $user->name .' '.$user->surname,
             'roles' => $this->repository->getRoles(),
             'cities' => CustomField::where('group_id', 1)->pluck('value', 'id')->prepend('--- brak ---', 0),
             'job_positions' => Department::all()->pluck('name', 'id'),
-            'selected' => $userRole,
+            //'selected' => $userRole,
             'backButton' => route('admin.user.index'),
             'entry' => $user
         ]);
@@ -108,9 +110,8 @@ class IndexController extends Controller
         $user = $this->repository->find($id);
         $user->update($input);
 
-        DB::table('model_has_roles')->where('model_id', $id)->delete();
-
-        $user->assignRole($request->input('roles'));
+        //DB::table('model_has_roles')->where('model_id', $id)->delete();
+        //$user->assignRole($request->input('roles'));
 
         //$user->update($request->except(['_token', 'submit']));
         return redirect(route('admin.user.index'))->with('success', 'Użytkownik zaktualizowany');

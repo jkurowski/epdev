@@ -86,14 +86,12 @@
                                         </span> Galeria</a>
                                 </li>
                             @endif
-                            @if (in_array('user', $modules))
                                 <li {{ Request::routeIs('admin.user.*') ? 'class=active' : '' }}>
                                     <a href="{{ route('admin.user.index') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span> Użytkownicy</a>
                                 </li>
-                            @endif
                             @if (in_array('greylist', $modules))
                                 <li {{ Request::routeIs('admin.greylist.*') ? 'class=active' : '' }}>
                                     <a href="{{ route('admin.greylist.index') }}">
