@@ -7,7 +7,7 @@
             <div class="d-flex flex-column">
                 <label class="subtitle mt-4 mb-3">MIASTO</label>
                 <div id="citySearch" class="dropdown dropdown-search">
-                    <button class="btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center" type="button">
                         <span>Wybierz z listy</span>
                         <span class="ms-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -33,7 +33,7 @@
             <div class="d-flex flex-column">
                 <label class="subtitle mt-4 mb-3">INWESTYCJA</label>
                 <div id="investmentSearch" class="dropdown dropdown-search">
-                    <button class="btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center" type="button">
                         <span>Wybierz z listy</span>
                         <span class="ms-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">

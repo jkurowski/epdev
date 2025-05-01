@@ -26,8 +26,6 @@
     {{-- <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
     {{-- <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet"> --}}
 
-    <script src="{{ asset('/js/jquery.min.js') }}"></script>
-    <script type="module" src="{{ asset('build/assets/app-7I0QT2GO.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('build/assets/app-Banrqkr2.css') }}">
     <link rel="stylesheet" href="{{ asset('build/assets/app-BUzhzLX1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}?v=3">
@@ -53,6 +51,28 @@
 
     @include('layouts.partials.footer')
     @include('layouts.partials.cookies')
+
+    <script src="{{ asset('/js/jquery.min.js') }}"></script>
+    <!-- Bootstrap CSS and JS -->
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- noUiSlider -->
+    <link href="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.js"></script>
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="{{ asset('/js/main.js') }}"></script>
 
     @auth
         @include('layouts.partials.inline')
@@ -90,7 +110,7 @@
                 keyboard: false
             });
             @endif
-            @if($popup == 1)
+            @if($popup == 66)
             popModal.show();
             setTimeout( function(){
                 popModal.hide();
