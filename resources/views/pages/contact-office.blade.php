@@ -18,7 +18,7 @@
                         <div class="title-container">
                             <h1 class="header-1 mb-0 aos-init aos-animate" data-aos="fade-up" data-modaltytul="1">{{ getInline($array, 1, 'modaltytul') }}</h1>
                         </div>
-                        <div class="text-container d-flex flex-column gap-3 text-justify text-pretty paragraph" data-modaleditortext="1">{!! getInline($array, 1, 'modaleditortext') !!}</div>
+                        <div class="text-container d-flex flex-column gap-3 text-justify paragraph" data-modaleditortext="1">{!! getInline($array, 1, 'modaleditortext') !!}</div>
                     </div>
                     <a href="#modalContact" data-bs-toggle="modal" data-bs-target="#modalContact" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">ZAPYTAJ O OFERTĘ<svg xmlns="http://www.w3.org/2000/svg" width="4.553" height="8.293" viewBox="0 0 4.553 8.293"><path d="M.813,4.147,4.553.406,4.147,0,0,4.147,4.147,8.293l.407-.407Z" transform="translate(4.553 8.293) rotate(180)" fill="currentColor" /></svg></a>
                 </div>

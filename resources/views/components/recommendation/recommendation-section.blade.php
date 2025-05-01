@@ -12,12 +12,12 @@
                             <h4 class="header-1" data-aos="fade-up">{{ $subtitle }}</h4>
                         </div>
                         <div class="text-container d-flex flex-column gap-3">
-                            <p class="text-pretty paragraph" data-aos="fade-up" data-aos-delay="100">
+                            <p class="paragraph" data-aos="fade-up" data-aos-delay="100">
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                 tempor
                                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                             </p>
-                            <p class="text-pretty paragraph" data-aos="fade-up" data-aos-delay="100">
+                            <p class="paragraph" data-aos="fade-up" data-aos-delay="100">
                                 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                                 no
                                 sea takimata sanctus est Lorem ipsum dolor sit amet.

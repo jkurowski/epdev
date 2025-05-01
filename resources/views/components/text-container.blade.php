@@ -20,7 +20,7 @@
     @if (!empty($paragraphs) && is_array($paragraphs))
         <div class="text-container d-flex flex-column gap-3 text-justify">
             @foreach ($paragraphs as $paragraph)
-                <p class="text-pretty paragraph" data-aos="fade-up" data-aos-delay="100">
+                <p class="paragraph" data-aos="fade-up" data-aos-delay="100">
                     {!! $paragraph !!}
                 </p>
             @endforeach

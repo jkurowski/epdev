@@ -8,7 +8,7 @@
         </div>
         <div class="box-text">
             @foreach ($reviewTexts as $text)
-                <p class="text-pretty paragraph mt-4">{!! $text !!}</p>
+                <p class="paragraph mt-4">{!! $text !!}</p>
             @endforeach
         </div>
         @if (isset($buttonLink) && isset($buttonText))

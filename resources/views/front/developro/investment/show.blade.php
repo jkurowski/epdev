@@ -38,7 +38,7 @@
                                     <div class="header-1">{{ $section->title }}</div>
                                 </div>
                                 @endif
-                                <div class="text-container d-flex flex-column gap-3 text-pretty paragraph text-justify">
+                                <div class="text-container d-flex flex-column gap-3 paragraph text-justify">
                                     {!! $section->text !!}
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                                 <div class="header-1">{{ $section->title }}</div>
                                             </div>
                                         @endif
-                                        <div class="text-container d-flex flex-column gap-3 text-pretty paragraph text-justify">
+                                        <div class="text-container d-flex flex-column gap-3 paragraph text-justify">
                                             {!! $section->text !!}
                                         </div>
                                     </div>
@@ -110,7 +110,7 @@
                                                 <div class="header-1">{{ $section->title }}</div>
                                             </div>
                                         @endif
-                                        <div class="text-container d-flex flex-column gap-3 text-pretty paragraph text-justify">
+                                        <div class="text-container d-flex flex-column gap-3 paragraph text-justify">
                                             {!! $section->text !!}
                                         </div>
                                     </div>
@@ -232,11 +232,11 @@
                             <div class="header-1">Interesuje Cię<br>wykończenie pod klucz?</div>
                         </div>
                         <div class="text-container d-flex flex-column gap-3 text-justify">
-                            <p class="text-pretty paragraph">
+                            <p class="paragraph">
                                 <strong>Pragnąc zapewnić Państwu kompleksową obsługę, nawiązaliśmy współpracę z&nbsp;Pracownią Architektury Wnętrz INTERIOR DESIGN STUDIO</strong>
                             </p>
-                            <p class="text-pretty paragraph">INTERIOR DESIGN STUDIO łączy pasję do projektowania z&nbsp;wieloletnim doświadczeniem w zakresie usług wykończeniowych.</p>
-                            <p class="text-pretty paragraph">Skontaktuj się z&nbsp;Ekspertem wnętrz!</p>
+                            <p class="paragraph">INTERIOR DESIGN STUDIO łączy pasję do projektowania z&nbsp;wieloletnim doświadczeniem w zakresie usług wykończeniowych.</p>
+                            <p class="paragraph">Skontaktuj się z&nbsp;Ekspertem wnętrz!</p>
                         </div>
                     </div>
                     <a class="btn btn-primary btn-phone-big" href="tel:+48698719562"> ZADZWOŃ +48 698 719 562 </a>
@@ -261,12 +261,12 @@
                             <div class="header-1">Kredyty hipoteczne</div>
                         </div>
                         <div class="text-container d-flex flex-column gap-3 text-justify">
-                            <p class="text-pretty paragraph">
+                            <p class="paragraph">
                                 <strong>Dla naszych Klientów ubiegających się o&nbsp;kredyt hipoteczny oferujemy bezpłatne wsparcie ekspertów finansowych.</strong>
                             </p>
-                            <p class="text-pretty paragraph">
+                            <p class="paragraph">
                                 Doradcy pomogą w&nbsp;wyborze najlepszego i&nbsp;najbardziej dopasowanego do możliwości finansowych kredytu, przygotują niezbędne dokumenty i&nbsp;złożą wnioski.</p>
-                            <p class="text-pretty paragraph">Zapraszamy do kontaktu</p>
+                            <p class="paragraph">Zapraszamy do kontaktu</p>
                         </div>
                     </div>
                     <div class="row">
