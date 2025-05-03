@@ -57,7 +57,7 @@
                 <div class="{{ $index % 2 == 0 ? 'slider-left' : 'slider-right' }}">
                     <div class="row gx-5 align-items-center">
                         <div class="order-1 col-12 col-xl-5">
-                            <x-sliders.homepage-slider :images="$i->homepageImages" position="left" />
+                            <x-sliders.homepage-slider :images="$i->homepageImages" position="{{ $index % 2 == 0 ? 'left' : 'right' }}" />
                         </div>
                         <!-- TEXT -->
                         <div class="{{ $index % 2 == 0 ? 'order-0 order-xl-2 col-12 col-xl-5 offset-xl-1' : 'col-12 col-xl-5 offset-2xl-1' }}">
