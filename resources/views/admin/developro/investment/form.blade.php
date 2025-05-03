@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="row w-100 mb-4">
-                    <div class="col-4">
+                    <div class="col-3">
                         @include('form-elements.html-select', [
                             'label' => 'Typ inwestycji',
                             'name' => 'type',
@@ -60,7 +60,7 @@
                             ],
                         ])
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                         @include('form-elements.html-select', [
                             'label' => 'Status inwestycji',
                             'name' => 'status',
@@ -73,7 +73,18 @@
                             ],
                         ])
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
+                        @include('form-elements.html-select', [
+                            'label' => 'Pokaż na stronie głównej',
+                            'name' => 'homepage',
+                            'selected' => $entry->homepage,
+                            'select' => [
+                                '0' => 'Nie',
+                                '1' => 'Tak',
+                            ],
+                        ])
+                    </div>
+                    <div class="col-3">
                         @include('form-elements.html-select', [
                             'label' => 'Miasto inwestycji',
                             'name' => 'city_id',
@@ -226,14 +237,6 @@
                     </div>
                 </div>
 
-                <div class="row w-100 mb-4 d-none">
-                    @include('form-elements.html-input-text', [
-                        'label' => 'Krótki opis na liście',
-                        'name' => 'entry_content',
-                        'value' => $entry->entry_content,
-                    ])
-                </div>
-
                 <div class="row w-100 mb-4">
                     @include('form-elements.html-input-file', [
                         'label' => 'Miniaturka',
@@ -253,6 +256,14 @@
                         'label' => 'Galeria',
                         'name' => 'gallery_id',
                         'selected' => $entry->gallery_id,
+                        'select' => $galleries,
+                    ])
+                </div>
+                <div class="row w-100 form-group">
+                    @include('form-elements.html-select', [
+                        'label' => 'Galeria na stonie głównej',
+                        'name' => 'homepage_gallery',
+                        'selected' => $entry->homepage_gallery,
                         'select' => $galleries,
                     ])
                 </div>
@@ -400,6 +411,17 @@
                         'name' => 'progress',
                         'value' => $entry->progress,
                         'rows' => 11,
+                        'required' => 1,
+                    ])
+                </div>
+
+                <div class="row w-100 mb-4">
+                    @include('form-elements.textarea-fullwidth', [
+                        'label' => 'Krótki opis na stronie głównej',
+                        'name' => 'entry_content',
+                        'value' => $entry->entry_content,
+                        'rows' => 11,
+                        'class' => 'tinymce',
                         'required' => 1,
                     ])
                 </div>

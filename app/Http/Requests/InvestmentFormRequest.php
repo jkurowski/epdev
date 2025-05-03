@@ -26,6 +26,8 @@ class InvestmentFormRequest extends FormRequest
         return [
             'type' => 'integer',
             'status' => 'integer',
+            'homepage' => 'integer',
+            'homepage_gallery' => 'integer',
             'name' => 'required|string|min:5|max:100',
             'address' => '',
             'city_id' => '',

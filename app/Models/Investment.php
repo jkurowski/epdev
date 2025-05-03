@@ -26,6 +26,8 @@ class Investment extends Model
     protected $fillable = [
         'type',
         'status',
+        'homepage',
+        'homepage_gallery',
         'name',
         'slug',
         'address',
@@ -204,6 +206,11 @@ class Investment extends Model
     public function sections(): HasMany
     {
         return $this->hasMany('App\Models\InvestmentSections');
+    }
+
+    public function homepageImages()
+    {
+        return $this->hasMany(Image::class, 'gallery_id', 'homepage_gallery');
     }
 
     /**
