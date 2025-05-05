@@ -20,7 +20,7 @@ class IndexController extends Controller
     {
         $this->repository = $repository;
         $this->articleRepository = $articleRepository;
-        $this->pageId = 11;
+        $this->pageId = 2;
     }
 
     public function index()

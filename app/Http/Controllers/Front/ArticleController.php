@@ -39,7 +39,7 @@ class ArticleController extends Controller
 
         $og = OpenGraph::title($article->title)
             ->type('article')
-            ->image('https://www.bliskiolechow.pl/public/uploads/articles/share/'.$article->file, [
+            ->image('https://www.epdevelopment.pl/public/uploads/articles/share/'.$article->file, [
                 'width' => 600,
                 'height' => 314
             ])

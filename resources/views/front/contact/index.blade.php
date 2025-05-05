@@ -1,8 +1,9 @@
 @extends('layouts.page')
 
-@section('meta_title', 'Kontakt')
-@isset($page->meta_title) @section('seo_title', $page->meta_title) @endisset
-@isset($page->meta_description) @section('seo_description', $page->meta_description) @endisset
+@section('meta_title', $page->title)
+@section('seo_title', $page->meta_title)
+@section('seo_description', $page->meta_description)
+
 @section('content')
     <div class="container">
         <div class="row">
