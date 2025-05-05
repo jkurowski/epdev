@@ -40,14 +40,12 @@
                         </a>
 
                         <ul class="sub-menu">
-                            @if (in_array('page', $modules))
-                                <li {{ Request::routeIs('admin.page.*') ? 'class=active' : '' }}>
-                                    <a href="{{ route('admin.page.index') }}">
+                            <li {{ Request::routeIs('admin.page.*') ? 'class=active' : '' }}>
+                                <a href="{{ route('admin.page.index') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span> Strony</a>
-                                </li>
-                            @endif
+                            </li>
                             @if (in_array('article', $modules))
                                 <li {{ Request::routeIs('admin.article.*') ? 'class=active' : '' }}>
                                     <a href="{{ route('admin.article.index') }}">
