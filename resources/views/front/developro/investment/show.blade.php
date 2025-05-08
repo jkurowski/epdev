@@ -132,7 +132,13 @@
             <div id="invest-arrows-2"></div>
         @endif
 
-        {!! $investment->content !!}
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    {!! $investment->content !!}
+                </div>
+            </div>
+        </div>
 
         @if($investment->status == 1 && $investment->show_properties)
         <div class="container margin-xs" id="znajdz-swoje-mieszkanie">
