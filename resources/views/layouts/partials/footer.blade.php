@@ -31,7 +31,10 @@
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="d-flex align-items-center justify-content-center h-100 w-100">
-                    <a href="#modalContact" data-bs-toggle="modal" data-bs-target="#modalContact" class="btn btn-footer">napisz do nas</a>
+                    <div class="text-center">
+                        <a href="#modalContact" data-bs-toggle="modal" data-bs-target="#modalContact" class="btn btn-footer mb-2">napisz do nas</a>
+                        <p><a href="{{ route('pages.privacy-policy') }}">Polityka prywatności</a></p>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
