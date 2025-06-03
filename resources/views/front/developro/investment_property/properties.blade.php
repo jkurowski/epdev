@@ -1,5 +1,9 @@
 @extends('layouts.page', ['body_class' => 'investments'])
-@section('meta_title', 'Mieszkania ')
+
+@section('meta_title', $page->title)
+@section('seo_title', $page->meta_title)
+@section('seo_description', $page->meta_description)
+@section('seo_robots', $page->meta_robots)
 
 @section('content')
     <x-breadcrumbs :items="[
@@ -8,9 +12,6 @@
             'url' => '#',
         ],
     ]" />
-
-
-
 
     <div class="container margin-xs" id="znajdz-swoje-mieszkanie">
         <div class="text-center">
