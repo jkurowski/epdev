@@ -12,7 +12,7 @@
         @hasSection('seo_title')
             @yield('seo_title')
         @else
-            {{ settings()->get('page_title') }}@hasSection('meta_title') - @yield('meta_title')@endif
+            @hasSection('meta_title')@yield('meta_title') - @endif{{ settings()->get('page_title') }}
         @endif
     </title>
 
