@@ -18,4 +18,3 @@ yarn-error.log
 /.htaccess
 .htaccess
 config/tracker.php
-/resources/views/form-elements/tintmce.blade.php
