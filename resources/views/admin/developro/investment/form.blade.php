@@ -210,21 +210,19 @@
 
                 <div class="row w-100 mb-5">
                     <div class="col-4">
-                        @include('form-elements.html-input-text-count', [
+                        @include('form-elements.html-input-text', [
                             'label' => 'Nagłówek strony',
                             'sublabel' => 'Meta tag - title',
                             'name' => 'meta_title',
                             'value' => $entry->meta_title,
-                            'maxlength' => 60,
                         ])
                     </div>
                     <div class="col-4">
-                        @include('form-elements.html-input-text-count', [
+                        @include('form-elements.html-input-text', [
                             'label' => 'Opis strony',
                             'sublabel' => 'Meta tag - description',
                             'name' => 'meta_description',
                             'value' => $entry->meta_description,
-                            'maxlength' => 158,
                         ])
                     </div>
                     <div class="col-4">
