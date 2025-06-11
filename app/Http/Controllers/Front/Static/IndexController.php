@@ -34,6 +34,11 @@ class IndexController extends Controller
         $page = Page::find(7);
         return view('pages.contact-after-sales', compact('page', 'array'));
     }
+    public function buyland()
+    {
+        $page = Page::find(8);
+        return view('pages.buy-land', compact('page'));
+    }
 
     public function testPage()
     {

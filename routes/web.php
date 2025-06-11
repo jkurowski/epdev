@@ -198,9 +198,7 @@ Route::group(['as' => 'pages.'], function () {
     // Buy land
     //  
 
-    Route::get('/kupimy-grunty', function () {
-        return view('pages.buy-land');
-    })->name('buy-land');
+    Route::get('/kupimy-grunty', 'Front\Static\IndexController@buyland')->name('buy-land');
 
     //
     // Privacy policy

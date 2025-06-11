@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-8 offset-md-4">
             <div class="alert alert-success" role="alert">
-                {{ session('status') }}Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                {{ session('status') }}
             </div>
         </div>
     </div>
