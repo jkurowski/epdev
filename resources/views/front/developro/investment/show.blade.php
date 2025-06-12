@@ -213,13 +213,15 @@
         @endif
 
         @if($investment->end_content)
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    {!! $investment->end_content !!}
+            <div class="margin-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            {!! $investment->end_content !!}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         @endif
 
         @if ($investment->gallery && $investment->gallery->photos->count() > 0)
