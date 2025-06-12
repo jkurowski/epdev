@@ -38,7 +38,7 @@ class IndexController extends Controller
 
     public function investmentsDone()
     {
-        $page = Page::find(8);
+        $page = Page::find(9);
 
         return view('pages.completed-investments', [
             'list' => $this->mapInvestmentsToView($this->getInvestmentsDone()),
@@ -48,7 +48,7 @@ class IndexController extends Controller
 
     public function investmentsPlanned()
     {
-        $page = Page::find(9);
+        $page = Page::find(10);
 
         return view('pages.planned-investments', [
             'list' => $this->mapInvestmentsToView($this->getInvestmentsPlanned()),
